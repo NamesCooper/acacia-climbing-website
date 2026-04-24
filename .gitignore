@@ -1,0 +1,15 @@
+.DS_Store
+*.local
+dist
+node_modules
+.idea/
+*.log
+.nuxt
+.nitro
+.cache
+.output
+.env
+.vercel
+/test-results/
+/playwright-report/
+/playwright/.cache/
