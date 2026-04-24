@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Core palette — Brand System V1 · 2026 */
+  --color-cream: #F2EBDC;
+  --color-cream-soft: #F7F3EA;
+  --color-ink: #1C2A1E;
+  --color-ink-soft: #2A3E2C;
+  --color-green: #2E6B40;
+  --color-charcoal: #141914;
+  --color-wattle: #D39E17;
+
+  /* Aliases used in components */
+  --color-muted: #2E6B40;
+  --color-wattle: #D39E17;
+  --color-moss: #2E6B40;
+
+  --font-serif: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+  --font-sans: "Inter Tight", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #F2EBDC;
+}
