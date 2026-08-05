@@ -3,6 +3,7 @@
 
 @theme {
   /* Core palette — Brand System V1 · 2026 */
+  --color-parchment: #F9F7F2;
   --color-cream: #F2EBDC;
   --color-cream-soft: #F7F3EA;
   --color-ink: #1C2A1E;
@@ -12,6 +13,7 @@
   --color-wattle: #D39E17;
 
   /* Aliases used in components */
+  --color-cream-deep: #E8DFC9;
   --color-muted: #2E6B40;
   --color-wattle: #D39E17;
   --color-moss: #2E6B40;
