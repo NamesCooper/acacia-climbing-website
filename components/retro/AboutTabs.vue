@@ -60,7 +60,7 @@ const tabs = [
     id: 'what',
     label: 'What',
     heading: 'What is ACC?',
-    body: 'A bunch of climbers working under ACAQ to get outdoor bouldering <strong>formally recognised by councils</strong>, so crags stay open and get the good stuff: stairs, signs and proper tracks.',
+    body: 'A bunch of climbers working to get outdoor bouldering <strong>formally recognised by councils</strong> around Australia, so crags stay open and get the good stuff: stairs, signs and proper tracks. In Queensland we work under ACAQ.',
   },
   {
     id: 'how',
@@ -72,7 +72,7 @@ const tabs = [
     id: 'where',
     label: 'Where',
     heading: 'Where are we?',
-    body: 'Right now: <strong>Tooheys, White Rock, Plunketts, Cedar Creek and Passchendaele</strong>. Got a local spot that needs some love? Tell us about it.',
+    body: 'We\'re starting in South East Queensland with <strong>Tooheys, White Rock, Plunketts, Cedar Creek and Passchendaele</strong>. The long game is every state. Got a spot anywhere in Australia that needs some love? Tell us about it.',
   },
 ]
 

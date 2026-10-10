@@ -13,10 +13,18 @@ const UPDATES_QUERY = /* groq */ `
   "crags": crags[]->{ "id": slug.current, name }
 }`
 
-// Dated progress notes from the Studio. Empty until Sanity is connected.
+// Dated progress notes from the Studio, baked in at build time.
+// If Sanity can't be reached during a build, the page shows its friendly empty state
+// rather than failing the whole deploy.
 export function useUpdates() {
   return useAsyncData<Update[]>('updates', async () => {
     const client = useSanity()
-    return client ? client.fetch<Update[]>(UPDATES_QUERY) : []
+    if (!client) return []
+    try {
+      return await client.fetch<Update[]>(UPDATES_QUERY)
+    } catch (err) {
+      console.warn('[updates] Could not reach Sanity, showing no updates:', err)
+      return []
+    }
   }, { default: () => [] })
 }

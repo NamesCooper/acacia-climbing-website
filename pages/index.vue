@@ -1,14 +1,9 @@
 <template>
-  <div class="overflow-x-hidden">
-    <RetroNav />
-    <main>
-      <RetroHero />
-      <RetroMarquee />
-      <RetroAboutTabs />
-      <RetroCragStickers />
-    </main>
-    <RetroHelpPrefooter />
-    <RetroFooter />
+  <div>
+    <RetroHero />
+    <RetroMarquee />
+    <RetroAboutTabs />
+    <RetroCragStickers />
   </div>
 </template>
 

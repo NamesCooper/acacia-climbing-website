@@ -6,7 +6,7 @@
     <RetroSparkle class="absolute right-[10%] top-[68%] text-outline hidden sm:block" :size="34" delay="1.4s" />
 
     <p class="relative m-0 font-poster text-[clamp(22px,3.4vw,34px)] leading-tight">
-      A friendly bunch of climbers from South East Queensland
+      A friendly bunch of climbers looking after Australia's crags
     </p>
 
     <!-- Two-ink riso headline: the wattle copy sits slightly off-register behind the dark one -->
@@ -16,8 +16,8 @@
     </h1>
 
     <p class="relative mx-auto mt-7 mb-0 max-w-[600px] text-lg sm:text-xl leading-relaxed">
-      We're working with councils so local bouldering spots get recognised, mapped and looked after.
-      It's our first go at this, and we're doing it out in the open.
+      We work with councils so bouldering spots get recognised, mapped and looked after.
+      We're starting in South East Queensland, it's our first go at this, and we're doing it out in the open.
     </p>
 
     <div class="relative flex flex-wrap justify-center gap-4 mt-9">
@@ -26,7 +26,7 @@
         class="nudge no-underline bg-moss text-paper border-[3px] border-outline rounded-full px-7 py-4 font-grotesk font-extrabold text-lg shadow-[5px_5px_0_var(--color-outline)]"
       >See the crag map</NuxtLink>
       <NuxtLink
-        to="/#help"
+        to="/get-involved"
         class="nudge no-underline bg-paper-light text-outline border-[3px] border-outline rounded-full px-7 py-4 font-grotesk font-extrabold text-lg shadow-[5px_5px_0_var(--color-outline)]"
       >How you can help</NuxtLink>
     </div>

@@ -20,7 +20,7 @@
       </div>
       <div class="mt-12 pt-5 border-t border-paper/20 flex flex-wrap justify-between gap-3 text-[13px] text-paper/70">
         <span>© {{ year }} Acacia Climbing Pty Ltd · ABN 38 237 542 815</span>
-        <span>Working under ACAQ · Guidebooks on KAYA · SEQ, Australia</span>
+        <span>For climbers across Australia · Starting in SEQ · Guidebooks on KAYA</span>
       </div>
     </div>
   </footer>
@@ -33,23 +33,24 @@ const columns: { heading: string; links: { label: string; to?: string; href?: st
   {
     heading: 'Explore',
     links: [
-      { label: 'The crags', to: '/progress' },
+      { label: 'The crag map', to: '/progress' },
       { label: 'Updates', to: '/updates' },
-      { label: 'About', to: '/#about' },
+      { label: 'About us', to: '/about' },
     ],
   },
   {
     heading: 'Help out',
     links: [
-      { label: 'Volunteer', href: 'mailto:hello@acaciaclimbing.org?subject=Keen%20to%20volunteer' },
+      { label: 'Ways to help', to: '/get-involved' },
       { label: 'Report a crag issue', href: 'mailto:hello@acaciaclimbing.org?subject=Crag%20report' },
-      { label: 'Donate', href: 'mailto:hello@acaciaclimbing.org?subject=Donating%20to%20Acacia' },
+      { label: 'Donate', to: '/get-involved#donate' },
     ],
   },
   {
     heading: 'Say g\'day',
     links: [
       { label: 'hello@acaciaclimbing.org', href: 'mailto:hello@acaciaclimbing.org' },
+      { label: 'Privacy and terms', to: '/privacy' },
     ],
   },
 ]

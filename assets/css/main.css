@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@1,9..144,900,100,1&family=Instrument+Serif&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&family=Bagel+Fat+One&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@1,9..144,900,100,1&family=Instrument+Serif&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&family=Bagel+Fat+One&family=Cormorant+Garamond:ital,wght@1,600&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -16,17 +16,6 @@
   --color-riso-green: #00A95C;   /* marquee band (real riso ink colour) */
   --color-sunflower: #FFB511;    /* marquee shadow (real riso ink colour) */
 
-  /* V1 names, re-pointed at the V2 palette so older pages keep working while they are redesigned */
-  --color-parchment: #FFFCF2;
-  --color-cream: #F1EADA;
-  --color-cream-soft: #F7F1E3;
-  --color-cream-deep: #E8DFC9;
-  --color-ink: #203022;
-  --color-ink-soft: #2A3E2C;
-  --color-green: #4F6B34;
-  --color-muted: #4F6B34;
-  --color-charcoal: #1E1A16;
-
   /* Type */
   --font-display: "Fraunces", Georgia, serif;          /* big italic headlines (use with italic) */
   --font-poster: "Instrument Serif", Georgia, serif;   /* friendly lead-in lines */
@@ -34,7 +23,6 @@
   --font-sans: "DM Sans", system-ui, sans-serif;       /* body text */
   --font-bagel: "Bagel Fat One", system-ui, sans-serif;/* marquee */
   --font-serif: "Cormorant Garamond", Georgia, serif;  /* accent italic, ties to the old logo */
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
 *,

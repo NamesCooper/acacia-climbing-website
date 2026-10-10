@@ -17,6 +17,7 @@
           >{{ p.label }}</a>
         </li>
       </ul>
+      <NuxtLink to="/get-involved" class="inline-block mt-8 font-grotesk font-bold text-lg text-wattle">More ways to help →</NuxtLink>
     </div>
   </section>
 </template>

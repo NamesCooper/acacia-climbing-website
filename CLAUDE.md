@@ -2,7 +2,7 @@
 
 ## What this project is
 
-The website for Acacia Climbing Coalition (ACC), a registered Australian climbing access advocacy organisation operating in South East Queensland. The site serves two audiences with equal weight:
+The website for Acacia Climbing Coalition (ACC), an Australian climbing access organisation. The scope is all of Australia; the work starts in South East Queensland. Copy should say that, never imply ACC is SEQ-only. The site serves two audiences with equal weight:
 
 - Climbers and volunteers who need to feel the mission and find a clear pathway to contribute
 - Council officers, land managers, and grant bodies who need to see a credible, organised, professional counterparty
@@ -14,7 +14,7 @@ ACC operates under the ACAQ (Australian Climbing Association Queensland) umbrell
 - Nuxt 3 with Vue 3 composition API, built as a static site (`pnpm generate`)
 - Tailwind CSS v4 for styling (tokens in `assets/css/main.css`)
 - Sanity for content (crags, milestones, updates, site settings). Studio lives in `/studio`, deployed to Sanity's hosting
-- Cloudflare Pages for hosting. A Sanity webhook triggers a Cloudflare deploy hook so publishing rebuilds the site
+- Cloudflare Workers (static assets, see `wrangler.jsonc`) for hosting. `pnpm run build` runs `nuxt generate`; nitro preset is forced to `static`. A Sanity webhook triggers a Cloudflare deploy hook so publishing rebuilds the site
 - Git for version control
 
 ## Where things live
@@ -25,6 +25,10 @@ ACC operates under the ACAQ (Australian Climbing Association Queensland) umbrell
 - `scripts/json-to-ndjson.mjs` is the one-off migration from the legacy JSON into Sanity
 - `.mcp.json` connects Claude to Sanity (read and edit content, deploy schema)
 - `.claude/agents/acc-helper.md` and `.claude/skills/` are Cooper's helper and its shortcuts (`/whats-next`, `/log-update`, `/check-site`)
+- `layouts/default.vue` wraps every page with the nav, the "Got an hour?" band and the footer. Hide the band on a page with `definePageMeta({ prefooter: false })`
+- `components/retro/` holds every V2 component, including `PageHeader` for inner pages
+- `utils/cragStatus.ts` is the single source for status labels and colours (homepage cards and map)
+- Pages: `/` home, `/progress` crag map, `/updates`, `/about`, `/get-involved`, `/privacy`
 - `ROADMAP.md` is the running list of small next tasks
 
 ---
@@ -33,7 +37,7 @@ ACC operates under the ACAQ (Australian Climbing Association Queensland) umbrell
 
 Bold, rounded, friendly. Think 1930s cartoon posters and riso prints: big italic serif headlines, thick dark outlines, flat bush colours, paper grain and the odd sparkle. Fun and clean, never cluttered. One idea per section.
 
-The approved homepage mockup lives on the Claude Design canvas ("G · Retro poster homepage"). The built version is `pages/index.vue` plus `components/retro/`. Older inner pages still use V1 styling and get redesigned one at a time.
+The approved homepage mockup lives on the Claude Design canvas ("G · Retro poster homepage"). Every page now uses V2. There is no V1 styling left; don't reintroduce old tokens (ink, cream, charcoal) or fonts (Inter Tight, JetBrains Mono).
 
 ### Colours (tokens in `assets/css/main.css`)
 

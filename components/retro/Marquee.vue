@@ -12,6 +12,6 @@
 
 <script setup lang="ts">
 withDefaults(defineProps<{ items?: string[] }>(), {
-  items: () => ['SEQ bouldering', 'climbers looking after crags', '5 crags and counting', "come say g'day"],
+  items: () => ['Australian bouldering', 'starting in SEQ', 'climbers looking after crags', '5 crags and counting', "come say g'day"],
 })
 </script>

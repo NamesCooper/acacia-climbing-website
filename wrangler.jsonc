@@ -1,0 +1,11 @@
+// Cloudflare Workers config. The site is fully static: `pnpm run build` (nuxt generate)
+// writes plain HTML to .output/public and Cloudflare serves those files as-is.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "acaciaclimbing",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": "./.output/public",
+    "not_found_handling": "404-page"
+  }
+}

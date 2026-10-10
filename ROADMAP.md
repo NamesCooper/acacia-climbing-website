@@ -23,10 +23,9 @@ Tick things off as you go. Add new ideas at the bottom of the right section rath
 - [ ] Save it as the ACC design system in Claude Design
 - [ ] Turn the Sprig Dot wordmark into proper SVG logo files
 - [ ] Design the mascot, then drop it into the hero and About panel
-- [ ] Restyle the crag map page (`/progress`)
-- [ ] Restyle the Updates page
-- [ ] Restyle Get involved, Volunteer and Report
-- [ ] Restyle About, Mission and Work (and fix the placeholder stats while you're there)
+- [x] Restyle the crag map (new free map tiles, works on phones)
+- [x] Restyle Updates, and add About, Get involved and Privacy pages in V2
+- [x] Remove all V1 styling
 - [ ] Move homepage copy (hero, tabs, help pills) into Sanity
 
 ## Honesty and credibility fixes (flagged during the rebuild)
@@ -34,7 +33,7 @@ Tick things off as you go. Add new ideas at the bottom of the right section rath
 - [x] `/work` placeholder stats replaced with real register numbers (5 crags, 1 recognised, 2 in progress); community and education rewritten as plans, not claims
 - [x] Site-wide viewport was fixed at `width=1440`; now `width=device-width`. Still worth checking each inner page on your phone
 - [x] Removed the DGR / tax-deductible / ACNC / "Inc." claims from Get involved, Donate, About, Privacy, Legal and Terms. If ACC gets DGR status later, add it back
-- [ ] Add ACC's real ABN to the Privacy, Legal and Terms pages (the placeholder was removed)
+- [x] Real ABN (38 237 542 815) on the footer and Privacy page
 - [ ] Check About still tells the story the way you'd tell it (fake team and timeline replaced with real milestones and a short "who's behind it")
 - [ ] Mission: Traditional Owner line now says we're building those relationships. Update it when there's something real to share
 - [ ] Privacy mentions a "quarterly dispatch" newsletter. Remove it if there isn't one

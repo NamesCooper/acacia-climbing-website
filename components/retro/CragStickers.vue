@@ -13,8 +13,8 @@
         class="tilt bg-paper-light border-[3px] border-forest rounded-[20px] p-[22px] shadow-[6px_6px_0_var(--color-forest)]"
         :style="{ '--tilt': tilts[i % tilts.length] + 'deg' }"
       >
-        <span class="inline-block border-2 border-forest rounded-full px-3 py-1 text-[13px] font-bold" :class="chipClass[c.status]">
-          {{ chipLabel[c.status] ?? c.statusLabel }}
+        <span class="inline-block border-2 rounded-full px-3 py-1 text-[13px] font-bold" :class="statusChip(c.status)">
+          {{ statusLabel(c.status) }}
         </span>
         <h3 class="mt-4 mb-0 font-grotesk font-extrabold leading-none text-forest text-[28px] [overflow-wrap:break-word]">{{ c.name }}</h3>
         <p class="mt-1.5 mb-0 text-sm">{{ c.council }}</p>
@@ -40,18 +40,6 @@ const { data } = await useCragData()
 
 const tilts = [-2, 1.5, -1, 2, -1.5]
 
-const chipClass: Record<string, string> = {
-  completed: 'bg-lichen',
-  recognised: 'bg-lichen',
-  progress: 'bg-wattle',
-  scoping: 'bg-sandstone',
-}
-const chipLabel: Record<string, string> = {
-  completed: 'Access secured',
-  recognised: 'Council recognised',
-  progress: 'In progress',
-  scoping: 'Getting started',
-}
 
 // How many crags to show on the homepage. The rest are one click away on the map.
 const SHOW = 4

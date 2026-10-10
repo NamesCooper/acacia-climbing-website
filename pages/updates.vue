@@ -1,54 +1,54 @@
 <template>
-  <div class="bg-cream text-ink font-sans">
-    <LayoutTheNav />
+  <div>
+    <RetroPageHeader
+      eyebrow="Updates"
+      title="What's been"
+      accent="happening"
+      lede="A running record of the work, crag by crag. Every meeting, submission, sign and clean-up, as it happens."
+    />
 
-    <LayoutPageHeader
-      eyebrow="UPDATES"
-      lede="A dated record of the work, crag by crag. Every meeting, submission and installation, in order."
-    >
-      The <span class="italic">record</span><span class="text-wattle">.</span>
-    </LayoutPageHeader>
+    <section class="max-w-[1000px] mx-auto px-6 pb-24">
+      <!-- Empty state -->
+      <div v-if="!updates.length" class="relative bg-paper-light border-[3px] border-outline rounded-[28px] p-8 sm:p-10 shadow-[6px_6px_0_var(--color-outline)] overflow-hidden">
+        <div aria-hidden="true" class="halftone absolute -right-16 -top-16 size-56 rounded-full" style="--dot: var(--color-wattle)" />
+        <p class="relative m-0 font-display text-[clamp(30px,4vw,44px)] leading-[1.05]">First updates coming soon</p>
+        <p class="relative mt-4 mb-0 text-lg leading-relaxed max-w-[600px]">
+          We've just rebuilt the site, and updates from the crags will land here as things happen.
+          In the meantime, the crag map shows where each crag is up to.
+        </p>
+        <NuxtLink to="/progress" class="nudge relative inline-block mt-6 no-underline bg-wattle border-[3px] border-outline rounded-full px-5 py-2.5 font-grotesk font-extrabold shadow-[4px_4px_0_var(--color-outline)]">See the crag map</NuxtLink>
+      </div>
 
-    <!-- List mode -->
-    <section class="px-4 sm:px-6 lg:px-14 py-16 lg:py-24">
-      <p v-if="!updates.length" class="font-serif italic text-[22px] text-ink-soft m-0">
-        Updates will appear here as the work progresses.
-      </p>
-
-      <article
-        v-for="u in updates"
-        :id="u.slug"
-        :key="u.slug"
-        class="grid grid-cols-1 lg:grid-cols-[180px_1fr] gap-4 lg:gap-12 py-10 border-t border-ink/20 first:border-t-ink"
-      >
-        <div>
-          <time :datetime="u.date" class="font-mono text-[11px] tracking-[0.15em] uppercase text-green">
-            {{ formatDate(u.date) }}
-          </time>
-          <p v-if="u.crags?.length" class="text-[12px] tracking-[0.12em] uppercase text-ink/50 mt-2 mb-0">
-            {{ u.crags.map(c => c.name).join(' · ') }}
-          </p>
-        </div>
-        <div class="max-w-[720px]">
-          <h2 class="font-serif font-medium m-0 leading-[1.05]" style="font-size: clamp(28px, 3vw, 40px)">
-            {{ u.title }}<span class="text-wattle">.</span>
-          </h2>
-          <p class="font-serif italic text-[20px] text-ink-soft leading-[1.45] mt-4 mb-0">{{ u.summary }}</p>
-          <div v-if="u.body?.length" class="update-body text-[16px] leading-[1.7] text-ink-soft mt-6">
+      <!-- Updates -->
+      <ol v-else class="list-none p-0 m-0 flex flex-col gap-6">
+        <li
+          v-for="u in updates"
+          :id="u.slug"
+          :key="u.slug"
+          class="bg-paper-light border-[3px] border-outline rounded-[28px] p-7 sm:p-8 shadow-[6px_6px_0_var(--color-outline)] scroll-mt-6"
+        >
+          <div class="flex flex-wrap items-center gap-2">
+            <time :datetime="u.date" class="inline-block bg-wattle border-2 border-forest rounded-full px-3 py-1 text-[13px] font-bold">{{ formatDate(u.date) }}</time>
+            <span v-for="c in u.crags ?? []" :key="c.id" class="inline-block bg-paper border-2 border-forest rounded-full px-3 py-1 text-[13px] font-bold">{{ c.name }}</span>
+          </div>
+          <h2 class="mt-4 mb-0 font-display text-[clamp(28px,3.4vw,40px)] leading-[1.05]">{{ u.title }}</h2>
+          <p class="mt-3 mb-0 text-lg leading-relaxed">{{ u.summary }}</p>
+          <div v-if="u.body?.length" class="update-body mt-4 text-[17px] leading-relaxed">
             <PortableText :value="u.body" />
           </div>
-        </div>
-      </article>
+        </li>
+      </ol>
     </section>
-
-    <LayoutTheFooter />
   </div>
 </template>
 
 <script setup lang="ts">
 import { PortableText } from '@portabletext/vue'
 
-useHead({ title: 'Updates · Acacia Climbing Coalition' })
+useHead({
+  title: 'Updates · Acacia Climbing Coalition',
+  meta: [{ name: 'description', content: 'The latest from the crags: council meetings, submissions, signage and clean-ups.' }],
+})
 
 const { data: updates } = await useUpdates()
 
@@ -58,5 +58,6 @@ const formatDate = (iso: string) =>
 
 <style scoped>
 .update-body :deep(p) { margin: 0 0 1em; }
-.update-body :deep(a) { color: var(--color-ink); text-decoration: underline; }
+.update-body :deep(a) { color: var(--color-moss); font-weight: 700; }
+.update-body :deep(img) { max-width: 100%; height: auto; border: 3px solid var(--color-outline); border-radius: 20px; }
 </style>
