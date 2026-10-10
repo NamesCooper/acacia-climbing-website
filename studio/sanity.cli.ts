@@ -2,7 +2,7 @@ import { defineCliConfig } from 'sanity/cli'
 
 export default defineCliConfig({
   api: {
-    projectId: process.env.SANITY_STUDIO_PROJECT_ID || '9cry3kpb',
+    projectId: process.env.SANITY_STUDIO_PROJECT_ID || 'qxrv033n',
     dataset: process.env.SANITY_STUDIO_DATASET || 'production',
   },
   // Studio will deploy to https://acaciaclimbing.sanity.studio

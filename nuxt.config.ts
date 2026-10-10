@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       sanity: {
-        projectId: '9cry3kpb',
+        projectId: 'qxrv033n',
         dataset: 'production',
         apiVersion: '2025-10-01',
       },

@@ -21,7 +21,7 @@ ACC operates under the ACAQ (Australian Climbing Association Queensland) umbrell
 
 - `studio/schemaTypes/` defines what can be edited in Sanity (crag, milestone, update, siteSettings)
 - `composables/useCragData.ts` and `composables/useUpdates.ts` are the only places the site reads content. They run at build time
-- `public/data/*.json` is the legacy data, used as a fallback until Sanity is connected. Remove once migrated
+- `public/data/*.json` is a saved copy of the crag data. The site falls back to it if Sanity is unreachable during a build, so keep it roughly in sync
 - `scripts/json-to-ndjson.mjs` is the one-off migration from the legacy JSON into Sanity
 - `.mcp.json` connects Claude to Sanity (read and edit content, deploy schema)
 - `.claude/agents/acc-helper.md` and `.claude/skills/` are Cooper's helper and its shortcuts (`/whats-next`, `/log-update`, `/check-site`)

@@ -87,8 +87,21 @@ async function fromLegacyJson(): Promise<CragData> {
   return { crags, milestones, areas: JSON.parse(areasRaw) }
 }
 
+// If Sanity can't be reached (or comes back empty) during a build, use the saved JSON
+// rather than publishing a site with no crags on it. The build log will show the warning.
+async function loadCragData(): Promise<CragData> {
+  try {
+    const live = await fromSanity()
+    if (live && live.crags.length) return live
+    if (live) console.warn('[crag-data] Sanity returned no crags, using saved JSON instead')
+  } catch (err) {
+    console.warn('[crag-data] Could not reach Sanity, using saved JSON instead:', err)
+  }
+  return fromLegacyJson()
+}
+
 export function useCragData() {
-  return useAsyncData<CragData>('crag-data', async () => (await fromSanity()) ?? fromLegacyJson(), {
+  return useAsyncData<CragData>('crag-data', loadCragData, {
     default: () => ({ crags: [], milestones: [], areas: { type: 'FeatureCollection', features: [] } }),
   })
 }
