@@ -1,5 +1,5 @@
 <template>
-  <section class="max-w-[1240px] mx-auto px-6 pt-22">
+  <section id="about" class="max-w-[1240px] mx-auto px-6 pt-22 scroll-mt-6">
     <div class="relative bg-sandstone border-[3px] border-outline rounded-[32px] overflow-hidden shadow-[8px_8px_0_var(--color-outline)]">
       <div aria-hidden="true" class="halftone absolute -right-20 -bottom-20 size-[420px] rounded-full" style="--dot: var(--color-sandstone-deep)"></div>
 

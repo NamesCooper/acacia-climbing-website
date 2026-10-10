@@ -26,7 +26,7 @@
         class="nudge no-underline bg-moss text-paper border-[3px] border-outline rounded-full px-7 py-4 font-grotesk font-extrabold text-lg shadow-[5px_5px_0_var(--color-outline)]"
       >See the crag map</NuxtLink>
       <NuxtLink
-        to="/get-involved"
+        to="/#help"
         class="nudge no-underline bg-paper-light text-outline border-[3px] border-outline rounded-full px-7 py-4 font-grotesk font-extrabold text-lg shadow-[5px_5px_0_var(--color-outline)]"
       >How you can help</NuxtLink>
     </div>

@@ -8,7 +8,7 @@
         {{ link.label }}
       </NuxtLink>
       <NuxtLink
-        to="/get-involved"
+        to="/#help"
         class="nudge no-underline text-outline bg-wattle border-[3px] border-outline rounded-full px-5 py-2.5 shadow-[4px_4px_0_var(--color-outline)]"
       >Lend a hand</NuxtLink>
     </nav>
@@ -19,6 +19,6 @@
 const links = [
   { label: 'The crags', to: '/progress' },
   { label: 'Updates', to: '/updates' },
-  { label: 'About', to: '/about-us' },
+  { label: 'About', to: '/#about' },
 ]
 </script>
