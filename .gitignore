@@ -35,3 +35,4 @@ scripts/out
 .env
 .env.*
 !.env.example
+studio/schema.json
