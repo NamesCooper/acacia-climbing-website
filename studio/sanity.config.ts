@@ -5,7 +5,7 @@ import { schemaTypes } from './schemaTypes'
 import { structure } from './structure'
 
 // The project ID is not a secret. It is set once you run `npx sanity init` (see README).
-const projectId = process.env.SANITY_STUDIO_PROJECT_ID || 'replace-me'
+const projectId = process.env.SANITY_STUDIO_PROJECT_ID || '9cry3kpb'
 const dataset = process.env.SANITY_STUDIO_DATASET || 'production'
 
 export default defineConfig({
