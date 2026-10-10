@@ -9,6 +9,6 @@ export default defineCliConfig({
   studioHost: 'acaciaclimbing',
   deployment: {
     appId: 'jdf3pnntl84ei3idshuqugkg',
+    autoUpdates: true,
   },
-  autoUpdates: true,
 })
