@@ -4,7 +4,7 @@
 
     <LayoutPageHeader
       eyebrow="ABOUT"
-      lede="Acacia is a small organisation with a long horizon. Six staff, 2,400 members, one mission — climbing in Australia, recognised and stewarded for the next hundred years."
+      lede="Acacia is a small, volunteer-run crew with a long horizon: climbing in Australia, recognised and looked after for the next hundred years. We're new, and we're building it in the open."
     >
       Climbers, <span class="italic">for the long haul</span><span class="text-wattle">.</span>
     </LayoutPageHeader>
@@ -21,15 +21,15 @@
           </h2>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 lg:gap-14">
             <p class="font-serif text-[19px] leading-[1.6] text-ink-soft m-0">
-              In late 2024, three crags in South East Queensland were closed in the same month —
-              each for a different reason, none of them with a climbing voice in the room.
-              A handful of climbers met at a Brisbane gym to ask the obvious question: who is
-              supposed to be advocating for outdoor climbing in this state?
+              Most councils in Australia don't have a way to formally recognise outdoor climbing.
+              That leaves crags with unclear access, no stairs or signs, and nobody speaking for
+              climbers when decisions get made. More people than ever are climbing in gyms and
+              wanting to head outside, with very little to tell them where it's okay to go.
             </p>
             <p class="font-serif text-[19px] leading-[1.6] text-ink-soft m-0">
-              The answer was nobody. So Acacia formed — not as another club, but as the
-              connective layer between the climbers, the gyms, the councils and the Traditional
-              Owner groups whose Country we climb on.
+              So we started Acacia, working under ACAQ (Queensland's peak climbing access body),
+              to do something about it, starting with bouldering in South East Queensland.
+              We talk to councils, document crags on KAYA, and keep everyone posted along the way.
               <span class="italic text-green"> A coalition, in the literal sense.</span>
             </p>
           </div>
@@ -44,7 +44,7 @@
           Timeline
         </div>
         <h2 class="font-serif font-medium text-[clamp(32px,4vw,56px)] leading-[1.05] tracking-[-0.02em] m-0 text-ink">
-          Two years, <span class="italic">moving slowly</span><span class="text-wattle">.</span>
+          Where we're <span class="italic">up to</span><span class="text-wattle">.</span>
         </h2>
       </div>
       <div class="lg:pl-[228px]">
@@ -68,15 +68,19 @@
           Team
         </div>
         <h2 class="font-serif font-medium text-[clamp(32px,4vw,56px)] leading-[1.05] tracking-[-0.02em] m-0 text-ink">
-          The people <span class="italic">at the desk</span><span class="text-wattle">.</span>
+          The people <span class="italic">behind it</span><span class="text-wattle">.</span>
         </h2>
       </div>
-      <div class="lg:pl-57 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0">
-        <div v-for="[name, role, loc] in team" :key="name" class="border-t border-ink pt-5 pb-8 pr-8">
-          <div class="font-serif text-[26px] font-medium text-ink tracking-[-0.01em] leading-none">{{ name }}</div>
-          <div class="font-serif text-[17px] italic text-green mt-2">{{ role }}</div>
-          <div class="font-mono text-[10px] tracking-[0.18em] text-ink/40 uppercase mt-2">{{ loc }}</div>
-        </div>
+      <div class="lg:pl-57 max-w-[760px]">
+        <p class="font-serif text-[19px] leading-[1.6] text-ink-soft m-0">
+          Right now Acacia is a small volunteer crew, coordinated by Cooper, who is also ACAQ's
+          bouldering representative. Everything here gets done in spare hours, with a lot of help
+          from local climbers.
+        </p>
+        <p class="font-serif text-[19px] leading-[1.6] text-ink-soft mt-6 mb-0">
+          Want to be part of it?
+          <NuxtLink to="/get-involved" class="text-green">Here's how to lend a hand.</NuxtLink>
+        </p>
       </div>
     </section>
 
@@ -104,28 +108,18 @@
 <script setup lang="ts">
 useHead({ title: 'About · Acacia Climbing Coalition' })
 
-const team = [
-  ['Maya Tully', 'Founder & Director', 'Brisbane'],
-  ['Jordan Hale', 'Crag Advocacy Lead', 'Sunshine Coast'],
-  ['Nia Coleman', 'Documentation Lead', 'Brisbane'],
-  ['Sam Ferreira', 'Community & Events', 'Gold Coast'],
-  ['Lior Brennan', 'Stewardship Curriculum', 'Toowoomba'],
-  ['Wren Okafor', 'Operations & Treasury', 'Brisbane'],
-]
-
+// Keep these true. Councils and grant bodies read this page after meetings.
 const milestones = [
-  ['2024', 'Coalition formed', 'Six founding members. First crag survey at White Rock.'],
-  ['2025 · I', 'First recognition', 'Brisbane City Council formally recognises bouldering at White Rock.'],
-  ['2025 · II', 'Register v.1', 'Public crag register launches — 42 crags, 680 routes documented.'],
-  ['2025 · III', 'Stewardship cohort', 'First 80 climbers complete the stewardship curriculum across 4 partner gyms.'],
-  ['2026 · I', 'Sunshine Coast', 'Active negotiation with Sunshine Coast Council for recognition at three crags.'],
-  ['2026 · II', 'Register v.2', '86 crags, 1,240 routes — including land tenure and access status.'],
+  ['Done', 'Tooheys Forest recognised', 'Brisbane City Council formally recognises bouldering at Tooheys, with new stairs and signage.'],
+  ['Underway', 'White Rock', 'Talking with Ipswich City Council about formal access.'],
+  ['Underway', 'Digital guidebooks', 'Documenting our crags on KAYA, so every crag is on the record.'],
+  ['Next up', 'More of SEQ', 'Plunketts is in research and site visits. Cedar Creek and Passchendaele are just getting started.'],
 ]
 
 const governance = [
-  ['Incorporated', 'Inc. Association · QLD'],
-  ['ACNC-registered', 'Charity status, MMXXV'],
-  ['DGR endorsed', 'Item 1, Sub-item 4.1.1'],
-  ['Audit', 'Annual external review'],
+  ['Under ACAQ', "Queensland's peak climbing access body"],
+  ['ABN registered', 'Registered Australian business'],
+  ['KAYA', 'Our digital guidebook home'],
+  ['Volunteer-run', 'Every hour is donated'],
 ]
 </script>

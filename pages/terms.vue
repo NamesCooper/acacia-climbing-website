@@ -62,7 +62,7 @@
           <p class="font-mono text-[11px] tracking-[0.22em] text-green uppercase leading-relaxed m-0">§ 05 / CONTACT</p>
         </div>
         <div>
-          <p class="font-serif font-medium text-[26px] m-0 mb-3">Secretary, Acacia Climbing Coalition Inc.</p>
+          <p class="font-serif font-medium text-[26px] m-0 mb-3">Acacia Climbing Coalition</p>
           <a
             href="mailto:secretary@acaciaclimbing.org"
             class="font-mono text-[14px] tracking-[0.12em] text-green underline"
@@ -90,7 +90,7 @@ const sections = [
     n: '02',
     t: 'About this Site',
     p: [
-      'The Site is operated by Acacia Climbing Coalition Inc., an Australian incorporated association. Its purpose is to inform the public about the work of the coalition and to coordinate the recognition, documentation and stewardship of outdoor climbing in Australia.',
+      'The Site is operated by Acacia Climbing Coalition, based in Queensland, Australia. Its purpose is to inform the public about the work of the coalition and to coordinate the recognition, documentation and stewardship of outdoor climbing in Australia.',
     ],
   },
   {
@@ -119,14 +119,14 @@ const sections = [
     n: '06',
     t: 'Donations',
     p: [
-      'Acacia is registered as a deductible gift recipient (DGR) under Australian law. Donations are processed by a third-party payment provider; receipts are issued electronically. Donations are non-refundable except where required by law.',
+      'Acacia is not currently a deductible gift recipient (DGR), so donations are not tax-deductible. Receipts are issued by email. Donations are non-refundable except where required by law.',
     ],
   },
   {
     n: '07',
     t: 'Intellectual property',
     p: [
-      'Site content — text, photography, register data, design — is © Acacia Climbing Coalition Inc. unless otherwise attributed. You may quote and link to material with attribution; you may not reproduce substantial portions of the register or design without written permission.',
+      'Site content — text, photography, register data, design — is © Acacia Climbing Coalition unless otherwise attributed. You may quote and link to material with attribution; you may not reproduce substantial portions of the register or design without written permission.',
     ],
   },
   {

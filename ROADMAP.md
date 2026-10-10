@@ -31,10 +31,14 @@ Tick things off as you go. Add new ideas at the bottom of the right section rath
 
 ## Honesty and credibility fixes (flagged during the rebuild)
 
-- [ ] `/work` shows numbers that look like placeholders (2,400+ members, 86 crags logged, 1,240 routes, 340 climbers trained, 9 partner gyms). Replace with real figures or remove until they're true. Councils will read these
+- [x] `/work` placeholder stats replaced with real register numbers (5 crags, 1 recognised, 2 in progress); community and education rewritten as plans, not claims
 - [x] Site-wide viewport was fixed at `width=1440`; now `width=device-width`. Still worth checking each inner page on your phone
-- [ ] Get involved says donations are "tax-deductible giving through an ACNC-registered DGR". Only keep that if ACC actually has DGR status; otherwise reword (e.g. "Every dollar goes to documentation and advocacy")
-- [ ] Get involved also mentions "the advocacy team" following up reports. Fine if true, but "we" is more honest while it's mostly you
+- [x] Removed the DGR / tax-deductible / ACNC / "Inc." claims from Get involved, Donate, About, Privacy, Legal and Terms. If ACC gets DGR status later, add it back
+- [ ] Add ACC's real ABN to the Privacy, Legal and Terms pages (the placeholder was removed)
+- [ ] Check About still tells the story the way you'd tell it (fake team and timeline replaced with real milestones and a short "who's behind it")
+- [ ] Mission: Traditional Owner line now says we're building those relationships. Update it when there's something real to share
+- [ ] Privacy mentions a "quarterly dispatch" newsletter. Remove it if there isn't one
+- [x] "The advocacy team" changed to "we" on Get involved
 - [x] Updates link is in the new homepage nav. Inner pages get it when they're restyled
 - [ ] Add KAYA links to each crag in Sanity (the `KAYA guidebook link` field) and show them on the crag panel
 

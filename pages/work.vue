@@ -35,8 +35,8 @@
 
         <!-- Col 3: detail + stats -->
         <div>
-          <p class="font-serif text-[18px] text-ink-soft leading-[1.65] m-0 mb-12">{{ pillar.detail }}</p>
-          <div class="grid grid-cols-3 gap-4">
+          <p class="font-serif text-[18px] text-ink-soft leading-[1.65] m-0" :class="pillar.stats.length ? 'mb-12' : ''">{{ pillar.detail }}</p>
+          <div v-if="pillar.stats.length" class="grid grid-cols-3 gap-4">
             <div v-for="[num, label] in pillar.stats" :key="label" class="min-w-0">
               <p class="font-serif text-[clamp(22px,7vw,36px)] text-ink m-0 leading-none [overflow-wrap:anywhere]">{{ num }}</p>
               <p class="font-mono text-[10px] tracking-[0.18em] text-green uppercase m-0 mt-1">{{ label }}</p>
@@ -53,34 +53,36 @@
 <script setup lang="ts">
 useHead({ title: 'The Work · Acacia Climbing Coalition' })
 
+// Keep stats true. Only show numbers we can back up (they come from the crag register).
+
 const pillars = [
   {
     n: 'I',
     name: 'Crag Advocacy',
-    blurb: 'Securing formal recognition with councils, land managers and Traditional Owner groups.',
-    detail: 'We document the climbing record at each crag, build the planning case, and represent climbers in council submissions, hearings and access negotiations. Where access is at risk, we are the named party in the room.',
-    stats: [['12', 'crags'], ['2', 'recognitions'], ['7', 'in negotiation']] as [string, string][],
+    blurb: 'Working with councils and land managers to get outdoor bouldering formally recognised.',
+    detail: 'We research each crag, talk with council and rangers, build the case for recognition, and speak up for climbers when access decisions get made.',
+    stats: [['5', 'crags'], ['1', 'recognised'], ['2', 'in progress']] as [string, string][],
   },
   {
     n: 'II',
     name: 'Crag Documentation',
-    blurb: 'A public register of every climbing area in South East Queensland — visible, defensible, complete.',
-    detail: 'The register records location, land tenure, climbing history, environmental sensitivities, and current access status for every documented crag. It is the evidentiary spine that planning submissions, environmental reviews and partner conversations all draw from.',
-    stats: [['86', 'crags logged'], ['1,240', 'routes documented'], ['v.2.4', 'release']] as [string, string][],
+    blurb: 'A public register of climbing areas in South East Queensland, growing crag by crag.',
+    detail: 'For each crag we record location, council, access status and progress, and digitise the guidebook on KAYA. A documented crag is a lot easier to protect.',
+    stats: [['5', 'on the register'], ['2,000+', 'problems across them'], ['KAYA', 'guidebook home']] as [string, string][],
   },
   {
     n: 'III',
     name: 'Community Building',
-    blurb: 'Connecting climbers, gyms, advocates and Traditional Owners into a single coalition voice.',
-    detail: 'Acacia hosts crag clean-ups, council deputations, education evenings at partner gyms, and Country-walks led by Traditional Owners. The coalition exists because climbers showed up — every event, every submission, every season.',
-    stats: [['28', 'events / year'], ['2,400+', 'members'], ['9', 'partner gyms']] as [string, string][],
+    blurb: 'Bringing climbers, gyms and local advocates together as one voice.',
+    detail: "We're starting small: crag clean-ups, track work and getting climbers along to council conversations. Gym partnerships and community nights are on the wish list. Keen to help make them happen? We'd love that.",
+    stats: [] as [string, string][],
   },
   {
     n: 'IV',
     name: 'Education & Stewardship',
-    blurb: 'Training the next generation of climber-stewards in ethics, ecology, and Country.',
-    detail: 'Our stewardship curriculum runs in partner gyms and at the crags themselves: minimum-impact practice, ecological awareness, Country protocol, and the planning literacy climbers need to participate in their own access conversations.',
-    stats: [['340', 'climbers trained'], ['4', 'curricula released'], ['MMXXVI', 'cohort open']] as [string, string][],
+    blurb: 'Helping climbers look after the places they climb.',
+    detail: "We'd love to run stewardship sessions in gyms and at the crags: minimum-impact climbing, respecting Country, and how access actually works. It's on the roadmap, and we're looking for people to help shape it.",
+    stats: [] as [string, string][],
   },
 ]
 </script>

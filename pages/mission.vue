@@ -78,7 +78,7 @@
             Sovereignty was never ceded.
           </p>
           <p class="m-0">
-            Acacia works in partnership with Traditional Owner groups across South East Queensland. Country consultation is a precondition of our crag documentation process — not an afterthought.
+            We want consultation with Traditional Owners to be part of how every crag is documented, not an afterthought. We're still building those relationships, and we'll share how that's going as it happens.
           </p>
         </div>
       </div>

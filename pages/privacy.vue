@@ -81,7 +81,7 @@ const sections = [
     n: '01',
     t: 'Who we are',
     p: [
-      'Acacia Climbing Coalition Inc. ("Acacia", "we", "us") is an Australian not-for-profit incorporated in Queensland, ABN 00 000 000 000. Our registered office is in Brisbane, Queensland, Australia.',
+      'Acacia Climbing Coalition ("Acacia", "we", "us") is a climbing access organisation based in Brisbane, Queensland, Australia.',
       'This Privacy Policy describes how we collect, hold, use and disclose personal information in accordance with the Privacy Act 1988 (Cth) and the Australian Privacy Principles.',
     ],
   },
@@ -97,7 +97,7 @@ const sections = [
     n: '03',
     t: 'How we use it',
     p: [
-      "We use personal information to: respond to your enquiries; process donations and issue receipts; coordinate volunteer activities; send the quarterly dispatch (only if you've subscribed); investigate reported access issues; and meet our obligations as an incorporated association and DGR.",
+      "We use personal information to: respond to your enquiries; process donations and issue receipts; coordinate volunteer activities; send the quarterly dispatch (only if you've subscribed); investigate reported access issues; and meet our legal obligations.",
     ],
   },
   {
