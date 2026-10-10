@@ -35,7 +35,7 @@ export default defineNuxtConfig({
       title: 'Acacia Climbing Coalition · SEQ',
       meta: [
         { name: 'description', content: 'A coalition of climbers securing formal access recognition across South East Queensland.' },
-        { name: 'viewport', content: 'width=1440' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       ],
     },
   },

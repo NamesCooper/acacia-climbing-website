@@ -15,18 +15,24 @@ Tick things off as you go. Add new ideas at the bottom of the right section rath
 - [ ] Post your first update with `/log-update` (even "we've started rebuilding the site" counts)
 - [ ] Merge `sanity-rebuild` into `main` once the preview looks right
 
-## Design refresh (V2, homey)
+## Design refresh (V2, retro poster)
 
-- [ ] Pick a direction from the Claude Design canvas
+- [x] Pick a direction from the Claude Design canvas (G · Retro poster homepage)
+- [x] Swap colour and font tokens in `assets/css/main.css`
+- [x] Rebuild the homepage in the new style (`components/retro/`)
 - [ ] Save it as the ACC design system in Claude Design
-- [ ] Swap colour and font tokens in `assets/css/main.css`
-- [ ] Restyle the homepage, one section per sitting
-- [ ] Restyle the inner pages
+- [ ] Turn the Sprig Dot wordmark into proper SVG logo files
+- [ ] Design the mascot, then drop it into the hero and About panel
+- [ ] Restyle the crag map page (`/progress`)
+- [ ] Restyle the Updates page
+- [ ] Restyle Get involved, Volunteer and Report
+- [ ] Restyle About, Mission and Work (and fix the placeholder stats while you're there)
+- [ ] Move homepage copy (hero, tabs, help pills) into Sanity
 
 ## Honesty and credibility fixes (flagged during the rebuild)
 
 - [ ] `/work` shows numbers that look like placeholders (2,400+ members, 86 crags logged, 1,240 routes, 340 climbers trained, 9 partner gyms). Replace with real figures or remove until they're true. Councils will read these
-- [ ] Site-wide viewport is fixed at `width=1440` in `nuxt.config.ts`, so phones show a shrunk desktop page. The components are already responsive, so switching to `width=device-width, initial-scale=1` should mostly just work. Test each page on your phone
+- [x] Site-wide viewport was fixed at `width=1440`; now `width=device-width`. Still worth checking each inner page on your phone
 - [ ] Add an "Updates" link to the nav and footer once there are two or three updates
 - [ ] Add KAYA links to each crag in Sanity (the `KAYA guidebook link` field) and show them on the crag panel
 

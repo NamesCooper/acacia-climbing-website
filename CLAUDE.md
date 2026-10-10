@@ -29,74 +29,55 @@ ACC operates under the ACAQ (Australian Climbing Association Queensland) umbrell
 
 ---
 
-## Brand System — V1 · 2026
+## Brand System — V2 · retro poster (October 2026)
 
-> A homier V2 brand is being designed in Claude Design (October 2026). Once Cooper picks a direction, it replaces this section and the tokens in `assets/css/main.css`. Until then, V1 below is what's live.
+Bold, rounded, friendly. Think 1930s cartoon posters and riso prints: big italic serif headlines, thick dark outlines, flat bush colours, paper grain and the odd sparkle. Fun and clean, never cluttered. One idea per section.
 
-### Colours
+The approved homepage mockup lives on the Claude Design canvas ("G · Retro poster homepage"). The built version is `pages/index.vue` plus `components/retro/`. Older inner pages still use V1 styling and get redesigned one at a time.
 
-| Token | Hex | Role |
-|-------|-----|------|
-| `cream` | #F2EBDC | Paper — primary background |
-| `ink` | #1C2A1E | Dark Green — primary text / dark section backgrounds |
-| `mid-green` | #2E6B40 | Secondary green — muted text, roman numerals, active status |
-| `charcoal` | #141914 | Deepest contrast — nav bar, darkest gaps |
-| `wattle` | #D39E17 | Accent — dots, donate CTA, in-sentence highlights |
+### Colours (tokens in `assets/css/main.css`)
 
-Derived:
-- `parchment` #F9F7F2 — off-white surface, sits above cream (cards, overlays)
-- `cream-soft` #F7F3EA
-- `ink-soft` #2A3E2C
+| Token | Hex | Use |
+|-------|-----|-----|
+| `paper` | #F1EADA | Page background |
+| `paper-light` | #FFFCF2 | Cards, buttons |
+| `outline` | #1E1A16 | Thick outlines, hard shadows, body text |
+| `forest` | #203022 | Logo green, dark sections (pre-footer, footer) |
+| `moss` | #4F6B34 | Progress bars, primary button |
+| `lichen` | #A9B97E | "Recognised" chips, soft fills |
+| `wattle` | #EFC248 | Main accent, misregistered headline shadow |
+| `wattle-deep` | #D29F2A | Logo gold, halftone dots on wattle |
+| `sandstone` | #E2C58E | Panels, "getting started" chips |
+| `sandstone-deep` | #B8935A | Halftone dots on sandstone |
+| `riso-green` | #00A95C | Marquee band only (real riso ink) |
+| `sunflower` | #FFB511 | Marquee text shadow only (real riso ink) |
 
-Never use old olive/brown values (#EFE6D2, #6A7560, #BE7B2E).
+No orange or pink. Keep to sandstone yellows, forest and moss greens, and wattle.
 
-### Type Scale
+### Type
 
-| Name | Size | Font |
-|------|------|------|
-| Hero Display | 128px | Cormorant Garamond |
-| H1 | 88px | Cormorant Garamond |
-| H2 | 56px | Cormorant Garamond |
-| H3 | 32px | Cormorant Garamond |
-| Lead | 20px italic | Cormorant Garamond Italic |
-| Body | 16px | Inter Tight |
-| Small | 14px | Inter Tight |
-| Meta | 12px | Inter Tight |
-| Caption | 11px | JetBrains Mono |
+| Role | Font | Tailwind |
+|------|------|----------|
+| Big headlines | Fraunces italic 900, soft | `font-display` |
+| Friendly lead-in lines | Instrument Serif | `font-poster` |
+| Section titles (uppercase), buttons, labels, wordmark | Bricolage Grotesque 700/800 | `font-grotesk` |
+| Body | DM Sans | `font-sans` (default) |
+| Marquee | Bagel Fat One | `font-bagel` |
+| Accent italic ("We'd love the help.") | Cormorant Garamond italic | `font-serif italic` |
 
-- **Display:** Cormorant Garamond — mix upright + italic per heading; italic for in-sentence emphasis words (*recognises*, *all of us*, *stewardship*)
-- **Body:** Inter Tight
-- **Mono / labels:** JetBrains Mono (caption level only)
+### Logo
 
-### UI Patterns
+"Sprig Dot": lowercase `acacia` in Bricolage Grotesque 800 with the wattle sprig as the dot on the i. Use `<RetroWordmark :size="44" />`. Sprig artwork is in `public/brand/` (gold, green, light). The old serif "A" monogram is kept as a formal seal for council and grant documents only.
 
-**Section labels** — `§ XX · SECTION NAME` in Inter Tight Meta (12px), uppercase, ink/50 opacity, top-left above section heading.
+### Patterns
 
-**Accent dot** — wattle (#D39E17) full-stop after display headings signals primary heading terminus.
-
-**Roman numerals (pillars)** — large I / II / III / IV in Cormorant Garamond Italic, mid-green (#2E6B40).
-
-**Status badges:**
-- `ACTIVE` — mid-green (#2E6B40) bg, cream text, Inter Tight 11px uppercase
-- `IN PROGRESS` — wattle (#D39E17) bg, ink text
-- `INACTIVE` — muted/outline style
-
-**Buttons:**
-- Primary (filled): charcoal bg, cream text, Inter Tight uppercase, sharp corners, letter-spacing
-- Secondary (outlined): transparent bg, 1px ink border, ink text
-- Donate CTA (nav only): wattle (#D39E17) bg, ink text
-
-**Navigation:** charcoal (#141914) bg, cream Inter Tight Meta links (uppercase, spaced).
-
-**Dark sections (hero, footer):** ink (#1C2A1E) bg, cream or cream/70 text. Footer wordmark is Cormorant Garamond Hero Display in cream.
-
-**Dividers:** 1px solid — ink/low-opacity on cream sections, cream/20 on dark sections.
-
-**Tables / registers:** column headers Inter Tight Meta uppercase ink/50; rows Inter Tight Body; row numbers Inter Tight Small ink/40.
-
-**Cards / partner grid:** thin 1px ink border, category label Inter Tight Meta uppercase ink/50, title Inter Tight Small/Body, body Inter Tight Small ink/70.
-
-The visual signature is a wattle full-stop after display headings and one italicised word per composition. Refer to the four-mode layout system (Milestone, Documentary, Editorial 50/50, List) when building new pages.
+- **Poster box:** 3px `outline` border + hard 4 to 8px offset shadow, big radius (20 to 32px) or full pill
+- **Riso headline:** duplicate the text behind in `wattle` (or `moss` on wattle backgrounds) offset ~6px, `aria-hidden` on the copy
+- **Halftone circle:** `.halftone` with `--dot` set to a deeper shade of the panel colour
+- **Tilt:** stickers and pills sit at -3 to 3deg via `.tilt` + `--tilt`, and straighten on hover
+- **Motion:** marquee, bobbing sprig, twinkling sparkles, progress bars filling. All switch off under `prefers-reduced-motion`
+- **Grain:** applied once to the whole site via `body::after`. Don't add more
+- The mascot (in progress) will live in the About panel and hero. Until then, the sprig stands in
 
 ---
 
@@ -119,7 +100,7 @@ The visual signature is a wattle full-stop after display headings and one italic
 ### Components
 
 - Prefer composition over duplication
-- New layout components should reflect one of the four modes from the brand system
+- New sections follow the V2 retro poster patterns above; homepage sections live in components/retro
 - Reusable components live in /components, page components in /pages
 - Use Vue 3 composition API (`<script setup>`) not Options API
 

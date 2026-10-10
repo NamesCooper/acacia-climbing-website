@@ -1,12 +1,17 @@
 <template>
-  <div class="font-sans text-ink bg-cream w-full">
-    <LayoutTheNav />
-    <HomeHeroSection />
-    <HomeMissionSection />
-    <HomePrecedentSection />
-    <HomeCragRegister />
-    <HomeCTASection />
-    <HomeCoalitionSection />
-    <LayoutTheFooter />
+  <div class="overflow-x-hidden">
+    <RetroNav />
+    <main>
+      <RetroHero />
+      <RetroMarquee />
+      <RetroAboutTabs />
+      <RetroCragStickers />
+    </main>
+    <RetroHelpPrefooter />
+    <RetroFooter />
   </div>
 </template>
+
+<script setup lang="ts">
+useHead({ title: 'Acacia Climbing Coalition · Keep the crags open' })
+</script>
