@@ -5,7 +5,10 @@ export default defineCliConfig({
     projectId: process.env.SANITY_STUDIO_PROJECT_ID || 'qxrv033n',
     dataset: process.env.SANITY_STUDIO_DATASET || 'production',
   },
-  // Studio will deploy to https://acaciaclimbing.sanity.studio
+  // Studio is deployed to https://acaciaclimbing.sanity.studio
   studioHost: 'acaciaclimbing',
+  deployment: {
+    appId: 'jdf3pnntl84ei3idshuqugkg',
+  },
   autoUpdates: true,
 })

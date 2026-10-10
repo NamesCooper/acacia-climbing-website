@@ -5,15 +5,15 @@ Tick things off as you go. Add new ideas at the bottom of the right section rath
 
 ## Get Sanity live (about an evening, in order)
 
-- [ ] Create a free Sanity account and project: in `/studio` run `npx sanity init --env` (pick "production" dataset). Copy the project ID into `studio/.env` and the root `.env`
-- [ ] Import the existing crags: in `/studio` run `npm run import-legacy`
-- [ ] Deploy the Studio: in `/studio` run `npm run deploy` (lives at acaciaclimbing.sanity.studio)
+- [x] Sanity project set up (qxrv033n) with crags imported
+- [x] Crags imported into Sanity
+- [x] Deploy the Studio (live at acaciaclimbing.sanity.studio)
 - [ ] Check the site locally reads from Sanity: `pnpm dev`, open http://localhost:3000/progress
-- [ ] Cloudflare Pages: set build command `pnpm generate`, output folder `.output/public`, and add the two `NUXT_PUBLIC_SANITY_*` env vars
+- [x] Cloudflare Workers builds connected (production branch: main)
 - [ ] Cloudflare Pages: create a deploy hook. In Sanity (manage.sanity.io > API > Webhooks) add a webhook to that URL, triggered on create/update/delete
 - [ ] Connect Claude to Sanity: run `claude` in this folder and approve the Sanity MCP sign-in
 - [ ] Post your first update with `/log-update` (even "we've started rebuilding the site" counts)
-- [ ] Merge `sanity-rebuild` into `main` once the preview looks right
+- [x] Merged into main and live
 
 ## Design refresh (V2, retro poster)
 
