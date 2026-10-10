@@ -22,3 +22,16 @@ logs
 .env
 .env.*
 !.env.example
+
+# Sanity Studio
+studio/node_modules
+studio/dist
+studio/.sanity
+
+# Migration output
+scripts/out
+
+# Local env
+.env
+.env.*
+!.env.example

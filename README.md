@@ -1,75 +1,39 @@
-# Nuxt Minimal Starter
+# Acacia Climbing Coalition website
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+The website for [acaciaclimbing.org](https://acaciaclimbing.org). Nuxt site on Cloudflare Pages, content in Sanity.
 
-## Setup
+This is a first-time, work-in-progress project. If you're Claude, read `CLAUDE.md`. If you're Cooper, `ROADMAP.md` has the next small things to do.
 
-Make sure to install dependencies:
+## How it fits together
 
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+```
+You edit in Sanity Studio  ──publish──▶  Sanity webhook  ──▶  Cloudflare deploy hook
+(acaciaclimbing.sanity.studio)                                       │
+                                                                     ▼
+                                           Cloudflare runs `pnpm generate`, which
+                                           pulls content from Sanity and writes
+                                           plain HTML pages. Live in ~2 minutes.
 ```
 
-## Development Server
+## Everyday commands
 
-Start the development server on `http://localhost:3000`:
+| What | Where | Command |
+|---|---|---|
+| Run the site locally | repo root | `pnpm dev` → http://localhost:3000 |
+| Build like Cloudflare does | repo root | `pnpm generate` |
+| Run the Studio locally | `/studio` | `npm run dev` → http://localhost:3333 |
+| Deploy Studio changes | `/studio` | `npm run deploy` |
 
-```bash
-# npm
-npm run dev
+## Working with Claude
 
-# pnpm
-pnpm dev
+Open this folder in Claude Code (`claude` in the terminal). It picks up `CLAUDE.md`, the `acc-helper` agent and these shortcuts:
 
-# yarn
-yarn dev
+- `/whats-next` picks one small task that fits the time you've got
+- `/log-update` turns "we met Ipswich council today" into a published update
+- `/check-site` builds the site and tells you if anything's broken
 
-# bun
-bun run dev
-```
+The Sanity MCP (`.mcp.json`) lets Claude read and edit content directly. First run asks you to sign in to Sanity.
 
-## Production
+## First-time setup
 
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+See the "Get Sanity live" checklist in `ROADMAP.md`. Until a Sanity project ID is set, the site falls back to the old JSON files in `public/data`, so nothing breaks in the meantime.

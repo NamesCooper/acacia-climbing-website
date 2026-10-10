@@ -193,6 +193,9 @@ import type { Map, LayerGroup, Layer } from 'leaflet'
 
 useHead({ meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }] })
 
+// Crag, milestone and area data, baked in at build time (see composables/useCragData.ts)
+const { data: cragData } = await useCragData()
+
 // ── TYPES ──
 interface StateConfig { id: string; name: string; active: boolean; center: [number, number]; zoom: number }
 interface Crag {
@@ -430,14 +433,9 @@ async function initMap() {
     else if (!currentState.value?.active && map!.hasLayer(cragMarkerLayer!)) map!.removeLayer(cragMarkerLayer!)
   })
 
-  const [crags, milestones, areas] = await Promise.all([
-    fetch('/data/crags.json').then(r => r.json()),
-    fetch('/data/milestones.json').then(r => r.json()),
-    fetch('/data/areas.geojson').then(r => r.json()).catch(() => null),
-  ])
-  allCrags.value = crags
-  allMilestones.value = milestones
-  allAreas = areas
+  allCrags.value = cragData.value.crags as Crag[]
+  allMilestones.value = cragData.value.milestones
+  allAreas = cragData.value.areas
 
   // State polygons — click directly selects, no popup
   try {

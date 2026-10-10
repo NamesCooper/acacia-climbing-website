@@ -11,15 +11,27 @@ ACC operates under the ACAQ (Australian Climbing Association Queensland) umbrell
 
 ## Tech stack
 
-- Nuxt 3 with Vue 3 composition API
-- Tailwind CSS for styling
-- JSON files in the repo as the data layer (no database)
-- Cloudflare Pages for hosting
+- Nuxt 3 with Vue 3 composition API, built as a static site (`pnpm generate`)
+- Tailwind CSS v4 for styling (tokens in `assets/css/main.css`)
+- Sanity for content (crags, milestones, updates, site settings). Studio lives in `/studio`, deployed to Sanity's hosting
+- Cloudflare Pages for hosting. A Sanity webhook triggers a Cloudflare deploy hook so publishing rebuilds the site
 - Git for version control
+
+## Where things live
+
+- `studio/schemaTypes/` defines what can be edited in Sanity (crag, milestone, update, siteSettings)
+- `composables/useCragData.ts` and `composables/useUpdates.ts` are the only places the site reads content. They run at build time
+- `public/data/*.json` is the legacy data, used as a fallback until Sanity is connected. Remove once migrated
+- `scripts/json-to-ndjson.mjs` is the one-off migration from the legacy JSON into Sanity
+- `.mcp.json` connects Claude to Sanity (read and edit content, deploy schema)
+- `.claude/agents/acc-helper.md` and `.claude/skills/` are Cooper's helper and its shortcuts (`/whats-next`, `/log-update`, `/check-site`)
+- `ROADMAP.md` is the running list of small next tasks
 
 ---
 
 ## Brand System — V1 · 2026
+
+> A homier V2 brand is being designed in Claude Design (October 2026). Once Cooper picks a direction, it replaces this section and the tokens in `assets/css/main.css`. Until then, V1 below is what's live.
 
 ### Colours
 
@@ -97,9 +109,10 @@ The visual signature is a wattle full-stop after display headings and one italic
 
 ### Data layer
 
-- The Progress Map and crag data live in JSON files in the repo
-- Treat JSON files as the source of truth, not as throwaway content
-- When updating crag, area, subarea, or climb data, preserve existing structure and field names
+- Sanity is the source of truth for crags, milestones, area boundaries and updates
+- Change content through the Studio or the Sanity MCP, not by editing JSON or Vue files
+- When changing a schema, keep existing field names (the site and migration depend on them), then run `npx sanity schema deploy` from `/studio`
+- Pages get content only through the composables, via `useAsyncData`, so it is baked in at build time and visible to Google
 - Coordinates are in decimal degrees, WGS84
 - Each crag should have at minimum: name, council jurisdiction, access status, GPS coordinates, last updated date
 
@@ -112,11 +125,12 @@ The visual signature is a wattle full-stop after display headings and one italic
 
 ### Content
 
-- Voice is serious but not corporate, earthy and grounded, mission-centred not personality-driven
+- Voice is homey, warm and honest. ACC is a group of climbers doing this for the first time and saying so. Openly a work in progress, community-first, not a polished institution
+- Still careful and fair about councils and land managers, and never claim progress or numbers that aren't real
 - Avoid em dashes (comma rhythm preferred)
 - Sentence case for headings, not Title Case
 - Australian English spelling (recognise, organisation, colour)
-- Reference points: editorial magazines like Alpinist, national park signage, well-designed conservation non-profits. Avoid: climbing gym brand voice, adventure tourism, tech startup tone
+- Reference points: a well-loved local club newsletter, national park signage, small conservation groups doing good work. Avoid: climbing gym brand voice, adventure tourism, tech startup tone, corporate polish
 
 ---
 
@@ -128,7 +142,10 @@ Frontend developer learning Nuxt, Vue, and the broader JS ecosystem. Fluent in H
 - For HTML, CSS, and standard JavaScript, don't over-explain
 - When making changes across multiple files, walk me through the change at the architectural level first, then make the edits
 - If a decision could be made multiple ways, briefly name the tradeoffs before picking one
-- Optimise for learning the right pattern, not for shipping fast
+- Keep tasks small and finishable (20 to 40 minutes). Split anything bigger and do the first piece
+- Prefer content changes in Sanity over code changes when either would work
+- Always finish by saying how to see the result
+- Momentum matters more than perfection. This is a first-time, solo, active work in progress
 
 ---
 
@@ -146,7 +163,8 @@ Frontend developer learning Nuxt, Vue, and the broader JS ecosystem. Fluent in H
 - Not a personal media brand for the founder
 - Not an adventure or lifestyle site
 - Not a climbing gym promotional page
-- Not a static brochure (it should feel alive and updated)
+- Not a static brochure (it should feel alive and updated, which is what `/updates` is for)
+- Not a corporate front. It's fine, even good, for it to show the work in progress
 
 ---
 

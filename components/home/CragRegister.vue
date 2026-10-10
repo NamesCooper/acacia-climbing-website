@@ -48,16 +48,6 @@
 </template>
 
 <script setup lang="ts">
-interface Crag {
-  id: string
-  name: string
-  status: string
-  statusLabel: string
-  council: string
-  problems: string
-  updatedAt: string
-}
-
 const statusColors: Record<string, string> = {
   completed: '#2E6B40',
   recognised: '#5AAA3A',
@@ -65,10 +55,9 @@ const statusColors: Record<string, string> = {
   scoping: '#888780',
 }
 
-const crags = ref<Crag[]>([])
-onMounted(async () => {
-  crags.value = await $fetch<Crag[]>('/data/crags.json')
-})
+// Baked in at build time, so the register is in the HTML for Google and council officers
+const { data } = await useCragData()
+const crags = computed(() => data.value.crags)
 
 function shortCouncil(council: string) {
   return council.replace(/ (City|Regional|Shire) Council$/, '').replace(' Council', '')

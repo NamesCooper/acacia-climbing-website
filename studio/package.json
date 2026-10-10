@@ -1,0 +1,24 @@
+{
+  "name": "acc-studio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Sanity Studio for the Acacia Climbing Coalition website",
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "deploy-graphql": "sanity graphql deploy",
+    "import-legacy": "node ../scripts/json-to-ndjson.mjs && sanity dataset import ../scripts/out/legacy.ndjson production --replace"
+  },
+  "dependencies": {
+    "@sanity/vision": "^3.99.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "sanity": "^3.99.0",
+    "styled-components": "^6.1.18"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
