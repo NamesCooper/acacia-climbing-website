@@ -37,8 +37,8 @@
         <div>
           <p class="font-serif text-[18px] text-ink-soft leading-[1.65] m-0 mb-12">{{ pillar.detail }}</p>
           <div class="grid grid-cols-3 gap-4">
-            <div v-for="[num, label] in pillar.stats" :key="label">
-              <p class="font-serif text-[36px] text-ink m-0 leading-none">{{ num }}</p>
+            <div v-for="[num, label] in pillar.stats" :key="label" class="min-w-0">
+              <p class="font-serif text-[clamp(22px,7vw,36px)] text-ink m-0 leading-none [overflow-wrap:anywhere]">{{ num }}</p>
               <p class="font-mono text-[10px] tracking-[0.18em] text-green uppercase m-0 mt-1">{{ label }}</p>
             </div>
           </div>

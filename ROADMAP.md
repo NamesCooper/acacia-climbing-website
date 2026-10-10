@@ -33,7 +33,9 @@ Tick things off as you go. Add new ideas at the bottom of the right section rath
 
 - [ ] `/work` shows numbers that look like placeholders (2,400+ members, 86 crags logged, 1,240 routes, 340 climbers trained, 9 partner gyms). Replace with real figures or remove until they're true. Councils will read these
 - [x] Site-wide viewport was fixed at `width=1440`; now `width=device-width`. Still worth checking each inner page on your phone
-- [ ] Add an "Updates" link to the nav and footer once there are two or three updates
+- [ ] Get involved says donations are "tax-deductible giving through an ACNC-registered DGR". Only keep that if ACC actually has DGR status; otherwise reword (e.g. "Every dollar goes to documentation and advocacy")
+- [ ] Get involved also mentions "the advocacy team" following up reports. Fine if true, but "we" is more honest while it's mostly you
+- [x] Updates link is in the new homepage nav. Inner pages get it when they're restyled
 - [ ] Add KAYA links to each crag in Sanity (the `KAYA guidebook link` field) and show them on the crag panel
 
 ## Later

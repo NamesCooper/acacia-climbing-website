@@ -2,7 +2,7 @@
   <section class="relative max-w-[1000px] mx-auto px-6 pt-8 pb-14 text-center">
     <!-- sparkles -->
     <RetroSparkle class="absolute left-[4%] top-[22%] text-outline hidden sm:block" :size="64" />
-    <RetroSparkle class="absolute right-[6%] top-[12%] text-outline" :size="44" delay=".8s" />
+    <RetroSparkle class="absolute right-[6%] top-0 sm:top-[12%] text-outline" :size="44" delay=".8s" />
     <RetroSparkle class="absolute right-[10%] top-[68%] text-outline hidden sm:block" :size="34" delay="1.4s" />
 
     <p class="relative m-0 font-poster text-[clamp(22px,3.4vw,34px)] leading-tight">

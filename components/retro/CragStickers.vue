@@ -2,10 +2,11 @@
   <section class="max-w-[1240px] mx-auto px-6 py-24">
     <div class="flex flex-wrap justify-between items-end gap-4">
       <h2 class="m-0 font-grotesk font-extrabold uppercase text-forest text-[clamp(44px,6vw,72px)] leading-[0.9] tracking-[-0.03em]">Where it's at</h2>
-      <NuxtLink to="/progress" class="font-grotesk font-bold text-lg text-forest">Open the full map →</NuxtLink>
+      <NuxtLink to="/progress" class="font-grotesk font-bold text-lg text-forest">See all {{ total }} on the map →</NuxtLink>
     </div>
 
-    <ul class="list-none p-0 m-0 mt-9 grid gap-6 grid-cols-[repeat(auto-fit,minmax(210px,1fr))]">
+    <!-- Four across on desktop, two on tablets, one on phones -->
+    <ul class="list-none p-0 m-0 mt-9 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
       <li
         v-for="(c, i) in cards"
         :key="c.id"
@@ -15,10 +16,7 @@
         <span class="inline-block border-2 border-forest rounded-full px-3 py-1 text-[13px] font-bold" :class="chipClass[c.status]">
           {{ chipLabel[c.status] ?? c.statusLabel }}
         </span>
-        <h3
-          class="mt-4 mb-0 font-grotesk font-extrabold leading-none text-forest [overflow-wrap:break-word]"
-          :class="c.longWord ? 'text-[21px]' : 'text-[clamp(24px,2.3vw,30px)]'"
-        >{{ c.name }}</h3>
+        <h3 class="mt-4 mb-0 font-grotesk font-extrabold leading-none text-forest text-[28px] [overflow-wrap:break-word]">{{ c.name }}</h3>
         <p class="mt-1.5 mb-0 text-sm">{{ c.council }}</p>
         <div
           class="mt-[18px] h-3.5 border-2 border-forest rounded-full bg-paper overflow-hidden"
@@ -55,15 +53,21 @@ const chipLabel: Record<string, string> = {
   scoping: 'Getting started',
 }
 
-// `computed` recalculates automatically whenever the data it uses changes
+// How many crags to show on the homepage. The rest are one click away on the map.
+const SHOW = 4
+
+// `computed` recalculates automatically whenever the data it uses changes.
+// Cards are sorted by progress so the furthest-along crags lead.
 const cards = computed(() =>
-  data.value.crags.map((c) => {
-    const steps = data.value.milestones.filter((m) => m.crag_id === c.id)
-    const done = steps.filter((m) => m.status === 'done').length
-    const total = steps.length || 8
-    // Single long words (like "Passchendaele") can't wrap, so they get a smaller size
-    const longWord = Math.max(...c.name.split(' ').map((w) => w.length)) > 10
-    return { ...c, done, total, longWord, pct: Math.round((done / total) * 100) }
-  }),
+  data.value.crags
+    .map((c) => {
+      const steps = data.value.milestones.filter((m) => m.crag_id === c.id)
+      const done = steps.filter((m) => m.status === 'done').length
+      const total = steps.length || 8
+      return { ...c, done, total, pct: Math.round((done / total) * 100) }
+    })
+    .sort((a, b) => b.pct - a.pct)
+    .slice(0, SHOW),
 )
+const total = computed(() => data.value.crags.length)
 </script>
