@@ -10,7 +10,7 @@ Tick things off as you go. Add new ideas at the bottom of the right section rath
 - [x] Deploy the Studio (live at acaciaclimbing.sanity.studio)
 - [ ] Check the site locally reads from Sanity: `pnpm dev`, open http://localhost:3000/progress
 - [x] Cloudflare Workers builds connected (production branch: main)
-- [ ] Cloudflare Pages: create a deploy hook. In Sanity (manage.sanity.io > API > Webhooks) add a webhook to that URL, triggered on create/update/delete
+- [x] Publishing in Sanity rebuilds the live site (Cloudflare deploy hook + Sanity webhook)
 - [ ] Connect Claude to Sanity: run `claude` in this folder and approve the Sanity MCP sign-in
 - [ ] Post your first update with `/log-update` (even "we've started rebuilding the site" counts)
 - [x] Merged into main and live
