@@ -11,6 +11,8 @@ export const presentation = presentationTool({
     // When the preview is on /something, open the Page with that slug
     mainDocuments: defineDocuments([
       { route: '/:slug', filter: `_type == "page" && slug.current == $slug` },
+      // Child pages, e.g. /partners/kaya has the web address "partners/kaya"
+      { route: '/:parent/:child', filter: `_type == "page" && slug.current == $parent + "/" + $child` },
     ]),
     // From a document, show where it appears on the site
     locations: {

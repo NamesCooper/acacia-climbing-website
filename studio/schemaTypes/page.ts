@@ -21,7 +21,7 @@ export const page = defineType({
     defineField({
       name: 'slug',
       title: 'Web address',
-      description: '"home" is the homepage. Anything else becomes acaciaclimbing.org/<this>',
+      description: '"home" is the homepage. Anything else becomes acaciaclimbing.org/<this>. For a child page, put the parent first, e.g. "partners/kaya"',
       type: 'slug',
       group: 'settings',
       options: { source: 'title', maxLength: 60 },
