@@ -92,7 +92,8 @@ No orange or pink. Keep to sandstone yellows, forest and moss greens, and wattle
 
 ### Illustration and photo direction
 
-- A mix: **rubber hose** mascots (1930s cartoon, noodle limbs, big friendly characters, often Aussie animals) plus **Alegria-style flat people** (chunky limbs, simple shapes) for climbers and volunteers. All drawn with the thick outlines, riso grain and bush palette above
+- **Rubber hose first**: 1930s cartoon, noodle limbs, big friendly characters (often Aussie animals), for mascots and people alike. All drawn with the thick outlines, riso grain and bush palette above
+- Where Cooper has hand drawings, a line-art take that mixes rubber hose with a touch of Alegria-style simple shapes is fine. Rubber hose stays the lead
 - **Not Corporate Memphis.** It reads as tech startup, which this site avoids
 - Real photos: black and white cut-outs sitting on a bold palette shape (wattle, moss, lichen, sandstone), with a sticker or two around them. Makes any phone photo look on-brand
 - Small outlined spot icons (3px outline, flat fill, hard shadow) are welcome on cards

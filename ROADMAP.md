@@ -33,7 +33,7 @@ Tick things off as you go. Add new ideas at the bottom of the right section rath
 ## Illustrations and real content (Cooper)
 
 - [ ] Mascots: rubber hose characters in a few poses (see "Illustration and photo direction" in CLAUDE.md)
-- [ ] Flat climber and volunteer figures, Alegria style, not Corporate Memphis
+- [ ] Climber and volunteer figures in rubber hose style (line-art mix with a little Alegria if working from drawings)
 - [ ] Gather real photos: clean-up days, Tooheys stairs and signs, crags. Phone photos are fine
 - [ ] Swap example words in Studio pages for real ones (Pages with the yellow dot are still mockup)
 
