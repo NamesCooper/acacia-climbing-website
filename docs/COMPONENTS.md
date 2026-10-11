@@ -93,19 +93,23 @@ Shared shapes (`Cta`, `CardItem`, `ProseBlock`) live in `types/content.ts`.
 
 ## How this maps to Sanity
 
-The Studio's "Page" type has section blocks. Each one draws with a section component:
+Home, About, Get involved and Privacy are Studio Pages. Each Studio block draws with one component:
 
-| Sanity section | Component |
-|----------------|-----------|
-| Text | `SectionSplit` |
+| Studio block | Component |
+|--------------|-----------|
+| Hero (big poster headline) | `HomeHero` |
+| Scrolling green band | `HomeMarquee` |
+| Tabs panel | `HomeAboutTabs` |
+| Crag cards ("Where it's at") | `HomeCragCards` |
+| Text (with optional quote card) | `SectionSplit` |
 | Cards | `SectionCards` |
+| Numbered steps | `SectionSteps` |
+| Centred statement | `SectionStatement` |
+| Long text (policies) | `SectionProse` |
+| Call to action panel | `SectionCallout` |
 | Timeline | `SectionCards` (date as the chip) |
-| Call to action | `SectionCallout` |
 | People | `SectionCards` (location as the chip) |
-| Crag register | `HomeCragCards` |
 
-The renderer is `components/SanitySections.vue`. The catch-all `pages/[...slug].vue` shows any Studio page whose slug has no Vue file of its own, so code pages (About etc.) always win. `nuxt.config.ts` asks Sanity for every page slug at build time so each one is baked in.
+The renderer is `components/SanitySections.vue`. `pages/index.vue` shows the Page with web address `home`; `pages/[...slug].vue` shows every other Page. Each Page has a switch for the "Got an hour?" band.
 
-To make a page in the Studio: Pages → new → fill in title, web address (slug), heading and sections → Publish. The site rebuilds in a couple of minutes and the page is at acaciaclimbing.org/<slug>.
-
-New section type? Add a schema in `studio/schemaTypes/sections.ts`, a component in `components/section/` if no existing one fits, and a `v-else-if` in `SanitySections.vue`.
+New block type? Add a schema in `studio/schemaTypes/sections.ts`, a component (or reuse one), and a `v-else-if` in `SanitySections.vue`. Colour and layout fields are cleaned with `stegaClean` there, because in the visual editor every string carries invisible markers.

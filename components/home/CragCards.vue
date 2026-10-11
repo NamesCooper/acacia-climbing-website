@@ -1,7 +1,7 @@
 <template>
   <section class="max-w-[1240px] mx-auto px-6 py-24">
     <div class="flex flex-wrap justify-between items-end gap-4">
-      <h2 class="m-0 font-grotesk font-extrabold uppercase text-forest text-[clamp(44px,6vw,72px)] leading-[0.9] tracking-[-0.03em]">Where it's at</h2>
+      <h2 class="m-0 font-grotesk font-extrabold uppercase text-forest text-[clamp(44px,6vw,72px)] leading-[0.9] tracking-[-0.03em]">{{ heading || "Where it's at" }}</h2>
       <NuxtLink to="/progress" class="font-grotesk font-bold text-lg text-forest">See all {{ total }} on the map →</NuxtLink>
     </div>
 
@@ -35,6 +35,8 @@
 </template>
 
 <script setup lang="ts">
+defineProps<{ heading?: string }>()
+
 // Crag data comes from Sanity at build time (see composables/useCragData.ts)
 const { data } = await useCragData()
 

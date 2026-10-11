@@ -5,30 +5,20 @@
     <UiSparkle class="absolute right-[6%] top-0 sm:top-[12%] text-outline" :size="44" delay=".8s" />
     <UiSparkle class="absolute right-[10%] top-[68%] text-outline hidden sm:block" :size="34" delay="1.4s" />
 
-    <p class="relative m-0 font-poster text-[clamp(22px,3.4vw,34px)] leading-tight">
-      A friendly bunch of climbers looking after Australia's crags
-    </p>
+    <p v-if="label" class="relative m-0 font-poster text-[clamp(22px,3.4vw,34px)] leading-tight">{{ label }}</p>
 
     <!-- Two-ink riso headline: the wattle copy sits slightly off-register behind the dark one -->
     <h1 class="relative mt-4 mb-0 font-display text-[clamp(64px,13vw,148px)] leading-[0.88] tracking-[-0.025em]">
-      <span aria-hidden="true" class="absolute inset-0 text-wattle translate-x-[6px] translate-y-[6px]">Keep the<br>crags open</span>
-      <span class="relative">Keep the<br>crags open</span>
+      <!-- Each line typed in the Studio becomes its own line here -->
+      <span aria-hidden="true" class="absolute inset-0 text-wattle translate-x-[6px] translate-y-[6px] whitespace-pre-line">{{ heading }}</span>
+      <span class="relative whitespace-pre-line">{{ heading }}</span>
     </h1>
 
-    <p class="relative mx-auto mt-7 mb-0 max-w-[600px] text-lg sm:text-xl leading-relaxed">
-      We work with councils so bouldering spots get recognised, mapped and looked after.
-      We're starting in South East Queensland, it's our first go at this, and we're doing it out in the open.
-    </p>
+    <p v-if="body" class="relative mx-auto mt-7 mb-0 max-w-[600px] text-lg sm:text-xl leading-relaxed">{{ body }}</p>
 
-    <div class="relative flex flex-wrap justify-center gap-4 mt-9">
-      <NuxtLink
-        to="/progress"
-        class="nudge no-underline bg-moss text-paper border-[3px] border-outline rounded-full px-7 py-4 font-grotesk font-extrabold text-lg shadow-[5px_5px_0_var(--color-outline)]"
-      >See the crag map</NuxtLink>
-      <NuxtLink
-        to="/get-involved"
-        class="nudge no-underline bg-paper-light text-outline border-[3px] border-outline rounded-full px-7 py-4 font-grotesk font-extrabold text-lg shadow-[5px_5px_0_var(--color-outline)]"
-      >How you can help</NuxtLink>
+    <div v-if="primary || secondary" class="relative flex flex-wrap justify-center gap-4 mt-9">
+      <UiButton v-if="primary" :to="primary.to" :href="primary.href" variant="moss" size="lg">{{ primary.label }}</UiButton>
+      <UiButton v-if="secondary" :to="secondary.to" :href="secondary.href" variant="paper" size="lg">{{ secondary.label }}</UiButton>
     </div>
 
     <div class="relative mx-auto mt-12 size-[200px] rounded-full border-[3px] border-dashed border-outline/30 flex items-center justify-center">
@@ -36,3 +26,9 @@
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import type { Cta } from '~/types/content'
+
+defineProps<{ label?: string; heading: string; body?: string; primary?: Cta; secondary?: Cta }>()
+</script>

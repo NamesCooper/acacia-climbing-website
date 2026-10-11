@@ -8,6 +8,7 @@ export interface SanityPage {
   eyebrow?: string
   heading: string
   lede?: string
+  showHelpBand?: boolean
   sections: Array<{ _key: string; _type: string; [field: string]: any }>
 }
 
@@ -16,8 +17,12 @@ export function usePage(slug: string) {
     try {
       return await sanityFetch<SanityPage>('page', { slug })
     } catch (err) {
-      console.warn(`[page] Could not reach Sanity for "${slug}":`, err)
-      return null
+      // Sanity unreachable during a build: use the saved copy rather than publish a blank page.
+      // (A page that's genuinely gone from Sanity still 404s, because that's not an error.)
+      console.warn(`[page] Could not reach Sanity for "${slug}", using saved copy:`, err)
+      const saved = await import('~/public/data/pages.json').then((m) => m.default as any[])
+      const p = saved.find((d) => d.slug?.current === slug)
+      return p ? { ...p, slug } : null
     }
   })
 }

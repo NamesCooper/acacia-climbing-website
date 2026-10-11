@@ -9,13 +9,13 @@
           <div role="tablist" aria-label="About ACC" class="flex flex-wrap gap-2.5" @keydown="onKey">
             <button
               v-for="(t, i) in tabs"
-              :id="'about-tab-' + t.id"
-              :key="t.id"
+              :id="'about-tab-' + i"
+              :key="i"
               ref="tabRefs"
               type="button"
               role="tab"
               :aria-selected="active === i"
-              :aria-controls="'about-panel-' + t.id"
+              :aria-controls="'about-panel-' + i"
               :tabindex="active === i ? 0 : -1"
               class="font-grotesk font-extrabold text-base border-[3px] border-outline rounded-full px-5 py-2.5 cursor-pointer"
               :class="active === i
@@ -28,13 +28,16 @@
           <div
             v-for="(t, i) in tabs"
             v-show="active === i"
-            :id="'about-panel-' + t.id"
-            :key="t.id"
+            :id="'about-panel-' + i"
+            :key="i"
             role="tabpanel"
-            :aria-labelledby="'about-tab-' + t.id"
+            :aria-labelledby="'about-tab-' + i"
           >
             <h2 class="mt-7 mb-0 font-display text-[clamp(44px,6vw,72px)] leading-[0.92] tracking-[-0.02em]">{{ t.heading }}</h2>
-            <p class="mt-4 mb-0 text-lg leading-relaxed max-w-[560px]" v-html="t.body"></p>
+            <!-- Rich text from the Studio: bold words come through as <strong> -->
+            <div class="mt-4 max-w-[560px] text-lg leading-relaxed [&_p]:m-0 [&_p+p]:mt-3">
+              <PortableText :value="t.body ?? []" />
+            </div>
           </div>
         </div>
 
@@ -50,36 +53,19 @@
 </template>
 
 <script setup lang="ts">
+import { PortableText } from '@portabletext/vue'
+
+const props = defineProps<{ tabs: { label: string; heading: string; body?: any[] }[] }>()
+
 // `ref` makes a value reactive: when it changes, the template re-renders.
 const active = ref(0)
 const tabRefs = ref<HTMLButtonElement[]>([])
 
-// Copy lives here for now. It moves into Sanity with the rest of the page copy.
-const tabs = [
-  {
-    id: 'what',
-    label: 'What',
-    heading: 'What is ACC?',
-    body: 'A bunch of climbers working to get outdoor bouldering <strong>formally recognised by councils</strong> around Australia, so crags stay open and get the good stuff: stairs, signs and proper tracks. In Queensland we work under ACAQ.',
-  },
-  {
-    id: 'how',
-    label: 'How',
-    heading: 'How does it work?',
-    body: 'Research the area, chat with council and rangers, map every boulder on <strong>KAYA</strong>, sort out access, then get it signed off. Documented crag, protected crag.',
-  },
-  {
-    id: 'where',
-    label: 'Where',
-    heading: 'Where are we?',
-    body: 'We\'re starting in South East Queensland with <strong>Tooheys, White Rock, Plunketts, Cedar Creek and Passchendaele</strong>. The long game is every state. Got a spot anywhere in Australia that needs some love? Tell us about it.',
-  },
-]
 
 function onKey(e: KeyboardEvent) {
   if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return
   const dir = e.key === 'ArrowRight' ? 1 : -1
-  active.value = (active.value + dir + tabs.length) % tabs.length
+  active.value = (active.value + dir + props.tabs.length) % props.tabs.length
   tabRefs.value[active.value]?.focus()
 }
 </script>

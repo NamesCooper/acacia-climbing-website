@@ -1,7 +1,8 @@
 import { defineArrayMember, defineField, defineType } from 'sanity'
 
 // Building blocks for pages. Each page is a header plus a list of these, in any order.
-// Headings: wrap a word in *asterisks* to make it italic. A wattle full stop is added automatically.
+// Each block is drawn on the site by a component in components/section or components/home
+// (see components/SanitySections.vue). Headings: wrap a word in *asterisks* to make it italic.
 
 const headingField = (name = 'heading', title = 'Heading') =>
   defineField({
@@ -13,20 +14,110 @@ const headingField = (name = 'heading', title = 'Heading') =>
 
 const labelField = defineField({
   name: 'label',
-  description: 'Small label shown above or beside the section, e.g. "Origin"',
+  title: 'Lead-in line',
+  description: 'Small friendly line shown above the heading',
   type: 'string',
 })
 
+const richText = (name = 'body', title = 'Text') =>
+  defineField({ name, title, type: 'array', of: [defineArrayMember({ type: 'block', styles: [{ title: 'Normal', value: 'normal' }], lists: [] })] })
+
+// Colour pickers, so choosing a look is a click rather than typing
+const radio = (list: { title: string; value: string }[]) => ({ list, layout: 'radio' as const, direction: 'horizontal' as const })
+
+const CARD_TONES = [
+  { title: 'Paper', value: 'light' },
+  { title: 'Wattle', value: 'wattle' },
+  { title: 'Sandstone', value: 'sandstone' },
+  { title: 'Lichen', value: 'lichen' },
+  { title: 'Forest (dark)', value: 'forest' },
+]
+const CHIP_TONES = [
+  { title: 'Lichen', value: 'lichen' },
+  { title: 'Wattle', value: 'wattle' },
+  { title: 'Sandstone', value: 'sandstone' },
+  { title: 'Moss', value: 'moss' },
+  { title: 'Paper', value: 'paper' },
+]
+const BUTTON_COLOURS = [
+  { title: 'Wattle', value: 'wattle' },
+  { title: 'Moss', value: 'moss' },
+  { title: 'Paper', value: 'paper' },
+]
+
+const linkFields = (labelName = 'linkLabel', hrefName = 'linkHref', title = 'Button') => [
+  defineField({ name: labelName, title: `${title} text`, type: 'string' }),
+  defineField({
+    name: hrefName,
+    title: `${title} link`,
+    description: 'A page like /get-involved, or mailto:hello@acaciaclimbing.org',
+    type: 'string',
+  }),
+]
+
+// ---------- Homepage blocks ----------
+
+export const heroSection = defineType({
+  name: 'heroSection',
+  title: 'Hero (big poster headline)',
+  type: 'object',
+  fields: [
+    labelField,
+    defineField({ name: 'heading', type: 'text', rows: 2, description: 'Each new line in this box starts a new line on the page' }),
+    defineField({ name: 'body', title: 'Intro', type: 'text', rows: 3 }),
+    ...linkFields('primaryLabel', 'primaryHref', 'Green button'),
+    ...linkFields('secondaryLabel', 'secondaryHref', 'Light button'),
+  ],
+  preview: { select: { title: 'heading' }, prepare: ({ title }) => ({ title: title || 'Hero', subtitle: 'Hero' }) },
+})
+
+export const marqueeSection = defineType({
+  name: 'marqueeSection',
+  title: 'Scrolling green band',
+  type: 'object',
+  fields: [defineField({ name: 'items', title: 'Phrases', type: 'array', of: [defineArrayMember({ type: 'string' })] })],
+  preview: { select: { items: 'items' }, prepare: ({ items }) => ({ title: (items ?? []).join(' ✸ ') || 'Scrolling band', subtitle: 'Scrolling band' }) },
+})
+
+export const tabsSection = defineType({
+  name: 'tabsSection',
+  title: 'Tabs panel',
+  type: 'object',
+  fields: [
+    defineField({
+      name: 'tabs',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'object',
+          name: 'tab',
+          fields: [
+            defineField({ name: 'label', title: 'Tab button', type: 'string' }),
+            defineField({ name: 'heading', type: 'string' }),
+            richText('body', 'Text'),
+          ],
+          preview: { select: { title: 'heading', subtitle: 'label' } },
+        }),
+      ],
+    }),
+  ],
+  preview: { select: { tabs: 'tabs' }, prepare: ({ tabs }) => ({ title: (tabs ?? []).map((t: any) => t.label).join(' / ') || 'Tabs', subtitle: 'Tabs panel' }) },
+})
+
+// ---------- General blocks ----------
+
 export const textSection = defineType({
   name: 'textSection',
-  title: 'Text',
+  title: 'Text (with optional quote card)',
   type: 'object',
   fields: [
     labelField,
     headingField(),
-    defineField({ name: 'body', type: 'array', of: [defineArrayMember({ type: 'block' })] }),
-    defineField({ name: 'linkLabel', title: 'Button text', type: 'string' }),
-    defineField({ name: 'linkHref', title: 'Button link', description: 'A page like /volunteer, or mailto:hello@acaciaclimbing.org', type: 'string' }),
+    richText(),
+    ...linkFields(),
+    defineField({ name: 'quote', title: 'Quote card: big line', type: 'string', description: 'Leave empty for no quote card' }),
+    defineField({ name: 'quoteBody', title: 'Quote card: text', type: 'text', rows: 3 }),
+    defineField({ name: 'quoteTone', title: 'Quote card colour', type: 'string', initialValue: 'wattle', options: radio(CARD_TONES) }),
   ],
   preview: { select: { title: 'heading', subtitle: 'label' }, prepare: ({ title, subtitle }) => ({ title: title || 'Text', subtitle: `Text · ${subtitle ?? ''}` }) },
 })
@@ -34,12 +125,36 @@ export const textSection = defineType({
 export const card = defineType({
   name: 'card',
   type: 'object',
+  groups: [
+    { name: 'words', title: 'Words', default: true },
+    { name: 'look', title: 'Look' },
+  ],
   fields: [
-    defineField({ name: 'kicker', description: 'Small text above the title, e.g. "I" or "Volunteer"', type: 'string' }),
-    defineField({ name: 'title', type: 'string', validation: (r) => r.required() }),
-    defineField({ name: 'body', type: 'text', rows: 3 }),
-    defineField({ name: 'linkLabel', title: 'Link text', type: 'string' }),
-    defineField({ name: 'linkHref', title: 'Link', type: 'string' }),
+    defineField({ name: 'kicker', title: 'Chip', description: 'Small label in a pill, e.g. "Volunteer" or "Done"', type: 'string', group: 'words' }),
+    defineField({ name: 'title', type: 'string', group: 'words', validation: (r) => r.required() }),
+    defineField({ name: 'body', type: 'text', rows: 3, group: 'words' }),
+    defineField({
+      name: 'items',
+      title: 'Small list',
+      description: 'Optional titled list inside the card (e.g. partners)',
+      type: 'array',
+      group: 'words',
+      of: [
+        defineArrayMember({
+          type: 'object',
+          name: 'cardItem',
+          fields: [defineField({ name: 'title', type: 'string' }), defineField({ name: 'body', type: 'text', rows: 2 })],
+          preview: { select: { title: 'title', subtitle: 'body' } },
+        }),
+      ],
+    }),
+    ...linkFields().map((f) => ({ ...f, group: 'words' })),
+    defineField({ name: 'tone', title: 'Card colour', type: 'string', group: 'look', initialValue: 'light', options: radio(CARD_TONES) }),
+    defineField({ name: 'chipTone', title: 'Chip colour', type: 'string', group: 'look', initialValue: 'lichen', options: radio(CHIP_TONES) }),
+    defineField({ name: 'chipDashed', title: 'Dashed chip (for "not started yet")', type: 'boolean', group: 'look' }),
+    defineField({ name: 'buttonColour', type: 'string', group: 'look', initialValue: 'wattle', options: radio(BUTTON_COLOURS) }),
+    defineField({ name: 'halftone', title: 'Dotty corner', type: 'boolean', group: 'look' }),
+    defineField({ name: 'anchor', title: 'Link name', description: 'Lets other pages link straight here, e.g. "donate" for /get-involved#donate', type: 'string', group: 'look' }),
   ],
   preview: { select: { title: 'title', subtitle: 'kicker' } },
 })
@@ -52,15 +167,74 @@ export const cardsSection = defineType({
     labelField,
     headingField(),
     defineField({ name: 'intro', type: 'text', rows: 3 }),
-    defineField({
-      name: 'style',
-      type: 'string',
-      initialValue: 'grid',
-      options: { list: [{ title: 'Grid of cards', value: 'grid' }, { title: 'Numbered list', value: 'list' }], layout: 'radio', direction: 'horizontal' },
-    }),
     defineField({ name: 'cards', type: 'array', of: [defineArrayMember({ type: 'card' })] }),
+    defineField({
+      name: 'columns',
+      title: 'Cards across',
+      type: 'number',
+      initialValue: 2,
+      options: { list: [{ title: '2', value: 2 }, { title: '3', value: 3 }, { title: '4', value: 4 }], layout: 'radio', direction: 'horizontal' },
+    }),
+    defineField({
+      name: 'titleStyle',
+      title: 'Card title style',
+      type: 'string',
+      initialValue: 'display',
+      options: radio([{ title: 'Big italic', value: 'display' }, { title: 'Bold sans', value: 'grotesk' }]),
+    }),
+    defineField({ name: 'tilted', title: 'Tilt the cards like stickers', type: 'boolean' }),
+    // Kept from the first version of this block; not used on the site
+    defineField({ name: 'style', type: 'string', hidden: true }),
   ],
-  preview: { select: { title: 'heading', subtitle: 'label' }, prepare: ({ title, subtitle }) => ({ title: title || 'Cards', subtitle: `Cards · ${subtitle ?? ''}` }) },
+  preview: {
+    select: { title: 'heading', subtitle: 'label', cards: 'cards' },
+    prepare: ({ title, subtitle, cards }) => ({ title: title || (cards ?? []).map((c: any) => c.title).join(', ') || 'Cards', subtitle: `Cards · ${subtitle ?? ''}` }),
+  },
+})
+
+export const stepsSection = defineType({
+  name: 'stepsSection',
+  title: 'Numbered steps',
+  type: 'object',
+  fields: [
+    labelField,
+    headingField(),
+    defineField({ name: 'steps', type: 'array', of: [defineArrayMember({ type: 'string' })] }),
+    ...linkFields('linkLabel', 'linkHref', 'Link'),
+    defineField({ name: 'band', title: 'Band colour', type: 'string', initialValue: 'sandstone', options: radio([{ title: 'Sandstone', value: 'sandstone' }, { title: 'Wattle', value: 'wattle' }]) }),
+  ],
+  preview: { select: { title: 'heading' }, prepare: ({ title }) => ({ title: title || 'Steps', subtitle: 'Numbered steps' }) },
+})
+
+export const statementSection = defineType({
+  name: 'statementSection',
+  title: 'Centred statement',
+  type: 'object',
+  fields: [headingField(), richText(), defineField({ name: 'sprig', title: 'Show the sprig on top', type: 'boolean', initialValue: true })],
+  preview: { select: { title: 'heading' }, prepare: ({ title }) => ({ title: title || 'Statement', subtitle: 'Centred statement' }) },
+})
+
+export const proseSection = defineType({
+  name: 'proseSection',
+  title: 'Long text (policies)',
+  type: 'object',
+  fields: [
+    defineField({
+      name: 'blocks',
+      title: 'Parts',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'object',
+          name: 'prosePart',
+          fields: [defineField({ name: 'title', type: 'string' }), richText()],
+          preview: { select: { title: 'title' } },
+        }),
+      ],
+    }),
+    defineField({ name: 'footnote', type: 'string' }),
+  ],
+  preview: { select: { blocks: 'blocks' }, prepare: ({ blocks }) => ({ title: (blocks ?? []).map((b: any) => b.title).join(', ') || 'Long text', subtitle: 'Long text' }) },
 })
 
 export const timelineSection = defineType({
@@ -119,26 +293,54 @@ export const peopleSection = defineType({
 
 export const ctaSection = defineType({
   name: 'ctaSection',
-  title: 'Call to action',
+  title: 'Call to action panel',
   type: 'object',
   fields: [
+    labelField,
     headingField(),
+    defineField({ name: 'body', title: 'Text', type: 'text', rows: 3 }),
     defineField({ name: 'buttonLabel', title: 'Button text', type: 'string' }),
     defineField({ name: 'buttonHref', title: 'Button link', type: 'string' }),
+    defineField({ name: 'tone', title: 'Panel colour', type: 'string', initialValue: 'sandstone', options: radio([{ title: 'Sandstone', value: 'sandstone' }, { title: 'Wattle', value: 'wattle' }, { title: 'Lichen', value: 'lichen' }]) }),
   ],
   preview: { select: { title: 'heading' }, prepare: ({ title }) => ({ title: title || 'Call to action', subtitle: 'Call to action' }) },
 })
 
 export const cragRegisterSection = defineType({
   name: 'cragRegisterSection',
-  title: 'Crag register',
+  title: 'Crag cards ("Where it\'s at")',
   type: 'object',
-  description: 'The live list of crags and their status, pulled from the Crags section.',
+  description: 'The furthest-along crags and their progress, pulled from the Crags section.',
   fields: [headingField('heading', 'Heading (optional)')],
-  preview: { prepare: () => ({ title: 'Crag register', subtitle: 'Live list of crags' }) },
+  preview: { prepare: () => ({ title: "Where it's at", subtitle: 'Live crag cards' }) },
 })
 
-export const sectionTypes = [textSection, card, cardsSection, timelineSection, peopleSection, ctaSection, cragRegisterSection]
-export const sectionMembers = ['textSection', 'cardsSection', 'timelineSection', 'peopleSection', 'ctaSection', 'cragRegisterSection'].map(
-  (type) => defineArrayMember({ type }),
-)
+export const sectionTypes = [
+  heroSection,
+  marqueeSection,
+  tabsSection,
+  textSection,
+  card,
+  cardsSection,
+  stepsSection,
+  statementSection,
+  proseSection,
+  timelineSection,
+  peopleSection,
+  ctaSection,
+  cragRegisterSection,
+]
+export const sectionMembers = [
+  'heroSection',
+  'marqueeSection',
+  'tabsSection',
+  'textSection',
+  'cardsSection',
+  'stepsSection',
+  'statementSection',
+  'proseSection',
+  'timelineSection',
+  'peopleSection',
+  'ctaSection',
+  'cragRegisterSection',
+].map((type) => defineArrayMember({ type }))

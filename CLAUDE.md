@@ -19,8 +19,8 @@ ACC operates under the ACAQ (Australian Climbing Association Queensland) umbrell
 
 ## Where things live
 
-- `studio/schemaTypes/` defines what can be edited in Sanity (crag, milestone, update, siteSettings)
-- `composables/useCragData.ts` and `composables/useUpdates.ts` are the only places the site reads content. They run at build time
+- `studio/schemaTypes/` defines what can be edited in Sanity (page and its blocks in `sections.ts`, crag, milestone, update, siteSettings)
+- `composables/useCragData.ts`, `useUpdates.ts` and `usePage.ts` are the only places the site reads content. They run at build time
 - `public/data/*.json` is a saved copy of the crag data. The site falls back to it if Sanity is unreachable during a build, so keep it roughly in sync
 - `scripts/json-to-ndjson.mjs` is the one-off migration from the legacy JSON into Sanity
 - `.mcp.json` connects Claude to Sanity (read and edit content, deploy schema)
@@ -33,7 +33,8 @@ ACC operates under the ACAQ (Australian Climbing Association Queensland) umbrell
   - `components/section/` reusable inner-page sections: `SectionSplit`, `SectionSteps`, `SectionCards`, `SectionStatement`, `SectionCallout`, `SectionProse`
 - `types/content.ts` holds the shared shapes (`Cta`, `CardItem`, `ProseBlock`) the sections take
 - `utils/cragStatus.ts` is the single source for status labels and colours (homepage cards and map)
-- Pages: `/` home, `/progress` crag map, `/updates`, `/about`, `/get-involved`, `/privacy`. Any other address is a Studio page via `pages/[...slug].vue` + `components/SanitySections.vue`
+- Pages: `/progress` (crag map) and `/updates` are Vue files. Every other page (home, about, get-involved, privacy, anything new) is a Studio Page: `pages/index.vue` (slug `home`) and `pages/[...slug].vue` load it via `usePage()` and draw its blocks with `components/SanitySections.vue`. To change page words or layout, edit the Page in the Studio, not Vue
+- `public/data/pages.json` is the backup copy of the Studio pages (made by `scripts/seed-pages.mjs`), used only if Sanity is unreachable during a build
 - The Studio's "Visual editor" tab shows a second, preview copy of the site (`pnpm build:preview`, `wrangler.preview.jsonc`, `preview/`, `server/api/preview-query.post.ts`). All queries live in `utils/queries.ts` and run through `sanityFetch()`. See README
 - `ROADMAP.md` is the running list of small next tasks
 
@@ -100,7 +101,7 @@ No orange or pink. Keep to sandstone yellows, forest and moss greens, and wattle
 
 ### Data layer
 
-- Sanity is the source of truth for crags, milestones, area boundaries and updates
+- Sanity is the source of truth for page copy, crags, milestones, area boundaries and updates
 - Change content through the Studio or the Sanity MCP, not by editing JSON or Vue files
 - When changing a schema, keep existing field names (the site and migration depend on them), then run `npx sanity schema deploy` from `/studio`
 - Pages get content only through the composables, via `useAsyncData`, so it is baked in at build time and visible to Google
