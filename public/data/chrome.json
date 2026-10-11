@@ -42,6 +42,37 @@
         "_key": "n2",
         "label": "About",
         "link": "/about"
+      },
+      {
+        "_type": "navItem",
+        "_key": "n3",
+        "label": "Work with us",
+        "children": [
+          {
+            "_type": "navLink",
+            "_key": "n30",
+            "label": "All the ways to work with us",
+            "link": "/work-with-us"
+          },
+          {
+            "_type": "navLink",
+            "_key": "n31",
+            "label": "Councils and land managers",
+            "link": "/work-with-us/councils"
+          },
+          {
+            "_type": "navLink",
+            "_key": "n32",
+            "label": "Gyms and clubs",
+            "link": "/work-with-us/gyms"
+          },
+          {
+            "_type": "navLink",
+            "_key": "n33",
+            "label": "Businesses and funders",
+            "link": "/work-with-us/support"
+          }
+        ]
       }
     ]
   },
@@ -130,6 +161,12 @@
             "_key": "c013",
             "label": "Report a crag issue",
             "link": "mailto:hello@acaciaclimbing.org?subject=Crag%20report"
+          },
+          {
+            "_type": "navLink",
+            "_key": "c018",
+            "label": "Work with us",
+            "link": "/work-with-us"
           },
           {
             "_type": "navLink",
