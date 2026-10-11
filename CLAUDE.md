@@ -92,8 +92,10 @@ No orange or pink. Keep to sandstone yellows, forest and moss greens, and wattle
 
 ### Illustration and photo direction
 
-- **Rubber hose first**: 1930s cartoon, noodle limbs, big friendly characters (often Aussie animals), for mascots and people alike. All drawn with the thick outlines, riso grain and bush palette above
-- Where Cooper has hand drawings, a line-art take that mixes rubber hose with a touch of Alegria-style simple shapes is fine. Rubber hose stays the lead
+- **Line art first** (changed from rubber hose, October 2026): friendly modern cartoon line art, simple rounded faces, relaxed real-climber poses, small props (chalk bag, shoes, pad, fist bump) as spot icons. Not 1930s or Cuphead style
+- Fills in the bush palette (forest for dark clothing and pads, not black; wattle, sandstone, lichen accents). Line weight heavy enough to sit next to the 3px poster outlines
+- Australian settings: sandstone and granite boulders, eucalypts and wattle. No alpine peaks or pine trees
+- Get climbing details right: crash pads sit on the ground under a climber, never worn on the back while climbing
 - **Not Corporate Memphis.** It reads as tech startup, which this site avoids
 - Real photos: black and white cut-outs sitting on a bold palette shape (wattle, moss, lichen, sandstone), with a sticker or two around them. Makes any phone photo look on-brand
 - Small outlined spot icons (3px outline, flat fill, hard shadow) are welcome on cards
