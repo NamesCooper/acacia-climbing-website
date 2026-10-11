@@ -99,7 +99,8 @@ No orange or pink. Keep to sandstone yellows, forest and moss greens, and wattle
 - **Not Corporate Memphis.** It reads as tech startup, which this site avoids
 - Real photos: black and white cut-outs sitting on a bold palette shape (wattle, moss, lichen, sandstone), with a sticker or two around them. Makes any phone photo look on-brand
 - Small outlined spot icons (3px outline, flat fill, hard shadow) are welcome on cards
-- Cooper is making the mascots and gathering real content; don't invent people, quotes or photos
+- AI-generated mockups are a mood board only, never on the live site. The plan is one commissioned illustrator for a consistent set
+- Cooper is sorting the mascots and gathering real photos and video; don't invent people, quotes or photos
 
 ---
 
@@ -149,6 +150,7 @@ Frontend developer learning Nuxt, Vue, and the broader JS ecosystem. Fluent in H
 - Prefer content changes in Sanity over code changes when either would work
 - Always finish by saying how to see the result
 - Momentum matters more than perfection. This is a first-time, solo, active work in progress
+- Priority right now is launching publicly. Don't hold launch for illustrations, photos or video; they drop in afterwards
 
 ---
 
