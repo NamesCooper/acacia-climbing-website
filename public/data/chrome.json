@@ -23,7 +23,78 @@
       }
     ],
     "buttonLabel": "Lend a hand",
-    "buttonLink": "/get-involved"
+    "buttonLink": "/get-involved",
+    "menu": [
+      {
+        "_type": "navItem",
+        "_key": "m0",
+        "label": "Explore",
+        "children": [
+          {
+            "_type": "navLink",
+            "_key": "m00",
+            "label": "The crag map",
+            "link": "/progress"
+          },
+          {
+            "_type": "navLink",
+            "_key": "m01",
+            "label": "Updates",
+            "link": "/updates"
+          },
+          {
+            "_type": "navLink",
+            "_key": "m02",
+            "label": "About us",
+            "link": "/about"
+          }
+        ]
+      },
+      {
+        "_type": "navItem",
+        "_key": "m1",
+        "label": "Help out",
+        "children": [
+          {
+            "_type": "navLink",
+            "_key": "m10",
+            "label": "Ways to help",
+            "link": "/get-involved"
+          },
+          {
+            "_type": "navLink",
+            "_key": "m11",
+            "label": "Report a crag issue",
+            "link": "mailto:hello@acaciaclimbing.org?subject=Crag%20report"
+          },
+          {
+            "_type": "navLink",
+            "_key": "m12",
+            "label": "Donate",
+            "link": "/get-involved#donate"
+          }
+        ]
+      },
+      {
+        "_type": "navItem",
+        "_key": "m2",
+        "label": "Say g'day",
+        "children": [
+          {
+            "_type": "navLink",
+            "_key": "m20",
+            "label": "hello@acaciaclimbing.org",
+            "link": "mailto:hello@acaciaclimbing.org"
+          },
+          {
+            "_type": "navLink",
+            "_key": "m21",
+            "label": "Privacy and terms",
+            "link": "/privacy"
+          }
+        ]
+      }
+    ]
   },
   {
     "_id": "helpBand",

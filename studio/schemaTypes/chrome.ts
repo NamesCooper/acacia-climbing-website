@@ -16,12 +16,42 @@ export const navLink = defineType({
   preview: { select: { title: 'label', subtitle: 'link' } },
 })
 
+export const navItem = defineType({
+  name: 'navItem',
+  title: 'Menu item',
+  type: 'object',
+  fields: [
+    defineField({ name: 'label', type: 'string', validation: (r) => r.required() }),
+    defineField({ name: 'link', type: 'string', description: `Optional if it has child links. ${LINK_HELP}` }),
+    defineField({
+      name: 'children',
+      title: 'Child links',
+      description: 'These drop down when someone hovers or taps the item',
+      type: 'array',
+      of: [defineArrayMember({ type: 'navLink' })],
+    }),
+  ],
+  preview: {
+    select: { title: 'label', children: 'children', link: 'link' },
+    prepare: ({ title, children, link }) => ({ title, subtitle: children?.length ? children.map((c: any) => c.label).join(' · ') : link }),
+  },
+})
+
 export const navigation = defineType({
   name: 'navigation',
   title: 'Navigation',
   type: 'document',
   fields: [
-    defineField({ name: 'links', title: 'Top links', type: 'array', of: [defineArrayMember({ type: 'navLink' })], validation: (r) => r.max(5) }),
+    defineField({
+      name: 'menu',
+      title: 'Menu',
+      description: 'Top items, each with its own link or a set of child links that drop down',
+      type: 'array',
+      of: [defineArrayMember({ type: 'navItem' })],
+      validation: (r) => r.max(5),
+    }),
+    // The first, flat version of the nav. Still used if Menu is empty.
+    defineField({ name: 'links', title: 'Top links (old)', type: 'array', of: [defineArrayMember({ type: 'navLink' })], hidden: ({ document }) => Boolean((document as any)?.menu?.length) }),
     defineField({ name: 'buttonLabel', title: 'Yellow button text', type: 'string' }),
     defineField({ name: 'buttonLink', title: 'Yellow button link', type: 'string', description: LINK_HELP }),
   ],
@@ -103,5 +133,5 @@ export const helpBand = defineType({
   preview: { prepare: () => ({ title: '"Got an hour?" band' }) },
 })
 
-export const chromeTypes = [navLink, navigation, footer, helpBand]
+export const chromeTypes = [navLink, navItem, navigation, footer, helpBand]
 export const SINGLETONS = ['siteSettings', 'navigation', 'footer', 'helpBand']
