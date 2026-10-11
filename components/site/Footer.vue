@@ -1,13 +1,14 @@
 <template>
-  <!-- One forest-green poster card on the paper: the "Got an hour?" ask on top (unless a page turns
+  <!-- Full-width forest band, matching the nav: the "Got an hour?" ask on top (unless a page turns
        it off), then the logo, links and small print. Words come from the Studio's
        '"Got an hour?" band' and 'Footer' documents. -->
-  <footer class="px-4 sm:px-6 pt-12 sm:pt-16 pb-8">
-    <div class="relative max-w-[1240px] mx-auto bg-forest text-paper border-[3px] border-outline rounded-[28px] sm:rounded-[36px] shadow-[8px_8px_0_var(--color-outline)] overflow-hidden">
-      <div aria-hidden="true" class="halftone absolute -left-28 -bottom-36 size-[340px] rounded-full opacity-60 hidden lg:block" style="--dot: var(--color-moss)"></div>
+  <footer class="relative mt-12 sm:mt-16 bg-forest text-paper border-t-[3px] border-outline overflow-hidden">
+    <div aria-hidden="true" class="halftone absolute -left-44 -bottom-64 size-[420px] rounded-full opacity-50 hidden lg:block" style="--dot: var(--color-moss)"></div>
+    <div aria-hidden="true" class="halftone absolute -right-32 -top-40 size-[380px] rounded-full opacity-40 hidden lg:block" style="--dot: var(--color-moss)"></div>
+    <div class="relative max-w-[1240px] mx-auto">
 
       <!-- The ask -->
-      <section v-if="showHelp && band" id="help" aria-labelledby="help-heading" class="relative px-6 pt-14 pb-12 sm:px-12 sm:pt-18 sm:pb-14 text-center scroll-mt-6">
+      <section v-if="showHelp && band" id="help" aria-labelledby="help-heading" class="relative px-6 pt-16 pb-12 sm:pt-20 sm:pb-14 text-center scroll-mt-6">
         <UiSparkle class="absolute left-[7%] top-10 text-wattle hidden sm:block" :size="34" />
         <UiSparkle class="absolute right-[8%] bottom-12 text-wattle hidden sm:block" :size="26" delay="1s" />
         <img src="/brand/sprig-gold.png" alt="" class="anim-bob mx-auto w-14 h-auto" />
@@ -34,10 +35,10 @@
       </section>
 
       <!-- Dashed "tear here" line between the ask and the links -->
-      <div v-if="showHelp && band" aria-hidden="true" class="mx-6 sm:mx-12 border-t-[3px] border-dashed border-paper/20"></div>
+      <div v-if="showHelp && band" aria-hidden="true" class="mx-6 border-t-[3px] border-dashed border-paper/20"></div>
 
       <!-- Logo and links -->
-      <div class="relative grid gap-12 px-7 py-10 sm:px-12 sm:py-14 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
+      <div class="relative grid gap-12 px-6 py-10 sm:py-14 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
         <UiSparkle v-if="!showHelp" class="absolute right-[7%] top-8 text-wattle hidden sm:block" :size="34" />
         <div class="max-w-[420px]">
           <NuxtLink to="/" aria-label="Acacia Climbing Coalition, home" class="no-underline text-paper-light">
@@ -66,11 +67,12 @@
           </div>
         </nav>
       </div>
-    </div>
 
-    <div class="max-w-[1240px] mx-auto mt-6 px-1 flex flex-wrap justify-between gap-x-6 gap-y-2 text-[13px] text-outline/75">
-      <span>© {{ year }}<template v-if="footer?.smallPrint">{{ ' ' }}{{ footer.smallPrint }}</template></span>
-      <span v-if="footer?.smallPrintRight">{{ footer.smallPrintRight }}</span>
+      <!-- Small print -->
+      <div class="relative mx-6 py-6 border-t-2 border-paper/15 flex flex-wrap justify-between gap-x-6 gap-y-2 text-[13px] text-paper/70">
+        <span>© {{ year }}<template v-if="footer?.smallPrint">{{ ' ' }}{{ footer.smallPrint }}</template></span>
+        <span v-if="footer?.smallPrintRight">{{ footer.smallPrintRight }}</span>
+      </div>
     </div>
   </footer>
 </template>
