@@ -73,7 +73,7 @@ export const heroSection = defineType({
 
 export const marqueeSection = defineType({
   name: 'marqueeSection',
-  title: 'Scrolling green band',
+  title: 'Scrolling band',
   type: 'object',
   fields: [
     defineField({ name: 'items', title: 'Phrases', type: 'array', of: [defineArrayMember({ type: 'string' })] }),
