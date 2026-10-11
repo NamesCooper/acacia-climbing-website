@@ -29,6 +29,9 @@ export default defineNuxtConfig({
         preview,
         studioUrl: 'https://acaciaclimbing.sanity.studio',
       },
+      // Free CARTO map-tile key. Set NUXT_PUBLIC_CARTO_KEY in Cloudflare's build variables.
+      // (Tile keys are visible in the browser by design; lock it to your domains in CARTO's dashboard.)
+      cartoKey: '',
     },
   },
 

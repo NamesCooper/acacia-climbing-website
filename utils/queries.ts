@@ -29,7 +29,8 @@ export const QUERIES = {
   chrome: /* groq */ `{
   "nav": *[_id == "navigation"][0]{ links[]{ _key, label, link }, buttonLabel, buttonLink },
   "footer": *[_id == "footer"][0]{ tagline, columns[]{ _key, heading, links[]{ _key, label, link } }, smallPrint, smallPrintRight },
-  "helpBand": *[_id == "helpBand"][0]{ heading, accent, intro, pills[]{ _key, label, link, colour }, linkLabel, linkHref }
+  "helpBand": *[_id == "helpBand"][0]{ heading, accent, intro, pills[]{ _key, label, link, colour }, linkLabel, linkHref },
+  "noHelpPages": *[_type == "page" && showHelpBand == false].slug.current
 }`,
 } as const
 

@@ -2,7 +2,6 @@
   <div v-if="page">
     <SitePageHeader :eyebrow="page.eyebrow" :title="heading.title" :accent="heading.accent" :lede="page.lede" />
     <SanitySections :sections="page.sections" />
-    <SiteHelpBand v-if="page.showHelpBand !== false" />
   </div>
 </template>
 
@@ -18,8 +17,6 @@ if (!page.value || slug === 'home') {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
 
-// Studio pages draw the "Got an hour?" band themselves (it has an on/off switch in the Studio)
-definePageMeta({ prefooter: false })
 
 const heading = computed(() => splitHeading(page.value?.heading))
 

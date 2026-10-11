@@ -1,30 +1,29 @@
 <template>
-  <div>
-    <SitePageHeader
-      eyebrow="The crag map"
-      title="Where it's"
-      accent="at"
-      lede="Every crag we're working on, and how far along it is. We're starting in South East Queensland, with the rest of Australia to come."
-    />
+  <!-- Full-screen map under the nav. On desktop the panel floats over the map's left side;
+       on phones the map comes first and the panel follows underneath. -->
+  <section class="relative lg:h-[calc(100svh-98px)] lg:min-h-[620px] border-y-[3px] border-outline bg-paper">
+    <!-- MAP -->
+    <div class="relative h-[62svh] min-h-[360px] lg:absolute lg:inset-0 lg:h-auto">
+      <div ref="mapEl" class="absolute inset-0" role="application" aria-label="Map of crags across Australia" />
+      <!-- legend -->
+      <div class="absolute right-3 bottom-3 sm:right-5 sm:bottom-5 z-[500] bg-paper-light border-[3px] border-outline rounded-2xl px-2.5 py-2 sm:px-3.5 sm:py-2.5 shadow-[3px_3px_0_var(--color-outline)]">
+        <ul class="list-none p-0 m-0 flex flex-col gap-1 sm:gap-1.5 text-[11px] sm:text-[13px] font-bold">
+          <li v-for="s in legend" :key="s" class="flex items-center gap-2">
+            <span class="size-3 sm:size-3.5 rounded-full border-2 border-outline" :style="{ background: statusColour(s) }" />
+            {{ statusLabel(s) }}
+          </li>
+        </ul>
+      </div>
+    </div>
 
-    <section class="max-w-[1240px] mx-auto px-6 pb-24">
-      <div class="grid gap-6 lg:grid-cols-[380px_1fr]">
-        <!-- MAP (first on phones) -->
-        <div class="relative order-1 lg:order-2 h-[55vh] min-h-[340px] lg:h-[660px] bg-paper-light border-[3px] border-outline rounded-[28px] overflow-hidden shadow-[6px_6px_0_var(--color-outline)]">
-          <div ref="mapEl" class="absolute inset-0" role="application" aria-label="Map of crags across Australia" />
-          <!-- legend -->
-          <div class="absolute right-2 bottom-2 sm:right-3 sm:bottom-3 z-[500] bg-paper-light border-[3px] border-outline rounded-2xl px-2.5 py-2 sm:px-3.5 sm:py-2.5 shadow-[3px_3px_0_var(--color-outline)]">
-            <ul class="list-none p-0 m-0 flex flex-col gap-1 sm:gap-1.5 text-[11px] sm:text-[13px] font-bold">
-              <li v-for="s in legend" :key="s" class="flex items-center gap-2">
-                <span class="size-3 sm:size-3.5 rounded-full border-2 border-outline" :style="{ background: statusColour(s) }" />
-                {{ statusLabel(s) }}
-              </li>
-            </ul>
-          </div>
-        </div>
-
+    <div class="px-4 py-6 sm:px-6 lg:p-0">
         <!-- PANEL -->
-        <aside ref="panelEl" class="order-2 lg:order-1 bg-paper-light border-[3px] border-outline rounded-[28px] shadow-[6px_6px_0_var(--color-outline)] lg:h-[660px] flex flex-col overflow-hidden scroll-mt-4">
+        <aside ref="panelEl" class="relative z-[600] bg-paper-light border-[3px] border-outline rounded-[28px] shadow-[6px_6px_0_var(--color-outline)] flex flex-col overflow-hidden scroll-mt-4 lg:absolute lg:left-6 lg:top-6 lg:bottom-6 lg:w-[400px]">
+          <!-- Title bar, always on top of the panel -->
+          <div class="flex-shrink-0 px-6 pt-5 pb-4 border-b-[3px] border-outline bg-wattle">
+            <p class="m-0 font-grotesk font-extrabold text-xs uppercase tracking-[0.08em]">The crag map</p>
+            <h1 class="mt-1 mb-0 font-display text-[40px] leading-[0.95]">Where it's at</h1>
+          </div>
           <!-- back -->
           <button
             v-if="view !== 'australia'"
@@ -37,7 +36,7 @@
             <!-- AUSTRALIA -->
             <div v-if="view === 'australia'" class="p-6">
               <h2 class="m-0 font-grotesk font-extrabold text-2xl uppercase tracking-[-0.01em]">Pick a state</h2>
-              <p class="mt-2 mb-4 text-[15px] leading-relaxed">We're starting in Queensland. Tap a state to see what's happening there.</p>
+              <p class="mt-2 mb-4 text-[15px] leading-relaxed">Every crag we're working on, and how far along it is. We're starting in South East Queensland, with the rest of Australia to come. Tap a state to have a look.</p>
               <ul class="list-none p-0 m-0 flex flex-col gap-2.5">
                 <li v-for="s in STATES" :key="s.id">
                   <button
@@ -148,14 +147,15 @@
             </div>
           </div>
         </aside>
-      </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 
 <script setup lang="ts">
 import type { Map as LeafletMap, LayerGroup, Layer, Marker } from 'leaflet'
 import type { Crag } from '~/composables/useCragData'
+
+definePageMeta({ prefooter: false })
 
 useHead({
   title: "Crag map · Acacia Climbing Coalition",
@@ -273,7 +273,7 @@ function goAustralia() {
   clearArea()
   highlightPin(null)
   styleStates()
-  map?.flyToBounds(AUSTRALIA, { duration: 0.8 })
+  map?.flyToBounds(AUSTRALIA, { duration: 0.8, paddingTopLeft: [window.innerWidth >= 1024 ? 430 : 0, 0] })
 }
 
 function selectState(id: string) {
@@ -312,14 +312,20 @@ onMounted(async () => {
   if (!mapEl.value) return
 
   map = L.map(mapEl.value, { zoomControl: false, minZoom: 3, zoomSnap: 0.25 })
-  L.control.zoom({ position: 'topleft' }).addTo(map)
-  // CARTO's free basemap works on any domain (Stadia needed an API key for the live site)
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    subdomains: 'abcd',
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-  }).addTo(map)
-  map.fitBounds(AUSTRALIA)
+  L.control.zoom({ position: 'topright' }).addTo(map)
+  // Map tiles. CARTO needs a free key (since Sept 2026), set as NUXT_PUBLIC_CARTO_KEY in Cloudflare's
+  // build settings. Without one we fall back to OpenStreetMap's own tiles so the map is never blank.
+  const { cartoKey } = useRuntimeConfig().public
+  const OSM = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  const tiles = cartoKey
+    ? L.tileLayer(`https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png?key=${cartoKey}`, {
+        maxZoom: 19,
+        attribution: `${OSM} &copy; <a href="https://carto.com/attributions">CARTO</a>`,
+      })
+    : L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: OSM })
+  tiles.addTo(map)
+  // Leave room for the floating panel on desktop
+  map.fitBounds(AUSTRALIA, { paddingTopLeft: [window.innerWidth >= 1024 ? 430 : 0, 0] })
 
   try {
     const geo = await fetch('/states.geojson').then((r) => r.json())
@@ -356,6 +362,8 @@ onUnmounted(() => {
 <style>
 /* Leaflet bits that Tailwind can't reach */
 .leaflet-container { font-family: var(--font-sans); background: var(--color-paper); }
+/* Warm the map tiles towards the paper colour so they sit in the poster palette */
+.leaflet-tile-pane { filter: sepia(0.28) saturate(0.85) brightness(1.02); }
 .leaflet-tooltip {
   font-family: var(--font-grotesk);
   font-weight: 800;

@@ -1,18 +1,51 @@
 <template>
-  <!-- A big forest-green poster card sitting on the paper, with the small print underneath.
-       Words and links come from "Footer" in the Studio; the button reuses the nav's yellow button. -->
+  <!-- One forest-green poster card on the paper: the "Got an hour?" ask on top (unless a page turns
+       it off), then the logo, links and small print. Words come from the Studio's
+       '"Got an hour?" band' and 'Footer' documents. -->
   <footer class="px-4 sm:px-6 pt-12 sm:pt-16 pb-8">
     <div class="relative max-w-[1240px] mx-auto bg-forest text-paper border-[3px] border-outline rounded-[28px] sm:rounded-[36px] shadow-[8px_8px_0_var(--color-outline)] overflow-hidden">
       <div aria-hidden="true" class="halftone absolute -left-28 -bottom-36 size-[340px] rounded-full opacity-60 hidden lg:block" style="--dot: var(--color-moss)"></div>
-      <UiSparkle class="absolute right-[7%] top-8 text-wattle hidden sm:block" :size="34" />
 
+      <!-- The ask -->
+      <section v-if="showHelp && band" id="help" aria-labelledby="help-heading" class="relative px-6 pt-14 pb-12 sm:px-12 sm:pt-18 sm:pb-14 text-center scroll-mt-6">
+        <UiSparkle class="absolute left-[7%] top-10 text-wattle hidden sm:block" :size="34" />
+        <UiSparkle class="absolute right-[8%] bottom-12 text-wattle hidden sm:block" :size="26" delay="1s" />
+        <img src="/brand/sprig-gold.png" alt="" class="anim-bob mx-auto w-14 h-auto" />
+        <h2 id="help-heading" class="mt-4 mb-0 font-grotesk font-extrabold uppercase text-[clamp(40px,6.5vw,72px)] leading-[0.95] tracking-[-0.03em] text-balance">
+          {{ band.heading }}
+          <span v-if="band.accent" class="font-serif italic font-semibold normal-case tracking-[-0.01em] text-wattle">{{ band.accent }}</span>
+        </h2>
+        <p v-if="band.intro" class="mt-5 mb-0 text-lg text-paper/85">{{ band.intro }}</p>
+        <ul v-if="band.pills?.length" class="list-none p-0 m-0 mt-8 flex flex-wrap justify-center gap-3">
+          <li v-for="(p, i) in band.pills" :key="p._key ?? p.label">
+            <NuxtLink
+              v-bind="chromeLink(p.link)"
+              class="tilt inline-block no-underline text-forest border-[3px] border-outline rounded-full px-5 py-3 font-bold shadow-[3px_3px_0_var(--color-outline)]"
+              :class="PILL_BG[stegaClean(p.colour ?? '')] ?? PILL_BG.wattle"
+              :style="{ '--tilt': TILTS[i % TILTS.length] + 'deg' }"
+            >{{ p.label }}</NuxtLink>
+          </li>
+        </ul>
+        <NuxtLink
+          v-if="band.linkLabel && band.linkHref"
+          v-bind="chromeLink(band.linkHref)"
+          class="inline-block mt-8 font-grotesk font-bold text-lg text-wattle"
+        >{{ band.linkLabel }} →</NuxtLink>
+      </section>
+
+      <!-- Dashed "tear here" line between the ask and the links -->
+      <div v-if="showHelp && band" aria-hidden="true" class="mx-6 sm:mx-12 border-t-[3px] border-dashed border-paper/20"></div>
+
+      <!-- Logo and links -->
       <div class="relative grid gap-12 px-7 py-10 sm:px-12 sm:py-14 lg:grid-cols-[1fr_1.6fr] lg:gap-16">
+        <UiSparkle v-if="!showHelp" class="absolute right-[7%] top-8 text-wattle hidden sm:block" :size="34" />
         <div class="max-w-[420px]">
           <NuxtLink to="/" aria-label="Acacia Climbing Coalition, home" class="no-underline text-paper-light">
             <UiWordmark :size="48" />
           </NuxtLink>
-          <p v-if="footer?.tagline" class="mt-6 mb-0 font-display text-[clamp(30px,3.6vw,40px)] leading-[1.02] text-wattle">{{ footer.tagline }}</p>
-          <UiButton v-if="button" v-bind="button" variant="wattle" class="mt-7">{{ nav?.buttonLabel }}</UiButton>
+          <p v-if="footer?.tagline" class="mt-6 mb-0 font-display text-[clamp(28px,3.2vw,36px)] leading-[1.04] text-wattle">{{ footer.tagline }}</p>
+          <!-- The help ask already has its own buttons, so only show this when it's switched off -->
+          <UiButton v-if="!showHelp && button" v-bind="button" variant="wattle" class="mt-7">{{ nav?.buttonLabel }}</UiButton>
         </div>
 
         <nav aria-label="Footer" class="flex flex-wrap gap-x-12 gap-y-10 lg:justify-end">
@@ -43,14 +76,24 @@
 </template>
 
 <script setup lang="ts">
+import { stegaClean } from '@sanity/client/stega'
+
 const year = new Date().getFullYear()
+const route = useRoute()
 const { data } = await useSiteChrome()
 const footer = computed(() => data.value?.footer)
 const nav = computed(() => data.value?.nav)
+const band = computed(() => data.value?.helpBand)
 
-// The nav's "Lend a hand" button, repeated at the bottom for people who scrolled all the way
+// Vue pages turn the ask off with definePageMeta({ prefooter: false });
+// Studio pages with their "Got an hour?" switch off are listed in noHelpPages.
+const slug = computed(() => (route.path === '/' ? 'home' : route.path.replace(/^\/|\/$/g, '')))
+const showHelp = computed(() => route.meta.prefooter !== false && !data.value?.noHelpPages?.includes(slug.value))
+
+// The nav's "Lend a hand" button, for pages without the ask
 const button = computed(() => (nav.value?.buttonLabel && nav.value.buttonLink ? chromeLink(nav.value.buttonLink) : null))
 
-const CHIP_BG = ['bg-wattle', 'bg-lichen', 'bg-sandstone', 'bg-paper-light']
 const TILTS = [-2, 1.5, -1.5, 2]
+const CHIP_BG = ['bg-wattle', 'bg-lichen', 'bg-sandstone', 'bg-paper-light']
+const PILL_BG: Record<string, string> = { wattle: 'bg-wattle', lichen: 'bg-lichen', sandstone: 'bg-sandstone', paper: 'bg-paper-light' }
 </script>

@@ -5,12 +5,7 @@
     <main id="main">
       <slot />
     </main>
-    <!-- Pages can hide the "Got an hour?" band with definePageMeta({ prefooter: false }) -->
-    <SiteHelpBand v-if="route.meta.prefooter !== false" />
     <SiteFooter />
   </div>
 </template>
 
-<script setup lang="ts">
-const route = useRoute()
-</script>
