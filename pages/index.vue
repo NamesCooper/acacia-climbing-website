@@ -1,9 +1,9 @@
 <template>
   <div>
-    <RetroHero />
-    <RetroMarquee />
-    <RetroAboutTabs />
-    <RetroCragStickers />
+    <HomeHero />
+    <HomeMarquee />
+    <HomeAboutTabs />
+    <HomeCragCards />
   </div>
 </template>
 

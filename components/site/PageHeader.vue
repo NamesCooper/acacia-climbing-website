@@ -2,7 +2,7 @@
   <!-- Poster-style header for inner pages. Pass the heading as `title`;
        `accent` is an optional word shown in moss after it (e.g. title "Lend a" accent "hand"). -->
   <section class="relative max-w-[1240px] mx-auto px-6 pt-8 pb-12 sm:pt-12 sm:pb-16">
-    <RetroSparkle class="absolute right-[6%] top-4 text-outline hidden sm:block" :size="48" />
+    <UiSparkle class="absolute right-[6%] top-4 text-outline hidden sm:block" :size="48" />
 
     <p
       v-if="eyebrow"

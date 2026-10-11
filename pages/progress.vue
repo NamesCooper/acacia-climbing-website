@@ -1,6 +1,6 @@
 <template>
   <div>
-    <RetroPageHeader
+    <SitePageHeader
       eyebrow="The crag map"
       title="Where it's"
       accent="at"

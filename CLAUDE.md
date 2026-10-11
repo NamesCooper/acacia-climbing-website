@@ -26,7 +26,12 @@ ACC operates under the ACAQ (Australian Climbing Association Queensland) umbrell
 - `.mcp.json` connects Claude to Sanity (read and edit content, deploy schema)
 - `.claude/agents/acc-helper.md` and `.claude/skills/` are Cooper's helper and its shortcuts (`/whats-next`, `/log-update`, `/check-site`)
 - `layouts/default.vue` wraps every page with the nav, the "Got an hour?" band and the footer. Hide the band on a page with `definePageMeta({ prefooter: false })`
-- `components/retro/` holds every V2 component, including `PageHeader` for inner pages
+- Components are split into four folders (full list in `docs/COMPONENTS.md`):
+  - `components/ui/` small bricks: `UiButton`, `UiChip`, `UiCard`, `UiRisoHeading`, `UiSectionTitle`, `UiHalftone`, `UiSparkle`, `UiWordmark`
+  - `components/site/` the frame on every page: `SiteNav`, `SiteFooter`, `SiteHelpBand`, `SitePageHeader`
+  - `components/home/` homepage-only sections: `HomeHero`, `HomeMarquee`, `HomeAboutTabs`, `HomeCragCards`
+  - `components/section/` reusable inner-page sections: `SectionSplit`, `SectionSteps`, `SectionCards`, `SectionStatement`, `SectionCallout`, `SectionProse`
+- `types/content.ts` holds the shared shapes (`Cta`, `CardItem`, `ProseBlock`) the sections take
 - `utils/cragStatus.ts` is the single source for status labels and colours (homepage cards and map)
 - Pages: `/` home, `/progress` crag map, `/updates`, `/about`, `/get-involved`, `/privacy`
 - `ROADMAP.md` is the running list of small next tasks
@@ -71,7 +76,7 @@ No orange or pink. Keep to sandstone yellows, forest and moss greens, and wattle
 
 ### Logo
 
-"Sprig Dot": lowercase `acacia` in Bricolage Grotesque 800 with the wattle sprig as the dot on the i. Use `<RetroWordmark :size="44" />`. Sprig artwork is in `public/brand/` (gold, green, light). The old serif "A" monogram is kept as a formal seal for council and grant documents only.
+"Sprig Dot": lowercase `acacia` in Bricolage Grotesque 800 with the wattle sprig as the dot on the i. Use `<UiWordmark :size="44" />`. Sprig artwork is in `public/brand/` (gold, green, light). The old serif "A" monogram is kept as a formal seal for council and grant documents only.
 
 ### Patterns
 
@@ -104,7 +109,7 @@ No orange or pink. Keep to sandstone yellows, forest and moss greens, and wattle
 ### Components
 
 - Prefer composition over duplication
-- New sections follow the V2 retro poster patterns above; homepage sections live in components/retro
+- New sections follow the V2 retro poster patterns above; homepage sections live in `components/home`, inner-page sections in `components/section`. Build new pages from `Section*` components first, and only write custom markup when none fit
 - Reusable components live in /components, page components in /pages
 - Use Vue 3 composition API (`<script setup>`) not Options API
 

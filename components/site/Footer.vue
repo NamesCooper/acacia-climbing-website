@@ -3,7 +3,7 @@
     <div class="max-w-[1240px] mx-auto">
       <div class="flex flex-wrap justify-between items-start gap-10">
         <div class="max-w-[360px]">
-          <RetroWordmark :size="40" />
+          <UiWordmark :size="40" />
           <p class="mt-4 mb-0 font-poster text-2xl leading-snug">Made by climbers, for the places we love</p>
         </div>
         <nav aria-label="Footer" class="flex flex-wrap gap-x-14 gap-y-8">

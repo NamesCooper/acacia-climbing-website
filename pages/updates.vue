@@ -1,6 +1,6 @@
 <template>
   <div>
-    <RetroPageHeader
+    <SitePageHeader
       eyebrow="Updates"
       title="What's been"
       accent="happening"

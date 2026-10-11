@@ -2,7 +2,7 @@
   <!-- Phones: wordmark + button on one row, links underneath. Desktop: all on one row. -->
   <header class="max-w-[1240px] mx-auto px-6 pt-5 pb-4 sm:py-6 grid grid-cols-[auto_auto] sm:grid-cols-[auto_1fr_auto] items-center justify-between gap-x-6 gap-y-3">
     <NuxtLink to="/" aria-label="Acacia Climbing Coalition, home" class="no-underline text-outline">
-      <RetroWordmark :size="40" />
+      <UiWordmark :size="40" />
     </NuxtLink>
     <nav aria-label="Main" class="order-3 col-span-2 sm:order-none sm:col-span-1 sm:justify-self-end flex flex-wrap items-center gap-x-6 gap-y-2 font-bold text-base">
       <NuxtLink
