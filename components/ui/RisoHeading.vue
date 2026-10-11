@@ -22,7 +22,7 @@ withDefaults(
 
 const SIZES = {
   md: 'text-[clamp(30px,3.8vw,46px)]',
-  lg: 'text-[clamp(52px,9vw,108px)]',
+  lg: 'text-[clamp(40px,13vw,52px)] sm:text-[clamp(52px,9vw,108px)] [overflow-wrap:break-word]',
   xl: 'text-[clamp(64px,13vw,148px)] leading-[0.88]',
 }
 </script>

@@ -3,12 +3,12 @@
        column headings; items with child links drop down a paper card on hover (or tap / Enter).
        Words and links come from "Navigation" in the Studio. -->
   <header class="relative z-[1000] bg-forest text-paper border-b-[3px] border-outline">
-    <div ref="barEl" class="relative max-w-[1240px] mx-auto px-6 pt-4 pb-3.5 sm:py-5 grid grid-cols-[auto_auto] sm:grid-cols-[auto_1fr_auto] items-center justify-between gap-x-6 gap-y-3" @keydown.esc="close(true)">
+    <div ref="barEl" class="relative max-w-[1240px] mx-auto px-6 pt-4 pb-3.5 sm:pb-4 lg:py-5 grid grid-cols-[auto_auto] lg:grid-cols-[auto_1fr_auto] items-center justify-between gap-x-6 gap-y-3" @keydown.esc="close(true)">
       <NuxtLink to="/" aria-label="Acacia Climbing Coalition, home" class="no-underline text-paper-light">
         <UiWordmark :size="40" />
       </NuxtLink>
 
-      <nav aria-label="Main" class="order-3 col-span-2 sm:order-none sm:col-span-1 sm:justify-self-end">
+      <nav aria-label="Main" class="order-3 col-span-2 lg:order-none lg:col-span-1 lg:justify-self-end">
         <ul class="list-none p-0 m-0 flex flex-wrap items-center gap-x-3 gap-y-2">
           <!-- On phones the dropdown spans the bar (li is static); from sm up it sits under its pill -->
           <li

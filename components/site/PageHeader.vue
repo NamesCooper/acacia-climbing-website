@@ -9,7 +9,7 @@
       class="m-0 inline-block bg-lichen border-[3px] border-outline rounded-full px-4 py-1.5 font-grotesk font-extrabold text-sm tracking-[0.06em] uppercase -rotate-2"
     >{{ eyebrow }}</p>
 
-    <h1 class="relative mt-6 mb-0 font-display text-[clamp(52px,9vw,108px)] leading-[0.9] tracking-[-0.025em] max-w-[1000px]">
+    <h1 class="relative mt-6 mb-0 font-display text-[clamp(40px,13vw,52px)] sm:text-[clamp(52px,9vw,108px)] leading-[0.9] [overflow-wrap:break-word] tracking-[-0.025em] max-w-[1000px]">
       <span aria-hidden="true" class="absolute inset-0 text-wattle translate-x-[5px] translate-y-[5px]">{{ accent ? `${title} ${accent}` : title }}</span>
       <!-- The space is written as {{ ' ' }} because Vue strips plain spaces between tags -->
       <span class="relative">{{ title }}<template v-if="accent">{{ ' ' }}<span class="text-moss">{{ accent }}</span></template></span>

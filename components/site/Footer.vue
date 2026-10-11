@@ -3,7 +3,6 @@
        it off), then the logo, links and small print. Words come from the Studio's
        '"Got an hour?" band' and 'Footer' documents. -->
   <footer class="relative mt-12 sm:mt-16 bg-forest text-paper border-t-[3px] border-outline overflow-hidden">
-    <div aria-hidden="true" class="halftone absolute -left-44 -bottom-64 size-[420px] rounded-full opacity-50 hidden lg:block" style="--dot: var(--color-moss)"></div>
     <div aria-hidden="true" class="halftone absolute -right-32 -top-40 size-[380px] rounded-full opacity-40 hidden lg:block" style="--dot: var(--color-moss)"></div>
     <div class="relative max-w-[1240px] mx-auto">
 

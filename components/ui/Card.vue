@@ -33,10 +33,11 @@ const TONES = {
 }
 const RADIUS = { sm: 'rounded-[20px]', md: 'rounded-[24px]', lg: 'rounded-[32px]' }
 const PAD = { sm: 'p-5', md: 'p-7', lg: 'p-8 sm:p-12' }
+// On phones the dots shrink into the corner (or hide) so they never sit behind words
 const HALFTONE_POS = {
-  'top-right': '-right-14 -top-14 size-48 opacity-70',
-  'bottom-left': '-left-20 -bottom-24 size-80',
-  'bottom-right': '-right-20 -bottom-20 size-[420px]',
+  'top-right': '-right-16 -top-16 size-32 sm:-right-14 sm:-top-14 sm:size-48 opacity-70',
+  'bottom-left': 'hidden sm:block -left-20 -bottom-24 size-80',
+  'bottom-right': 'hidden sm:block -right-20 -bottom-20 size-[420px]',
 }
 const dotFor = {
   light: 'wattle',

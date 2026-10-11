@@ -158,285 +158,6 @@
     ]
   },
   {
-    "_id": "page-about",
-    "_type": "page",
-    "title": "About",
-    "slug": {
-      "_type": "slug",
-      "current": "about"
-    },
-    "copyStatus": "draft",
-    "eyebrow": "About us",
-    "heading": "Climbers, for the long *haul*",
-    "lede": "Acacia Climbing Coalition is a small, volunteer-run crew working to get outdoor climbing recognised and looked after across Australia. We're starting in South East Queensland, and building it in the open.",
-    "showHelpBand": true,
-    "seoDescription": "Who we are, why we started, and how we work with councils to get outdoor climbing recognised across Australia.",
-    "sections": [
-      {
-        "_type": "textSection",
-        "_key": "k000n",
-        "heading": "Why we started",
-        "body": [
-          {
-            "_type": "block",
-            "_key": "k000j",
-            "style": "normal",
-            "markDefs": [],
-            "children": [
-              {
-                "_type": "span",
-                "_key": "k000k",
-                "text": "Most councils in Australia don't have a way to formally recognise outdoor climbing. That leaves crags with unclear access, no stairs or signs, and nobody speaking for climbers when decisions get made.",
-                "marks": []
-              }
-            ]
-          },
-          {
-            "_type": "block",
-            "_key": "k000l",
-            "style": "normal",
-            "markDefs": [],
-            "children": [
-              {
-                "_type": "span",
-                "_key": "k000m",
-                "text": "At the same time, more people than ever are climbing in gyms and wanting to head outside, with very little to tell them where it's okay to go and how to look after it when they get there.",
-                "marks": []
-              }
-            ]
-          }
-        ],
-        "quote": "\"Documented crag, protected crag.\"",
-        "quoteBody": "A crag that's mapped, written up and known to council is a lot easier to keep open. So that's what we do, one crag at a time, and we share every step along the way.",
-        "quoteTone": "wattle"
-      },
-      {
-        "_type": "stepsSection",
-        "_key": "k000o",
-        "label": "Every crag goes through the same eight steps",
-        "heading": "How we do it",
-        "steps": [
-          "Research the area, its history and its climbing",
-          "Reach out to guidebook authors and locals",
-          "Talk with council and park rangers",
-          "Agree a plan together",
-          "Site visits: GPS, photos and mapping on KAYA",
-          "Sort out any access issues",
-          "Final council approvals",
-          "Publish the guidebook on KAYA"
-        ],
-        "linkLabel": "See where each crag is up to",
-        "linkHref": "/progress",
-        "band": "sandstone"
-      },
-      {
-        "_type": "cardsSection",
-        "_key": "k000t",
-        "heading": "Where we're up to",
-        "columns": 2,
-        "titleStyle": "grotesk",
-        "cards": [
-          {
-            "_type": "card",
-            "_key": "k000p",
-            "kicker": "Done",
-            "chipTone": "moss",
-            "title": "Tooheys Forest recognised",
-            "body": "Brisbane City Council formally recognises bouldering at Tooheys, with new stairs and signage now in."
-          },
-          {
-            "_type": "card",
-            "_key": "k000q",
-            "kicker": "Underway",
-            "chipTone": "wattle",
-            "title": "White Rock and Plunketts",
-            "body": "Talking with Ipswich and Logan councils about formal access, with site visits and mapping underway."
-          },
-          {
-            "_type": "card",
-            "_key": "k000r",
-            "kicker": "Underway",
-            "chipTone": "wattle",
-            "title": "Digital guidebooks",
-            "body": "Documenting our crags on KAYA, so every crag is properly on the record."
-          },
-          {
-            "_type": "card",
-            "_key": "k000s",
-            "kicker": "Next up",
-            "chipTone": "paper",
-            "chipDashed": true,
-            "title": "More of Australia",
-            "body": "Cedar Creek and Passchendaele are just getting started. After SEQ, the plan is every state."
-          }
-        ]
-      },
-      {
-        "_type": "cardsSection",
-        "_key": "k000z",
-        "columns": 2,
-        "titleStyle": "grotesk",
-        "cards": [
-          {
-            "_type": "card",
-            "_key": "k000u",
-            "title": "Who's behind it",
-            "body": "Right now Acacia is a small volunteer crew, coordinated by Cooper, who is also the bouldering representative for Rock Climbing Queensland (RCQ, formerly ACAQ). Everything here gets done in spare hours, with a lot of help from local climbers.",
-            "linkLabel": "Come be part of it",
-            "linkHref": "/get-involved"
-          },
-          {
-            "_type": "card",
-            "_key": "k000y",
-            "tone": "forest",
-            "title": "Working with",
-            "items": [
-              {
-                "_type": "cardItem",
-                "_key": "k000v",
-                "title": "RCQ",
-                "body": "Rock Climbing Queensland (formerly ACAQ), the state's peak climbing body. Our Queensland work happens under their umbrella."
-              },
-              {
-                "_type": "cardItem",
-                "_key": "k000w",
-                "title": "KAYA",
-                "body": "Where our digital guidebooks live, so climbers have accurate, up-to-date info."
-              },
-              {
-                "_type": "cardItem",
-                "_key": "k000x",
-                "title": "Local councils",
-                "body": "Brisbane, Ipswich, Logan, Moreton Bay and Southern Downs, so far."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "_type": "statementSection",
-        "_key": "k0014",
-        "heading": "We climb on Country",
-        "sprig": true,
-        "body": [
-          {
-            "_type": "block",
-            "_key": "k0010",
-            "style": "normal",
-            "markDefs": [],
-            "children": [
-              {
-                "_type": "span",
-                "_key": "k0011",
-                "text": "The crags we document sit on the lands of many Aboriginal and Torres Strait Islander peoples, including the Turrbal, Jagera, Yugarapul, Jinibara and Kabi Kabi peoples in South East Queensland. We pay our respects to Elders past and present.",
-                "marks": []
-              }
-            ]
-          },
-          {
-            "_type": "block",
-            "_key": "k0012",
-            "style": "normal",
-            "markDefs": [],
-            "children": [
-              {
-                "_type": "span",
-                "_key": "k0013",
-                "text": "We want consultation with Traditional Owners to be part of how every crag is documented, not an afterthought. We're still building those relationships, and we'll share how that's going as it happens.",
-                "marks": []
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "_id": "page-get-involved",
-    "_type": "page",
-    "title": "Get involved",
-    "slug": {
-      "_type": "slug",
-      "current": "get-involved"
-    },
-    "copyStatus": "draft",
-    "eyebrow": "Lend a hand",
-    "heading": "Every bit *helps*",
-    "lede": "We're a small crew, so a bit of help goes a long way. Pick whatever suits you, flick us an email, and we'll take it from there.",
-    "showHelpBand": false,
-    "seoDescription": "Volunteer, report a crag issue, help with council letters or chip in. Every bit helps keep Australian crags open.",
-    "sections": [
-      {
-        "_type": "cardsSection",
-        "_key": "k0019",
-        "columns": 2,
-        "titleStyle": "display",
-        "cards": [
-          {
-            "_type": "card",
-            "_key": "k0015",
-            "anchor": "volunteer",
-            "kicker": "Volunteer",
-            "chipTone": "lichen",
-            "halftone": true,
-            "title": "Give an hour or two",
-            "body": "Crag clean-ups, track work, site visits and mapping. Weekends mostly, and no experience needed beyond knowing your way around a crag.",
-            "linkLabel": "I'm keen to volunteer",
-            "linkHref": "mailto:hello@acaciaclimbing.org?subject=Keen%20to%20volunteer",
-            "buttonColour": "moss"
-          },
-          {
-            "_type": "card",
-            "_key": "k0016",
-            "anchor": "report",
-            "kicker": "Report",
-            "chipTone": "wattle",
-            "halftone": true,
-            "title": "Be our eyes on the ground",
-            "body": "Closed tracks, new signs, damage, a gate that wasn't there last week. Tell us what you've seen, where and when, and we'll log it and follow it up.",
-            "linkLabel": "Report a crag issue",
-            "linkHref": "mailto:hello@acaciaclimbing.org?subject=Crag%20report"
-          },
-          {
-            "_type": "card",
-            "_key": "k0017",
-            "anchor": "council",
-            "kicker": "Speak up",
-            "chipTone": "sandstone",
-            "halftone": true,
-            "title": "Help with council letters",
-            "body": "When a council is deciding something, letters from local climbers really count. We'll let you know when it matters and help with what to say.",
-            "linkLabel": "Count me in",
-            "linkHref": "mailto:hello@acaciaclimbing.org?subject=Keen%20to%20help%20with%20council%20letters"
-          },
-          {
-            "_type": "card",
-            "_key": "k0018",
-            "anchor": "donate",
-            "kicker": "Donate",
-            "chipTone": "paper",
-            "chipDashed": true,
-            "halftone": true,
-            "title": "Chip in for the crags",
-            "body": "Donations go straight to signage, mapping and council submissions. We're not a registered charity yet, so it isn't tax-deductible for now.",
-            "linkLabel": "I'd like to donate",
-            "linkHref": "mailto:hello@acaciaclimbing.org?subject=Donating%20to%20Acacia"
-          }
-        ]
-      },
-      {
-        "_type": "ctaSection",
-        "_key": "k001a",
-        "label": "Not in South East Queensland?",
-        "heading": "We want to hear from climbers everywhere",
-        "body": "We're starting in SEQ, but the goal is every state. If there's a crag near you with access worries, or you're already looking after one, tell us about it. It all helps shape where we go next.",
-        "buttonLabel": "Tell us about your local",
-        "buttonHref": "mailto:hello@acaciaclimbing.org?subject=Climbing%20near%20me",
-        "tone": "sandstone"
-      }
-    ]
-  },
-  {
     "_id": "page-privacy",
     "_type": "page",
     "title": "Privacy and terms",
@@ -606,5 +327,893 @@
         ]
       }
     ]
+  },
+  {
+    "_id": "page-about",
+    "_type": "page",
+    "copyStatus": "draft",
+    "eyebrow": "About us",
+    "heading": "Climbers, for the long *haul*",
+    "lede": "Acacia Climbing Coalition is a small, volunteer-run crew working to get outdoor climbing recognised and looked after across Australia. We're starting in South East Queensland, and building it in the open.",
+    "sections": [
+      {
+        "_key": "k000n",
+        "_type": "textSection",
+        "body": [
+          {
+            "_key": "k000j",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "k000k",
+                "_type": "span",
+                "marks": [],
+                "text": "Most councils in Australia don't have a way to formally recognise outdoor climbing. That leaves crags with unclear access, no stairs or signs, and nobody speaking for climbers when decisions get made."
+              }
+            ],
+            "markDefs": [],
+            "style": "normal"
+          },
+          {
+            "_key": "k000l",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "k000m",
+                "_type": "span",
+                "marks": [],
+                "text": "At the same time, more people than ever are climbing in gyms and wanting to head outside, with very little to tell them where it's okay to go and how to look after it when they get there."
+              }
+            ],
+            "markDefs": [],
+            "style": "normal"
+          }
+        ],
+        "heading": "Why we started",
+        "quote": "\"Documented crag, protected crag.\"",
+        "quoteBody": "A crag that's mapped, written up and known to council is a lot easier to keep open. So that's what we do, one crag at a time, and we share every step along the way.",
+        "quoteTone": "wattle"
+      },
+      {
+        "_key": "k00m1",
+        "_type": "textSection",
+        "body": [
+          {
+            "_key": "m1a",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "m1a1",
+                "_type": "span",
+                "marks": [],
+                "text": "Right now there's no modern, actively looked-after guide for Queensland climbing. A lot of what's out there is years old, and some areas have very little public information at all. That's how people end up lost, or bush-bashing new paths that damage the forest around the rock."
+              }
+            ],
+            "markDefs": [],
+            "style": "normal"
+          },
+          {
+            "_key": "m1b",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "m1b1",
+                "_type": "span",
+                "marks": [],
+                "text": "We're building that modern guide: made with the community, actively looked after, with clear approach tracks, current access notes, and closures for fires, backburning or roads showing up the day they happen."
+              }
+            ],
+            "markDefs": [],
+            "style": "normal"
+          }
+        ],
+        "heading": "Bringing climbing info up to date",
+        "quote": "\"Built to last, like the Access Fund.\"",
+        "quoteBody": "In the US, the Access Fund has looked after climbing access alongside land managers for decades. We want Australian climbing set up for the long term in the same way.",
+        "quoteTone": "lichen"
+      },
+      {
+        "_key": "k000o",
+        "_type": "stepsSection",
+        "band": "sandstone",
+        "heading": "How we do it",
+        "label": "Every crag goes through the same eight steps",
+        "linkHref": "/progress",
+        "linkLabel": "See where each crag is up to",
+        "steps": [
+          "Research the area, its history and its climbing",
+          "Reach out to guidebook authors and locals",
+          "Talk with council and park rangers",
+          "Agree a plan together",
+          "Site visits: GPS, photos and mapping on KAYA",
+          "Sort out any access issues",
+          "Final council approvals",
+          "Publish the guidebook on KAYA"
+        ]
+      },
+      {
+        "_key": "k000t",
+        "_type": "cardsSection",
+        "cards": [
+          {
+            "_key": "k000p",
+            "_type": "card",
+            "body": "Brisbane City Council formally recognises bouldering at Tooheys, with new stairs and signage now in.",
+            "chipTone": "moss",
+            "kicker": "Done",
+            "title": "Tooheys Forest recognised"
+          },
+          {
+            "_key": "k000q",
+            "_type": "card",
+            "body": "Talking with Ipswich and Logan councils about formal access, with site visits and mapping underway.",
+            "chipTone": "wattle",
+            "kicker": "Underway",
+            "title": "White Rock and Plunketts"
+          },
+          {
+            "_key": "k000r",
+            "_type": "card",
+            "body": "Documenting our crags on KAYA, so every crag is properly on the record.",
+            "chipTone": "wattle",
+            "kicker": "Underway",
+            "title": "Digital guidebooks"
+          },
+          {
+            "_key": "k000s",
+            "_type": "card",
+            "body": "Cedar Creek and Passchendaele are just getting started. After SEQ, the plan is every state.",
+            "chipDashed": true,
+            "chipTone": "paper",
+            "kicker": "Next up",
+            "title": "More of Australia"
+          }
+        ],
+        "columns": 2,
+        "heading": "Where we're up to",
+        "titleStyle": "grotesk"
+      },
+      {
+        "_key": "k000z",
+        "_type": "cardsSection",
+        "cards": [
+          {
+            "_key": "k000u",
+            "_type": "card",
+            "body": "Right now Acacia is a small volunteer crew, coordinated by Cooper, who is also the bouldering representative for Rock Climbing Queensland (RCQ, formerly ACAQ). Everything here gets done in spare hours, with a lot of help from local climbers. In the spirit of being upfront: Cooper also works with KAYA as a support engineer.",
+            "linkHref": "/get-involved",
+            "linkLabel": "Come be part of it",
+            "title": "Who's behind it"
+          },
+          {
+            "_key": "k000y",
+            "_type": "card",
+            "items": [
+              {
+                "_key": "k000v",
+                "_type": "cardItem",
+                "body": "Rock Climbing Queensland (formerly ACAQ), the state's peak climbing body. Our Queensland work happens under their umbrella.",
+                "title": "RCQ"
+              },
+              {
+                "_key": "k000w",
+                "_type": "cardItem",
+                "body": "Where our digital guidebooks live, so climbers have accurate, up-to-date info.",
+                "title": "KAYA"
+              },
+              {
+                "_key": "k000q",
+                "_type": "cardItem",
+                "body": "Queensland Parks and Wildlife Service. We have a good working relationship with the rangers looking after crags in their parks.",
+                "title": "QPWS"
+              },
+              {
+                "_key": "k000x",
+                "_type": "cardItem",
+                "body": "Brisbane, Ipswich, Logan, Moreton Bay and Southern Downs, so far.",
+                "title": "Local councils"
+              }
+            ],
+            "title": "Working with",
+            "tone": "forest"
+          }
+        ],
+        "columns": 2,
+        "titleStyle": "grotesk"
+      },
+      {
+        "_key": "k0014",
+        "_type": "statementSection",
+        "body": [
+          {
+            "_key": "k0010",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "k0011",
+                "_type": "span",
+                "marks": [],
+                "text": "The crags we document sit on the lands of many Aboriginal and Torres Strait Islander peoples, including the Turrbal, Jagera, Yugarapul, Jinibara and Kabi Kabi peoples in South East Queensland. We pay our respects to Elders past and present."
+              }
+            ],
+            "markDefs": [],
+            "style": "normal"
+          },
+          {
+            "_key": "k0012",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "k0013",
+                "_type": "span",
+                "marks": [],
+                "text": "We want consultation with Traditional Owners to be part of how every crag is documented, not an afterthought. We're still building those relationships, and we'll share how that's going as it happens."
+              }
+            ],
+            "markDefs": [],
+            "style": "normal"
+          }
+        ],
+        "heading": "We climb on Country",
+        "sprig": true
+      }
+    ],
+    "seoDescription": "Who we are, why we started, and how we work with councils to get outdoor climbing recognised across Australia.",
+    "showHelpBand": true,
+    "slug": {
+      "_type": "slug",
+      "current": "about"
+    },
+    "title": "About"
+  },
+  {
+    "_id": "page-get-involved",
+    "_type": "page",
+    "copyStatus": "draft",
+    "eyebrow": "Lend a hand",
+    "heading": "Every bit *helps*",
+    "lede": "We're a small crew, so a bit of help goes a long way. Pick whatever suits you, flick us an email, and we'll take it from there.",
+    "sections": [
+      {
+        "_key": "k0019",
+        "_type": "cardsSection",
+        "cards": [
+          {
+            "_key": "k0015",
+            "_type": "card",
+            "anchor": "volunteer",
+            "body": "Crag clean-ups, track work, site visits and mapping. Weekends mostly, and no experience needed beyond knowing your way around a crag.",
+            "buttonColour": "moss",
+            "chipTone": "lichen",
+            "halftone": true,
+            "kicker": "Volunteer",
+            "linkHref": "mailto:hello@acaciaclimbing.org?subject=Keen%20to%20volunteer",
+            "linkLabel": "I'm keen to volunteer",
+            "title": "Give an hour or two"
+          },
+          {
+            "_key": "k0016",
+            "_type": "card",
+            "anchor": "report",
+            "body": "Closed tracks, new signs, damage, a gate that wasn't there last week. Tell us what you've seen, where and when, and we'll log it and follow it up.",
+            "chipTone": "wattle",
+            "halftone": true,
+            "kicker": "Report",
+            "linkHref": "mailto:hello@acaciaclimbing.org?subject=Crag%20report",
+            "linkLabel": "Report a crag issue",
+            "title": "Be our eyes on the ground"
+          },
+          {
+            "_key": "k0017",
+            "_type": "card",
+            "anchor": "council",
+            "body": "When a council is deciding something, letters from local climbers really count. We'll let you know when it matters and help with what to say.",
+            "chipTone": "sandstone",
+            "halftone": true,
+            "kicker": "Speak up",
+            "linkHref": "mailto:hello@acaciaclimbing.org?subject=Keen%20to%20help%20with%20council%20letters",
+            "linkLabel": "Count me in",
+            "title": "Help with council letters"
+          },
+          {
+            "_key": "k0018",
+            "_type": "card",
+            "anchor": "donate",
+            "body": "Donations go to Crag Care Days, comps and giveaways, and, once we have the backing, sponsoring climbers who help document and share our crags. We're not a registered charity yet, so it isn't tax-deductible for now.",
+            "chipDashed": true,
+            "chipTone": "paper",
+            "halftone": true,
+            "kicker": "Donate",
+            "linkHref": "/work-with-us/support",
+            "linkLabel": "Where the money goes",
+            "title": "Chip in for the crags"
+          }
+        ],
+        "columns": 2,
+        "titleStyle": "display"
+      },
+      {
+        "_key": "k001a",
+        "_type": "ctaSection",
+        "body": "We're starting in SEQ, but the goal is every state. If there's a crag near you with access worries, or you're already looking after one, tell us about it. It all helps shape where we go next.",
+        "buttonHref": "mailto:hello@acaciaclimbing.org?subject=Climbing%20near%20me",
+        "buttonLabel": "Tell us about your local",
+        "heading": "We want to hear from climbers everywhere",
+        "label": "Not in South East Queensland?",
+        "tone": "sandstone"
+      }
+    ],
+    "seoDescription": "Volunteer, report a crag issue, help with council letters or chip in. Every bit helps keep Australian crags open.",
+    "showHelpBand": false,
+    "slug": {
+      "_type": "slug",
+      "current": "get-involved"
+    },
+    "title": "Get involved"
+  },
+  {
+    "_id": "page-work-with-us",
+    "_type": "page",
+    "copyStatus": "draft",
+    "eyebrow": "Work with us",
+    "heading": "Let's look after crags *together*",
+    "lede": "Councils, gyms, clubs, businesses and funders all have a part to play. Pick the one that sounds like you.",
+    "sections": [
+      {
+        "_key": "w1",
+        "_type": "cardsSection",
+        "cards": [
+          {
+            "_key": "w1a",
+            "_type": "card",
+            "body": "How we work with you to recognise climbing and look after the places it happens.",
+            "buttonColour": "moss",
+            "chipTone": "lichen",
+            "halftone": true,
+            "kicker": "Councils",
+            "linkHref": "/work-with-us/councils",
+            "linkLabel": "For councils",
+            "title": "Councils and land managers"
+          },
+          {
+            "_key": "w1b",
+            "_type": "card",
+            "body": "Help your members make the move from the wall to real rock, and do it well.",
+            "chipTone": "wattle",
+            "halftone": true,
+            "kicker": "Gyms and clubs",
+            "linkHref": "/work-with-us/gyms",
+            "linkLabel": "For gyms and clubs",
+            "title": "Gyms and clubs"
+          },
+          {
+            "_key": "w1c",
+            "_type": "card",
+            "body": "Back the mapping, signage and on-the-ground work that keeps crags open.",
+            "chipTone": "sandstone",
+            "halftone": true,
+            "kicker": "Support",
+            "linkHref": "/work-with-us/support",
+            "linkLabel": "Ways to support",
+            "title": "Businesses and funders"
+          }
+        ],
+        "columns": 3,
+        "titleStyle": "display"
+      },
+      {
+        "_key": "w2",
+        "_type": "ctaSection",
+        "body": "If you've got an idea, a place you look after, or something you'd like to offer, we'd love to hear it.",
+        "buttonHref": "mailto:hello@acaciaclimbing.org?subject=Working%20together",
+        "buttonLabel": "Email us",
+        "heading": "Say g'day anyway",
+        "label": "Not sure where you fit?",
+        "tone": "lichen"
+      }
+    ],
+    "seoDescription": "Councils, land managers, gyms, clubs, businesses and funders: how to work with Acacia Climbing Coalition to keep Australia's crags open.",
+    "showHelpBand": true,
+    "slug": {
+      "_type": "slug",
+      "current": "work-with-us"
+    },
+    "title": "Work with us"
+  },
+  {
+    "_id": "page-councils",
+    "_type": "page",
+    "copyStatus": "draft",
+    "eyebrow": "For councils and land managers",
+    "heading": "Recognising climbing, *together*",
+    "lede": "If you look after land where people climb, we'd love to work with you. Here's who we are, how we work, and what we bring to the table.",
+    "sections": [
+      {
+        "_key": "c1",
+        "_type": "textSection",
+        "body": [
+          {
+            "_key": "c1a",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "c1a1",
+                "_type": "span",
+                "marks": [],
+                "text": "Most councils in Australia don't yet have a way to formally recognise outdoor climbing. That leaves crags with unclear access, no stairs, signs or proper tracks, and nobody speaking for climbers when decisions get made."
+              }
+            ],
+            "markDefs": [],
+            "style": "normal"
+          },
+          {
+            "_key": "c1b",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "c1b1",
+                "_type": "span",
+                "marks": [],
+                "text": "At the same time, more people are moving from gyms to real rock. Recognition gives everyone a clear, agreed answer to where climbing happens and how it's looked after."
+              }
+            ],
+            "markDefs": [],
+            "style": "normal"
+          }
+        ],
+        "heading": "Why recognition matters",
+        "quote": "\"Documented crag, protected crag.\"",
+        "quoteBody": "We get recognition first, then publish the guidebook with your backing. Nothing goes public without your OK.",
+        "quoteTone": "wattle"
+      },
+      {
+        "_key": "c2",
+        "_type": "factsSection",
+        "facts": [
+          {
+            "_key": "c2a",
+            "_type": "fact",
+            "label": "Focus areas in South East Queensland",
+            "tone": "wattle",
+            "value": "5"
+          },
+          {
+            "_key": "c2b",
+            "_type": "fact",
+            "label": "Formal council recognition, at Tooheys Forest",
+            "tone": "lichen",
+            "value": "1"
+          },
+          {
+            "_key": "c2c",
+            "_type": "fact",
+            "label": "Steps on every access pathway",
+            "tone": "sandstone",
+            "value": "8"
+          }
+        ],
+        "heading": "So far",
+        "note": "As of October 2026. Every crag's progress is live on the crag map."
+      },
+      {
+        "_key": "c3",
+        "_type": "stepsSection",
+        "band": "sandstone",
+        "heading": "How we work",
+        "label": "The same process, every time",
+        "linkHref": "/progress",
+        "linkLabel": "See where each crag is up to",
+        "steps": [
+          "Research the area, its history and its climbing",
+          "Reach out to guidebook authors and locals",
+          "Talk with council and park rangers",
+          "Agree a plan together",
+          "Site visits: GPS, photos and mapping on KAYA",
+          "Sort out any access issues",
+          "Final council approvals",
+          "Publish the guidebook on KAYA"
+        ]
+      },
+      {
+        "_key": "c4",
+        "_type": "cardsSection",
+        "cards": [
+          {
+            "_key": "c4a",
+            "_type": "card",
+            "body": "A single, organised voice for climbers, instead of many scattered ones.",
+            "chipTone": "wattle",
+            "kicker": "Contact",
+            "title": "One point of contact"
+          },
+          {
+            "_key": "c4b",
+            "_type": "card",
+            "body": "GPS, photos and area boundaries, ready for your planning and published on KAYA once you're happy.",
+            "chipTone": "lichen",
+            "kicker": "Mapping",
+            "title": "Mapping and documentation"
+          },
+          {
+            "_key": "c4c",
+            "_type": "card",
+            "body": "Clean-up days, track work and keeping an eye out for problems.",
+            "chipTone": "sandstone",
+            "kicker": "People",
+            "title": "Volunteers on the ground"
+          },
+          {
+            "_key": "c4d",
+            "_type": "card",
+            "body": "We work within your permits and conditions, and help climbers understand and follow them.",
+            "chipTone": "paper",
+            "kicker": "Guidance",
+            "title": "Your rules, shared widely"
+          },
+          {
+            "_key": "c4e",
+            "_type": "card",
+            "body": "Send us fire danger, backburning, road closures or anything else climbers should know, and we update the guidebook the same day, instead of people relying on years-old information.",
+            "chipTone": "wattle",
+            "kicker": "Live updates",
+            "title": "Closures shown straight away",
+            "tone": "wattle"
+          },
+          {
+            "_key": "c4f",
+            "_type": "card",
+            "body": "Once guidebooks are published, what they earn from views and memberships goes back to RCQ, to councils for ongoing care of the area, and to theCrag.",
+            "chipTone": "lichen",
+            "kicker": "Money back",
+            "title": "Income back to the area"
+          }
+        ],
+        "columns": 3,
+        "heading": "What we bring",
+        "titleStyle": "grotesk"
+      },
+      {
+        "_key": "c5",
+        "_type": "cragRegisterSection",
+        "heading": "Where it's at",
+        "linkLabel": "See every crag on the map"
+      },
+      {
+        "_key": "c6",
+        "_type": "cardsSection",
+        "cards": [
+          {
+            "_key": "c6a",
+            "_type": "card",
+            "body": "Our Queensland work sits with Rock Climbing Queensland (RCQ, formerly ACAQ), the state's peak climbing body. Our founder is RCQ's bouldering representative. We also work closely with QPWS rangers.",
+            "chipTone": "lichen",
+            "kicker": "RCQ",
+            "linkHref": "/about",
+            "linkLabel": "About us",
+            "title": "Under RCQ's umbrella"
+          },
+          {
+            "_key": "c6b",
+            "_type": "card",
+            "body": "We want consultation with Traditional Owners to be part of how every crag is documented. We're still building those relationships, and we'll share how that's going.",
+            "chipTone": "sandstone",
+            "kicker": "Country",
+            "title": "Traditional Owners"
+          },
+          {
+            "_key": "c6c",
+            "_type": "card",
+            "body": "ABN 38 237 542 815. Email hello@acaciaclimbing.org and you'll hear back from a real person.",
+            "chipTone": "paper",
+            "kicker": "Details",
+            "title": "On the record"
+          }
+        ],
+        "columns": 3,
+        "heading": "Who you're dealing with",
+        "titleStyle": "grotesk"
+      },
+      {
+        "_key": "c7",
+        "_type": "faqSection",
+        "heading": "Questions councils ask",
+        "items": [
+          {
+            "_key": "c7a",
+            "_type": "faqItem",
+            "answer": "No. Recognition and agreement come first. We only publish once you're comfortable, and we'll share what's going out before it does.",
+            "question": "Will you publish a guidebook before we've agreed?"
+          },
+          {
+            "_key": "c7b",
+            "_type": "faqItem",
+            "answer": "Mostly time: a contact, a conversation or two, and a decision. We bring the volunteers, mapping and communication with climbers.\n\nThings like stairs, signage or track work are talked through site by site.",
+            "question": "What does this ask of council?"
+          },
+          {
+            "_key": "c7d",
+            "_type": "faqItem",
+            "answer": "Guidebook income from views and memberships goes back to Rock Climbing Queensland, to councils for looking after the areas, and to theCrag. Donations go to Crag Care Days, comps, giveaways and, in time, sponsoring climbers who help document our crags.\n\nTo be upfront: our founder also works with KAYA as a support engineer. If he helps a gym onto KAYA's indoor app, KAYA may pay him for that setup and support. That's separate from Acacia, and we'd rather you hear it from us.",
+            "question": "Does anyone make money from this?"
+          },
+          {
+            "_key": "c7c",
+            "_type": "faqItem",
+            "answer": "Cooper Flick, our founder and Rock Climbing Queensland's bouldering representative. Email hello@acaciaclimbing.org and we'll set up a time that suits.",
+            "question": "Who do we talk to?"
+          }
+        ]
+      },
+      {
+        "_key": "c8",
+        "_type": "ctaSection",
+        "body": "Tell us which site you look after and what's on your mind. We'll set up a time to talk, on site or off.",
+        "buttonHref": "mailto:hello@acaciaclimbing.org?subject=Council%20enquiry",
+        "buttonLabel": "Email us",
+        "heading": "Let's have a chat",
+        "label": "Manage land where people climb?",
+        "tone": "wattle"
+      }
+    ],
+    "seoDescription": "For councils and land managers: how Acacia Climbing Coalition works with you to recognise and look after outdoor climbing.",
+    "showHelpBand": false,
+    "slug": {
+      "_type": "slug",
+      "current": "work-with-us/councils"
+    },
+    "title": "Councils and land managers"
+  },
+  {
+    "_id": "page-work-gyms",
+    "_type": "page",
+    "copyStatus": "draft",
+    "eyebrow": "Gyms and clubs",
+    "heading": "From the wall to the *rock*",
+    "lede": "More of your members want to climb outside. We can help them do it well, and help keep open the places they'll climb.",
+    "sections": [
+      {
+        "_key": "g1",
+        "_type": "textSection",
+        "body": [
+          {
+            "_key": "g1a",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "g1a1",
+                "_type": "span",
+                "marks": [],
+                "text": "Heading outside is a big step. Climbers want to know where it's okay to go, what's allowed, and how to look after the place. Right now that information is patchy."
+              }
+            ],
+            "markDefs": [],
+            "style": "normal"
+          },
+          {
+            "_key": "g1b",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "g1b1",
+                "_type": "span",
+                "marks": [],
+                "text": "Every crag that stays open, with stairs, signs and a good guidebook, is somewhere your members can keep climbing for years."
+              }
+            ],
+            "markDefs": [],
+            "style": "normal"
+          }
+        ],
+        "heading": "Why it matters to you",
+        "quote": "\"Documented crag, protected crag.\"",
+        "quoteBody": "Our crag map shows where each spot is up to, and every documented crag goes on KAYA.",
+        "quoteTone": "lichen"
+      },
+      {
+        "_key": "g2",
+        "_type": "cardsSection",
+        "cards": [
+          {
+            "_key": "g2a",
+            "_type": "card",
+            "body": "Point members to the crag map and the latest updates, so they know where things stand before they go.",
+            "chipTone": "wattle",
+            "kicker": "Share",
+            "linkHref": "/progress",
+            "linkLabel": "See the crag map",
+            "title": "Share access info"
+          },
+          {
+            "_key": "g2b",
+            "_type": "card",
+            "body": "Have us in for a chat about access, how to climb outside respectfully, and how members can help.",
+            "chipTone": "lichen",
+            "kicker": "Talk",
+            "title": "Host a night",
+            "tone": "wattle"
+          },
+          {
+            "_key": "g2c",
+            "_type": "card",
+            "body": "Team up on a session or day trip that teaches the basics of climbing outdoors responsibly.",
+            "chipTone": "sandstone",
+            "kicker": "Outside",
+            "title": "Intro-to-outdoors"
+          },
+          {
+            "_key": "g2d",
+            "_type": "card",
+            "body": "KAYA also has an indoor app for logging climbs and managing sets, similar to TopLogger, all in the same app as the outdoor guides. Full disclosure: our founder works with KAYA as a support engineer, and KAYA may pay him to set up and support gyms that join.",
+            "chipTone": "paper",
+            "kicker": "Indoor app",
+            "title": "KAYA for your walls"
+          }
+        ],
+        "columns": 2,
+        "heading": "Ways to team up",
+        "tilted": true,
+        "titleStyle": "grotesk"
+      },
+      {
+        "_key": "g3",
+        "_type": "ctaSection",
+        "body": "Tell us a bit about your gym or club and what you have in mind.",
+        "buttonHref": "mailto:hello@acaciaclimbing.org?subject=Gym%20or%20club",
+        "buttonLabel": "Email us",
+        "heading": "Let's team up",
+        "label": "Run a gym or club?",
+        "tone": "wattle"
+      }
+    ],
+    "seoDescription": "How climbing gyms and clubs can work with Acacia Climbing Coalition to help climbers head outside responsibly.",
+    "showHelpBand": true,
+    "slug": {
+      "_type": "slug",
+      "current": "work-with-us/gyms"
+    },
+    "title": "Gyms and clubs"
+  },
+  {
+    "_id": "page-work-support",
+    "_type": "page",
+    "copyStatus": "draft",
+    "eyebrow": "Businesses and funders",
+    "heading": "Back the *work*",
+    "lede": "We're volunteer-run, so a bit of support goes a long way. Here's what it makes possible.",
+    "sections": [
+      {
+        "_key": "s1",
+        "_type": "cardsSection",
+        "cards": [
+          {
+            "_key": "s1a",
+            "_type": "card",
+            "body": "Travel, site visits, GPS and photos for each area.",
+            "chipTone": "wattle",
+            "kicker": "Fieldwork",
+            "title": "Mapping crags"
+          },
+          {
+            "_key": "s1b",
+            "_type": "card",
+            "body": "Signage, track materials and clean-up days.",
+            "chipTone": "lichen",
+            "kicker": "On the ground",
+            "title": "Signs and tracks"
+          },
+          {
+            "_key": "s1c",
+            "_type": "card",
+            "body": "Governance, insurance and a proper structure.",
+            "chipTone": "sandstone",
+            "kicker": "Set-up",
+            "title": "Doing it properly"
+          },
+          {
+            "_key": "s1d",
+            "_type": "card",
+            "body": "Helping gym climbers head outside responsibly.",
+            "chipTone": "paper",
+            "kicker": "Education",
+            "title": "Climbing well"
+          }
+        ],
+        "columns": 4,
+        "heading": "What support makes possible",
+        "titleStyle": "grotesk"
+      },
+      {
+        "_key": "s4",
+        "_type": "cardsSection",
+        "cards": [
+          {
+            "_key": "s4a",
+            "_type": "card",
+            "anchor": "donations",
+            "body": "Crag Care Days, comps and giveaways, and, once we have the backing, sponsoring climbers who help document and share our crags, including free KAYA memberships. We're not here to push anyone into paid memberships.",
+            "chipTone": "wattle",
+            "kicker": "Donations",
+            "title": "Back into climbing"
+          },
+          {
+            "_key": "s4b",
+            "_type": "card",
+            "anchor": "guidebooks",
+            "body": "Once published, guidebooks earn from views and memberships. That goes back to Rock Climbing Queensland, to councils for ongoing care of the areas, and to theCrag.",
+            "chipTone": "lichen",
+            "kicker": "Guidebook income",
+            "title": "Back to the land"
+          },
+          {
+            "_key": "s4c",
+            "_type": "card",
+            "anchor": "disclosure",
+            "body": "Cooper also works with KAYA as a support engineer. There's no gym arrangement yet, but if he helps a gym onto KAYA's indoor app, KAYA may pay him for the setup and ongoing support. That's separate from Acacia.",
+            "chipTone": "sandstone",
+            "kicker": "Full disclosure",
+            "title": "Our founder and KAYA",
+            "tone": "sandstone"
+          }
+        ],
+        "columns": 3,
+        "heading": "Where the money goes",
+        "intro": "We'd rather be completely clear about this from the start.",
+        "titleStyle": "grotesk"
+      },
+      {
+        "_key": "s2",
+        "_type": "textSection",
+        "body": [
+          {
+            "_key": "s2a",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "s2a1",
+                "_type": "span",
+                "marks": [],
+                "text": "Everything supported gets reported in our public updates, so you can see where it went."
+              }
+            ],
+            "markDefs": [],
+            "style": "normal"
+          },
+          {
+            "_key": "s2b",
+            "_type": "block",
+            "children": [
+              {
+                "_key": "s2b1",
+                "_type": "span",
+                "marks": [],
+                "text": "We're not a registered charity yet, so donations aren't tax-deductible for now. If that changes, we'll say so here."
+              }
+            ],
+            "markDefs": [],
+            "style": "normal"
+          }
+        ],
+        "heading": "Honest about it",
+        "linkHref": "/updates",
+        "linkLabel": "See our updates"
+      },
+      {
+        "_key": "s3",
+        "_type": "ctaSection",
+        "body": "Tell us what you'd like to support and we'll put together the details.",
+        "buttonHref": "mailto:hello@acaciaclimbing.org?subject=Supporting%20Acacia",
+        "buttonLabel": "Email us",
+        "heading": "Let's talk about it",
+        "label": "Business, grant body or funder?",
+        "tone": "sandstone"
+      }
+    ],
+    "seoDescription": "How businesses, grant bodies and funders can support Acacia Climbing Coalition's work keeping Australian crags open.",
+    "showHelpBand": true,
+    "slug": {
+      "_type": "slug",
+      "current": "work-with-us/support"
+    },
+    "title": "Businesses and funders"
   }
 ]
