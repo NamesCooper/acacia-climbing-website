@@ -70,6 +70,30 @@
       :cta="cta(s.buttonLabel, s.buttonHref)"
     />
 
+    <SectionImageText
+      v-else-if="s._type === 'imageTextSection'"
+      :lead="s.label"
+      :title="plain(s.heading)"
+      :paragraphs="blocksToParagraphs(s.body)"
+      :image="s.image ? { src: sanityImageUrl(s.image), alt: s.image.alt, caption: s.image.caption } : undefined"
+      :image-side="clean(s.imageSide) ?? 'left'"
+      :cta="cta(s.linkLabel, s.linkHref)"
+    />
+
+    <SectionFacts
+      v-else-if="s._type === 'factsSection'"
+      :lead="s.label"
+      :title="plain(s.heading)"
+      :note="s.note"
+      :facts="(s.facts ?? []).map((f: any) => ({ value: f.value, label: f.label, tone: clean(f.tone) }))"
+    />
+
+    <SectionFaq v-else-if="s._type === 'faqSection'" :lead="s.label" :title="plain(s.heading)" :items="s.items ?? []" />
+
+    <SectionLatestUpdates v-else-if="s._type === 'updatesSection'" :lead="s.label" :title="plain(s.heading)" :count="s.count ?? 3" />
+
+    <SectionVideo v-else-if="s._type === 'videoSection'" :lead="s.label" :title="plain(s.heading)" :url="clean(s.url)" :caption="s.caption" />
+
     <SectionCards
       v-else-if="s._type === 'timelineSection'"
       :lead="s.label"
@@ -93,6 +117,7 @@
 import { stegaClean } from '@sanity/client/stega'
 import type { CardItem, Cta } from '~/types/content'
 import { blocksToParagraphs } from '~/composables/usePage'
+import { sanityImageUrl } from '~/composables/sanityImage'
 
 defineProps<{ sections: Array<{ _key: string; _type: string; [field: string]: any }> }>()
 

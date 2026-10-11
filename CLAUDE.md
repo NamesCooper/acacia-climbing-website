@@ -31,7 +31,8 @@ ACC operates under the ACAQ (Australian Climbing Association Queensland) umbrell
   - `components/ui/` small bricks: `UiButton`, `UiChip`, `UiCard`, `UiRisoHeading`, `UiSectionTitle`, `UiHalftone`, `UiSparkle`, `UiWordmark`
   - `components/site/` the frame on every page: `SiteNav`, `SiteFooter` (includes the help ask), `SitePageHeader`
   - `components/home/` homepage-only sections: `HomeHero`, `HomeMarquee`, `HomeAboutTabs`, `HomeCragCards`
-  - `components/section/` reusable inner-page sections: `SectionSplit`, `SectionSteps`, `SectionCards`, `SectionStatement`, `SectionCallout`, `SectionProse`
+  - `components/section/` reusable inner-page sections: `SectionSplit`, `SectionSteps`, `SectionCards`, `SectionStatement`, `SectionCallout`, `SectionProse`, `SectionImageText`, `SectionFacts`, `SectionFaq`, `SectionLatestUpdates`, `SectionVideo`
+- `/blocks` is a hidden gallery of every Studio block with example words; its screenshots are the Studio's "Add item" thumbnails (`studio/static/blocks/*.jpg`)
 - `types/content.ts` holds the shared shapes (`Cta`, `CardItem`, `ProseBlock`) the sections take
 - `utils/cragStatus.ts` is the single source for status labels and colours (homepage cards and map)
 - Pages: `/progress` (crag map) and `/updates` are Vue files. Every other page (home, about, get-involved, privacy, anything new) is a Studio Page: `pages/index.vue` (slug `home`) and `pages/[...slug].vue` load it via `usePage()` and draw its blocks with `components/SanitySections.vue`. To change page words or layout, edit the Page in the Studio, not Vue

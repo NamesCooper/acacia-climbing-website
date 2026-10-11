@@ -91,6 +91,10 @@ Shared shapes (`Cta`, `CardItem`, `ProseBlock`) live in `types/content.ts`.
 </template>
 ```
 
+## See every block
+
+acaciaclimbing.org/blocks shows every block with example words (hidden from Google, not linked from the site). The Studio's "Add item" menu shows a picture of each block, taken from that page and saved in `studio/static/blocks/`. When a block's look changes, re-take its picture.
+
 ## How this maps to Sanity
 
 Home, About, Get involved and Privacy are Studio Pages. Each Studio block draws with one component:
@@ -101,6 +105,11 @@ Home, About, Get involved and Privacy are Studio Pages. Each Studio block draws 
 | Scrolling green band | `HomeMarquee` |
 | Tabs panel | `HomeAboutTabs` |
 | Crag cards ("Where it's at") | `HomeCragCards` |
+| Photo and text | `SectionImageText` |
+| Big numbers | `SectionFacts` |
+| Questions (FAQ) | `SectionFaq` |
+| Latest updates | `SectionLatestUpdates` |
+| Video | `SectionVideo` |
 | Text (with optional quote card) | `SectionSplit` |
 | Cards | `SectionCards` |
 | Numbered steps | `SectionSteps` |

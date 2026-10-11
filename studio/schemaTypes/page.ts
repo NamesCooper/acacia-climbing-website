@@ -54,7 +54,22 @@ export const page = defineType({
       validation: (r) => r.required(),
     }),
     defineField({ name: 'lede', title: 'Intro line', type: 'text', rows: 3, group: 'header' }),
-    defineField({ name: 'sections', type: 'array', group: 'sections', of: sectionMembers }),
+    defineField({
+      name: 'sections',
+      type: 'array',
+      group: 'sections',
+      of: sectionMembers,
+      // "Add item" opens a grid of pictures of each block (images live in studio/static/blocks)
+      options: {
+        insertMenu: {
+          filter: 'auto',
+          views: [
+            { name: 'grid', previewImageUrl: (type: string) => `/static/blocks/${type}.jpg` },
+            { name: 'list' },
+          ],
+        },
+      },
+    }),
   ],
   preview: {
     select: { title: 'title', slug: 'slug.current', status: 'copyStatus' },

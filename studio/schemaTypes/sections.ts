@@ -330,6 +330,132 @@ export const cragRegisterSection = defineType({
   preview: { prepare: () => ({ title: "Where it's at", subtitle: 'Live crag cards' }) },
 })
 
+// ---------- Newer blocks ----------
+
+export const faqSection = defineType({
+  name: 'faqSection',
+  title: 'Questions (FAQ)',
+  type: 'object',
+  fields: [
+    labelField,
+    headingField(),
+    defineField({
+      name: 'items',
+      title: 'Questions',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'object',
+          name: 'faqItem',
+          fields: [
+            defineField({ name: 'question', type: 'string', validation: (r) => r.required() }),
+            defineField({ name: 'answer', type: 'text', rows: 4, description: 'Leave a blank line to start a new paragraph' }),
+          ],
+          preview: { select: { title: 'question', subtitle: 'answer' } },
+        }),
+      ],
+    }),
+  ],
+  preview: { select: { title: 'heading' }, prepare: ({ title }) => ({ title: title || 'Questions', subtitle: 'Questions (FAQ)' }) },
+})
+
+export const factsSection = defineType({
+  name: 'factsSection',
+  title: 'Big numbers',
+  type: 'object',
+  description: 'Only use real numbers you could back up to a council officer.',
+  fields: [
+    labelField,
+    headingField(),
+    defineField({
+      name: 'facts',
+      title: 'Numbers',
+      type: 'array',
+      validation: (r) => r.max(4),
+      of: [
+        defineArrayMember({
+          type: 'object',
+          name: 'fact',
+          fields: [
+            defineField({ name: 'value', title: 'Number', description: 'e.g. "5" or "1st"', type: 'string', validation: (r) => r.required() }),
+            defineField({ name: 'label', title: 'What it means', type: 'string', validation: (r) => r.required() }),
+            defineField({
+              name: 'tone',
+              title: 'Colour',
+              type: 'string',
+              options: radio([
+                { title: 'Wattle', value: 'wattle' },
+                { title: 'Lichen', value: 'lichen' },
+                { title: 'Sandstone', value: 'sandstone' },
+                { title: 'Paper', value: 'paper' },
+              ]),
+            }),
+          ],
+          preview: { select: { title: 'value', subtitle: 'label' } },
+        }),
+      ],
+    }),
+    defineField({ name: 'note', title: 'Small note underneath', type: 'string', description: 'e.g. "As of October 2026"' }),
+  ],
+  preview: { select: { title: 'heading' }, prepare: ({ title }) => ({ title: title || 'Big numbers', subtitle: 'Big numbers' }) },
+})
+
+export const updatesSection = defineType({
+  name: 'updatesSection',
+  title: 'Latest updates',
+  type: 'object',
+  description: 'Shows the newest posts from Updates automatically.',
+  fields: [
+    labelField,
+    headingField('heading', 'Heading (optional)'),
+    defineField({
+      name: 'count',
+      title: 'How many',
+      type: 'number',
+      initialValue: 3,
+      options: { list: [{ title: '2', value: 2 }, { title: '3', value: 3 }, { title: '6', value: 6 }], layout: 'radio', direction: 'horizontal' },
+    }),
+  ],
+  preview: { select: { title: 'heading' }, prepare: ({ title }) => ({ title: title || 'Latest updates', subtitle: 'Latest updates (automatic)' }) },
+})
+
+export const imageTextSection = defineType({
+  name: 'imageTextSection',
+  title: 'Photo and text',
+  type: 'object',
+  fields: [
+    labelField,
+    headingField(),
+    richText(),
+    defineField({
+      name: 'image',
+      title: 'Photo',
+      type: 'image',
+      options: { hotspot: true },
+      fields: [
+        defineField({ name: 'alt', title: 'Describe the photo', description: 'For people using screen readers, e.g. "Volunteers carrying a step up the Tooheys track"', type: 'string' }),
+        defineField({ name: 'caption', type: 'string' }),
+      ],
+    }),
+    defineField({ name: 'imageSide', title: 'Photo on the', type: 'string', initialValue: 'left', options: radio([{ title: 'Left', value: 'left' }, { title: 'Right', value: 'right' }]) }),
+    ...linkFields(),
+  ],
+  preview: { select: { title: 'heading', media: 'image' }, prepare: ({ title, media }) => ({ title: title || 'Photo and text', subtitle: 'Photo and text', media }) },
+})
+
+export const videoSection = defineType({
+  name: 'videoSection',
+  title: 'Video',
+  type: 'object',
+  fields: [
+    labelField,
+    headingField('heading', 'Heading (optional)'),
+    defineField({ name: 'url', title: 'YouTube or Vimeo link', type: 'url', validation: (r) => r.required() }),
+    defineField({ name: 'caption', type: 'string' }),
+  ],
+  preview: { select: { title: 'heading', subtitle: 'url' }, prepare: ({ title, subtitle }) => ({ title: title || 'Video', subtitle }) },
+})
+
 export const sectionTypes = [
   heroSection,
   marqueeSection,
@@ -344,6 +470,11 @@ export const sectionTypes = [
   peopleSection,
   ctaSection,
   cragRegisterSection,
+  faqSection,
+  factsSection,
+  updatesSection,
+  imageTextSection,
+  videoSection,
 ]
 export const sectionMembers = [
   'heroSection',
@@ -358,4 +489,9 @@ export const sectionMembers = [
   'peopleSection',
   'ctaSection',
   'cragRegisterSection',
+  'imageTextSection',
+  'factsSection',
+  'faqSection',
+  'updatesSection',
+  'videoSection',
 ].map((type) => defineArrayMember({ type }))
