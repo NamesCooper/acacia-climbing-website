@@ -48,7 +48,7 @@ const home = {
     s('marqueeSection', { colour: 'moss', items: ['Australian bouldering', 'starting in SEQ', 'climbers looking after crags', '5 crags and counting', "come say g'day"] }),
     s('tabsSection', {
       tabs: [
-        { _type: 'tab', _key: key(), label: 'What', heading: 'What is ACC?', body: blocks('A bunch of climbers working to get outdoor bouldering **formally recognised by councils** around Australia, so crags stay open and get the good stuff: stairs, signs and proper tracks. In Queensland we work under ACAQ.') },
+        { _type: 'tab', _key: key(), label: 'What', heading: 'What is ACC?', body: blocks('A bunch of climbers working to get outdoor bouldering **formally recognised by councils** around Australia, so crags stay open and get the good stuff: stairs, signs and proper tracks. In Queensland we work under Rock Climbing Queensland (RCQ, formerly ACAQ).') },
         { _type: 'tab', _key: key(), label: 'How', heading: 'How does it work?', body: blocks('Research the area, chat with council and rangers, map every boulder on **KAYA**, sort out access, then get it signed off. Documented crag, protected crag.') },
         { _type: 'tab', _key: key(), label: 'Where', heading: 'Where are we?', body: blocks("We're starting in South East Queensland with **Tooheys, White Rock, Plunketts, Cedar Creek and Passchendaele**. The long game is every state. Got a spot anywhere in Australia that needs some love? Tell us about it.") },
       ],

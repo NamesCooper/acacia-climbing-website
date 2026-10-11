@@ -7,7 +7,7 @@ The website for Acacia Climbing Coalition (ACC), an Australian climbing access o
 - Climbers and volunteers who need to feel the mission and find a clear pathway to contribute
 - Council officers, land managers, and grant bodies who need to see a credible, organised, professional counterparty
 
-ACC operates under the ACAQ (Australian Climbing Association Queensland) umbrella and uses KAYA for digital guidebook hosting. The long-term goal is a funded non-profit with national scope.
+ACC operates under the RCQ (Rock Climbing Queensland, formerly ACAQ) umbrella and uses KAYA for digital guidebook hosting. Cooper also works with KAYA as a support engineer and earns from gyms that sign up to KAYA's indoor app; the site discloses this wherever gyms or money come up. Guidebook income goes back to RCQ and councils; donations go to Crag Care Days, comps, guidebook authors and free KAYA memberships. Be fair to existing guidebooks and theCrag: describe the problem (out of date, hard to use, areas kept quiet), never knock them by name The long-term goal is a funded non-profit with national scope.
 
 ## Tech stack
 

@@ -68,7 +68,7 @@
                   {
                     "_type": "span",
                     "_key": "k0006",
-                    "text": " around Australia, so crags stay open and get the good stuff: stairs, signs and proper tracks. In Queensland we work under ACAQ.",
+                    "text": " around Australia, so crags stay open and get the good stuff: stairs, signs and proper tracks. In Queensland we work under Rock Climbing Queensland (RCQ, formerly ACAQ).",
                     "marks": []
                   }
                 ]
@@ -281,7 +281,7 @@
             "_type": "card",
             "_key": "k000u",
             "title": "Who's behind it",
-            "body": "Right now Acacia is a small volunteer crew, coordinated by Cooper, who is also the bouldering representative for ACAQ, Queensland's peak climbing access body. Everything here gets done in spare hours, with a lot of help from local climbers.",
+            "body": "Right now Acacia is a small volunteer crew, coordinated by Cooper, who is also the bouldering representative for Rock Climbing Queensland (RCQ, formerly ACAQ). Everything here gets done in spare hours, with a lot of help from local climbers.",
             "linkLabel": "Come be part of it",
             "linkHref": "/get-involved"
           },
@@ -294,8 +294,8 @@
               {
                 "_type": "cardItem",
                 "_key": "k000v",
-                "title": "ACAQ",
-                "body": "Queensland's peak climbing access body. Our Queensland work happens under their umbrella."
+                "title": "RCQ",
+                "body": "Rock Climbing Queensland (formerly ACAQ), the state's peak climbing body. Our Queensland work happens under their umbrella."
               },
               {
                 "_type": "cardItem",
