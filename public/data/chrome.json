@@ -1,0 +1,145 @@
+[
+  {
+    "_id": "navigation",
+    "_type": "navigation",
+    "links": [
+      {
+        "_type": "navLink",
+        "_key": "c000",
+        "label": "The crags",
+        "link": "/progress"
+      },
+      {
+        "_type": "navLink",
+        "_key": "c001",
+        "label": "Updates",
+        "link": "/updates"
+      },
+      {
+        "_type": "navLink",
+        "_key": "c002",
+        "label": "About",
+        "link": "/about"
+      }
+    ],
+    "buttonLabel": "Lend a hand",
+    "buttonLink": "/get-involved"
+  },
+  {
+    "_id": "helpBand",
+    "_type": "helpBand",
+    "heading": "Got an hour?",
+    "accent": "We'd love the help.",
+    "intro": "Pick one and flick us an email. We'll take it from there.",
+    "pills": [
+      {
+        "_type": "pill",
+        "_key": "c003",
+        "label": "Clean-up days",
+        "link": "mailto:hello@acaciaclimbing.org?subject=Keen%20for%20clean-up%20days",
+        "colour": "wattle"
+      },
+      {
+        "_type": "pill",
+        "_key": "c004",
+        "label": "Track work",
+        "link": "mailto:hello@acaciaclimbing.org?subject=Keen%20to%20help%20with%20track%20work",
+        "colour": "lichen"
+      },
+      {
+        "_type": "pill",
+        "_key": "c005",
+        "label": "Writing to council",
+        "link": "mailto:hello@acaciaclimbing.org?subject=Keen%20to%20help%20with%20council%20letters",
+        "colour": "sandstone"
+      },
+      {
+        "_type": "pill",
+        "_key": "c006",
+        "label": "Telling us about your local",
+        "link": "mailto:hello@acaciaclimbing.org?subject=Crag%20report",
+        "colour": "paper"
+      }
+    ],
+    "linkLabel": "More ways to help",
+    "linkHref": "/get-involved"
+  },
+  {
+    "_id": "footer",
+    "_type": "footer",
+    "tagline": "Made by climbers, for the places we love",
+    "columns": [
+      {
+        "_type": "footerColumn",
+        "_key": "c007",
+        "heading": "Explore",
+        "links": [
+          {
+            "_type": "navLink",
+            "_key": "c008",
+            "label": "The crag map",
+            "link": "/progress"
+          },
+          {
+            "_type": "navLink",
+            "_key": "c009",
+            "label": "Updates",
+            "link": "/updates"
+          },
+          {
+            "_type": "navLink",
+            "_key": "c010",
+            "label": "About us",
+            "link": "/about"
+          }
+        ]
+      },
+      {
+        "_type": "footerColumn",
+        "_key": "c011",
+        "heading": "Help out",
+        "links": [
+          {
+            "_type": "navLink",
+            "_key": "c012",
+            "label": "Ways to help",
+            "link": "/get-involved"
+          },
+          {
+            "_type": "navLink",
+            "_key": "c013",
+            "label": "Report a crag issue",
+            "link": "mailto:hello@acaciaclimbing.org?subject=Crag%20report"
+          },
+          {
+            "_type": "navLink",
+            "_key": "c014",
+            "label": "Donate",
+            "link": "/get-involved#donate"
+          }
+        ]
+      },
+      {
+        "_type": "footerColumn",
+        "_key": "c015",
+        "heading": "Say g'day",
+        "links": [
+          {
+            "_type": "navLink",
+            "_key": "c016",
+            "label": "hello@acaciaclimbing.org",
+            "link": "mailto:hello@acaciaclimbing.org"
+          },
+          {
+            "_type": "navLink",
+            "_key": "c017",
+            "label": "Privacy and terms",
+            "link": "/privacy"
+          }
+        ]
+      }
+    ],
+    "smallPrint": "Acacia Climbing Pty Ltd · ABN 38 237 542 815",
+    "smallPrintRight": "For climbers across Australia · Starting in SEQ · Guidebooks on KAYA"
+  }
+]

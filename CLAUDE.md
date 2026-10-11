@@ -20,12 +20,12 @@ ACC operates under the ACAQ (Australian Climbing Association Queensland) umbrell
 ## Where things live
 
 - `studio/schemaTypes/` defines what can be edited in Sanity (page and its blocks in `sections.ts`, crag, milestone, update, siteSettings)
-- `composables/useCragData.ts`, `useUpdates.ts` and `usePage.ts` are the only places the site reads content. They run at build time
+- `composables/useCragData.ts`, `useUpdates.ts`, `usePage.ts` and `useSiteChrome.ts` are the only places the site reads content. They run at build time
 - `public/data/*.json` is a saved copy of the crag data. The site falls back to it if Sanity is unreachable during a build, so keep it roughly in sync
 - `scripts/json-to-ndjson.mjs` is the one-off migration from the legacy JSON into Sanity
 - `.mcp.json` connects Claude to Sanity (read and edit content, deploy schema)
 - `.claude/agents/acc-helper.md` and `.claude/skills/` are Cooper's helper and its shortcuts (`/whats-next`, `/log-update`, `/check-site`)
-- `layouts/default.vue` wraps every page with the nav, the "Got an hour?" band and the footer. Hide the band on a page with `definePageMeta({ prefooter: false })`
+- `layouts/default.vue` wraps every page with the nav, the "Got an hour?" band and the footer. Their words and links come from the Studio's Navigation, Footer and "Got an hour?" band documents (`studio/schemaTypes/chrome.ts`) via `composables/useSiteChrome.ts`, with `public/data/chrome.json` as the backup copy. Hide the band on a Vue page with `definePageMeta({ prefooter: false })`; Studio pages have a switch
 - Components are split into four folders (full list in `docs/COMPONENTS.md`):
   - `components/ui/` small bricks: `UiButton`, `UiChip`, `UiCard`, `UiRisoHeading`, `UiSectionTitle`, `UiHalftone`, `UiSparkle`, `UiWordmark`
   - `components/site/` the frame on every page: `SiteNav`, `SiteFooter`, `SiteHelpBand`, `SitePageHeader`

@@ -13,6 +13,13 @@ export const structure: StructureResolver = (S) =>
       S.documentTypeListItem('crag').title('Crags'),
       S.documentTypeListItem('update').title('Updates'),
       S.divider(),
+      // Shows on every page
+      ...[
+        ['navigation', 'Navigation'],
+        ['helpBand', '"Got an hour?" band'],
+        ['footer', 'Footer'],
+      ].map(([id, title]) => S.listItem().title(title).id(id).child(S.document().schemaType(id).documentId(id))),
+      S.divider(),
       S.listItem()
         .title('Site settings')
         .id('siteSettings')

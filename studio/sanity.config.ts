@@ -4,6 +4,7 @@ import { visionTool } from '@sanity/vision'
 import { schemaTypes } from './schemaTypes'
 import { structure } from './structure'
 import { presentation } from './presentation'
+import { SINGLETONS } from './schemaTypes/chrome'
 
 // The project ID is not a secret. It is set once you run `npx sanity init` (see README).
 const projectId = process.env.SANITY_STUDIO_PROJECT_ID || 'qxrv033n'
@@ -17,7 +18,7 @@ export default defineConfig({
   plugins: [structureTool({ structure }), presentation, visionTool()],
   schema: {
     types: schemaTypes,
-    // Site settings is a single document, so hide it from the "create new" menu
-    templates: (templates) => templates.filter(({ schemaType }) => schemaType !== 'siteSettings'),
+    // Settings, navigation, footer and the help band are single documents, so hide them from "create new"
+    templates: (templates) => templates.filter(({ schemaType }) => !SINGLETONS.includes(schemaType)),
   },
 })

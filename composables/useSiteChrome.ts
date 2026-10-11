@@ -1,0 +1,38 @@
+import { stegaClean } from '@sanity/client/stega'
+
+// Navigation, footer and the "Got an hour?" band, edited in the Studio sidebar.
+// Every component that calls this shares one fetch (same key), baked in at build time.
+
+export interface ChromeLink { _key?: string; label: string; link: string }
+export interface SiteChrome {
+  nav: { links?: ChromeLink[]; buttonLabel?: string; buttonLink?: string } | null
+  footer: { tagline?: string; columns?: { _key?: string; heading: string; links?: ChromeLink[] }[]; smallPrint?: string; smallPrintRight?: string } | null
+  helpBand: { heading?: string; accent?: string; intro?: string; pills?: (ChromeLink & { colour?: string })[]; linkLabel?: string; linkHref?: string } | null
+}
+
+async function fromSaved(): Promise<SiteChrome> {
+  const docs = await import('~/public/data/chrome.json').then((m) => m.default as any[])
+  const byId = (id: string) => docs.find((d) => d._id === id) ?? null
+  return { nav: byId('navigation'), footer: byId('footer'), helpBand: byId('helpBand') }
+}
+
+export function useSiteChrome() {
+  return useAsyncData<SiteChrome>('site-chrome', async () => {
+    try {
+      const live = await sanityFetch<SiteChrome>('chrome')
+      // Fill any missing piece from the saved copy, so the site never loses its nav or footer
+      const saved = await fromSaved()
+      return { nav: live?.nav ?? saved.nav, footer: live?.footer ?? saved.footer, helpBand: live?.helpBand ?? saved.helpBand }
+    } catch (err) {
+      console.warn('[chrome] Could not reach Sanity, using saved nav and footer:', err)
+      return fromSaved()
+    }
+  })
+}
+
+// A link from the Studio: "/..." stays inside the site, anything else (mailto:, https:) is a normal link.
+// stegaClean strips the visual editor's invisible markers so the address works.
+export function chromeLink(link?: string) {
+  const l = stegaClean(link ?? '')
+  return l.startsWith('/') ? { to: l } : { href: l }
+}

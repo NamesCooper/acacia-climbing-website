@@ -27,6 +27,10 @@ export const presentation = presentationTool({
         ],
       }),
       update: defineLocations({ locations: [{ title: 'Updates', href: '/updates' }] }),
+      // These show on every page; the homepage is a good place to see them
+      navigation: defineLocations({ locations: [{ title: 'Every page (top)', href: '/' }] }),
+      footer: defineLocations({ locations: [{ title: 'Every page (bottom)', href: '/' }] }),
+      helpBand: defineLocations({ locations: [{ title: 'Most pages (above the footer)', href: '/' }] }),
     },
   },
 })
