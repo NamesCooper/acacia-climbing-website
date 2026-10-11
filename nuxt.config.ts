@@ -31,6 +31,23 @@ export default defineNuxtConfig({
     },
   },
 
+  // Pages built in the Studio aren't linked from anywhere yet, so the crawler
+  // wouldn't find them. Ask Sanity for every page slug and bake each one in.
+  hooks: {
+    async 'nitro:config'(config) {
+      try {
+        const query = encodeURIComponent('*[_type == "page" && defined(slug.current) && slug.current != "home"].slug.current')
+        const res = await fetch(`https://qxrv033n.apicdn.sanity.io/v2025-10-01/data/query/production?query=${query}`)
+        const { result = [] } = (await res.json()) as { result?: string[] }
+        config.prerender ??= {}
+        config.prerender.routes = [...(config.prerender.routes ?? []), ...result.map((s) => `/${s}`)]
+        console.log(`[pages] Prerendering ${result.length} Studio page(s)`)
+      } catch (err) {
+        console.warn('[pages] Could not fetch Studio pages, skipping them this build:', err)
+      }
+    },
+  },
+
   app: {
     head: {
       htmlAttrs: { lang: 'en-AU' },

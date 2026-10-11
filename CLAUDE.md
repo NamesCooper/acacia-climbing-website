@@ -33,7 +33,7 @@ ACC operates under the ACAQ (Australian Climbing Association Queensland) umbrell
   - `components/section/` reusable inner-page sections: `SectionSplit`, `SectionSteps`, `SectionCards`, `SectionStatement`, `SectionCallout`, `SectionProse`
 - `types/content.ts` holds the shared shapes (`Cta`, `CardItem`, `ProseBlock`) the sections take
 - `utils/cragStatus.ts` is the single source for status labels and colours (homepage cards and map)
-- Pages: `/` home, `/progress` crag map, `/updates`, `/about`, `/get-involved`, `/privacy`
+- Pages: `/` home, `/progress` crag map, `/updates`, `/about`, `/get-involved`, `/privacy`. Any other address is a Studio page via `pages/[...slug].vue` + `components/SanitySections.vue`
 - `ROADMAP.md` is the running list of small next tasks
 
 ---

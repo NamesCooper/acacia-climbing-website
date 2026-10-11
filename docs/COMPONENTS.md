@@ -99,9 +99,13 @@ The Studio's "Page" type has section blocks. Each one draws with a section compo
 |----------------|-----------|
 | Text | `SectionSplit` |
 | Cards | `SectionCards` |
-| Timeline | `SectionSteps` |
+| Timeline | `SectionCards` (date as the chip) |
 | Call to action | `SectionCallout` |
-| People | `SectionCards` |
+| People | `SectionCards` (location as the chip) |
 | Crag register | `HomeCragCards` |
 
-New section type? Add a schema in `studio/schemaTypes/sections.ts`, a component in `components/section/`, and a line in the renderer.
+The renderer is `components/SanitySections.vue`. The catch-all `pages/[...slug].vue` shows any Studio page whose slug has no Vue file of its own, so code pages (About etc.) always win. `nuxt.config.ts` asks Sanity for every page slug at build time so each one is baked in.
+
+To make a page in the Studio: Pages → new → fill in title, web address (slug), heading and sections → Publish. The site rebuilds in a couple of minutes and the page is at acaciaclimbing.org/<slug>.
+
+New section type? Add a schema in `studio/schemaTypes/sections.ts`, a component in `components/section/` if no existing one fits, and a `v-else-if` in `SanitySections.vue`.
