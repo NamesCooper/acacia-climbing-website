@@ -46,21 +46,9 @@ const DEFAULT_LABELS: Record<string, string> = {
   scoping: 'Scoping',
 }
 
-const CRAG_QUERY = /* groq */ `
-*[_type == "crag" && defined(slug.current)]
-| order(select(status == "completed" => 0, status == "recognised" => 1, status == "progress" => 2, 3) asc, name asc) {
-  "id": slug.current,
-  name, subtitle, status, statusLabel, council, councilStatus, description,
-  problems, style, season, state, region, updatedAt, kayaUrl, areaGeoJson,
-  "lat": location.lat,
-  "lng": location.lng,
-  "milestones": milestones[]{ text, status }
-}`
-
 async function fromSanity(): Promise<CragData | null> {
-  const client = useSanity()
-  if (!client) return null
-  const rows = await client.fetch<any[]>(CRAG_QUERY)
+  const rows = await sanityFetch<any[]>('crags')
+  if (!rows) return null
   return {
     crags: rows.map(({ milestones, areaGeoJson, ...c }) => ({
       ...c,

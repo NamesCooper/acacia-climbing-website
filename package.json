@@ -7,11 +7,13 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "build:preview": "NUXT_PUBLIC_SANITY_PREVIEW=true nuxt build"
   },
   "dependencies": {
     "@portabletext/vue": "^2.0.0",
     "@sanity/client": "^8.9.0",
+    "@sanity/visual-editing": "^6.1.3",
     "leaflet": "^1.9.4",
     "nuxt": "^3.21.2",
     "vue": "^3.5.32",

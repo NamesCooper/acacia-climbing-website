@@ -1,0 +1,11 @@
+// The preview site: only used inside the Studio's "Visual editor" tab.
+// Built with `pnpm build:preview`, deployed with `npx wrangler deploy -c wrangler.preview.jsonc`.
+// Needs one secret set in Cloudflare: NUXT_SANITY_READ_TOKEN (a Sanity "Viewer" token).
+{
+  "name": "acaciaclimbing-preview",
+  "main": "./.output/server/index.mjs",
+  "compatibility_date": "2025-09-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": { "directory": "./.output/public", "binding": "ASSETS" },
+  "observability": { "enabled": true }
+}

@@ -37,3 +37,18 @@ The Sanity MCP (`.mcp.json`) lets Claude read and edit content directly. First r
 ## First-time setup
 
 See the "Get Sanity live" checklist in `ROADMAP.md`. Until a Sanity project ID is set, the site falls back to the old JSON files in `public/data`, so nothing breaks in the meantime.
+
+## Visual editor (Studio → "Visual editor" tab)
+
+The same code builds two sites:
+
+| | Live site | Preview site |
+|---|---|---|
+| Worker | `acaciaclimbing` | `acaciaclimbing-preview` |
+| Build | `pnpm run build` (static) | `pnpm run build:preview` (small server) |
+| Deploy | `npx wrangler deploy` | `npx wrangler deploy -c wrangler.preview.jsonc` |
+| Shows | Published content, rebuilt on publish | Drafts, live, with click-to-edit |
+
+The preview site needs one secret in Cloudflare, `NUXT_SANITY_READ_TOKEN`: a Sanity API token with **Viewer** rights (sanity.io/manage → API → Tokens). It never reaches the browser; `server/api/preview-query.post.ts` uses it and only runs the named queries in `utils/queries.ts`.
+
+Click-to-edit only works on words that come from Sanity (Studio pages, updates). Text written in Vue files isn't editable there.

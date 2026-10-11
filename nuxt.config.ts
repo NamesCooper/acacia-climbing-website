@@ -1,9 +1,17 @@
 import tailwindcss from '@tailwindcss/vite'
 
+// The same code builds two sites:
+//  - the live site (default): plain static pages, published content only
+//  - the preview site (`pnpm build:preview`): a small server on Cloudflare that shows
+//    drafts and click-to-edit overlays inside the Studio's Presentation tab
+const preview = process.env.NUXT_PUBLIC_SANITY_PREVIEW === 'true'
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
+  // Click-to-edit overlays are heavy, so only the preview site loads them
+  plugins: preview ? ['~/preview/visual-editing.client.ts'] : [],
   vite: {
     plugins: [tailwindcss()],
   },
@@ -11,11 +19,15 @@ export default defineNuxtConfig({
   // Public values available in the browser and at build time.
   // Override with NUXT_PUBLIC_SANITY_PROJECT_ID etc. in a local .env if needed.
   runtimeConfig: {
+    // Private: only on the preview server. Set as a secret in Cloudflare (NUXT_SANITY_READ_TOKEN).
+    sanityReadToken: '',
     public: {
       sanity: {
         projectId: 'qxrv033n',
         dataset: 'production',
         apiVersion: '2025-10-01',
+        preview,
+        studioUrl: 'https://acaciaclimbing.sanity.studio',
       },
     },
   },
@@ -23,18 +35,21 @@ export default defineNuxtConfig({
   // Always build plain static pages, even on Cloudflare (which would otherwise
   // auto-pick its server preset). Content from Sanity is baked in at build time,
   // and wrangler.jsonc serves the .output/public folder.
-  nitro: {
-    preset: 'static',
-    prerender: {
-      crawlLinks: true,
-      routes: ['/', '/progress', '/updates', '/about', '/get-involved', '/privacy'],
-    },
-  },
+  nitro: preview
+    ? { preset: 'cloudflare_module' }
+    : {
+        preset: 'static',
+        prerender: {
+          crawlLinks: true,
+          routes: ['/', '/progress', '/updates', '/about', '/get-involved', '/privacy'],
+        },
+      },
 
   // Pages built in the Studio aren't linked from anywhere yet, so the crawler
   // wouldn't find them. Ask Sanity for every page slug and bake each one in.
   hooks: {
     async 'nitro:config'(config) {
+      if (preview) return
       try {
         const query = encodeURIComponent('*[_type == "page" && defined(slug.current) && slug.current != "home"].slug.current')
         const res = await fetch(`https://qxrv033n.apicdn.sanity.io/v2025-10-01/data/query/production?query=${query}`)
@@ -57,6 +72,8 @@ export default defineNuxtConfig({
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         { name: 'theme-color', content: '#203022' },
         { property: 'og:site_name', content: 'Acacia Climbing Coalition' },
+        // Keep the preview site out of Google
+        ...(preview ? [{ name: 'robots', content: 'noindex, nofollow' }] : []),
       ],
       link: [{ rel: 'icon', type: 'image/png', href: '/brand/sprig-gold.png' }],
     },

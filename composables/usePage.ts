@@ -11,18 +11,10 @@ export interface SanityPage {
   sections: Array<{ _key: string; _type: string; [field: string]: any }>
 }
 
-const PAGE_QUERY = /* groq */ `
-*[_type == "page" && slug.current == $slug][0] {
-  title, "slug": slug.current, seoDescription, eyebrow, heading, lede,
-  "sections": coalesce(sections, [])
-}`
-
 export function usePage(slug: string) {
   return useAsyncData<SanityPage | null>(`page:${slug}`, async () => {
-    const client = useSanity()
-    if (!client) return null
     try {
-      return await client.fetch<SanityPage | null>(PAGE_QUERY, { slug })
+      return await sanityFetch<SanityPage>('page', { slug })
     } catch (err) {
       console.warn(`[page] Could not reach Sanity for "${slug}":`, err)
       return null
@@ -32,9 +24,13 @@ export function usePage(slug: string) {
 
 // Headings in the Studio mark the italic bit with *asterisks*, e.g. "Every bit *helps*".
 // SitePageHeader wants that as { title: "Every bit", accent: "helps" }.
+// In preview, text carries invisible click-to-edit markers at the end, so set those
+// aside while splitting and stick them back on.
 export function splitHeading(heading = '') {
-  const m = heading.match(/^(.*?)\s*\*([^*]+)\*\s*$/)
-  return m ? { title: m[1], accent: m[2] } : { title: heading.replaceAll('*', ''), accent: undefined }
+  const marker = heading.match(/[\u200b-\u200d\u2060-\u2064\ufeff]+$/)?.[0] ?? ''
+  const text = heading.slice(0, heading.length - marker.length)
+  const m = text.match(/^(.*?)\s*\*([^*]+)\*\s*$/)
+  return m ? { title: m[1] + marker, accent: m[2] } : { title: text.replaceAll('*', '') + marker, accent: undefined }
 }
 
 // Rich text from the Studio, flattened to plain paragraphs for the section components.

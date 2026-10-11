@@ -34,6 +34,7 @@ ACC operates under the ACAQ (Australian Climbing Association Queensland) umbrell
 - `types/content.ts` holds the shared shapes (`Cta`, `CardItem`, `ProseBlock`) the sections take
 - `utils/cragStatus.ts` is the single source for status labels and colours (homepage cards and map)
 - Pages: `/` home, `/progress` crag map, `/updates`, `/about`, `/get-involved`, `/privacy`. Any other address is a Studio page via `pages/[...slug].vue` + `components/SanitySections.vue`
+- The Studio's "Visual editor" tab shows a second, preview copy of the site (`pnpm build:preview`, `wrangler.preview.jsonc`, `preview/`, `server/api/preview-query.post.ts`). All queries live in `utils/queries.ts` and run through `sanityFetch()`. See README
 - `ROADMAP.md` is the running list of small next tasks
 
 ---

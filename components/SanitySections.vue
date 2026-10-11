@@ -49,6 +49,7 @@
 
 <script setup lang="ts">
 import type { Cta } from '~/types/content'
+import { stegaClean } from '@sanity/client/stega'
 import { blocksToParagraphs } from '~/composables/usePage'
 
 defineProps<{ sections: Array<{ _key: string; _type: string; [field: string]: any }> }>()
@@ -58,6 +59,7 @@ const plain = (text?: string) => (text ?? '').replaceAll('*', '')
 // Links starting with "/" stay inside the site, everything else (mailto:, https:) is a plain link
 function cta(label?: string, link?: string): Cta | undefined {
   if (!label || !link) return undefined
+  link = stegaClean(link) // strip preview markers from addresses
   return link.startsWith('/') ? { label, to: link } : { label, href: link }
 }
 </script>

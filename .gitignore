@@ -36,3 +36,4 @@ scripts/out
 .env.*
 !.env.example
 studio/schema.json
+.wrangler
