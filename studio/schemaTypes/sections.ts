@@ -1,3 +1,4 @@
+import { createElement } from 'react'
 import { defineArrayMember, defineField, defineType } from 'sanity'
 
 // Building blocks for pages. Each page is a header plus a list of these, in any order.
@@ -456,7 +457,28 @@ export const videoSection = defineType({
   preview: { select: { title: 'heading', subtitle: 'url' }, prepare: ({ title, subtitle }) => ({ title: title || 'Video', subtitle }) },
 })
 
-export const sectionTypes = [
+// Each block's row in a page's Sections list shows a small picture of the block
+// (the same pictures as the Add item menu, in studio/static/blocks). A block with its
+// own photo, like Photo and text, shows that instead.
+const thumb = (type: string) => () =>
+  createElement('img', { src: `/static/blocks/${type}.jpg`, alt: '', style: { width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' } })
+
+function withThumb<T extends { name: string; preview?: any }>(t: T): T {
+  if (t.name === 'card') return t
+  const prepare = t.preview?.prepare
+  return {
+    ...t,
+    preview: {
+      ...t.preview,
+      prepare: (value: any) => {
+        const out = prepare ? prepare(value) : value
+        return { ...out, media: out?.media ?? value?.media ?? thumb(t.name) }
+      },
+    },
+  }
+}
+
+const rawSectionTypes = [
   heroSection,
   marqueeSection,
   tabsSection,
@@ -476,6 +498,7 @@ export const sectionTypes = [
   imageTextSection,
   videoSection,
 ]
+export const sectionTypes = rawSectionTypes.map(withThumb)
 export const sectionMembers = [
   'heroSection',
   'marqueeSection',
