@@ -68,6 +68,14 @@ export const heroSection = defineType({
     defineField({ name: 'body', title: 'Intro', type: 'text', rows: 3 }),
     ...linkFields('primaryLabel', 'primaryHref', 'Green button'),
     ...linkFields('secondaryLabel', 'secondaryHref', 'Light button'),
+    defineField({
+      name: 'proof',
+      title: 'Proof chips',
+      description: 'Short, true lines shown as little stickers under the buttons, e.g. "Recognised by Brisbane City Council at Tooheys Forest". Keep to 2 or 3.',
+      type: 'array',
+      of: [defineArrayMember({ type: 'string' })],
+      validation: (r) => r.max(4),
+    }),
   ],
   preview: { select: { title: 'heading' }, prepare: ({ title }) => ({ title: title || 'Hero', subtitle: 'Hero' }) },
 })
@@ -439,9 +447,70 @@ export const imageTextSection = defineType({
       ],
     }),
     defineField({ name: 'imageSide', title: 'Photo on the', type: 'string', initialValue: 'left', options: radio([{ title: 'Left', value: 'left' }, { title: 'Right', value: 'right' }]) }),
+    defineField({
+      name: 'look',
+      title: 'Photo style',
+      type: 'string',
+      initialValue: 'frame',
+      description: 'Cut-out: upload a PNG with the background removed (on iPhone, press and hold the person in Photos and tap Copy or Share). It shows in black and white on a colour shape, with the caption as a sticker.',
+      options: radio([{ title: 'Framed photo', value: 'frame' }, { title: 'Cut-out on a shape', value: 'cutout' }]),
+    }),
+    defineField({
+      name: 'shape',
+      title: 'Shape colour',
+      type: 'string',
+      initialValue: 'wattle',
+      hidden: ({ parent }) => parent?.look !== 'cutout',
+      options: radio([{ title: 'Wattle', value: 'wattle' }, { title: 'Lichen', value: 'lichen' }, { title: 'Sandstone', value: 'sandstone' }, { title: 'Moss', value: 'moss' }]),
+    }),
     ...linkFields(),
   ],
   preview: { select: { title: 'heading', media: 'image' }, prepare: ({ title, media }) => ({ title: title || 'Photo and text', subtitle: 'Photo and text', media }) },
+})
+
+export const formSection = defineType({
+  name: 'formSection',
+  title: 'Sign-up form',
+  type: 'object',
+  description: 'Name, email, suburb, what they want to help with, and a message.',
+  groups: [
+    { name: 'words', title: 'Words', default: true },
+    { name: 'sending', title: 'Where it sends' },
+  ],
+  fields: [
+    { ...labelField, group: 'words' },
+    { ...headingField(), group: 'words' },
+    defineField({ name: 'intro', type: 'text', rows: 3, group: 'words' }),
+    defineField({
+      name: 'interests',
+      title: 'Things they can tick',
+      type: 'array',
+      of: [defineArrayMember({ type: 'string' })],
+      group: 'words',
+      description: 'e.g. "Clean-up days", "Track work", "Writing to council"',
+    }),
+    defineField({ name: 'buttonLabel', title: 'Button text', type: 'string', initialValue: 'Count me in', group: 'words' }),
+    defineField({ name: 'successHeading', title: 'After sending: big line', type: 'string', initialValue: 'Thanks, legend.', group: 'words' }),
+    defineField({ name: 'successText', title: 'After sending: text', type: 'text', rows: 2, group: 'words' }),
+    defineField({
+      name: 'privacyNote',
+      title: 'Small privacy line',
+      type: 'string',
+      group: 'words',
+      initialValue: "We'll only use your details to get in touch about helping out. No spam, and you can ask us to delete them any time.",
+    }),
+    defineField({ name: 'anchor', title: 'Link name', description: 'Lets other pages link straight here, e.g. "sign-up" for /get-involved#sign-up', type: 'string', group: 'words' }),
+    defineField({
+      name: 'endpoint',
+      title: 'Form service link',
+      type: 'url',
+      group: 'sending',
+      description: 'From Formspree (https://formspree.io/f/…) or Web3Forms (https://api.web3forms.com/submit). Leave empty and the form opens a pre-filled email instead.',
+    }),
+    defineField({ name: 'accessKey', title: 'Access key', type: 'string', group: 'sending', description: 'Only for Web3Forms. Leave empty for Formspree.' }),
+    defineField({ name: 'fallbackEmail', title: 'Backup email', type: 'string', group: 'sending', initialValue: 'hello@acaciaclimbing.org' }),
+  ],
+  preview: { select: { title: 'heading' }, prepare: ({ title }) => ({ title: title || 'Sign-up form', subtitle: 'Sign-up form' }) },
 })
 
 export const videoSection = defineType({
@@ -497,6 +566,7 @@ const rawSectionTypes = [
   updatesSection,
   imageTextSection,
   videoSection,
+  formSection,
 ]
 export const sectionTypes = rawSectionTypes.map(withThumb)
 export const sectionMembers = [
@@ -517,4 +587,5 @@ export const sectionMembers = [
   'faqSection',
   'updatesSection',
   'videoSection',
+  'formSection',
 ].map((type) => defineArrayMember({ type }))

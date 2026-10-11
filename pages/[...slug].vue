@@ -20,8 +20,9 @@ if (!page.value || slug === 'home') {
 
 const heading = computed(() => splitHeading(page.value?.heading))
 
-useHead({
+usePageSeo({
   title: () => `${page.value?.title} · Acacia Climbing Coalition`,
-  meta: [{ name: 'description', content: () => page.value?.seoDescription ?? page.value?.lede ?? '' }],
+  description: () => page.value?.seoDescription ?? page.value?.lede,
+  image: () => page.value?.shareImage,
 })
 </script>

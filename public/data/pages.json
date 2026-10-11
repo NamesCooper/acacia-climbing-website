@@ -16,12 +16,23 @@
         "_type": "heroSection",
         "_key": "k0000",
         "label": "Hey, we're Acacia. A friendly bunch of climbers.",
-        "heading": "Our crags,\nlooked after",
+        "heading": "Keep the\nCrags Open",
         "body": "We work with councils so bouldering spots get recognised, mapped and looked after. We're starting in South East Queensland, it's our first go at this, and we're doing it out in the open.",
-        "primaryLabel": "See the crag map",
+        "primaryLabel": "See the Crag Map",
         "primaryHref": "/progress",
-        "secondaryLabel": "How you can help",
-        "secondaryHref": "/get-involved"
+        "secondaryLabel": "How you can Help",
+        "secondaryHref": "/get-involved",
+        "proof": [
+          "Bouldering recognised by Brisbane City Council at Tooheys Forest",
+          "Working under Rock Climbing Queensland",
+          "Guidebooks on KAYA"
+        ]
+      },
+      {
+        "_type": "cragRegisterSection",
+        "_key": "k000i",
+        "heading": "Where it's at",
+        "linkLabel": "See where every crag is up to"
       },
       {
         "_type": "marqueeSection",
@@ -150,10 +161,21 @@
         ]
       },
       {
-        "_type": "cragRegisterSection",
-        "_key": "k000i",
-        "heading": "Where it's at",
-        "linkLabel": "See where every crag is up to"
+        "_key": "h0upd",
+        "_type": "updatesSection",
+        "label": "Fresh from the crags",
+        "heading": "Latest updates",
+        "count": 3
+      },
+      {
+        "_key": "h0who",
+        "_type": "ctaSection",
+        "label": "Who's behind this?",
+        "heading": "Started by a local boulderer",
+        "body": "Acacia was started by Cooper, a South East Queensland boulderer and Rock Climbing Queensland's bouldering rep. It's a small volunteer crew for now, and we'd love a few more faces.",
+        "buttonLabel": "Meet the crew",
+        "buttonHref": "/about",
+        "tone": "lichen"
       }
     ]
   },
@@ -410,26 +432,9 @@
         "heading": "Bringing climbing info up to date",
         "quote": "\"Built to last, like the Access Fund.\"",
         "quoteBody": "In the US, the Access Fund has looked after climbing access alongside land managers for decades. We want Australian climbing set up for the long term in the same way.",
-        "quoteTone": "lichen"
-      },
-      {
-        "_key": "k000o",
-        "_type": "stepsSection",
-        "band": "sandstone",
-        "heading": "How we do it",
-        "label": "Every crag goes through the same eight steps",
-        "linkHref": "/progress",
-        "linkLabel": "See where each crag is up to",
-        "steps": [
-          "Research the area, its history and its climbing",
-          "Reach out to guidebook authors and locals",
-          "Talk with council and park rangers",
-          "Agree a plan together",
-          "Site visits: GPS, photos and mapping on KAYA",
-          "Sort out any access issues",
-          "Final council approvals",
-          "Publish the guidebook on KAYA"
-        ]
+        "quoteTone": "lichen",
+        "linkLabel": "See how we work with councils",
+        "linkHref": "/work-with-us/councils"
       },
       {
         "_key": "k000t",
@@ -480,7 +485,7 @@
           {
             "_key": "k000u",
             "_type": "card",
-            "body": "Right now Acacia is a small volunteer crew, coordinated by Cooper, who is also the bouldering representative for Rock Climbing Queensland (RCQ, formerly ACAQ). Everything here gets done in spare hours, with a lot of help from local climbers. In the spirit of being upfront: Cooper also works with KAYA as a support engineer.",
+            "body": "Acacia was started by Cooper, a South East Queensland boulderer and the bouldering representative for Rock Climbing Queensland (RCQ, formerly ACAQ). He spent a couple of years working towards this before taking it public. Right now it's a small volunteer crew doing the work in spare hours, with a lot of help from local climbers. In the spirit of being upfront: Cooper also works with KAYA as a support engineer. There's no arrangement with any gym yet, but KAYA may pay him in future to help gyms get set up on its indoor app. If that happens, it's his income, not Acacia's, and we'll say so here.",
             "linkHref": "/get-involved",
             "linkLabel": "Come be part of it",
             "title": "Who's behind it"
@@ -633,6 +638,26 @@
         "titleStyle": "display"
       },
       {
+        "_key": "gi0form",
+        "_type": "formSection",
+        "label": "Easiest way in",
+        "heading": "Put your hand up",
+        "intro": "Tell us a bit about yourself and what you'd like to help with, and we'll get in touch. No experience needed.",
+        "interests": [
+          "Clean-up days",
+          "Track work",
+          "Writing to council",
+          "Mapping on KAYA",
+          "Telling us about your local"
+        ],
+        "buttonLabel": "Count me in",
+        "successHeading": "Thanks, legend.",
+        "successText": "We've got your details and we'll be in touch soon.",
+        "privacyNote": "We'll only use your details to get in touch about helping out. No spam, and you can ask us to delete them any time.",
+        "anchor": "sign-up",
+        "fallbackEmail": "hello@acaciaclimbing.org"
+      },
+      {
         "_key": "k001a",
         "_type": "ctaSection",
         "body": "We're starting in SEQ, but the goal is every state. If there's a crag near you with access worries, or you're already looking after one, tell us about it. It all helps shape where we go next.",
@@ -762,57 +787,9 @@
           }
         ],
         "heading": "Why recognition matters",
-        "quote": "\"Documented crag, protected crag.\"",
+        "quote": "\"Recognition first.\"",
         "quoteBody": "We get recognition first, then publish the guidebook with your backing. Nothing goes public without your OK.",
         "quoteTone": "wattle"
-      },
-      {
-        "_key": "c2",
-        "_type": "factsSection",
-        "facts": [
-          {
-            "_key": "c2a",
-            "_type": "fact",
-            "label": "Focus areas in South East Queensland",
-            "tone": "wattle",
-            "value": "5"
-          },
-          {
-            "_key": "c2b",
-            "_type": "fact",
-            "label": "Formal council recognition, at Tooheys Forest",
-            "tone": "lichen",
-            "value": "1"
-          },
-          {
-            "_key": "c2c",
-            "_type": "fact",
-            "label": "Steps on every access pathway",
-            "tone": "sandstone",
-            "value": "8"
-          }
-        ],
-        "heading": "So far",
-        "note": "As of October 2026. Every crag's progress is live on the crag map."
-      },
-      {
-        "_key": "c3",
-        "_type": "stepsSection",
-        "band": "sandstone",
-        "heading": "How we work",
-        "label": "The same process, every time",
-        "linkHref": "/progress",
-        "linkLabel": "See where each crag is up to",
-        "steps": [
-          "Research the area, its history and its climbing",
-          "Reach out to guidebook authors and locals",
-          "Talk with council and park rangers",
-          "Agree a plan together",
-          "Site visits: GPS, photos and mapping on KAYA",
-          "Sort out any access issues",
-          "Final council approvals",
-          "Publish the guidebook on KAYA"
-        ]
       },
       {
         "_key": "c4",
@@ -871,6 +848,47 @@
         "columns": 3,
         "heading": "What we bring",
         "titleStyle": "grotesk"
+      },
+      {
+        "_key": "c3",
+        "_type": "stepsSection",
+        "band": "sandstone",
+        "heading": "How we work",
+        "label": "The same process, every time",
+        "linkHref": "/progress",
+        "linkLabel": "See where each crag is up to",
+        "steps": [
+          "Research the area, its history and its climbing",
+          "Reach out to guidebook authors and locals",
+          "Talk with council and park rangers",
+          "Agree a plan together",
+          "Site visits: GPS, photos and mapping on KAYA",
+          "Sort out any access issues",
+          "Final council approvals",
+          "Publish the guidebook on KAYA"
+        ]
+      },
+      {
+        "_key": "c2",
+        "_type": "factsSection",
+        "facts": [
+          {
+            "_key": "c2a",
+            "_type": "fact",
+            "label": "Focus areas in South East Queensland",
+            "tone": "wattle",
+            "value": "5"
+          },
+          {
+            "_key": "c2b",
+            "_type": "fact",
+            "label": "Formal council recognition, at Tooheys Forest",
+            "tone": "lichen",
+            "value": "1"
+          }
+        ],
+        "heading": "So far",
+        "note": "As of October 2026. Every crag's progress is live on the crag map."
       },
       {
         "_key": "c5",
@@ -1005,7 +1023,7 @@
           }
         ],
         "heading": "Why it matters to you",
-        "quote": "\"Documented crag, protected crag.\"",
+        "quote": "\"Know before you go.\"",
         "quoteBody": "Our crag map shows where each spot is up to, and every documented crag goes on KAYA.",
         "quoteTone": "lichen"
       },

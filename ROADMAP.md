@@ -30,6 +30,14 @@ Tick things off as you go. Add new ideas at the bottom of the right section rath
 - [x] Nav and footer as full-width forest bands, help ask merged into the footer
 - [x] Block gallery (acaciaclimbing.org/blocks) with picture thumbnails in the Studio
 
+## Launch checklist (Cooper)
+
+- [ ] Hook up the sign-up form on Get involved: make a free Formspree form (formspree.io, sign up with hello@acaciaclimbing.org), copy its link, paste it into the form block's "Where it sends" tab, publish. Until then it opens a pre-filled email
+- [ ] Post the first update (the homepage "Latest updates" block appears once there's one)
+- [ ] Shorten the first proof chip on the homepage if it wraps on your phone
+- [ ] Add a photo of yourself to About's "Who's behind it" when you have a cut-out
+- [ ] Share a page link to yourself to check the preview picture
+
 ## Illustrations and real content (Cooper)
 
 - [ ] Mascots: line-art characters in a few poses (see "Illustration and photo direction" in CLAUDE.md)
@@ -39,7 +47,7 @@ Tick things off as you go. Add new ideas at the bottom of the right section rath
 
 ## When content lands (ask Claude)
 
-- [ ] Photo style: black and white cut-out on a palette shape, with stickers, as an option on "Photo and text"
+- [x] Photo style: black and white cut-out on a palette shape, with stickers, as an option on "Photo and text"
 - [ ] Small outlined spot icons on cards
 - [ ] Drop the mascot into the hero badge and the tabs panel
 - [ ] Re-take block thumbnails for the Studio and the design canvas after any look changes
@@ -60,5 +68,5 @@ Tick things off as you go. Add new ideas at the bottom of the right section rath
 ## Later
 
 - [ ] Move page copy (mission, about, work) into Sanity so words can change without code
-- [ ] Contact / "report a crag issue" form that lands in your inbox or Notion
+- [ ] "Report a crag issue" form (the sign-up form block can be reused for this)
 - [ ] Archive the old `acc-crag-map` repo on GitHub (its data now lives here)

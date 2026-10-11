@@ -101,15 +101,16 @@ Home, About, Get involved and Privacy are Studio Pages. Each Studio block draws 
 
 | Studio block | Component |
 |--------------|-----------|
-| Hero (big poster headline) | `HomeHero` |
+| Hero (big poster headline, optional proof chips) | `HomeHero` |
 | Scrolling green band | `HomeMarquee` |
 | Tabs panel | `HomeAboutTabs` |
 | Crag cards ("Where it's at") | `HomeCragCards` |
-| Photo and text | `SectionImageText` |
+| Photo and text (framed, or black and white cut-out on a shape) | `SectionImageText` |
 | Big numbers | `SectionFacts` |
 | Questions (FAQ) | `SectionFaq` |
 | Latest updates | `SectionLatestUpdates` |
 | Video | `SectionVideo` |
+| Sign-up form | `SectionForm` |
 | Text (with optional quote card) | `SectionSplit` |
 | Cards | `SectionCards` |
 | Numbered steps | `SectionSteps` |

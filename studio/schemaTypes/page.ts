@@ -45,6 +45,14 @@ export const page = defineType({
       initialValue: true,
     }),
     defineField({ name: 'seoDescription', title: 'Google description', type: 'text', rows: 2, group: 'settings', validation: (r) => r.max(160) }),
+    defineField({
+      name: 'shareImage',
+      title: 'Share picture',
+      description: 'Shows when someone shares this page (Facebook, Instagram DMs, messages). Landscape, about 1200 × 630. Leave empty to use the site-wide one.',
+      type: 'image',
+      options: { hotspot: true },
+      group: 'settings',
+    }),
     defineField({ name: 'eyebrow', description: 'Small label above the heading', type: 'string', group: 'header' }),
     defineField({
       name: 'heading',

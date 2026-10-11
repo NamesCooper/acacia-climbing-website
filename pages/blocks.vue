@@ -10,22 +10,22 @@
     <!-- Jump links -->
     <nav aria-label="Blocks" class="max-w-[1240px] mx-auto px-6 pb-6">
       <ul class="list-none p-0 m-0 flex flex-wrap gap-2.5">
-        <li v-for="b in BLOCKS" :key="b.type">
-          <a :href="`#${b.type}`" class="inline-block no-underline text-forest bg-paper-light border-2 border-outline rounded-full px-3.5 py-1.5 text-sm font-bold hover:bg-wattle">{{ b.name }}</a>
+        <li v-for="b in BLOCKS" :key="b.name">
+          <a :href="`#${b.anchor ?? b.type}`" class="inline-block no-underline text-forest bg-paper-light border-2 border-outline rounded-full px-3.5 py-1.5 text-sm font-bold hover:bg-wattle">{{ b.name }}</a>
         </li>
       </ul>
     </nav>
 
-    <template v-for="b in BLOCKS" :key="b.type">
-      <div :id="b.type" class="max-w-[1240px] mx-auto px-6 pt-12 scroll-mt-4">
+    <template v-for="b in BLOCKS" :key="b.name">
+      <div :id="b.anchor ?? b.type" class="max-w-[1240px] mx-auto px-6 pt-12 scroll-mt-4">
         <div class="flex flex-wrap items-center gap-x-4 gap-y-2 border-t-[3px] border-dashed border-outline/25 pt-6">
           <span class="inline-block bg-forest text-paper border-2 border-outline rounded-full px-4 py-1.5 font-grotesk font-extrabold text-sm">{{ b.name }}</span>
           <span class="text-[15px]"><strong>Good for:</strong> {{ b.goodFor }}</span>
         </div>
       </div>
       <!-- data-block is used to take the thumbnail pictures for the Studio menu -->
-      <div :data-block="b.type">
-        <SanitySections :sections="[{ _key: b.type, _type: b.type, ...b.example }]" />
+      <div :data-block="b.anchor ?? b.type">
+        <SanitySections :sections="[{ _key: b.anchor ?? b.type, _type: b.type, ...b.example }]" />
       </div>
     </template>
   </div>
@@ -45,7 +45,7 @@ const text = (...paras: string[]) =>
   paras.map((p) => ({ _type: 'block', _key: `t${k++}`, style: 'normal', markDefs: [], children: [{ _type: 'span', _key: `s${k++}`, text: p, marks: [] }] }))
 const card = (c: Record<string, any>) => ({ _type: 'card', _key: `c${k++}`, ...c })
 
-const BLOCKS: { type: string; name: string; goodFor: string; example: Record<string, any> }[] = [
+const BLOCKS: { type: string; anchor?: string; name: string; goodFor: string; example: Record<string, any> }[] = [
   {
     type: 'heroSection',
     name: 'Hero (big poster headline)',
@@ -56,6 +56,7 @@ const BLOCKS: { type: string; name: string; goodFor: string; example: Record<str
       body: "We work with councils so bouldering spots get recognised, mapped and looked after.",
       primaryLabel: 'See the crag map', primaryHref: '/progress',
       secondaryLabel: 'How you can help', secondaryHref: '/get-involved',
+      proof: ['Recognised by Brisbane City Council at Tooheys Forest', 'Under Rock Climbing Queensland', 'Guidebooks on KAYA'],
     },
   },
   {
@@ -100,6 +101,30 @@ const BLOCKS: { type: string; name: string; goodFor: string; example: Record<str
     },
   },
   {
+    type: 'imageTextSection',
+    anchor: 'imageTextCutout',
+    name: 'Photo and text (cut-out style)',
+    goodFor: 'people and moments. Upload a photo with the background removed and pick "Cut-out on a shape".',
+    example: {
+      label: 'Who\'s behind it',
+      heading: 'Started by a local boulderer',
+      body: text('A short, first-person hello. Why you started, and what you\'re hoping to build.'),
+      look: 'cutout', shape: 'lichen', imageSide: 'right',
+      linkLabel: 'Meet the crew', linkHref: '/about',
+    },
+  },
+  {
+    type: 'formSection',
+    name: 'Sign-up form',
+    goodFor: 'collecting helpers without relying on email links. Set where it sends under "Where it sends".',
+    example: {
+      label: 'Got an hour?', heading: 'Lend a hand',
+      intro: "Tell us a bit about yourself and what you'd like to help with. We'll get in touch.",
+      interests: ['Clean-up days', 'Track work', 'Writing to council', 'Mapping on KAYA'],
+      privacyNote: "We'll only use your details to get in touch about helping out.",
+    },
+  },
+  {
     type: 'cardsSection',
     name: 'Cards',
     goodFor: 'ways to help, milestones, partners. 2, 3 or 4 across, colours and tilt are up to you.',
@@ -108,7 +133,7 @@ const BLOCKS: { type: string; name: string; goodFor: string; example: Record<str
       cards: [
         card({ kicker: 'Volunteer', chipTone: 'lichen', title: 'Give an hour or two', body: 'Clean-ups, track work and mapping.', linkLabel: "I'm keen", linkHref: '/get-involved', buttonColour: 'moss', halftone: true }),
         card({ kicker: 'Report', chipTone: 'wattle', title: 'Be our eyes', body: 'Tell us about closed tracks, new signs or damage.', tone: 'sandstone' }),
-        card({ kicker: 'Partners', title: 'Working with', tone: 'forest', items: [{ _key: 'i1', title: 'ACAQ', body: "Queensland's peak climbing access body." }, { _key: 'i2', title: 'KAYA', body: 'Where our guidebooks live.' }] }),
+        card({ kicker: 'Partners', title: 'Working with', tone: 'forest', items: [{ _key: 'i1', title: 'RCQ', body: "Rock Climbing Queensland, the state's peak climbing body." }, { _key: 'i2', title: 'KAYA', body: 'Where our guidebooks live.' }] }),
       ],
     },
   },
@@ -171,7 +196,7 @@ const BLOCKS: { type: string; name: string; goodFor: string; example: Record<str
       items: [
         { _key: 'q1', question: 'Is it okay to climb at these crags?', answer: 'Access status here is general information, not permission. Always check signage and local rules before you go.' },
         { _key: 'q2', question: 'Can I help if I\'m new to climbing outside?', answer: 'Absolutely. Plenty of the work is mapping, writing and turning up to clean-up days.' },
-        { _key: 'q3', question: 'Who runs Acacia?', answer: 'A small volunteer crew. In Queensland we work under ACAQ.' },
+        { _key: 'q3', question: 'Who runs Acacia?', answer: 'A small volunteer crew. In Queensland we work under Rock Climbing Queensland.' },
       ],
     },
   },

@@ -26,11 +26,28 @@
       <UiButton v-if="primary" :to="primary.to" :href="primary.href" variant="moss" size="lg" class="text-center">{{ primary.label }}</UiButton>
       <UiButton v-if="secondary" :to="secondary.to" :href="secondary.href" variant="paper" size="lg" class="text-center">{{ secondary.label }}</UiButton>
     </div>
+
+    <!-- Proof chips: small true facts a council officer can check, as tilted stickers -->
+    <ul v-if="proof?.length" class="relative list-none p-0 m-0 mt-9 sm:mt-11 flex flex-wrap justify-center gap-x-3 gap-y-3 max-w-[820px]">
+      <li
+        v-for="(p, i) in proof"
+        :key="p"
+        class="tilt inline-flex items-center gap-2 border-2 border-outline rounded-full px-3.5 py-1.5 font-grotesk font-bold text-[13px] sm:text-sm leading-snug text-forest shadow-[2px_2px_0_var(--color-outline)] text-balance"
+        :class="PROOF_BG[i % PROOF_BG.length]"
+        :style="{ '--tilt': PROOF_TILT[i % PROOF_TILT.length] + 'deg' }"
+      >
+        <svg aria-hidden="true" viewBox="0 0 12 12" class="size-3 shrink-0"><path d="M2 6.5 4.8 9 10 3" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        {{ p }}
+      </li>
+    </ul>
   </section>
 </template>
 
 <script setup lang="ts">
 import type { Cta } from '~/types/content'
 
-defineProps<{ label?: string; heading: string; body?: string; primary?: Cta; secondary?: Cta }>()
+defineProps<{ label?: string; heading: string; body?: string; primary?: Cta; secondary?: Cta; proof?: string[] }>()
+
+const PROOF_BG = ['bg-lichen', 'bg-paper-light', 'bg-sandstone', 'bg-wattle']
+const PROOF_TILT = [-1.5, 1, -0.8, 1.4]
 </script>

@@ -5,6 +5,7 @@ export interface SanityPage {
   title: string
   slug: string
   seoDescription?: string
+  shareImage?: any
   eyebrow?: string
   heading: string
   lede?: string

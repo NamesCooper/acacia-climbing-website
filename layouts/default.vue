@@ -9,3 +9,24 @@
   </div>
 </template>
 
+
+<script setup lang="ts">
+import { SITE_URL } from '~/composables/usePageSeo'
+
+// Site-wide link details. Each page sets its own title, description and picture
+// (see composables/usePageSeo.ts); these fill in everything else.
+// Pages are served with a trailing slash (/about/), so the address Google keeps does too.
+const route = useRoute()
+const pageUrl = () => SITE_URL + (route.path === '/' ? '/' : route.path.replace(/\/?$/, '/'))
+
+useSeoMeta({
+  ogType: 'website',
+  ogUrl: pageUrl,
+  ogImage: `${SITE_URL}/og.png`,
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  ogImageAlt: 'Acacia Climbing Coalition: our crags, looked after',
+  twitterCard: 'summary_large_image',
+})
+useHead({ link: [{ rel: 'canonical', href: pageUrl }] })
+</script>

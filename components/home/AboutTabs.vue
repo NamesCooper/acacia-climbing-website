@@ -1,7 +1,7 @@
 <template>
   <section id="about" class="max-w-[1240px] mx-auto px-6 pt-22 scroll-mt-6">
     <div class="relative bg-sandstone border-[3px] border-outline rounded-[32px] overflow-hidden shadow-[8px_8px_0_var(--color-outline)]">
-      <div aria-hidden="true" class="halftone absolute -right-20 -bottom-20 size-[420px] rounded-full" style="--dot: var(--color-sandstone-deep)"></div>
+      <div aria-hidden="true" class="halftone absolute -right-20 -bottom-20 size-[420px] rounded-full hidden lg:block" style="--dot: var(--color-sandstone-deep)"></div>
 
       <div class="relative px-6 py-12 sm:px-14 sm:py-16 flex flex-wrap gap-10 items-center">
         <div class="flex-[999_1_480px] min-w-0">
@@ -41,8 +41,9 @@
           </div>
         </div>
 
-        <!-- Spot for the mascot once it's ready -->
-        <div class="flex-[1_1_240px] flex justify-center">
+        <!-- Spot for the mascot once it's ready. Only on wide screens for now: on phones and
+             tablets it sat under the text as an empty-looking box. -->
+        <div class="hidden lg:flex flex-[1_1_240px] justify-center">
           <div class="w-[180px] h-[200px] sm:w-[240px] sm:h-[280px] bg-paper border-[3px] border-outline rounded-3xl flex items-center justify-center">
             <img src="/brand/sprig-green.png" alt="" class="anim-bob w-[100px] sm:w-[140px] h-auto" />
           </div>

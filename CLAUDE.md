@@ -26,12 +26,13 @@ ACC operates under the RCQ (Rock Climbing Queensland, formerly ACAQ) umbrella an
 - `.mcp.json` connects Claude to Sanity (read and edit content, deploy schema)
 - `.claude/agents/acc-helper.md` and `.claude/skills/` are Cooper's helper and its shortcuts (`/whats-next`, `/log-update`, `/check-site`)
 - `layouts/default.vue` wraps every page with the nav and the footer. The nav and footer are full-width forest bands that frame every page. The footer has the "Got an hour?" ask on top, then logo, links and small print. Words and links come from the Studio's Navigation, Footer and "Got an hour?" band documents (`studio/schemaTypes/chrome.ts`) via `composables/useSiteChrome.ts`, with `public/data/chrome.json` as the backup copy. Hide the ask on a Vue page with `definePageMeta({ prefooter: false })`; Studio pages have a switch
+- Link previews: `composables/usePageSeo.ts` sets each page's title, description and share picture (`public/og.png` unless the Page has its own "Share picture"); `layouts/default.vue` adds the canonical link
 - The crag map (`/progress`) is full-screen. Tiles come from CARTO and need `NUXT_PUBLIC_CARTO_KEY` in Cloudflare's build variables; without it they fall back to OpenStreetMap
 - Components are split into four folders (full list in `docs/COMPONENTS.md`):
   - `components/ui/` small bricks: `UiButton`, `UiChip`, `UiCard`, `UiRisoHeading`, `UiSectionTitle`, `UiHalftone`, `UiSparkle`, `UiWordmark`
   - `components/site/` the frame on every page: `SiteNav`, `SiteFooter` (includes the help ask), `SitePageHeader`
   - `components/home/` homepage-only sections: `HomeHero`, `HomeMarquee`, `HomeAboutTabs`, `HomeCragCards`
-  - `components/section/` reusable inner-page sections: `SectionSplit`, `SectionSteps`, `SectionCards`, `SectionStatement`, `SectionCallout`, `SectionProse`, `SectionImageText`, `SectionFacts`, `SectionFaq`, `SectionLatestUpdates`, `SectionVideo`
+  - `components/section/` reusable inner-page sections: `SectionSplit`, `SectionSteps`, `SectionCards`, `SectionStatement`, `SectionCallout`, `SectionProse`, `SectionImageText`, `SectionFacts`, `SectionFaq`, `SectionLatestUpdates` (hidden until there's an update), `SectionVideo`, `SectionForm` (sign-up form; sends to Formspree or Web3Forms set in the Studio, else opens a pre-filled email)
 - `/blocks` is a hidden gallery of every Studio block with example words; its screenshots are the Studio's "Add item" thumbnails (`studio/static/blocks/*.jpg`)
 - `types/content.ts` holds the shared shapes (`Cta`, `CardItem`, `ProseBlock`) the sections take
 - `utils/cragStatus.ts` is the single source for status labels and colours (homepage cards and map)

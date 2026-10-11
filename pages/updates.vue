@@ -45,9 +45,9 @@
 <script setup lang="ts">
 import { PortableText } from '@portabletext/vue'
 
-useHead({
-  title: 'Updates · Acacia Climbing Coalition',
-  meta: [{ name: 'description', content: 'The latest from the crags: council meetings, submissions, signage and clean-ups.' }],
+usePageSeo({
+  title: () => 'Updates · Acacia Climbing Coalition',
+  description: () => 'The latest from the crags: council meetings, submissions, signage and clean-ups.',
 })
 
 const { data: updates } = await useUpdates()

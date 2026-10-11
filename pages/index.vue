@@ -14,8 +14,9 @@ if (!page.value) {
 }
 
 
-useHead({
-  title: 'Acacia Climbing Coalition · Keep the crags open',
-  meta: [{ name: 'description', content: () => page.value?.seoDescription ?? '' }],
+usePageSeo({
+  title: () => 'Acacia Climbing Coalition · Keep the crags open',
+  description: () => page.value?.seoDescription,
+  image: () => page.value?.shareImage,
 })
 </script>

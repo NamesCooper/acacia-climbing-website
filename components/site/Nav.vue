@@ -3,13 +3,19 @@
        column headings; items with child links drop down a paper card on hover (or tap / Enter).
        Words and links come from "Navigation" in the Studio. -->
   <header class="relative z-[1000] bg-forest text-paper border-b-[3px] border-outline">
-    <div ref="barEl" class="relative max-w-[1240px] mx-auto px-6 pt-4 pb-3.5 sm:pb-4 lg:py-5 grid grid-cols-[auto_auto] lg:grid-cols-[auto_1fr_auto] items-center justify-between gap-x-6 gap-y-3" @keydown.esc="close(true)">
+    <div ref="barEl" class="relative max-w-[1240px] mx-auto px-5 sm:px-6 py-3.5 sm:pt-4 sm:pb-4 lg:py-5 grid grid-cols-[1fr_auto_auto] sm:grid-cols-[1fr_auto] lg:grid-cols-[auto_1fr_auto] items-center gap-x-3 sm:gap-x-6 gap-y-3" @keydown.esc="close(true); menuOpen = false">
       <NuxtLink to="/" aria-label="Acacia Climbing Coalition, home" class="no-underline text-paper-light">
         <UiWordmark :size="40" />
       </NuxtLink>
 
-      <nav aria-label="Main" class="order-3 col-span-2 lg:order-none lg:col-span-1 lg:justify-self-end">
-        <ul class="list-none p-0 m-0 flex flex-wrap items-center gap-x-3 gap-y-2">
+      <!-- On phones the pills fold away behind the Menu button; from sm up they're always showing -->
+      <nav
+        id="main-menu"
+        aria-label="Main"
+        class="order-3 col-span-3 sm:col-span-2 lg:order-none lg:col-span-1 lg:justify-self-end sm:block pb-1 sm:pb-0"
+        :class="menuOpen ? 'block' : 'hidden'"
+      >
+        <ul class="list-none p-0 m-0 flex flex-wrap items-center gap-x-3 gap-y-3 sm:gap-y-2">
           <!-- On phones the dropdown spans the bar (li is static); from sm up it sits under its pill -->
           <li
             v-for="(item, i) in items"
@@ -61,14 +67,36 @@
               </ul>
             </div>
           </li>
+          <!-- On the smallest phones the "Lend a hand" button lives in here instead of the bar -->
+          <li v-if="nav?.buttonLabel && nav.buttonLink" class="min-[380px]:hidden">
+            <NuxtLink
+              v-bind="chromeLink(nav.buttonLink)"
+              class="inline-block no-underline text-outline bg-wattle border-2 border-outline rounded-full px-3.5 py-1.5 font-bold shadow-[2px_2px_0_var(--color-outline)]"
+            >{{ nav.buttonLabel }}</NuxtLink>
+          </li>
         </ul>
       </nav>
 
       <NuxtLink
         v-if="nav?.buttonLabel && nav.buttonLink"
         v-bind="chromeLink(nav.buttonLink)"
-        class="nudge justify-self-end whitespace-nowrap no-underline text-outline bg-wattle border-[3px] border-outline rounded-full px-4 py-2 sm:px-5 sm:py-2.5 font-bold shadow-[4px_4px_0_var(--color-outline)]"
+        class="nudge hidden min-[380px]:inline-block justify-self-end whitespace-nowrap no-underline text-outline bg-wattle border-[3px] border-outline rounded-full px-4 py-2 sm:px-5 sm:py-2.5 font-bold shadow-[4px_4px_0_var(--color-outline)]"
       >{{ nav.buttonLabel }}</NuxtLink>
+
+      <!-- Phones only: opens and closes the pills -->
+      <button
+        type="button"
+        class="sm:hidden col-start-3 min-[380px]:col-start-auto justify-self-end inline-flex items-center gap-2 cursor-pointer bg-paper-light text-outline border-[3px] border-outline rounded-full px-3.5 py-2 font-grotesk font-extrabold text-sm uppercase tracking-[0.06em] shadow-[3px_3px_0_var(--color-outline)]"
+        aria-controls="main-menu"
+        :aria-expanded="menuOpen"
+        @click="menuOpen = !menuOpen"
+      >
+        <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4">
+          <path v-if="!menuOpen" d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
+          <path v-else d="M3.5 3.5l9 9M12.5 3.5l-9 9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
+        </svg>
+        {{ menuOpen ? 'Close' : 'Menu' }}
+      </button>
     </div>
   </header>
 </template>
@@ -93,7 +121,8 @@ const barEl = ref<HTMLElement | null>(null)
 let hoverTimer: ReturnType<typeof setTimeout> | undefined
 
 const canHover = () => import.meta.client && window.matchMedia('(hover: hover)').matches
-function toggle(i: number) { open.value = open.value === i ? null : i }
+// With a mouse, hovering already opened it, so a click keeps it open rather than snapping it shut
+function toggle(i: number) { open.value = canHover() ? i : open.value === i ? null : i }
 function close(refocus = false) {
   if (refocus && open.value !== null) triggers[open.value]?.focus()
   open.value = null
@@ -110,9 +139,12 @@ function isActive(item: MenuItem) {
   })
 }
 
+// Phones: whether the folded-away menu is showing
+const menuOpen = ref(false)
+
 // Close when the page changes or when clicking anywhere outside the nav
-watch(() => route.fullPath, () => close())
-function onDocClick(e: MouseEvent) { if (barEl.value && !barEl.value.contains(e.target as Node)) close() }
+watch(() => route.fullPath, () => { close(); menuOpen.value = false })
+function onDocClick(e: MouseEvent) { if (barEl.value && !barEl.value.contains(e.target as Node)) { close(); menuOpen.value = false } }
 onMounted(() => document.addEventListener('click', onDocClick))
 onUnmounted(() => document.removeEventListener('click', onDocClick))
 

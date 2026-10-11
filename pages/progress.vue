@@ -157,9 +157,9 @@ import type { Crag } from '~/composables/useCragData'
 
 definePageMeta({ prefooter: false })
 
-useHead({
-  title: "Crag map · Acacia Climbing Coalition",
-  meta: [{ name: 'description', content: 'Access progress for every crag Acacia Climbing Coalition is working on, starting in South East Queensland.' }],
+usePageSeo({
+  title: () => "Crag map · Acacia Climbing Coalition",
+  description: () => 'Access progress for every crag Acacia Climbing Coalition is working on, starting in South East Queensland.',
 })
 
 // Crag, milestone and area data, baked in at build time (see composables/useCragData.ts)

@@ -10,6 +10,7 @@
       :body="s.body"
       :primary="cta(s.primaryLabel, s.primaryHref)"
       :secondary="cta(s.secondaryLabel, s.secondaryHref)"
+      :proof="s.proof ?? []"
     />
 
     <HomeMarquee v-else-if="s._type === 'marqueeSection'" :items="s.items ?? []" :colour="clean(s.colour) ?? 'moss'" />
@@ -77,6 +78,8 @@
       :paragraphs="blocksToParagraphs(s.body)"
       :image="s.image ? { src: sanityImageUrl(s.image), alt: s.image.alt, caption: s.image.caption } : undefined"
       :image-side="clean(s.imageSide) ?? 'left'"
+      :look="clean(s.look) ?? 'frame'"
+      :shape="clean(s.shape) ?? 'wattle'"
       :cta="cta(s.linkLabel, s.linkHref)"
     />
 
@@ -93,6 +96,22 @@
     <SectionLatestUpdates v-else-if="s._type === 'updatesSection'" :lead="s.label" :title="plain(s.heading)" :count="s.count ?? 3" />
 
     <SectionVideo v-else-if="s._type === 'videoSection'" :lead="s.label" :title="plain(s.heading)" :url="clean(s.url)" :caption="s.caption" />
+
+    <SectionForm
+      v-else-if="s._type === 'formSection'"
+      :lead="s.label"
+      :title="plain(s.heading) || 'Lend a hand'"
+      :intro="s.intro"
+      :interests="s.interests ?? []"
+      :button-label="s.buttonLabel"
+      :success-heading="s.successHeading"
+      :success-text="s.successText"
+      :privacy-note="s.privacyNote"
+      :endpoint="clean(s.endpoint)"
+      :access-key="clean(s.accessKey)"
+      :fallback-email="clean(s.fallbackEmail)"
+      :anchor="clean(s.anchor)"
+    />
 
     <SectionCards
       v-else-if="s._type === 'timelineSection'"
