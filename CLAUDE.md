@@ -101,7 +101,7 @@ No orange or pink. Keep to sandstone yellows, forest and moss greens, and wattle
 
 - Sanity is the source of truth for page copy, crags, milestones, area boundaries and updates
 - Change content through the Studio or the Sanity MCP, not by editing JSON or Vue files
-- When changing a schema, keep existing field names (the site and migration depend on them), then run `npx sanity schema deploy` from `/studio`
+- When changing a schema, keep existing field names (the site and migration depend on them). Pushing to main deploys the Studio and schema automatically (`.github/workflows/deploy-studio.yml`); `npx sanity deploy` from `/studio` does it by hand
 - Pages get content only through the composables, via `useAsyncData`, so it is baked in at build time and visible to Google
 - Coordinates are in decimal degrees, WGS84
 - Each crag should have at minimum: name, council jurisdiction, access status, GPS coordinates, last updated date

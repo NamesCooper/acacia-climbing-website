@@ -52,3 +52,7 @@ The same code builds two sites:
 The preview site needs one secret in Cloudflare, `NUXT_SANITY_READ_TOKEN`: a Sanity API token with **Viewer** rights (sanity.io/manage → API → Tokens). It never reaches the browser; `server/api/preview-query.post.ts` uses it and only runs the named queries in `utils/queries.ts`.
 
 Click-to-edit only works on words that come from Sanity (Studio pages, updates). Text written in Vue files isn't editable there.
+
+## Studio deploys itself
+
+`.github/workflows/deploy-studio.yml` runs `npx sanity deploy` on GitHub whenever a push to `main` changes something in `/studio`, so new blocks and fields reach the Studio without running anything locally. It needs a GitHub secret called `SANITY_AUTH_TOKEN` (a Sanity token with Deploy Studio rights). To run it by hand: GitHub → Actions → Deploy Sanity Studio → Run workflow.
