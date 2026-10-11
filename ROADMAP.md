@@ -26,7 +26,23 @@ Tick things off as you go. Add new ideas at the bottom of the right section rath
 - [x] Restyle the crag map (new free map tiles, works on phones)
 - [x] Restyle Updates, and add About, Get involved and Privacy pages in V2
 - [x] Remove all V1 styling
-- [ ] Move homepage copy (hero, tabs, help pills) into Sanity
+- [x] Move homepage copy (hero, tabs, help pills) into Sanity
+- [x] Nav and footer as full-width forest bands, help ask merged into the footer
+- [x] Block gallery (acaciaclimbing.org/blocks) with picture thumbnails in the Studio
+
+## Illustrations and real content (Cooper)
+
+- [ ] Mascots: rubber hose characters in a few poses (see "Illustration and photo direction" in CLAUDE.md)
+- [ ] Flat climber and volunteer figures, Alegria style, not Corporate Memphis
+- [ ] Gather real photos: clean-up days, Tooheys stairs and signs, crags. Phone photos are fine
+- [ ] Swap example words in Studio pages for real ones (Pages with the yellow dot are still mockup)
+
+## When content lands (ask Claude)
+
+- [ ] Photo style: black and white cut-out on a palette shape, with stickers, as an option on "Photo and text"
+- [ ] Small outlined spot icons on cards
+- [ ] Drop the mascot into the hero badge and the tabs panel
+- [ ] Re-take block thumbnails for the Studio and the design canvas after any look changes
 
 ## Honesty and credibility fixes (flagged during the rebuild)
 

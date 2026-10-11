@@ -90,6 +90,14 @@ No orange or pink. Keep to sandstone yellows, forest and moss greens, and wattle
 - **Grain:** applied once to the whole site via `body::after`. Don't add more
 - The mascot (in progress) will live in the About panel and hero. Until then, the sprig stands in
 
+### Illustration and photo direction
+
+- A mix: **rubber hose** mascots (1930s cartoon, noodle limbs, big friendly characters, often Aussie animals) plus **Alegria-style flat people** (chunky limbs, simple shapes) for climbers and volunteers. All drawn with the thick outlines, riso grain and bush palette above
+- **Not Corporate Memphis.** It reads as tech startup, which this site avoids
+- Real photos: black and white cut-outs sitting on a bold palette shape (wattle, moss, lichen, sandstone), with a sticker or two around them. Makes any phone photo look on-brand
+- Small outlined spot icons (3px outline, flat fill, hard shadow) are welcome on cards
+- Cooper is making the mascots and gathering real content; don't invent people, quotes or photos
+
 ---
 
 ## Project conventions
