@@ -60,8 +60,6 @@ The approved homepage mockup lives on the Claude Design canvas ("G · Retro post
 | `wattle-deep` | #D29F2A | Logo gold, halftone dots on wattle |
 | `sandstone` | #E2C58E | Panels, "getting started" chips |
 | `sandstone-deep` | #B8935A | Halftone dots on sandstone |
-| `riso-green` | #00A95C | Marquee band only (real riso ink) |
-| `sunflower` | #FFB511 | Marquee text shadow only (real riso ink) |
 
 No orange or pink. Keep to sandstone yellows, forest and moss greens, and wattle.
 

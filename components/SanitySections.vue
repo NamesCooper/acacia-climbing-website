@@ -12,11 +12,11 @@
       :secondary="cta(s.secondaryLabel, s.secondaryHref)"
     />
 
-    <HomeMarquee v-else-if="s._type === 'marqueeSection'" :items="s.items ?? []" />
+    <HomeMarquee v-else-if="s._type === 'marqueeSection'" :items="s.items ?? []" :colour="clean(s.colour) ?? 'moss'" />
 
     <HomeAboutTabs v-else-if="s._type === 'tabsSection'" :tabs="s.tabs ?? []" />
 
-    <HomeCragCards v-else-if="s._type === 'cragRegisterSection'" :heading="s.heading" />
+    <HomeCragCards v-else-if="s._type === 'cragRegisterSection'" :heading="s.heading" :link-label="s.linkLabel" />
 
     <!-- General blocks -->
     <SectionSplit

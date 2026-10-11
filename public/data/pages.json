@@ -15,8 +15,8 @@
       {
         "_type": "heroSection",
         "_key": "k0000",
-        "label": "A friendly bunch of climbers looking after Australia's crags",
-        "heading": "Keep the\ncrags open",
+        "label": "Hey, we're Acacia. A friendly bunch of climbers.",
+        "heading": "Our crags,\nlooked after",
         "body": "We work with councils so bouldering spots get recognised, mapped and looked after. We're starting in South East Queensland, it's our first go at this, and we're doing it out in the open.",
         "primaryLabel": "See the crag map",
         "primaryHref": "/progress",
@@ -32,7 +32,8 @@
           "climbers looking after crags",
           "5 crags and counting",
           "come say g'day"
-        ]
+        ],
+        "colour": "moss"
       },
       {
         "_type": "tabsSection",
@@ -151,7 +152,8 @@
       {
         "_type": "cragRegisterSection",
         "_key": "k000i",
-        "heading": "Where it's at"
+        "heading": "Where it's at",
+        "linkLabel": "See where every crag is up to"
       }
     ]
   },

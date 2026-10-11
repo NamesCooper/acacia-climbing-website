@@ -75,7 +75,19 @@ export const marqueeSection = defineType({
   name: 'marqueeSection',
   title: 'Scrolling green band',
   type: 'object',
-  fields: [defineField({ name: 'items', title: 'Phrases', type: 'array', of: [defineArrayMember({ type: 'string' })] })],
+  fields: [
+    defineField({ name: 'items', title: 'Phrases', type: 'array', of: [defineArrayMember({ type: 'string' })] }),
+    defineField({
+      name: 'colour',
+      type: 'string',
+      initialValue: 'moss',
+      options: radio([
+        { title: 'Moss with paper words', value: 'moss' },
+        { title: 'Forest with wattle words', value: 'forest' },
+        { title: 'Wattle with forest words', value: 'wattle' },
+      ]),
+    }),
+  ],
   preview: { select: { items: 'items' }, prepare: ({ items }) => ({ title: (items ?? []).join(' ✸ ') || 'Scrolling band', subtitle: 'Scrolling band' }) },
 })
 
@@ -311,7 +323,10 @@ export const cragRegisterSection = defineType({
   title: 'Crag cards ("Where it\'s at")',
   type: 'object',
   description: 'The furthest-along crags and their progress, pulled from the Crags section.',
-  fields: [headingField('heading', 'Heading (optional)')],
+  fields: [
+    headingField('heading', 'Heading (optional)'),
+    defineField({ name: 'linkLabel', title: 'Map link text', type: 'string', description: 'The link beside the heading. An arrow is added automatically.' }),
+  ],
   preview: { prepare: () => ({ title: "Where it's at", subtitle: 'Live crag cards' }) },
 })
 

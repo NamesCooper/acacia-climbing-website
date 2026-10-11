@@ -37,15 +37,15 @@ const home = {
   seoDescription: "Climbers working with councils so Australia's bouldering spots get recognised, mapped and looked after. Starting in South East Queensland.",
   sections: [
     s('heroSection', {
-      label: "A friendly bunch of climbers looking after Australia's crags",
-      heading: 'Keep the\ncrags open',
+      label: "Hey, we're Acacia. A friendly bunch of climbers.",
+      heading: 'Our crags,\nlooked after',
       body: "We work with councils so bouldering spots get recognised, mapped and looked after. We're starting in South East Queensland, it's our first go at this, and we're doing it out in the open.",
       primaryLabel: 'See the crag map',
       primaryHref: '/progress',
       secondaryLabel: 'How you can help',
       secondaryHref: '/get-involved',
     }),
-    s('marqueeSection', { items: ['Australian bouldering', 'starting in SEQ', 'climbers looking after crags', '5 crags and counting', "come say g'day"] }),
+    s('marqueeSection', { colour: 'moss', items: ['Australian bouldering', 'starting in SEQ', 'climbers looking after crags', '5 crags and counting', "come say g'day"] }),
     s('tabsSection', {
       tabs: [
         { _type: 'tab', _key: key(), label: 'What', heading: 'What is ACC?', body: blocks('A bunch of climbers working to get outdoor bouldering **formally recognised by councils** around Australia, so crags stay open and get the good stuff: stairs, signs and proper tracks. In Queensland we work under ACAQ.') },
@@ -53,7 +53,7 @@ const home = {
         { _type: 'tab', _key: key(), label: 'Where', heading: 'Where are we?', body: blocks("We're starting in South East Queensland with **Tooheys, White Rock, Plunketts, Cedar Creek and Passchendaele**. The long game is every state. Got a spot anywhere in Australia that needs some love? Tell us about it.") },
       ],
     }),
-    s('cragRegisterSection', { heading: "Where it's at" }),
+    s('cragRegisterSection', { heading: "Where it's at", linkLabel: 'See where every crag is up to' }),
   ],
 }
 
