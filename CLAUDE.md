@@ -150,6 +150,7 @@ Frontend developer learning Nuxt, Vue, and the broader JS ecosystem. Fluent in H
 - For HTML, CSS, and standard JavaScript, don't over-explain
 - When making changes across multiple files, walk me through the change at the architectural level first, then make the edits
 - If a decision could be made multiple ways, briefly name the tradeoffs before picking one
+- When Cooper suggests something, don't just agree: give honest feedback and the reasoning, including pushback or a better option when there is one
 - Keep tasks small and finishable (20 to 40 minutes). Split anything bigger and do the first piece
 - Prefer content changes in Sanity over code changes when either would work
 - Always finish by saying how to see the result

@@ -23,6 +23,6 @@
 type FactTone = 'wattle' | 'lichen' | 'sandstone' | 'gum' | 'paper'
 defineProps<{ title?: string; lead?: string; note?: string; facts: { value: string; label: string; tone?: FactTone }[] }>()
 const TONES: Record<FactTone, string> = { wattle: 'bg-wattle', lichen: 'bg-lichen', sandstone: 'bg-sandstone', gum: 'bg-gum', paper: 'bg-paper-light' }
-const ORDER: FactTone[] = ['wattle', 'lichen', 'sandstone', 'paper']
+const ORDER: FactTone[] = ['wattle', 'lichen', 'gum', 'paper']
 const TILTS = [-1.5, 1.2, -1, 1.5]
 </script>
