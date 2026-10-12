@@ -7,10 +7,12 @@
       <li v-for="(c, i) in cards" :id="c.id" :key="c.title" class="scroll-mt-6">
         <UiCard :tone="c.tone ?? 'light'" :halftone="c.halftone ? 'top-right' : undefined" :tilt="tilted ? TILTS[i % TILTS.length] : undefined" class="h-full">
           <UiChip v-if="c.chip" :tone="c.chipTone ?? 'lichen'" :dashed="c.chipDashed">{{ c.chip }}</UiChip>
-          <h3
+          <!-- h2 when the section has no title of its own, so heading levels never skip -->
+          <component
+            :is="title ? 'h3' : 'h2'"
             class="m-0 leading-[1.02]"
             :class="[c.chip ? 'mt-4' : '', titleStyle === 'display' ? 'font-display text-[clamp(30px,3.4vw,42px)]' : 'font-grotesk font-extrabold text-2xl', c.tone === 'forest' ? 'text-wattle' : '']"
-          >{{ c.title }}</h3>
+          >{{ c.title }}</component>
           <p v-if="c.body" class="mt-3 mb-0 text-[17px] leading-relaxed" :class="c.tone === 'forest' ? 'text-paper/90' : ''">{{ c.body }}</p>
           <ul v-if="c.items?.length" class="list-none p-0 m-0 mt-4 flex flex-col gap-3">
             <li v-for="item in c.items" :key="item.title">

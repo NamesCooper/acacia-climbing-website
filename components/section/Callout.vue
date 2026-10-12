@@ -16,7 +16,7 @@
 import type { Cta } from '~/types/content'
 
 withDefaults(
-  defineProps<{ title: string; lead?: string; body?: string; cta?: Cta; tone?: 'sandstone' | 'wattle' | 'lichen' }>(),
+  defineProps<{ title: string; lead?: string; body?: string; cta?: Cta; tone?: 'sandstone' | 'wattle' | 'lichen' | 'gum' }>(),
   { tone: 'sandstone' },
 )
 </script>

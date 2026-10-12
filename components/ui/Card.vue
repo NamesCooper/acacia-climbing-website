@@ -16,7 +16,7 @@
 withDefaults(
   defineProps<{
     as?: string
-    tone?: 'light' | 'wattle' | 'sandstone' | 'lichen' | 'forest'
+    tone?: 'light' | 'wattle' | 'sandstone' | 'lichen' | 'gum' | 'forest'
     size?: 'sm' | 'md' | 'lg'
     tilt?: number
     halftone?: 'top-right' | 'bottom-left' | 'bottom-right'
@@ -29,6 +29,7 @@ const TONES = {
   wattle: 'bg-wattle text-outline shadow-[6px_6px_0_var(--color-outline)]',
   sandstone: 'bg-sandstone text-outline shadow-[6px_6px_0_var(--color-outline)]',
   lichen: 'bg-lichen text-outline shadow-[6px_6px_0_var(--color-outline)]',
+  gum: 'bg-gum text-outline shadow-[6px_6px_0_var(--color-outline)]',
   forest: 'bg-forest text-paper shadow-[6px_6px_0_var(--color-outline)]',
 }
 const RADIUS = { sm: 'rounded-[20px]', md: 'rounded-[24px]', lg: 'rounded-[32px]' }
@@ -44,6 +45,7 @@ const dotFor = {
   wattle: 'wattle-deep',
   sandstone: 'sandstone-deep',
   lichen: 'moss',
+  gum: 'gum-deep',
   forest: 'moss',
 } as const
 </script>

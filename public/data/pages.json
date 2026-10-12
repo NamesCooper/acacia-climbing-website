@@ -665,7 +665,7 @@
         "buttonLabel": "Tell us about your local",
         "heading": "We want to hear from climbers everywhere",
         "label": "Not in South East Queensland?",
-        "tone": "sandstone"
+        "tone": "gum"
       }
     ],
     "seoDescription": "Volunteer, report a crag issue, help with council letters or chip in. Every bit helps keep Australian crags open.",
@@ -852,7 +852,7 @@
       {
         "_key": "c3",
         "_type": "stepsSection",
-        "band": "sandstone",
+        "band": "lichen",
         "heading": "How we work",
         "label": "The same process, every time",
         "linkHref": "/progress",
@@ -1223,7 +1223,7 @@
         "buttonLabel": "Email us",
         "heading": "Let's talk about it",
         "label": "Business, grant body or funder?",
-        "tone": "sandstone"
+        "tone": "gum"
       }
     ],
     "seoDescription": "How businesses, grant bodies and funders can support Acacia Climbing Coalition's work keeping Australian crags open.",

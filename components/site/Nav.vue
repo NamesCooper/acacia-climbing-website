@@ -67,8 +67,8 @@
               </ul>
             </div>
           </li>
-          <!-- On the smallest phones the "Lend a hand" button lives in here instead of the bar -->
-          <li v-if="nav?.buttonLabel && nav.buttonLink" class="min-[380px]:hidden">
+          <!-- On narrower phones (under 430px) the "Lend a hand" button lives in here instead of the bar -->
+          <li v-if="nav?.buttonLabel && nav.buttonLink" class="min-[430px]:hidden">
             <NuxtLink
               v-bind="chromeLink(nav.buttonLink)"
               class="inline-block no-underline text-outline bg-wattle border-2 border-outline rounded-full px-3.5 py-1.5 font-bold shadow-[2px_2px_0_var(--color-outline)]"
@@ -80,13 +80,13 @@
       <NuxtLink
         v-if="nav?.buttonLabel && nav.buttonLink"
         v-bind="chromeLink(nav.buttonLink)"
-        class="nudge hidden min-[380px]:inline-block justify-self-end whitespace-nowrap no-underline text-outline bg-wattle border-[3px] border-outline rounded-full px-4 py-2 sm:px-5 sm:py-2.5 font-bold shadow-[4px_4px_0_var(--color-outline)]"
+        class="nudge hidden min-[430px]:inline-block justify-self-end whitespace-nowrap no-underline text-outline bg-wattle border-[3px] border-outline rounded-full px-4 py-2 sm:px-5 sm:py-2.5 font-bold shadow-[4px_4px_0_var(--color-outline)]"
       >{{ nav.buttonLabel }}</NuxtLink>
 
       <!-- Phones only: opens and closes the pills -->
       <button
         type="button"
-        class="sm:hidden col-start-3 min-[380px]:col-start-auto justify-self-end inline-flex items-center gap-2 cursor-pointer bg-paper-light text-outline border-[3px] border-outline rounded-full px-3.5 py-2 font-grotesk font-extrabold text-sm uppercase tracking-[0.06em] shadow-[3px_3px_0_var(--color-outline)]"
+        class="sm:hidden col-start-3 min-[430px]:col-start-auto justify-self-end inline-flex items-center gap-2 cursor-pointer bg-paper-light text-outline border-[3px] border-outline rounded-full px-3.5 py-2 font-grotesk font-extrabold text-sm uppercase tracking-[0.06em] shadow-[3px_3px_0_var(--color-outline)]"
         aria-controls="main-menu"
         :aria-expanded="menuOpen"
         @click="menuOpen = !menuOpen"

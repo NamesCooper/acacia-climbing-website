@@ -5,6 +5,7 @@ export const CRAG_STATUSES = [
   { title: 'Council recognised', value: 'recognised', label: 'Council Recognised' },
   { title: 'In progress', value: 'progress', label: 'In Progress' },
   { title: 'Scoping', value: 'scoping', label: 'Scoping' },
+  { title: 'Access issue (closed or at risk)', value: 'issue', label: 'Access issue' },
 ]
 
 export const crag = defineType({

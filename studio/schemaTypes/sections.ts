@@ -31,19 +31,24 @@ const CARD_TONES = [
   { title: 'Wattle', value: 'wattle' },
   { title: 'Sandstone', value: 'sandstone' },
   { title: 'Lichen', value: 'lichen' },
+  { title: 'Gum leaf', value: 'gum' },
   { title: 'Forest (dark)', value: 'forest' },
 ]
 const CHIP_TONES = [
   { title: 'Lichen', value: 'lichen' },
   { title: 'Wattle', value: 'wattle' },
   { title: 'Sandstone', value: 'sandstone' },
+  { title: 'Gum leaf', value: 'gum' },
   { title: 'Moss', value: 'moss' },
   { title: 'Paper', value: 'paper' },
+  { title: 'Ironbark (warnings)', value: 'ironbark' },
 ]
 const BUTTON_COLOURS = [
   { title: 'Wattle', value: 'wattle' },
+  { title: 'Gum leaf', value: 'gum' },
   { title: 'Moss', value: 'moss' },
   { title: 'Paper', value: 'paper' },
+  { title: 'Ironbark (warnings)', value: 'ironbark' },
 ]
 
 const linkFields = (labelName = 'linkLabel', hrefName = 'linkHref', title = 'Button') => [
@@ -222,7 +227,7 @@ export const stepsSection = defineType({
     headingField(),
     defineField({ name: 'steps', type: 'array', of: [defineArrayMember({ type: 'string' })] }),
     ...linkFields('linkLabel', 'linkHref', 'Link'),
-    defineField({ name: 'band', title: 'Band colour', type: 'string', initialValue: 'sandstone', options: radio([{ title: 'Sandstone', value: 'sandstone' }, { title: 'Wattle', value: 'wattle' }]) }),
+    defineField({ name: 'band', title: 'Band colour', type: 'string', initialValue: 'sandstone', options: radio([{ title: 'Sandstone', value: 'sandstone' }, { title: 'Lichen', value: 'lichen' }, { title: 'Gum leaf', value: 'gum' }, { title: 'Wattle', value: 'wattle' }]) }),
   ],
   preview: { select: { title: 'heading' }, prepare: ({ title }) => ({ title: title || 'Steps', subtitle: 'Numbered steps' }) },
 })
@@ -322,7 +327,7 @@ export const ctaSection = defineType({
     defineField({ name: 'body', title: 'Text', type: 'text', rows: 3 }),
     defineField({ name: 'buttonLabel', title: 'Button text', type: 'string' }),
     defineField({ name: 'buttonHref', title: 'Button link', type: 'string' }),
-    defineField({ name: 'tone', title: 'Panel colour', type: 'string', initialValue: 'sandstone', options: radio([{ title: 'Sandstone', value: 'sandstone' }, { title: 'Wattle', value: 'wattle' }, { title: 'Lichen', value: 'lichen' }]) }),
+    defineField({ name: 'tone', title: 'Panel colour', type: 'string', initialValue: 'sandstone', options: radio([{ title: 'Sandstone', value: 'sandstone' }, { title: 'Wattle', value: 'wattle' }, { title: 'Lichen', value: 'lichen' }, { title: 'Gum leaf', value: 'gum' }]) }),
   ],
   preview: { select: { title: 'heading' }, prepare: ({ title }) => ({ title: title || 'Call to action', subtitle: 'Call to action' }) },
 })
@@ -396,6 +401,7 @@ export const factsSection = defineType({
                 { title: 'Wattle', value: 'wattle' },
                 { title: 'Lichen', value: 'lichen' },
                 { title: 'Sandstone', value: 'sandstone' },
+                { title: 'Gum leaf', value: 'gum' },
                 { title: 'Paper', value: 'paper' },
               ]),
             }),
@@ -461,7 +467,7 @@ export const imageTextSection = defineType({
       type: 'string',
       initialValue: 'wattle',
       hidden: ({ parent }) => parent?.look !== 'cutout',
-      options: radio([{ title: 'Wattle', value: 'wattle' }, { title: 'Lichen', value: 'lichen' }, { title: 'Sandstone', value: 'sandstone' }, { title: 'Moss', value: 'moss' }]),
+      options: radio([{ title: 'Wattle', value: 'wattle' }, { title: 'Lichen', value: 'lichen' }, { title: 'Sandstone', value: 'sandstone' }, { title: 'Gum leaf', value: 'gum' }, { title: 'Moss', value: 'moss' }]),
     }),
     ...linkFields(),
   ],

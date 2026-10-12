@@ -18,7 +18,7 @@
 
     <div class="px-4 py-6 sm:px-6 lg:p-0">
         <!-- PANEL -->
-        <aside ref="panelEl" class="relative z-[600] bg-paper-light border-[3px] border-outline rounded-[28px] shadow-[6px_6px_0_var(--color-outline)] flex flex-col overflow-hidden scroll-mt-4 lg:absolute lg:left-6 lg:top-6 lg:bottom-6 lg:w-[400px]">
+        <section ref="panelEl" aria-label="Crag details" class="relative z-[600] bg-paper-light border-[3px] border-outline rounded-[28px] shadow-[6px_6px_0_var(--color-outline)] flex flex-col overflow-hidden scroll-mt-4 lg:absolute lg:left-6 lg:top-6 lg:bottom-6 lg:w-[400px]">
           <!-- Title bar, always on top of the panel -->
           <div class="flex-shrink-0 px-6 pt-5 pb-4 border-b-[3px] border-outline bg-wattle">
             <p class="m-0 font-grotesk font-extrabold text-xs uppercase tracking-[0.08em]">The crag map</p>
@@ -146,7 +146,7 @@
               <p class="mt-4 mb-0 text-[12px] opacity-70">Last updated {{ formatDate(currentCrag.updatedAt) }}. Always check signage and local access info before you climb.</p>
             </div>
           </div>
-        </aside>
+        </section>
     </div>
   </section>
 </template>
@@ -180,7 +180,8 @@ const STATE_NAME_MAP: Record<string, string> = {
   'Queensland': 'QLD', 'New South Wales': 'NSW', 'Victoria': 'VIC', 'South Australia': 'SA',
   'Western Australia': 'WA', 'Tasmania': 'TAS', 'Northern Territory': 'NT', 'Australian Capital Territory': 'ACT',
 }
-const legend = STATUS_ORDER
+// "Access issue" only shows in the key when a crag actually has it
+const legend = computed(() => STATUS_ORDER.filter((s) => s !== 'issue' || cragData.value.crags.some((c) => c.status === 'issue')))
 
 // ── State for the panel ──
 const view = ref<'australia' | 'state' | 'coming-soon' | 'crag'>('australia')
@@ -223,7 +224,8 @@ const statePolys: Record<string, any> = {}
 const AUSTRALIA: [[number, number], [number, number]] = [[-44, 112], [-10, 154]]
 
 function pinIcon(c: Crag, active = false) {
-  const size = active ? 30 : 22
+  // At least 24px so they're easy to tap (WCAG 2.2 target size)
+  const size = active ? 34 : 26
   return L!.divIcon({
     className: '',
     html: `<span style="display:block;width:${size}px;height:${size}px;border-radius:999px;background:${statusColour(c.status)};border:3px solid #1E1A16;box-shadow:3px 3px 0 #1E1A16;${c.status === 'scoping' ? 'border-style:dashed;' : ''}"></span>`,
@@ -240,7 +242,7 @@ function styleStates() {
       color: '#1E1A16',
       weight: selected ? 3 : 1.5,
       opacity: selected ? 1 : 0.5,
-      fillColor: has ? '#A9B97E' : '#E2C58E',
+      fillColor: has ? '#A9B97E' : '#D8C29A',
       fillOpacity: selected ? 0.35 : has ? 0.25 : 0.12,
     })
   })

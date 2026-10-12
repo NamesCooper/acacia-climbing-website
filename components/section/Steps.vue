@@ -1,6 +1,6 @@
 <template>
   <!-- Full-width coloured band with numbered step cards. -->
-  <section class="border-y-[3px] border-outline my-10 sm:my-14" :class="band === 'wattle' ? 'bg-wattle' : 'bg-sandstone'">
+  <section class="border-y-[3px] border-outline my-10 sm:my-14" :class="BANDS[band] ?? BANDS.sandstone">
     <div class="max-w-[1240px] mx-auto px-6 py-16 sm:py-20">
       <UiSectionTitle :title="title" :lead="lead" />
       <ol class="list-none p-0 m-0 mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -23,8 +23,10 @@ withDefaults(
     lead?: string
     steps: string[]
     link?: { label: string; to: string }
-    band?: 'sandstone' | 'wattle'
+    band?: 'sandstone' | 'wattle' | 'lichen' | 'gum'
   }>(),
   { band: 'sandstone' },
 )
+
+const BANDS = { sandstone: 'bg-sandstone', wattle: 'bg-wattle', lichen: 'bg-lichen', gum: 'bg-gum' }
 </script>

@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 withDefaults(
-  defineProps<{ dot?: 'wattle' | 'wattle-deep' | 'sandstone-deep' | 'lichen' | 'moss' }>(),
+  defineProps<{ dot?: 'wattle' | 'wattle-deep' | 'sandstone-deep' | 'gum-deep' | 'lichen' | 'moss' }>(),
   { dot: 'wattle-deep' },
 )
 </script>

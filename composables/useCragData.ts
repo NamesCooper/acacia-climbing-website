@@ -13,7 +13,7 @@ export interface Crag {
   subtitle?: string
   lat: number
   lng: number
-  status: 'completed' | 'recognised' | 'progress' | 'scoping'
+  status: 'completed' | 'recognised' | 'progress' | 'scoping' | 'issue'
   statusLabel: string
   council: string
   councilStatus?: string
@@ -44,6 +44,7 @@ const DEFAULT_LABELS: Record<string, string> = {
   recognised: 'Council Recognised',
   progress: 'In Progress',
   scoping: 'Scoping',
+  issue: 'Access issue',
 }
 
 async function fromSanity(): Promise<CragData | null> {

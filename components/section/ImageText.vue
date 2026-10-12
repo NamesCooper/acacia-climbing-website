@@ -62,7 +62,7 @@
 <script setup lang="ts">
 import type { Cta } from '~/types/content'
 
-type Shape = 'wattle' | 'moss' | 'lichen' | 'sandstone'
+type Shape = 'wattle' | 'moss' | 'lichen' | 'sandstone' | 'gum'
 
 withDefaults(
   defineProps<{
@@ -78,11 +78,12 @@ withDefaults(
   { paragraphs: () => [], imageSide: 'left', look: 'frame', shape: 'wattle' },
 )
 
-const SHAPES: Record<Shape, string> = { wattle: 'bg-wattle', moss: 'bg-moss', lichen: 'bg-lichen', sandstone: 'bg-sandstone' }
+const SHAPES: Record<Shape, string> = { wattle: 'bg-wattle', moss: 'bg-moss', lichen: 'bg-lichen', sandstone: 'bg-sandstone', gum: 'bg-gum' }
 const DOTS: Record<Shape, string> = {
   wattle: 'var(--color-wattle-deep)',
   moss: 'var(--color-forest)',
   lichen: 'var(--color-moss)',
   sandstone: 'var(--color-sandstone-deep)',
+  gum: 'var(--color-gum-deep)',
 }
 </script>

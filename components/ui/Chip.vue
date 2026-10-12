@@ -10,7 +10,7 @@
 <script setup lang="ts">
 withDefaults(
   defineProps<{
-    tone?: 'wattle' | 'lichen' | 'sandstone' | 'moss' | 'forest' | 'paper'
+    tone?: 'wattle' | 'lichen' | 'sandstone' | 'gum' | 'moss' | 'forest' | 'paper' | 'ironbark'
     status?: string
     dashed?: boolean
   }>(),
@@ -21,6 +21,8 @@ const TONES = {
   wattle: 'bg-wattle text-forest',
   lichen: 'bg-lichen text-forest',
   sandstone: 'bg-sandstone text-forest',
+  gum: 'bg-gum text-outline',
+  ironbark: 'bg-ironbark text-paper',
   moss: 'bg-moss text-paper',
   forest: 'bg-forest text-paper',
   paper: 'bg-paper text-forest',

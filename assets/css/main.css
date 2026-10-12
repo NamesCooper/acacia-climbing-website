@@ -9,10 +9,13 @@
   --color-forest: #203022;       /* logo green, dark sections */
   --color-moss: #4F6B34;         /* progress bars, secondary buttons */
   --color-lichen: #A9B97E;       /* "recognised" chip, soft fills */
-  --color-wattle: #EFC248;       /* main accent */
+  --color-wattle: #EFC248;       /* actions and highlights: buttons, chips, riso shadows */
   --color-wattle-deep: #D29F2A;  /* logo gold, halftone dots on wattle */
-  --color-sandstone: #E2C58E;    /* panels, "getting started" chip */
-  --color-sandstone-deep: #B8935A;
+  --color-sandstone: #D8C29A;    /* calm panels and bands (dusty, so it never competes with wattle) */
+  --color-sandstone-deep: #B39A70; /* halftone dots on sandstone */
+  --color-gum: #8FA6A0;          /* gum-leaf grey-green: a cool, calm accent for panels */
+  --color-gum-deep: #6F8781;     /* halftone dots on gum */
+  --color-ironbark: #8A3B2A;     /* warnings only: access issues, closures (paper text on it) */
 
   /* Type */
   --font-display: "Fraunces", Georgia, serif;          /* big italic headlines (use with italic) */
@@ -90,6 +93,13 @@ body::after {
 .tilt:hover, .tilt:focus-visible { transform: rotate(0deg) translateY(-4px); }
 
 .nudge { transition: transform .15s ease; }
+
+/* Keyboard focus: a thick ring that matches the poster outlines, wattle on dark bands */
+:focus-visible { outline: 3px solid var(--color-outline); outline-offset: 3px; border-radius: 6px; }
+.bg-forest :focus-visible, .bg-moss :focus-visible, .bg-ironbark :focus-visible { outline-color: var(--color-wattle); }
+
+/* The scrolling band stops while you hover it, or when its pause button is pressed */
+.torn-band:hover .anim-marquee, .anim-marquee.is-paused { animation-play-state: paused; }
 .nudge:hover, .nudge:focus-visible { transform: translate(-2px, -2px); }
 
 @media (prefers-reduced-motion: reduce) {

@@ -59,12 +59,15 @@ The approved homepage mockup lives on the Claude Design canvas ("G · Retro post
 | `forest` | #203022 | Logo green, dark sections (pre-footer, footer) |
 | `moss` | #4F6B34 | Progress bars, primary button |
 | `lichen` | #A9B97E | "Recognised" chips, soft fills |
-| `wattle` | #EFC248 | Main accent, misregistered headline shadow |
+| `wattle` | #EFC248 | Actions and highlights: buttons, chips, riso headline shadow. Never as text on paper |
 | `wattle-deep` | #D29F2A | Logo gold, halftone dots on wattle |
-| `sandstone` | #E2C58E | Panels, "getting started" chips |
-| `sandstone-deep` | #B8935A | Halftone dots on sandstone |
+| `sandstone` | #D8C29A | Calm panels and bands (dusty, so it never competes with wattle) |
+| `sandstone-deep` | #B39A70 | Halftone dots on sandstone |
+| `gum` | #8FA6A0 | Gum-leaf grey-green: cool, calm panels and bands |
+| `gum-deep` | #6F8781 | Halftone dots on gum |
+| `ironbark` | #8A3B2A | Warnings only: the "Access issue" status, closures. Paper text on it |
 
-No orange or pink. Keep to sandstone yellows, forest and moss greens, and wattle.
+No orange or pink. Wattle is for actions and highlights; sandstone and gum are for calm panels; ironbark is only for warnings. Alternate greens (lichen, gum) with the yellows down a page so it doesn't read as one long beige scroll.
 
 ### Type
 
