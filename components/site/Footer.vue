@@ -51,9 +51,8 @@
         <nav aria-label="Footer" class="flex flex-wrap gap-x-12 gap-y-10 lg:justify-end">
           <div v-for="(col, i) in footer?.columns ?? []" :key="col._key ?? col.heading" class="min-w-[130px]">
             <p
-              class="tilt m-0 inline-block border-2 border-outline rounded-full px-3 py-1 font-grotesk font-extrabold text-xs uppercase tracking-[0.08em] text-forest"
+              class="m-0 inline-block border-2 border-outline rounded-full px-3 py-1 font-grotesk font-extrabold text-xs uppercase tracking-[0.08em] text-forest"
               :class="CHIP_BG[i % CHIP_BG.length]"
-              :style="{ '--tilt': TILTS[i % TILTS.length] + 'deg' }"
             >{{ col.heading }}</p>
             <ul class="list-none p-0 m-0 mt-4 flex flex-col gap-2.5">
               <li v-for="l in col.links ?? []" :key="l._key ?? l.label">

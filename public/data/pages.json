@@ -919,28 +919,6 @@
         ]
       },
       {
-        "_key": "c2",
-        "_type": "factsSection",
-        "facts": [
-          {
-            "_key": "c2a",
-            "_type": "fact",
-            "label": "Focus areas in South East Queensland",
-            "tone": "wattle",
-            "value": "5"
-          },
-          {
-            "_key": "c2b",
-            "_type": "fact",
-            "label": "Formal council recognition, at Tooheys Forest",
-            "tone": "lichen",
-            "value": "1"
-          }
-        ],
-        "heading": "So far",
-        "note": "As of October 2026. Every crag's progress is live on the crag map."
-      },
-      {
         "_key": "c5",
         "_type": "cragRegisterSection",
         "heading": "Where it's at",
