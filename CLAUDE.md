@@ -96,8 +96,10 @@ No orange or pink. Wattle is for actions and highlights; sandstone and gum are f
 
 ### Illustration and photo direction
 
-- **Line art first** (changed from rubber hose, October 2026): friendly modern cartoon line art, simple rounded faces, relaxed real-climber poses, small props (chalk bag, shoes, pad, fist bump) as spot icons. Not 1930s or Cuphead style
-- Fills in the bush palette (forest for dark clothing and pads, not black; wattle, sandstone, lichen accents). Line weight heavy enough to sit next to the 3px poster outlines
+- **Realistic line art** (October 2026): field-guide and national-park-sign style ink drawings with natural proportions, real gear and believable poses. Not cartoony, not rubber hose, not Cuphead. The bold poster site stays as it is; the drawings sit inside it
+- A heavier outer contour (to hold its own next to the 3px poster outlines) with finer lines inside for folds, rock texture and chalk. Ink in forest or outline, little or no fill on the figure
+- Colour comes from a palette shape behind the drawing (wattle, lichen, sandstone, gum), the same treatment as photo cut-outs, so drawings and photos read as one family
+- Small vignettes (a climber, a boulder, a gum tree), not full landscapes. Props (chalk bag, shoes, pad, brush) work as spot icons
 - Australian settings: sandstone and granite boulders, eucalypts and wattle. No alpine peaks or pine trees
 - Get climbing details right: crash pads sit on the ground under a climber, never worn on the back while climbing
 - **Not Corporate Memphis.** It reads as tech startup, which this site avoids
