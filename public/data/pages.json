@@ -153,6 +153,38 @@
                 ]
               }
             ]
+          },
+          {
+            "_key": "k000w1",
+            "_type": "tab",
+            "label": "Who",
+            "heading": "Who's behind it?",
+            "body": [
+              {
+                "_key": "kw1b",
+                "_type": "block",
+                "style": "normal",
+                "markDefs": [],
+                "children": [
+                  {
+                    "_key": "kw1s",
+                    "_type": "span",
+                    "marks": [],
+                    "text": "Acacia was started by Cooper, a South East Queensland boulderer and Rock Climbing Queensland's bouldering rep. It's a small volunteer crew for now, and we'd love a few more faces."
+                  }
+                ]
+              }
+            ],
+            "image": {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-a877dc73fc8ca8b35e3758e8b12e22f81751b3b7-1200x1200-jpg"
+              },
+              "alt": "Cooper, who started Acacia, smiling"
+            },
+            "linkLabel": "Meet the crew",
+            "linkHref": "/about"
           }
         ]
       },
@@ -216,24 +248,6 @@
         "label": "Fresh from the crags",
         "heading": "Latest updates",
         "count": 3
-      },
-      {
-        "_key": "h0who",
-        "_type": "ctaSection",
-        "label": "Who's behind this?",
-        "heading": "Started by a local boulderer",
-        "body": "Acacia was started by Cooper, a South East Queensland boulderer and Rock Climbing Queensland's bouldering rep. It's a small volunteer crew for now, and we'd love a few more faces.",
-        "buttonLabel": "Meet the crew",
-        "buttonHref": "/about",
-        "tone": "lichen",
-        "image": {
-          "_type": "image",
-          "asset": {
-            "_type": "reference",
-            "_ref": "image-a877dc73fc8ca8b35e3758e8b12e22f81751b3b7-1200x1200-jpg"
-          },
-          "alt": "Cooper, who started Acacia, smiling"
-        }
       }
     ]
   },

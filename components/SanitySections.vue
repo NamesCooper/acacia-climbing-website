@@ -14,7 +14,10 @@
 
     <HomeMarquee v-else-if="s._type === 'marqueeSection'" :items="s.items ?? []" :colour="clean(s.colour) ?? 'moss'" />
 
-    <HomeAboutTabs v-else-if="s._type === 'tabsSection'" :tabs="s.tabs ?? []" />
+    <HomeAboutTabs
+      v-else-if="s._type === 'tabsSection'"
+      :tabs="(s.tabs ?? []).map((t: any) => ({ ...t, photo: t.image?.asset ? { src: sanityImageUrl(t.image, 600), alt: t.image.alt } : undefined }))"
+    />
 
     <HomeCragCards v-else-if="s._type === 'cragRegisterSection'" :heading="s.heading" :link-label="s.linkLabel" />
 

@@ -104,7 +104,7 @@ No orange or pink. Wattle is for actions and small highlights (buttons, chips, s
 - Australian settings: sandstone and granite boulders, eucalypts and wattle. No alpine peaks or pine trees
 - Get climbing details right: crash pads sit on the ground under a climber, never worn on the back while climbing
 - **Not Corporate Memphis.** It reads as tech startup, which this site avoids
-- Real photos: black and white cut-outs sitting on a bold palette shape (wattle, moss, lichen, sandstone), with a sticker or two around them. Makes any phone photo look on-brand
+- Real photos stay in full colour (Cooper, Oct 2026), framed with the 3px outline and hard shadow. The "cut-out on a shape" option in the Photo and text block is still there for photos with the background removed
 - Small outlined spot icons (3px outline, flat fill, hard shadow) are welcome on cards
 - AI-generated mockups are a mood board only, never on the live site. The plan is one commissioned illustrator for a consistent set
 - Cooper is sorting the mascots and gathering real photos and video; don't invent people, quotes or photos

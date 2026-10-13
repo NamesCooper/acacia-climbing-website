@@ -1,9 +1,8 @@
 <template>
   <!-- Everything stacks in one centred column: latest update, lead-in, headline, intro, buttons -->
   <section class="relative max-w-[1100px] mx-auto px-6 pt-10 pb-16 sm:pt-16 sm:pb-24 flex flex-col items-center text-center">
-    <!-- Sparkles sit out at the edges on bigger screens, clear of the words -->
-    <UiSparkle class="absolute left-[3%] top-[30%] text-outline hidden md:block" :size="56" />
-    <UiSparkle class="absolute right-[4%] top-[14%] text-outline hidden md:block" :size="40" delay=".8s" />
+    <!-- Two sparkles hang off the headline itself (see the h1), so they stay clear of the words
+         at every width. This one sits by the buttons. -->
     <UiSparkle class="absolute right-[8%] bottom-[18%] text-outline hidden md:block" :size="30" delay="1.4s" />
 
     <!-- Newest update as one small link, so the site feels alive at a glance.
@@ -26,6 +25,9 @@
     <h1 class="relative mt-4 sm:mt-5 mb-0 font-display text-[clamp(60px,12.5vw,148px)] leading-[0.9] tracking-[-0.025em]">
       <span aria-hidden="true" class="absolute inset-0 text-wattle-deep translate-x-[0.05em] translate-y-[0.05em] whitespace-pre-line">{{ heading }}</span>
       <span class="relative whitespace-pre-line">{{ heading }}</span>
+      <!-- Positioned in em, so they scale with the headline and always sit just outside it -->
+      <UiSparkle class="absolute -left-[0.55em] top-[1.15em] text-outline hidden xl:block" :size="48" />
+      <UiSparkle class="absolute -right-[0.4em] -top-[0.1em] text-outline hidden xl:block" :size="36" delay=".8s" />
     </h1>
 
     <p v-if="body" class="relative mt-7 sm:mt-9 mb-0 max-w-[620px] text-lg sm:text-xl leading-relaxed text-balance">{{ body }}</p>

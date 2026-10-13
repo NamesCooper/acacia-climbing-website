@@ -38,11 +38,26 @@
               class="[grid-area:1/1]"
               :class="active === i ? '' : 'invisible'"
             >
+              <!-- On phones and tablets the photo sits small beside the heading -->
+              <img
+                v-if="t.photo?.src"
+                :src="t.photo.src"
+                :alt="t.photo.alt ?? ''"
+                width="96"
+                height="96"
+                loading="lazy"
+                class="lg:hidden float-right ml-4 mt-7 size-20 sm:size-24 object-cover border-[3px] border-outline rounded-2xl shadow-[3px_3px_0_var(--color-outline)]"
+              />
               <h2 class="mt-7 mb-0 font-display text-[clamp(44px,6vw,72px)] leading-[0.92] tracking-[-0.02em]">{{ t.heading }}</h2>
               <!-- Rich text from the Studio: bold words come through as <strong> -->
               <div class="mt-4 max-w-[560px] text-lg leading-relaxed [&_p]:m-0 [&_p+p]:mt-3">
                 <PortableText :value="t.body ?? []" />
               </div>
+              <NuxtLink
+                v-if="t.linkLabel && t.linkHref"
+                :to="t.linkHref"
+                class="inline-block mt-5 font-grotesk font-bold text-lg text-forest"
+              >{{ t.linkLabel }} →</NuxtLink>
             </div>
           </div>
         </div>
@@ -50,8 +65,17 @@
         <!-- Spot for the mascot once it's ready. Only on wide screens for now: on phones and
              tablets it sat under the text as an empty-looking box. -->
         <div class="hidden lg:flex flex-[1_1_240px] justify-center">
-          <div class="w-[180px] h-[200px] sm:w-[240px] sm:h-[280px] bg-paper border-[3px] border-outline rounded-3xl flex items-center justify-center">
-            <img src="/brand/sprig-green.png" alt="" class="anim-bob w-[100px] sm:w-[140px] h-auto" />
+          <!-- The open tab's photo if it has one, otherwise the sprig (the mascot's spot, later) -->
+          <img
+            v-if="tabs[active]?.photo?.src"
+            :src="tabs[active].photo!.src"
+            :alt="tabs[active].photo!.alt ?? ''"
+            width="280"
+            height="280"
+            class="size-[280px] object-cover border-[3px] border-outline rounded-3xl shadow-[6px_6px_0_var(--color-outline)]"
+          />
+          <div v-else class="w-[240px] h-[280px] bg-paper border-[3px] border-outline rounded-3xl flex items-center justify-center">
+            <img src="/brand/sprig-green.png" alt="" class="anim-bob w-[140px] h-auto" />
           </div>
         </div>
       </div>
@@ -62,7 +86,9 @@
 <script setup lang="ts">
 import { PortableText } from '@portabletext/vue'
 
-const props = defineProps<{ tabs: { label: string; heading: string; body?: any[] }[] }>()
+const props = defineProps<{
+  tabs: { label: string; heading: string; body?: any[]; linkLabel?: string; linkHref?: string; photo?: { src?: string; alt?: string } }[]
+}>()
 
 // `ref` makes a value reactive: when it changes, the template re-renders.
 const active = ref(0)
