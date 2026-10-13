@@ -6,9 +6,11 @@
       <ol class="list-none p-0 m-0 mt-10 grid gap-3 sm:gap-4 sm:grid-cols-2" :class="LG_COLS[steps.length] ?? 'lg:grid-cols-4'">
         <li v-for="(step, i) in steps" :key="step">
           <!-- On phones the number sits beside the words, so a list of steps stays short -->
-          <UiCard size="sm" class="h-full flex items-center gap-4 sm:block">
+          <UiCard size="sm" class="h-full">
+            <div class="flex items-center gap-4 sm:block">
             <span class="flex-shrink-0 inline-flex items-center justify-center size-10 rounded-full bg-moss text-paper border-[3px] border-outline font-grotesk font-extrabold">{{ i + 1 }}</span>
             <p class="m-0 sm:mt-3 font-grotesk font-bold text-[17px] leading-snug">{{ step }}</p>
+            </div>
           </UiCard>
         </li>
       </ol>

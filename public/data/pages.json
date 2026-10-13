@@ -225,7 +225,15 @@
         "body": "Acacia was started by Cooper, a South East Queensland boulderer and Rock Climbing Queensland's bouldering rep. It's a small volunteer crew for now, and we'd love a few more faces.",
         "buttonLabel": "Meet the crew",
         "buttonHref": "/about",
-        "tone": "lichen"
+        "tone": "lichen",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-a877dc73fc8ca8b35e3758e8b12e22f81751b3b7-1200x1200-jpg"
+          },
+          "alt": "Cooper, who started Acacia, smiling"
+        }
       }
     ]
   },
@@ -498,51 +506,21 @@
       },
       {
         "_key": "k000z",
-        "_type": "cardsSection",
-        "cards": [
-          {
-            "_key": "k000u",
-            "_type": "card",
-            "body": "Acacia was started by Cooper, a South East Queensland boulderer and the bouldering representative for Rock Climbing Queensland (RCQ, formerly ACAQ). He spent a couple of years working towards this before taking it public. Right now it's a small volunteer crew doing the work in spare hours, with a lot of help from local climbers.",
-            "linkHref": "/get-involved",
-            "linkLabel": "Come be part of it",
-            "title": "Who's behind it"
+        "_type": "ctaSection",
+        "label": "Who's behind it",
+        "heading": "Started by a local boulderer",
+        "body": "Acacia was started by Cooper, a South East Queensland boulderer and the bouldering representative for Rock Climbing Queensland (RCQ, formerly ACAQ). He spent a couple of years working towards this before taking it public. Right now it's a small volunteer crew doing the work in spare hours, with a lot of help from local climbers.",
+        "buttonLabel": "Come be part of it",
+        "buttonHref": "/get-involved",
+        "tone": "light",
+        "image": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-a877dc73fc8ca8b35e3758e8b12e22f81751b3b7-1200x1200-jpg"
           },
-          {
-            "_key": "k000y",
-            "_type": "card",
-            "items": [
-              {
-                "_key": "k000v",
-                "_type": "cardItem",
-                "body": "Rock Climbing Queensland (formerly ACAQ), the state's peak climbing body. Our Queensland work happens under their umbrella.",
-                "title": "RCQ"
-              },
-              {
-                "_key": "k000w",
-                "_type": "cardItem",
-                "body": "Where our digital guidebooks live, so climbers have accurate, up-to-date info.",
-                "title": "KAYA"
-              },
-              {
-                "_key": "k000q",
-                "_type": "cardItem",
-                "body": "Queensland Parks and Wildlife Service. We have a good working relationship with the rangers looking after crags in their parks.",
-                "title": "QPWS"
-              },
-              {
-                "_key": "k000x",
-                "_type": "cardItem",
-                "body": "Brisbane, Ipswich, Logan, Moreton Bay and Southern Downs, so far.",
-                "title": "Local councils"
-              }
-            ],
-            "title": "Working with",
-            "tone": "forest"
-          }
-        ],
-        "columns": 2,
-        "titleStyle": "grotesk"
+          "alt": "Cooper, who started Acacia, smiling"
+        }
       },
       {
         "_key": "k0014",
@@ -862,7 +840,7 @@
         "linkHref": "/progress",
         "linkLabel": "See where each crag is up to",
         "steps": [
-          "Research the area and talk with local climbers",
+          "Research the area, and talk with local climbers and anyone who's documented it",
           "Talk with council and rangers, and agree a plan",
           "Site visits: GPS, photos and mapping",
           "Sort out access and get final approval",
