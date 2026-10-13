@@ -5,7 +5,7 @@
     <p v-if="intro" class="-mt-6 mb-10 max-w-[680px] text-lg leading-relaxed">{{ intro }}</p>
     <ul class="list-none p-0 m-0 grid gap-6" :class="COLS[columns]">
       <li v-for="(c, i) in cards" :id="c.id" :key="c.title" class="scroll-mt-6">
-        <UiCard :tone="c.tone ?? 'light'" :halftone="c.halftone ? 'top-right' : undefined" :tilt="tilted ? TILTS[i % TILTS.length] : undefined" class="h-full">
+        <UiCard :tone="c.tone ?? 'light'" :halftone="c.halftone ? 'top-right' : undefined" class="h-full">
           <UiChip v-if="c.chip" :tone="c.chipTone ?? 'lichen'" :dashed="c.chipDashed">{{ c.chip }}</UiChip>
           <!-- h2 when the section has no title of its own, so heading levels never skip -->
           <component
@@ -49,5 +49,4 @@ withDefaults(
 )
 
 const COLS = { 2: 'md:grid-cols-2', 3: 'md:grid-cols-2 lg:grid-cols-3', 4: 'sm:grid-cols-2 lg:grid-cols-4' }
-const TILTS = [-1.5, 1.2, -1, 1.5]
 </script>

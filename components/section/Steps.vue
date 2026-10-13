@@ -5,7 +5,7 @@
       <UiSectionTitle :title="title" :lead="lead" />
       <ol class="list-none p-0 m-0 mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <li v-for="(step, i) in steps" :key="step">
-          <UiCard size="sm" :tilt="i % 2 ? 1.2 : -1.2" class="h-full">
+          <UiCard size="sm" class="h-full">
             <span class="inline-flex items-center justify-center size-10 rounded-full bg-moss text-paper border-[3px] border-outline font-grotesk font-extrabold">{{ i + 1 }}</span>
             <p class="mt-3 mb-0 font-grotesk font-bold text-[17px] leading-snug">{{ step }}</p>
           </UiCard>

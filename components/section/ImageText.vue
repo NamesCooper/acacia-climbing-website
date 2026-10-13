@@ -1,6 +1,6 @@
 <template>
   <!-- A photo beside some text. Two looks:
-       - frame: the photo in a tilted poster frame
+       - frame: the photo in a poster frame
        - cutout: a black and white cut-out (PNG with the background removed) standing on a
          bold palette shape, with the caption as a sticker. Makes any phone photo look on-brand. -->
   <section class="max-w-[1240px] mx-auto px-6 py-10 sm:py-14">
@@ -28,16 +28,14 @@
           <UiSparkle class="absolute left-[2%] top-[6%] text-outline" :size="34" />
           <figcaption
             v-if="image?.caption"
-            class="tilt absolute right-[2%] bottom-[6%] max-w-[70%] bg-paper-light border-[3px] border-outline rounded-full px-4 py-1.5 font-grotesk font-extrabold text-sm shadow-[3px_3px_0_var(--color-outline)]"
-            style="--tilt: 3deg"
+            class="absolute right-[2%] bottom-[6%] max-w-[70%] bg-paper-light border-[3px] border-outline rounded-full px-4 py-1.5 font-grotesk font-extrabold text-sm shadow-[3px_3px_0_var(--color-outline)]"
           >{{ image.caption }}</figcaption>
         </div>
 
         <!-- Framed photo -->
         <template v-else>
           <div
-            class="tilt relative aspect-[4/3] bg-sandstone border-[3px] border-outline rounded-[28px] overflow-hidden shadow-[8px_8px_0_var(--color-outline)]"
-            :style="{ '--tilt': (imageSide === 'right' ? 1.2 : -1.2) + 'deg' }"
+            class="relative aspect-[4/3] bg-sandstone border-[3px] border-outline rounded-[28px] overflow-hidden shadow-[8px_8px_0_var(--color-outline)]"
           >
             <img v-if="image?.src" :src="image.src" :alt="image.alt ?? ''" class="absolute inset-0 size-full object-cover" loading="lazy" />
             <!-- Placeholder until a photo is added -->

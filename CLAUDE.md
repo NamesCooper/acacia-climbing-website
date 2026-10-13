@@ -90,7 +90,7 @@ No orange or pink. Wattle is for actions and small highlights (buttons, chips, s
 - **Riso headline:** duplicate the text behind in `wattle-deep` (logo gold), offset 0.05em, `aria-hidden` on the copy. Only on the paper background (hero, page headers, statements); on coloured panels use a plain heading, because the shadow blurs into the panel
 - **Fraunces** is loaded with the quirky "wonky" letters switched off (WONK 0) for readability
 - **Halftone circle:** `.halftone` with `--dot` set to a deeper shade of the panel colour
-- **Tilt:** stickers and pills sit at -3 to 3deg via `.tilt` + `--tilt`, and straighten on hover
+- **Tilt:** only the nav pills tilt (-2 to 2deg via `.tilt` + `--tilt`, straightening on hover), plus the decorative marquee band. Buttons, chips, cards, eyebrows and footer pills stay straight; `.tilt` without `--tilt` just gives the hover lift
 - **Motion:** marquee, bobbing sprig, twinkling sparkles, progress bars filling. All switch off under `prefers-reduced-motion`
 - **Grain:** applied once to the whole site via `body::after`. Don't add more
 - The mascot (in progress) will live in the About panel and hero. Until then, the sprig stands in

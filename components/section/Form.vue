@@ -132,7 +132,8 @@ async function submit() {
       body: JSON.stringify({
         ...details,
         ...(props.accessKey ? { access_key: props.accessKey } : {}),
-        subject: 'New helper sign-up from acaciaclimbing.org',
+        subject: 'Get involved: new helper sign-up',
+        from_name: 'Acacia website',
         _replyto: form.email,
       }),
     })

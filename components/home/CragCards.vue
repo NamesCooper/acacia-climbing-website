@@ -11,7 +11,6 @@
         v-for="(c, i) in cards"
         :key="c.id"
         class="tilt bg-paper-light border-[3px] border-forest rounded-[20px] p-[22px] shadow-[6px_6px_0_var(--color-forest)]"
-        :style="{ '--tilt': tilts[i % tilts.length] + 'deg' }"
       >
         <span class="inline-block border-2 rounded-full px-3 py-1 text-[13px] font-bold" :class="statusChip(c.status)">
           {{ statusLabel(c.status) }}
@@ -40,7 +39,6 @@ defineProps<{ heading?: string; linkLabel?: string }>()
 // Crag data comes from Sanity at build time (see composables/useCragData.ts)
 const { data } = await useCragData()
 
-const tilts = [-2, 1.5, -1, 2, -1.5]
 
 
 // How many crags to show on the homepage. The rest are one click away on the map.

@@ -199,7 +199,8 @@ export const cardsSection = defineType({
       initialValue: 'display',
       options: radio([{ title: 'Big italic', value: 'display' }, { title: 'Bold sans', value: 'grotesk' }]),
     }),
-    defineField({ name: 'tilted', title: 'Tilt the cards like stickers', type: 'boolean' }),
+    // Cards are straight now (Oct 2026); kept so old content still validates
+    defineField({ name: 'tilted', type: 'boolean', hidden: true }),
     // Kept from the first version of this block; not used on the site
     defineField({ name: 'style', type: 'string', hidden: true }),
   ],

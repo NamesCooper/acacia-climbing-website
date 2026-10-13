@@ -22,7 +22,6 @@
               v-bind="chromeLink(p.link)"
               class="tilt inline-block no-underline text-forest border-[3px] border-outline rounded-full px-5 py-3 font-bold shadow-[3px_3px_0_var(--color-outline)]"
               :class="PILL_BG[stegaClean(p.colour ?? '')] ?? PILL_BG.wattle"
-              :style="{ '--tilt': TILTS[i % TILTS.length] + 'deg' }"
             >{{ p.label }}</NuxtLink>
           </li>
         </ul>
@@ -93,7 +92,6 @@ const showHelp = computed(() => route.meta.prefooter !== false && !data.value?.n
 // The nav's "Lend a hand" button, for pages without the ask
 const button = computed(() => (nav.value?.buttonLabel && nav.value.buttonLink ? chromeLink(nav.value.buttonLink) : null))
 
-const TILTS = [-2, 1.5, -1.5, 2]
 const CHIP_BG = ['bg-wattle', 'bg-lichen', 'bg-sandstone', 'bg-paper-light']
 const PILL_BG: Record<string, string> = { wattle: 'bg-wattle', lichen: 'bg-lichen', sandstone: 'bg-sandstone', paper: 'bg-paper-light' }
 </script>

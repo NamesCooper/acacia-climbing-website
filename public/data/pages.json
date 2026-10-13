@@ -705,7 +705,9 @@
         "successText": "We've got your details and we'll be in touch soon.",
         "privacyNote": "We'll only use your details to get in touch about helping out. No spam, and you can ask us to delete them any time.",
         "anchor": "sign-up",
-        "fallbackEmail": "hello@acaciaclimbing.org"
+        "fallbackEmail": "hello@acaciaclimbing.org",
+        "endpoint": "https://api.web3forms.com/submit",
+        "accessKey": "dd414f0e-abc8-4798-b0b5-b1d2efc1b527"
       },
       {
         "_key": "k001a",
