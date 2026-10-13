@@ -114,6 +114,7 @@
       :access-key="clean(s.accessKey)"
       :fallback-email="clean(s.fallbackEmail)"
       :anchor="clean(s.anchor)"
+      :kind="clean(s.kind) === 'contact' ? 'contact' : 'signup'"
     />
 
     <SectionCards

@@ -44,7 +44,7 @@ export default defineNuxtConfig({
         preset: 'static',
         prerender: {
           crawlLinks: true,
-          routes: ['/', '/progress', '/updates', '/about', '/get-involved', '/privacy', '/blocks', '/work-with-us', '/work-with-us/councils', '/work-with-us/gyms', '/work-with-us/support'],
+          routes: ['/', '/progress', '/updates', '/about', '/get-involved', '/privacy', '/blocks', '/work-with-us', '/work-with-us/councils', '/work-with-us/gyms', '/work-with-us/support', '/contact'],
         },
       },
 

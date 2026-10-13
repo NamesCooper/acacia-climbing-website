@@ -144,7 +144,7 @@
                   class="nudge no-underline bg-wattle border-[3px] border-outline rounded-full px-4 py-2 font-grotesk font-extrabold text-sm shadow-[3px_3px_0_var(--color-outline)]"
                 >Guidebook on KAYA ↗</a>
                 <NuxtLink
-                  :to="{ path: '/get-involved', query: { help: 'telling-us-about-your-local', crag: currentCrag.name }, hash: '#sign-up' }"
+                  :to="{ path: '/contact', query: { topic: 'crag-report', crag: currentCrag.name } }"
                   class="nudge no-underline bg-paper border-[3px] border-outline rounded-full px-4 py-2 font-grotesk font-extrabold text-sm shadow-[3px_3px_0_var(--color-outline)]"
                 >Report something here</NuxtLink>
               </div>

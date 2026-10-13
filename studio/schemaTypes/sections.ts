@@ -486,24 +486,33 @@ export const imageTextSection = defineType({
 
 export const formSection = defineType({
   name: 'formSection',
-  title: 'Sign-up form',
+  title: 'Form (sign-up or contact)',
   type: 'object',
-  description: 'Name, email, suburb, what they want to help with, and a message.',
+  description: 'Sign-up: name, email, suburb, what they want to help with. Contact: name, email, organisation, one topic and a message.',
   groups: [
     { name: 'words', title: 'Words', default: true },
     { name: 'sending', title: 'Where it sends' },
   ],
   fields: [
+    defineField({
+      name: 'kind',
+      title: 'Kind of form',
+      type: 'string',
+      initialValue: 'signup',
+      group: 'words',
+      description: 'Links can pick the box for people: ?help=track-work on a sign-up form, ?topic=feedback on a contact form.',
+      options: radio([{ title: 'Sign-up (tick what they can help with)', value: 'signup' }, { title: 'Contact (pick one topic, message required)', value: 'contact' }]),
+    }),
     { ...labelField, group: 'words' },
     { ...headingField(), group: 'words' },
     defineField({ name: 'intro', type: 'text', rows: 3, group: 'words' }),
     defineField({
       name: 'interests',
-      title: 'Things they can tick',
+      title: 'Things they can tick (sign-up) or topics (contact)',
       type: 'array',
       of: [defineArrayMember({ type: 'string' })],
       group: 'words',
-      description: 'e.g. "Clean-up days", "Track work", "Writing to council"',
+      description: 'Sign-up e.g. "Clean-up days", "Track work". Contact e.g. "General question", "Feedback".',
     }),
     defineField({ name: 'buttonLabel', title: 'Button text', type: 'string', initialValue: 'Count me in', group: 'words' }),
     defineField({ name: 'successHeading', title: 'After sending: big line', type: 'string', initialValue: 'Thanks, legend.', group: 'words' }),

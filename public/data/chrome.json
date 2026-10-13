@@ -160,7 +160,7 @@
             "_type": "navLink",
             "_key": "c013",
             "label": "Report a crag issue",
-            "link": "/get-involved?help=telling-us-about-your-local#sign-up"
+            "link": "/contact?topic=crag-report"
           },
           {
             "_type": "navLink",
@@ -181,6 +181,18 @@
         "_key": "c015",
         "heading": "Say g'day",
         "links": [
+          {
+            "_type": "navLink",
+            "_key": "c019",
+            "label": "Contact us",
+            "link": "/contact"
+          },
+          {
+            "_type": "navLink",
+            "_key": "c01a",
+            "label": "Send feedback",
+            "link": "/contact?topic=feedback"
+          },
           {
             "_type": "navLink",
             "_key": "c016",
