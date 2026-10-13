@@ -1,7 +1,7 @@
 <template>
   <!-- Full-screen map under the nav. On desktop the panel floats over the map's left side;
        on phones the map comes first and the panel follows underneath. -->
-  <section class="relative lg:h-[calc(100svh-93px)] lg:min-h-[620px] border-y-[3px] border-outline bg-paper">
+  <section class="relative lg:h-[calc(100svh-97px)] lg:min-h-[620px] border-y-[3px] border-outline bg-paper">
     <!-- MAP -->
     <div class="relative h-[62svh] min-h-[360px] lg:absolute lg:inset-0 lg:h-auto">
       <div ref="mapEl" class="absolute inset-0" role="application" aria-label="Map of crags across Australia" />

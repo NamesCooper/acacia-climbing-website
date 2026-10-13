@@ -5,7 +5,7 @@
   <header class="relative z-[1000] bg-forest text-paper border-b-[3px] border-outline">
     <div ref="barEl" class="relative max-w-[1240px] mx-auto px-5 sm:px-6 py-3.5 sm:pt-4 sm:pb-4 lg:py-5 grid grid-cols-[1fr_auto_auto] sm:grid-cols-[1fr_auto] lg:grid-cols-[auto_1fr_auto] items-center gap-x-3 sm:gap-x-6 gap-y-3" @keydown.esc="close(true); menuOpen = false">
       <NuxtLink to="/" aria-label="Acacia Climbing Coalition, home" class="no-underline text-paper-light">
-        <UiWordmark :size="40" />
+        <UiWordmark :size="38" tagline />
       </NuxtLink>
 
       <!-- On phones the pills fold away behind the Menu button; from sm up they're always showing -->
@@ -67,8 +67,8 @@
               </ul>
             </div>
           </li>
-          <!-- On narrower phones (under 430px) the "Lend a hand" button lives in here instead of the bar -->
-          <li v-if="nav?.buttonLabel && nav.buttonLink" class="min-[430px]:hidden">
+          <!-- On narrower phones (under 480px) the "Lend a hand" button lives in here instead of the bar -->
+          <li v-if="nav?.buttonLabel && nav.buttonLink" class="min-[480px]:hidden">
             <NuxtLink
               v-bind="chromeLink(nav.buttonLink)"
               class="inline-block no-underline text-outline bg-wattle border-2 border-outline rounded-full px-3.5 py-1.5 font-bold shadow-[2px_2px_0_var(--color-outline)]"
@@ -80,13 +80,13 @@
       <NuxtLink
         v-if="nav?.buttonLabel && nav.buttonLink"
         v-bind="chromeLink(nav.buttonLink)"
-        class="nudge hidden min-[430px]:inline-block justify-self-end whitespace-nowrap no-underline text-outline bg-wattle border-[3px] border-outline rounded-full px-4 py-2 sm:px-5 sm:py-2.5 font-bold shadow-[4px_4px_0_var(--color-outline)]"
+        class="nudge hidden min-[480px]:inline-block justify-self-end whitespace-nowrap no-underline text-outline bg-wattle border-[3px] border-outline rounded-full px-4 py-2 sm:px-5 sm:py-2.5 font-bold shadow-[4px_4px_0_var(--color-outline)]"
       >{{ nav.buttonLabel }}</NuxtLink>
 
       <!-- Phones only: opens and closes the pills -->
       <button
         type="button"
-        class="sm:hidden col-start-3 min-[430px]:col-start-auto justify-self-end inline-flex items-center gap-2 cursor-pointer bg-paper-light text-outline border-[3px] border-outline rounded-full px-3.5 py-2 font-grotesk font-extrabold text-sm uppercase tracking-[0.06em] shadow-[3px_3px_0_var(--color-outline)]"
+        class="sm:hidden col-start-3 min-[480px]:col-start-auto justify-self-end inline-flex items-center gap-2 cursor-pointer bg-paper-light text-outline border-[3px] border-outline rounded-full px-3.5 py-2 font-grotesk font-extrabold text-sm uppercase tracking-[0.06em] shadow-[3px_3px_0_var(--color-outline)]"
         aria-controls="main-menu"
         :aria-expanded="menuOpen"
         @click="menuOpen = !menuOpen"

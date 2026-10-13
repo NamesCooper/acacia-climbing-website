@@ -41,7 +41,7 @@
         <UiSparkle v-if="!showHelp" class="absolute right-[7%] top-8 text-wattle hidden sm:block" :size="34" />
         <div class="max-w-[420px]">
           <NuxtLink to="/" aria-label="Acacia Climbing Coalition, home" class="no-underline text-paper-light">
-            <UiWordmark :size="48" />
+            <UiWordmark :size="48" tagline />
           </NuxtLink>
           <p v-if="footer?.tagline" class="mt-6 mb-0 font-display text-[clamp(28px,3.2vw,36px)] leading-[1.04] text-wattle">{{ footer.tagline }}</p>
           <!-- The help ask already has its own buttons, so only show this when it's switched off -->

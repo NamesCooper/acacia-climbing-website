@@ -34,7 +34,7 @@ Tick things off as you go. Add new ideas at the bottom of the right section rath
 
 - [ ] Read the draft Guidebooks page in the Studio (Pages, Guidebooks), tweak, publish, then add it to the nav menu
 - [ ] Ask KAYA (as their LCO) for a brand kit and an OK to use app screenshots
-- [ ] Check with your accountant that "Acacia Climbing Pty Ltd" matches how ACC is set up, since the site describes passing guidebook income on
+- [ ] When grants come up, ask an accountant about a non-profit structure (incorporated association or ACNC charity, or RCQ auspicing). ACC is currently a sole-trader business name
 
 - [ ] Hook up the sign-up form on Get involved: make a free Formspree form (formspree.io, sign up with hello@acaciaclimbing.org), copy its link, paste it into the form block's "Where it sends" tab, publish. Until then it opens a pre-filled email
 - [ ] Post the first update (the homepage "Latest updates" block appears once there's one)

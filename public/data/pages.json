@@ -155,6 +155,48 @@
         ]
       },
       {
+        "_key": "h0with",
+        "_type": "cardsSection",
+        "label": "Who we work alongside",
+        "heading": "Working with",
+        "columns": 4,
+        "titleStyle": "grotesk",
+        "cards": [
+          {
+            "_key": "hw1",
+            "_type": "card",
+            "kicker": "Umbrella",
+            "chipTone": "lichen",
+            "title": "Rock Climbing Queensland",
+            "body": "The state's peak climbing body. Our Queensland work happens under their umbrella."
+          },
+          {
+            "_key": "hw2",
+            "_type": "card",
+            "kicker": "Guidebooks",
+            "chipTone": "wattle",
+            "title": "KAYA",
+            "body": "Where our digital guidebooks live. We're their local climbing organisation for South East Queensland."
+          },
+          {
+            "_key": "hw3",
+            "_type": "card",
+            "kicker": "Parks",
+            "chipTone": "sandstone",
+            "title": "QPWS",
+            "body": "Queensland Parks and Wildlife Service. We work with the rangers looking after crags in their parks."
+          },
+          {
+            "_key": "hw4",
+            "_type": "card",
+            "kicker": "Councils",
+            "chipTone": "paper",
+            "title": "Local councils",
+            "body": "Brisbane, Ipswich, Logan, Moreton Bay and Southern Downs, so far."
+          }
+        ]
+      },
+      {
         "_key": "h0upd",
         "_type": "updatesSection",
         "label": "Fresh from the crags",
@@ -191,7 +233,7 @@
       {
         "_type": "proseSection",
         "_key": "k001w",
-        "footnote": "Acacia Climbing Pty Ltd · ABN 38 237 542 815 · Questions? hello@acaciaclimbing.org",
+        "footnote": "Acacia Climbing Coalition · ABN 38 237 542 815 · Questions? hello@acaciaclimbing.org",
         "blocks": [
           {
             "_type": "prosePart",
@@ -207,7 +249,7 @@
                   {
                     "_type": "span",
                     "_key": "k001d",
-                    "text": "This site is run by Acacia Climbing Pty Ltd (ABN 38 237 542 815), trading as Acacia Climbing Coalition, based in Queensland, Australia.",
+                    "text": "This site is run by Cooper Flick, trading as Acacia Climbing Coalition (ABN 38 237 542 815), based in Queensland, Australia.",
                     "marks": []
                   }
                 ]
@@ -228,7 +270,7 @@
                   {
                     "_type": "span",
                     "_key": "k001g",
-                    "text": "We don't have accounts, forms or newsletters on this site. If you email us, we receive your name, email address and whatever you choose to tell us.",
+                    "text": "We don't have accounts or a newsletter on this site. If you use the sign-up form or email us, we receive your name, email address and whatever you choose to tell us. If the form is delivered by a form service, that service only passes it on to us.",
                     "marks": []
                   }
                 ]
