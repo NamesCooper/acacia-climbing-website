@@ -620,14 +620,14 @@
             "_key": "k0018",
             "_type": "card",
             "anchor": "donate",
-            "body": "Donations go to Crag Care Days, comps and giveaways, and, once we have the backing, sponsoring climbers who help document and share our crags. We're not a registered charity yet, so it isn't tax-deductible for now.",
+            "body": "We're not set up to take donations just yet. When we are, they'll go to Crag Care Days, comps and giveaways, and in time sponsoring climbers who document our crags. Put your hand up and we'll let you know.",
             "chipDashed": true,
             "chipTone": "paper",
             "halftone": true,
             "kicker": "Donate",
-            "linkHref": "/work-with-us/support",
-            "linkLabel": "Where the money goes",
-            "title": "Chip in for the crags"
+            "linkHref": "/get-involved?help=chipping-in-when-it-opens#sign-up",
+            "linkLabel": "Tell me when",
+            "title": "Chip in, soon"
           }
         ],
         "columns": 2,
@@ -644,7 +644,8 @@
           "Track work",
           "Writing to council",
           "Mapping on KAYA",
-          "Telling us about your local"
+          "Telling us about your local",
+          "Chipping in when it opens"
         ],
         "buttonLabel": "Count me in",
         "successHeading": "Thanks, legend.",
@@ -1048,10 +1049,10 @@
           {
             "_key": "s1b",
             "_type": "card",
-            "body": "Signage, track materials and clean-up days.",
+            "body": "Clean-up days, plus the tools and gloves to run them.",
             "chipTone": "lichen",
             "kicker": "On the ground",
-            "title": "Signs and tracks"
+            "title": "Crag Care Days"
           },
           {
             "_key": "s1c",
@@ -1128,7 +1129,7 @@
                 "_key": "s2b1",
                 "_type": "span",
                 "marks": [],
-                "text": "We're not a registered charity yet, so donations aren't tax-deductible for now. If that changes, we'll say so here."
+                "text": "We're not taking donations just yet. When we do, they won't be tax-deductible at first, because we're not a registered charity. If that changes, we'll say so here."
               }
             ],
             "markDefs": [],
