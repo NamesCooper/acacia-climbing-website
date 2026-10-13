@@ -123,7 +123,7 @@ const about = {
           items: [
             { _type: 'cardItem', _key: key(), title: 'ACAQ', body: "Queensland's peak climbing access body. Our Queensland work happens under their umbrella." },
             { _type: 'cardItem', _key: key(), title: 'KAYA', body: 'Where our digital guidebooks live, so climbers have accurate, up-to-date info.' },
-            { _type: 'cardItem', _key: key(), title: 'Local councils', body: 'Brisbane, Ipswich, Logan, Moreton Bay and Southern Downs, so far.' },
+            { _type: 'cardItem', _key: key(), title: 'Local councils', body: 'Brisbane, Ipswich, Logan and Moreton Bay so far, plus HQ Plantations at Passchendaele.' },
           ],
         }),
       ],

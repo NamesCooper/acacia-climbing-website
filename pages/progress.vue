@@ -210,7 +210,7 @@ function progressOf(id: string) {
 const details = computed(() => {
   const c = currentCrag.value
   if (!c) return []
-  return [['Council', c.council], ['Rock', c.style], ['Season', c.season], ['Status', c.councilStatus]] as [string, string | undefined][]
+  return [['Land manager', c.council], ['Rock', c.style], ['Season', c.season], ['Status', c.councilStatus]] as [string, string | undefined][]
 })
 
 function formatDate(iso?: string) {
