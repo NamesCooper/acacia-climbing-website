@@ -620,7 +620,7 @@
             "_key": "k0018",
             "_type": "card",
             "anchor": "donate",
-            "body": "We're not set up to take donations just yet. When we are, they'll go to Crag Care Days, area climbing months, comps and giveaways, and sponsoring climbers who document our crags. Put your hand up and we'll let you know.",
+            "body": "We're not set up to take donations just yet. When we are, they'll go to Crag Care Days, crag challenges, fundraising comps and sponsoring climbers who document our crags. Put your hand up and we'll let you know.",
             "chipDashed": true,
             "chipTone": "paper",
             "halftone": true,
@@ -1051,16 +1051,16 @@
             "_type": "card",
             "kicker": "Events",
             "chipTone": "wattle",
-            "title": "Area climbing months",
-            "body": "Get out and climb one area for a month, and go in the draw for a crash pad or a KAYA membership."
+            "title": "Crag challenges",
+            "body": "Month-long challenges on KAYA. Most sends, or most photos and info logged for the guide, wins a crash pad or a KAYA membership."
           },
           {
             "_key": "s1c",
             "_type": "card",
             "kicker": "Community",
             "chipTone": "sandstone",
-            "title": "Comps and giveaways",
-            "body": "Local comps and meet-ups that bring climbers together, with a few prizes along the way."
+            "title": "Fundraising comps",
+            "body": "Community comps with live scoring on KAYA, where the entry money goes back into the crags."
           },
           {
             "_key": "s1d",
@@ -1083,7 +1083,7 @@
             "_key": "s4a",
             "_type": "card",
             "anchor": "donations",
-            "body": "Crag Care Days, area climbing months, comps and giveaways, and, once we have the backing, sponsoring climbers who help document and share our crags, including free KAYA memberships. We're not here to push anyone into paid memberships.",
+            "body": "Crag Care Days, crag challenges, fundraising comps and giveaways, and, once we have the backing, sponsoring climbers who help document and share our crags, including free KAYA memberships. We're not here to push anyone into paid memberships.",
             "chipTone": "wattle",
             "kicker": "Donations",
             "title": "Back into climbing"
