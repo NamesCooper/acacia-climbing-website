@@ -170,7 +170,10 @@
             "kicker": "Umbrella",
             "chipTone": "lichen",
             "title": "Rock Climbing Queensland",
-            "body": "The state's peak climbing body. Our Queensland work happens under their umbrella."
+            "body": "The state's peak climbing body. Our Queensland work happens under their umbrella.",
+            "linkLabel": "Visit RCQ",
+            "linkHref": "https://www.qldclimb.org.au/",
+            "buttonColour": "link"
           },
           {
             "_key": "hw2",
@@ -178,7 +181,10 @@
             "kicker": "Guidebooks",
             "chipTone": "wattle",
             "title": "KAYA",
-            "body": "Where our digital guidebooks live. We're their local climbing organisation for South East Queensland."
+            "body": "Where our digital guidebooks live. We're their local climbing organisation for South East Queensland.",
+            "linkLabel": "Visit KAYA",
+            "linkHref": "https://kayaclimb.com/",
+            "buttonColour": "link"
           },
           {
             "_key": "hw3",
@@ -186,7 +192,10 @@
             "kicker": "Parks",
             "chipTone": "sandstone",
             "title": "QPWS",
-            "body": "Queensland Parks and Wildlife Service. We work with the rangers looking after crags in their parks."
+            "body": "Queensland Parks and Wildlife Service. We work with the rangers looking after crags in their parks.",
+            "linkLabel": "Visit QPWS",
+            "linkHref": "https://parks.qld.gov.au/",
+            "buttonColour": "link"
           },
           {
             "_key": "hw4",
@@ -194,7 +203,10 @@
             "kicker": "Councils",
             "chipTone": "paper",
             "title": "Local councils",
-            "body": "Brisbane, Ipswich, Logan, Moreton Bay and Southern Downs, so far."
+            "body": "Brisbane, Ipswich, Logan, Moreton Bay and Southern Downs, so far.",
+            "linkLabel": "How we work with councils",
+            "linkHref": "/work-with-us/councils",
+            "buttonColour": "link"
           }
         ]
       },

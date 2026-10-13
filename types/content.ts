@@ -6,7 +6,7 @@ export interface Cta {
   to?: string
   /** Email or another site, e.g. "mailto:hello@acaciaclimbing.org" */
   href?: string
-  variant?: 'wattle' | 'moss' | 'paper'
+  variant?: 'wattle' | 'moss' | 'paper' | 'link'
 }
 
 export type Tone = 'light' | 'wattle' | 'sandstone' | 'lichen' | 'gum' | 'forest'

@@ -20,7 +20,12 @@
               <p v-if="item.body" class="mt-0.5 mb-0 text-[16px] leading-relaxed" :class="c.tone === 'forest' ? 'text-paper/90' : ''">{{ item.body }}</p>
             </li>
           </ul>
-          <UiButton v-if="c.cta" class="mt-6" :to="c.cta.to" :href="c.cta.href" :variant="c.cta.variant">{{ c.cta.label }}</UiButton>
+          <!-- "Text link" is a quiet read-more; anything else is a chunky button -->
+          <template v-if="c.cta?.variant === 'link'">
+            <NuxtLink v-if="c.cta.to" :to="c.cta.to" class="inline-block mt-5 font-grotesk font-bold text-lg underline decoration-2 underline-offset-4 hover:decoration-wattle-deep" :class="c.tone === 'forest' ? 'text-wattle' : 'text-forest'">{{ c.cta.label }}&nbsp;→</NuxtLink>
+            <a v-else :href="c.cta.href" target="_blank" rel="noopener" class="inline-block mt-5 font-grotesk font-bold text-lg underline decoration-2 underline-offset-4 hover:decoration-wattle-deep" :class="c.tone === 'forest' ? 'text-wattle' : 'text-forest'">{{ c.cta.label }}&nbsp;↗<span class="sr-only"> (opens in a new tab)</span></a>
+          </template>
+          <UiButton v-else-if="c.cta" class="mt-6" :to="c.cta.to" :href="c.cta.href" :variant="c.cta.variant">{{ c.cta.label }}</UiButton>
         </UiCard>
       </li>
     </ul>

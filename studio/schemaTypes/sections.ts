@@ -45,10 +45,9 @@ const CHIP_TONES = [
 ]
 const BUTTON_COLOURS = [
   { title: 'Wattle', value: 'wattle' },
-  { title: 'Gum leaf', value: 'gum' },
   { title: 'Moss', value: 'moss' },
   { title: 'Paper', value: 'paper' },
-  { title: 'Ironbark (warnings)', value: 'ironbark' },
+  { title: 'Text link (quiet)', value: 'link' },
 ]
 
 const linkFields = (labelName = 'linkLabel', hrefName = 'linkHref', title = 'Button') => [
