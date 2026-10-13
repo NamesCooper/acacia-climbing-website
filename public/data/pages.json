@@ -488,45 +488,13 @@
       },
       {
         "_key": "k000t",
-        "_type": "cardsSection",
-        "cards": [
-          {
-            "_key": "k000p",
-            "_type": "card",
-            "body": "Brisbane City Council formally recognises bouldering at Tooheys, with new stairs and signage now in.",
-            "chipTone": "moss",
-            "kicker": "Done",
-            "title": "Tooheys Forest recognised"
-          },
-          {
-            "_key": "k000q",
-            "_type": "card",
-            "body": "Talking with Ipswich and Logan councils about formal access, with site visits and mapping underway.",
-            "chipTone": "wattle",
-            "kicker": "Underway",
-            "title": "White Rock and Plunketts"
-          },
-          {
-            "_key": "k000r",
-            "_type": "card",
-            "body": "Documenting our crags on KAYA, so every crag is properly on the record.",
-            "chipTone": "wattle",
-            "kicker": "Underway",
-            "title": "Digital guidebooks"
-          },
-          {
-            "_key": "k000s",
-            "_type": "card",
-            "body": "Cedar Creek and Passchendaele are just getting started. After SEQ, the plan is every state.",
-            "chipDashed": true,
-            "chipTone": "paper",
-            "kicker": "Next up",
-            "title": "More of Australia"
-          }
-        ],
-        "columns": 2,
-        "heading": "Where we're up to",
-        "titleStyle": "grotesk"
+        "_type": "ctaSection",
+        "label": "Where we're up to",
+        "heading": "Every crag, on one map",
+        "body": "Tooheys Forest is recognised, White Rock and Plunketts are underway, and Cedar Creek and Passchendaele are just getting started. The map shows where each one is up to.",
+        "buttonLabel": "See the crag map",
+        "buttonHref": "/progress",
+        "tone": "gum"
       },
       {
         "_key": "k000z",
@@ -850,7 +818,7 @@
           {
             "_key": "c4a",
             "_type": "card",
-            "body": "A single, organised voice for climbers, instead of many scattered ones.",
+            "body": "A single, organised voice for climbers. We share your permits and conditions and help climbers follow them.",
             "chipTone": "wattle",
             "kicker": "Contact",
             "title": "One point of contact"
@@ -872,14 +840,6 @@
             "title": "Volunteers on the ground"
           },
           {
-            "_key": "c4d",
-            "_type": "card",
-            "body": "We work within your permits and conditions, and help climbers understand and follow them.",
-            "chipTone": "paper",
-            "kicker": "Guidance",
-            "title": "Your rules, shared widely"
-          },
-          {
             "_key": "c4e",
             "_type": "card",
             "body": "Send us fire danger, backburning, road closures or anything else climbers should know, and we update the guidebook the same day, instead of people relying on years-old information.",
@@ -887,17 +847,9 @@
             "kicker": "Live updates",
             "title": "Closures shown straight away",
             "tone": "lichen"
-          },
-          {
-            "_key": "c4f",
-            "_type": "card",
-            "body": "Once guidebooks are published, what they earn from views and memberships goes back to RCQ, to councils for ongoing care of the area, and to theCrag.",
-            "chipTone": "lichen",
-            "kicker": "Money back",
-            "title": "Income back to the area"
           }
         ],
-        "columns": 3,
+        "columns": 2,
         "heading": "What we bring",
         "titleStyle": "grotesk"
       },
@@ -910,13 +862,10 @@
         "linkHref": "/progress",
         "linkLabel": "See where each crag is up to",
         "steps": [
-          "Research the area, its history and its climbing",
-          "Reach out to guidebook authors and locals",
-          "Talk with council and park rangers",
-          "Agree a plan together",
-          "Site visits: GPS, photos and mapping on KAYA",
-          "Sort out any access issues",
-          "Final council approvals",
+          "Research the area and talk with local climbers",
+          "Talk with council and rangers, and agree a plan",
+          "Site visits: GPS, photos and mapping",
+          "Sort out access and get final approval",
           "Publish the guidebook on KAYA"
         ]
       },
@@ -925,41 +874,6 @@
         "_type": "cragRegisterSection",
         "heading": "Where it's at",
         "linkLabel": "See every crag on the map"
-      },
-      {
-        "_key": "c6",
-        "_type": "cardsSection",
-        "cards": [
-          {
-            "_key": "c6a",
-            "_type": "card",
-            "body": "Our Queensland work sits with Rock Climbing Queensland (RCQ, formerly ACAQ), the state's peak climbing body. Our founder is RCQ's bouldering representative. We also work closely with QPWS rangers.",
-            "chipTone": "lichen",
-            "kicker": "RCQ",
-            "linkHref": "/about",
-            "linkLabel": "About us",
-            "title": "Under RCQ's umbrella"
-          },
-          {
-            "_key": "c6b",
-            "_type": "card",
-            "body": "We want consultation with Traditional Owners to be part of how every crag is documented. We're still building those relationships, and we'll share how that's going.",
-            "chipTone": "sandstone",
-            "kicker": "Country",
-            "title": "Traditional Owners"
-          },
-          {
-            "_key": "c6c",
-            "_type": "card",
-            "body": "ABN 38 237 542 815. Email hello@acaciaclimbing.org and you'll hear back from a real person.",
-            "chipTone": "paper",
-            "kicker": "Details",
-            "title": "On the record"
-          }
-        ],
-        "columns": 3,
-        "heading": "Who you're dealing with",
-        "titleStyle": "grotesk"
       },
       {
         "_key": "c7",
@@ -983,6 +897,18 @@
             "_type": "faqItem",
             "answer": "Guidebook income from views and memberships goes back to Rock Climbing Queensland, to councils for looking after the areas, and to theCrag. Donations go to Crag Care Days, comps, giveaways and, in time, sponsoring climbers who help document our crags.",
             "question": "Does anyone make money from this?"
+          },
+          {
+            "_key": "c7e",
+            "_type": "faqItem",
+            "question": "Who are you, officially?",
+            "answer": "Acacia Climbing Coalition (ABN 38 237 542 815). Our Queensland work sits under Rock Climbing Queensland (RCQ, formerly ACAQ), the state's peak climbing body, and our founder is RCQ's bouldering representative. We also work closely with QPWS rangers."
+          },
+          {
+            "_key": "c7f",
+            "_type": "faqItem",
+            "question": "How do Traditional Owners fit in?",
+            "answer": "We want consultation with Traditional Owners to be part of how every crag is documented, not an afterthought. We're still building those relationships, and we'll share how that's going."
           },
           {
             "_key": "c7c",

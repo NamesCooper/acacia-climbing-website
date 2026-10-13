@@ -68,6 +68,7 @@
       :body="s.body"
       :tone="clean(s.tone) ?? 'sandstone'"
       :cta="cta(s.buttonLabel, s.buttonHref)"
+      :image="s.image?.asset ? { src: sanityImageUrl(s.image, 600), alt: s.image.alt } : undefined"
     />
 
     <SectionImageText
