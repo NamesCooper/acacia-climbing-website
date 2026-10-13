@@ -10,7 +10,6 @@
       :body="s.body"
       :primary="cta(s.primaryLabel, s.primaryHref)"
       :secondary="cta(s.secondaryLabel, s.secondaryHref)"
-      :proof="s.proof ?? []"
     />
 
     <HomeMarquee v-else-if="s._type === 'marqueeSection'" :items="s.items ?? []" :colour="clean(s.colour) ?? 'moss'" />

@@ -73,14 +73,6 @@ export const heroSection = defineType({
     defineField({ name: 'body', title: 'Intro', type: 'text', rows: 3 }),
     ...linkFields('primaryLabel', 'primaryHref', 'Green button'),
     ...linkFields('secondaryLabel', 'secondaryHref', 'Light button'),
-    defineField({
-      name: 'proof',
-      title: 'Proof chips',
-      description: 'Short, true lines shown as little stickers under the buttons, e.g. "Recognised by Brisbane City Council at Tooheys Forest". Keep to 2 or 3.',
-      type: 'array',
-      of: [defineArrayMember({ type: 'string' })],
-      validation: (r) => r.max(4),
-    }),
   ],
   preview: { select: { title: 'heading' }, prepare: ({ title }) => ({ title: title || 'Hero', subtitle: 'Hero' }) },
 })

@@ -56,7 +56,6 @@ const BLOCKS: { type: string; anchor?: string; name: string; goodFor: string; ex
       body: "We work with councils so bouldering spots get recognised, mapped and looked after.",
       primaryLabel: 'See the crag map', primaryHref: '/progress',
       secondaryLabel: 'How you can help', secondaryHref: '/get-involved',
-      proof: ['Recognised by Brisbane City Council at Tooheys Forest', 'Under Rock Climbing Queensland', 'Guidebooks on KAYA'],
     },
   },
   {

@@ -15,18 +15,12 @@
       {
         "_type": "heroSection",
         "_key": "k0000",
-        "label": "Hey, we're Acacia. A friendly bunch of climbers.",
         "heading": "Keep the\nCrags Open",
         "body": "We work with councils so bouldering spots get recognised, mapped and looked after. We're starting in South East Queensland, it's our first go at this, and we're doing it out in the open.",
         "primaryLabel": "See the Crag Map",
         "primaryHref": "/progress",
         "secondaryLabel": "How you can Help",
-        "secondaryHref": "/get-involved",
-        "proof": [
-          "Bouldering recognised by Brisbane City Council at Tooheys Forest",
-          "Working under Rock Climbing Queensland",
-          "Guidebooks on KAYA"
-        ]
+        "secondaryHref": "/get-involved"
       },
       {
         "_type": "cragRegisterSection",

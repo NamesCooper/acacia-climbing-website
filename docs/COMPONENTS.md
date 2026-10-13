@@ -101,7 +101,7 @@ Home, About, Get involved and Privacy are Studio Pages. Each Studio block draws 
 
 | Studio block | Component |
 |--------------|-----------|
-| Hero (big poster headline, optional proof chips) | `HomeHero` |
+| Hero (big poster headline, newest update link on top) | `HomeHero` |
 | Scrolling green band | `HomeMarquee` |
 | Tabs panel | `HomeAboutTabs` |
 | Crag cards ("Where it's at") | `HomeCragCards` |
