@@ -9,7 +9,10 @@
 // Every page except the map and updates is built in the Studio ("Pages").
 // This catch-all looks up the Page whose web address matches, e.g. /about.
 const route = useRoute()
-const slug = ([] as string[]).concat(route.params.slug ?? []).join('/')
+// Drop empty pieces so /about/ and /about both mean "about". The live site serves pages with a
+// trailing slash, and without this the browser looked for "about/", missed the baked-in copy,
+// and asked Sanity for a page that doesn't exist.
+const slug = ([] as string[]).concat(route.params.slug ?? []).filter(Boolean).join('/')
 
 const { data: page } = await usePage(slug)
 
