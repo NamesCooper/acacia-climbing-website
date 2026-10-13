@@ -24,9 +24,14 @@
             <p class="m-0 font-grotesk font-extrabold text-xs uppercase tracking-[0.08em]">The crag map</p>
             <h1 class="mt-1 mb-0 font-display text-[40px] leading-[0.95]">Where it's at</h1>
           </div>
-          <!-- back -->
+          <!-- back: home from the top level, then up a level once you've zoomed in -->
+          <NuxtLink
+            v-if="view === 'australia'"
+            to="/"
+            class="flex-shrink-0 block no-underline text-outline px-6 py-3 border-b-[3px] border-outline bg-sandstone font-grotesk font-extrabold text-sm uppercase tracking-[0.06em] hover:bg-wattle"
+          >← Back to home</NuxtLink>
           <button
-            v-if="view !== 'australia'"
+            v-else
             type="button"
             class="flex-shrink-0 text-left px-6 py-3 border-0 border-b-[3px] border-outline bg-sandstone font-grotesk font-extrabold text-sm uppercase tracking-[0.06em] cursor-pointer hover:bg-wattle"
             @click="goBack"
@@ -86,10 +91,10 @@
                 We're starting in South East Queensland and want to reach every state. Climbing in {{ currentState?.name }}?
                 We'd love to hear about your local crags, any access worries, and who's already looking after them.
               </p>
-              <a
-                :href="`mailto:hello@acaciaclimbing.org?subject=${encodeURIComponent('Climbing in ' + (currentState?.name ?? ''))}`"
+              <NuxtLink
+                :to="{ path: '/get-involved', query: { help: 'telling-us-about-your-local', crag: currentState?.name }, hash: '#sign-up' }"
                 class="nudge inline-block mt-6 no-underline bg-wattle border-[3px] border-outline rounded-full px-5 py-2.5 font-grotesk font-extrabold shadow-[4px_4px_0_var(--color-outline)]"
-              >Tell us about your local</a>
+              >Tell us about your local</NuxtLink>
             </div>
 
             <!-- CRAG -->
@@ -138,10 +143,10 @@
                   rel="noopener"
                   class="nudge no-underline bg-wattle border-[3px] border-outline rounded-full px-4 py-2 font-grotesk font-extrabold text-sm shadow-[3px_3px_0_var(--color-outline)]"
                 >Guidebook on KAYA ↗</a>
-                <a
-                  :href="`mailto:hello@acaciaclimbing.org?subject=${encodeURIComponent('Crag report: ' + currentCrag.name)}`"
+                <NuxtLink
+                  :to="{ path: '/get-involved', query: { help: 'telling-us-about-your-local', crag: currentCrag.name }, hash: '#sign-up' }"
                   class="nudge no-underline bg-paper border-[3px] border-outline rounded-full px-4 py-2 font-grotesk font-extrabold text-sm shadow-[3px_3px_0_var(--color-outline)]"
-                >Report something here</a>
+                >Report something here</NuxtLink>
               </div>
               <p class="mt-4 mb-0 text-[12px] opacity-70">Last updated {{ formatDate(currentCrag.updatedAt) }}. Always check signage and local access info before you climb.</p>
             </div>

@@ -81,34 +81,34 @@
     "_type": "helpBand",
     "heading": "Got an hour?",
     "accent": "We'd love the help.",
-    "intro": "Pick one and flick us an email. We'll take it from there.",
+    "intro": "Pick one and pop your name in. We'll take it from there.",
     "pills": [
       {
         "_type": "pill",
         "_key": "c003",
         "label": "Clean-up days",
-        "link": "mailto:hello@acaciaclimbing.org?subject=Keen%20for%20clean-up%20days",
+        "link": "/get-involved?help=clean-up-days#sign-up",
         "colour": "wattle"
       },
       {
         "_type": "pill",
         "_key": "c004",
         "label": "Track work",
-        "link": "mailto:hello@acaciaclimbing.org?subject=Keen%20to%20help%20with%20track%20work",
+        "link": "/get-involved?help=track-work#sign-up",
         "colour": "lichen"
       },
       {
         "_type": "pill",
         "_key": "c005",
         "label": "Writing to council",
-        "link": "mailto:hello@acaciaclimbing.org?subject=Keen%20to%20help%20with%20council%20letters",
+        "link": "/get-involved?help=writing-to-council#sign-up",
         "colour": "sandstone"
       },
       {
         "_type": "pill",
         "_key": "c006",
         "label": "Telling us about your local",
-        "link": "mailto:hello@acaciaclimbing.org?subject=Crag%20report",
+        "link": "/get-involved?help=telling-us-about-your-local#sign-up",
         "colour": "paper"
       }
     ],
@@ -160,7 +160,7 @@
             "_type": "navLink",
             "_key": "c013",
             "label": "Report a crag issue",
-            "link": "mailto:hello@acaciaclimbing.org?subject=Crag%20report"
+            "link": "/get-involved?help=telling-us-about-your-local#sign-up"
           },
           {
             "_type": "navLink",

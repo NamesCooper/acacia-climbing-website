@@ -1,7 +1,8 @@
 <template>
   <!-- Sign-up form. Sends to a form service (e.g. Formspree or Web3Forms) set in the Studio,
        so it works on a static site with no server of our own. Until a service is set,
-       "Send" opens a pre-filled email instead, so it's never a dead end. -->
+       "Send" opens a pre-filled email instead, so it's never a dead end. Links can pre-fill it
+       (see prefill below). -->
   <section :id="anchor || undefined" class="max-w-[1240px] mx-auto px-6 py-10 sm:py-14">
     <UiCard tone="light" size="lg">
       <div class="grid gap-8 lg:gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
@@ -95,6 +96,27 @@ const CHIP_ON = ['bg-wattle', 'bg-lichen', 'bg-sandstone']
 const form = reactive({ name: '', email: '', suburb: '', interests: [] as string[], message: '', botcheck: '' })
 const status = ref<'idle' | 'sending' | 'sent' | 'error'>('idle')
 const note = ref('')
+
+// Links can pre-fill the form, e.g. /get-involved?help=clean-up-days,track-work&crag=Tooheys#sign-up
+// `help` ticks matching interests (case and punctuation don't matter), `crag` fills the
+// "Suburb or nearest crag" box. Read after the page loads (onMounted), because the static HTML
+// is built without a query string and Vue expects the first render to match it. The watch
+// catches clicks that change the query while you're already on this page.
+const route = useRoute()
+const slugify = (v: string) => v.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+function prefill() {
+  const help = ([] as unknown[]).concat(route.query.help ?? []).join(',').split(',').map((v) => slugify(String(v))).filter(Boolean)
+  if (help.length) {
+    const picked = props.interests.filter((item) => help.includes(slugify(item)))
+    if (picked.length) form.interests = Array.from(new Set([...form.interests, ...picked]))
+  }
+  const crag = typeof route.query.crag === 'string' ? route.query.crag.trim() : ''
+  if (crag && !form.suburb) form.suburb = crag.slice(0, 80)
+}
+onMounted(() => {
+  prefill()
+  watch(() => route.query, prefill)
+})
 
 const looksLikeEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)
 

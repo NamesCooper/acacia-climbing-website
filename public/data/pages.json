@@ -17,9 +17,9 @@
         "_key": "k0000",
         "heading": "Looking after\nAustralia's crags",
         "body": "We work with councils so bouldering spots get recognised, mapped and looked after. We're starting in South East Queensland, it's our first go at this, and we're doing it out in the open.",
-        "primaryLabel": "See the Crag Map",
+        "primaryLabel": "See the crag map",
         "primaryHref": "/progress",
-        "secondaryLabel": "How you can Help",
+        "secondaryLabel": "How you can help",
         "secondaryHref": "/get-involved"
       },
       {
@@ -627,7 +627,7 @@
     "copyStatus": "draft",
     "eyebrow": "Lend a hand",
     "heading": "Every bit *helps*",
-    "lede": "We're a small crew, so a bit of help goes a long way. Pick whatever suits you, flick us an email, and we'll take it from there.",
+    "lede": "We're a small crew, so a bit of help goes a long way. Pick whatever suits you, pop your name in, and we'll take it from there.",
     "sections": [
       {
         "_key": "k0019",
@@ -642,7 +642,7 @@
             "chipTone": "lichen",
             "halftone": true,
             "kicker": "Volunteer",
-            "linkHref": "mailto:hello@acaciaclimbing.org?subject=Keen%20to%20volunteer",
+            "linkHref": "/get-involved?help=clean-up-days,track-work#sign-up",
             "linkLabel": "I'm keen to volunteer",
             "title": "Give an hour or two"
           },
@@ -654,7 +654,7 @@
             "chipTone": "wattle",
             "halftone": true,
             "kicker": "Report",
-            "linkHref": "mailto:hello@acaciaclimbing.org?subject=Crag%20report",
+            "linkHref": "/get-involved?help=telling-us-about-your-local#sign-up",
             "linkLabel": "Report a crag issue",
             "title": "Be our eyes on the ground"
           },
@@ -666,7 +666,7 @@
             "chipTone": "sandstone",
             "halftone": true,
             "kicker": "Speak up",
-            "linkHref": "mailto:hello@acaciaclimbing.org?subject=Keen%20to%20help%20with%20council%20letters",
+            "linkHref": "/get-involved?help=writing-to-council#sign-up",
             "linkLabel": "Count me in",
             "title": "Help with council letters"
           },
@@ -713,7 +713,7 @@
         "_key": "k001a",
         "_type": "ctaSection",
         "body": "We're starting in SEQ, but the goal is every state. If there's a crag near you with access worries, or you're already looking after one, tell us about it. It all helps shape where we go next.",
-        "buttonHref": "mailto:hello@acaciaclimbing.org?subject=Climbing%20near%20me",
+        "buttonHref": "/get-involved?help=telling-us-about-your-local#sign-up",
         "buttonLabel": "Tell us about your local",
         "heading": "We want to hear from climbers everywhere",
         "label": "Not in South East Queensland?",

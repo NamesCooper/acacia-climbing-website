@@ -25,18 +25,24 @@
             >{{ t.label }}</button>
           </div>
 
-          <div
-            v-for="(t, i) in tabs"
-            v-show="active === i"
-            :id="'about-panel-' + i"
-            :key="i"
-            role="tabpanel"
-            :aria-labelledby="'about-tab-' + i"
-          >
-            <h2 class="mt-7 mb-0 font-display text-[clamp(44px,6vw,72px)] leading-[0.92] tracking-[-0.02em]">{{ t.heading }}</h2>
-            <!-- Rich text from the Studio: bold words come through as <strong> -->
-            <div class="mt-4 max-w-[560px] text-lg leading-relaxed [&_p]:m-0 [&_p+p]:mt-3">
-              <PortableText :value="t.body ?? []" />
+          <!-- All panels sit in the same grid cell, so the box is always as tall as the longest
+               one and nothing below jumps when you switch tabs. Hidden ones use visibility:hidden,
+               which also hides them from screen readers. -->
+          <div class="grid">
+            <div
+              v-for="(t, i) in tabs"
+              :id="'about-panel-' + i"
+              :key="i"
+              role="tabpanel"
+              :aria-labelledby="'about-tab-' + i"
+              class="[grid-area:1/1]"
+              :class="active === i ? '' : 'invisible'"
+            >
+              <h2 class="mt-7 mb-0 font-display text-[clamp(44px,6vw,72px)] leading-[0.92] tracking-[-0.02em]">{{ t.heading }}</h2>
+              <!-- Rich text from the Studio: bold words come through as <strong> -->
+              <div class="mt-4 max-w-[560px] text-lg leading-relaxed [&_p]:m-0 [&_p+p]:mt-3">
+                <PortableText :value="t.body ?? []" />
+              </div>
             </div>
           </div>
         </div>
