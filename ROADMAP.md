@@ -40,7 +40,7 @@ Tick things off as you go. Add new ideas at the bottom of the right section rath
 
 ## Illustrations and real content (Cooper)
 
-- [ ] Realistic line-art figures in a few poses, field-guide style (see "Illustration and photo direction" in CLAUDE.md)
+- [ ] Friendly line-art figures in a few poses, like the first GPT sheet (see "Illustration and photo direction" in CLAUDE.md)
 - [ ] Climber and volunteer vignettes in the same style, plus prop spot icons (chalk bag, shoe, brush, pad)
 - [ ] Gather real photos: clean-up days, Tooheys stairs and signs, crags. Phone photos are fine
 - [ ] Swap example words in Studio pages for real ones (Pages with the yellow dot are still mockup)
