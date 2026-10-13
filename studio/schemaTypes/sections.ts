@@ -135,7 +135,7 @@ export const textSection = defineType({
     ...linkFields(),
     defineField({ name: 'quote', title: 'Quote card: big line', type: 'string', description: 'Leave empty for no quote card' }),
     defineField({ name: 'quoteBody', title: 'Quote card: text', type: 'text', rows: 3 }),
-    defineField({ name: 'quoteTone', title: 'Quote card colour', type: 'string', initialValue: 'wattle', options: radio(CARD_TONES) }),
+    defineField({ name: 'quoteTone', title: 'Quote card colour', type: 'string', initialValue: 'sandstone', description: 'Wattle is best kept for buttons and small highlights, not big panels', options: radio(CARD_TONES) }),
   ],
   preview: { select: { title: 'heading', subtitle: 'label' }, prepare: ({ title, subtitle }) => ({ title: title || 'Text', subtitle: `Text · ${subtitle ?? ''}` }) },
 })
@@ -319,7 +319,7 @@ export const ctaSection = defineType({
     defineField({ name: 'body', title: 'Text', type: 'text', rows: 3 }),
     defineField({ name: 'buttonLabel', title: 'Button text', type: 'string' }),
     defineField({ name: 'buttonHref', title: 'Button link', type: 'string' }),
-    defineField({ name: 'tone', title: 'Panel colour', type: 'string', initialValue: 'sandstone', options: radio([{ title: 'Sandstone', value: 'sandstone' }, { title: 'Wattle', value: 'wattle' }, { title: 'Lichen', value: 'lichen' }, { title: 'Gum leaf', value: 'gum' }]) }),
+    defineField({ name: 'tone', title: 'Panel colour', type: 'string', initialValue: 'sandstone', description: 'Paper makes the button stand out most. Wattle is best kept for buttons, not big panels', options: radio([{ title: 'Paper', value: 'light' }, { title: 'Sandstone', value: 'sandstone' }, { title: 'Lichen', value: 'lichen' }, { title: 'Gum leaf', value: 'gum' }, { title: 'Wattle', value: 'wattle' }]) }),
   ],
   preview: { select: { title: 'heading' }, prepare: ({ title }) => ({ title: title || 'Call to action', subtitle: 'Call to action' }) },
 })

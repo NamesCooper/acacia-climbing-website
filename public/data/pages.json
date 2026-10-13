@@ -15,7 +15,7 @@
       {
         "_type": "heroSection",
         "_key": "k0000",
-        "heading": "Keep the\nCrags Open",
+        "heading": "Looking after\nAustralia's crags",
         "body": "We work with councils so bouldering spots get recognised, mapped and looked after. We're starting in South East Queensland, it's our first go at this, and we're doing it out in the open.",
         "primaryLabel": "See the Crag Map",
         "primaryHref": "/progress",
@@ -388,7 +388,7 @@
         "heading": "Why we started",
         "quote": "\"Documented crag, protected crag.\"",
         "quoteBody": "A crag that's mapped, written up and known to council is a lot easier to keep open. So that's what we do, one crag at a time, and we share every step along the way.",
-        "quoteTone": "wattle"
+        "quoteTone": "sandstone"
       },
       {
         "_key": "k00m1",
@@ -479,7 +479,7 @@
           {
             "_key": "k000u",
             "_type": "card",
-            "body": "Acacia was started by Cooper, a South East Queensland boulderer and the bouldering representative for Rock Climbing Queensland (RCQ, formerly ACAQ). He spent a couple of years working towards this before taking it public. Right now it's a small volunteer crew doing the work in spare hours, with a lot of help from local climbers. In the spirit of being upfront: Cooper also works with KAYA as a support engineer. There's no arrangement with any gym yet, but KAYA may pay him in future to help gyms get set up on its indoor app. If that happens, it's his income, not Acacia's, and we'll say so here.",
+            "body": "Acacia was started by Cooper, a South East Queensland boulderer and the bouldering representative for Rock Climbing Queensland (RCQ, formerly ACAQ). He spent a couple of years working towards this before taking it public. Right now it's a small volunteer crew doing the work in spare hours, with a lot of help from local climbers.",
             "linkHref": "/get-involved",
             "linkLabel": "Come be part of it",
             "title": "Who's behind it"
@@ -783,7 +783,7 @@
         "heading": "Why recognition matters",
         "quote": "\"Recognition first.\"",
         "quoteBody": "We get recognition first, then publish the guidebook with your backing. Nothing goes public without your OK.",
-        "quoteTone": "wattle"
+        "quoteTone": "sandstone"
       },
       {
         "_key": "c4",
@@ -828,7 +828,7 @@
             "chipTone": "wattle",
             "kicker": "Live updates",
             "title": "Closures shown straight away",
-            "tone": "wattle"
+            "tone": "lichen"
           },
           {
             "_key": "c4f",
@@ -945,7 +945,7 @@
           {
             "_key": "c7d",
             "_type": "faqItem",
-            "answer": "Guidebook income from views and memberships goes back to Rock Climbing Queensland, to councils for looking after the areas, and to theCrag. Donations go to Crag Care Days, comps, giveaways and, in time, sponsoring climbers who help document our crags.\n\nTo be upfront: our founder also works with KAYA as a support engineer. If he helps a gym onto KAYA's indoor app, KAYA may pay him for that setup and support. That's separate from Acacia, and we'd rather you hear it from us.",
+            "answer": "Guidebook income from views and memberships goes back to Rock Climbing Queensland, to councils for looking after the areas, and to theCrag. Donations go to Crag Care Days, comps, giveaways and, in time, sponsoring climbers who help document our crags.",
             "question": "Does anyone make money from this?"
           },
           {
@@ -964,7 +964,7 @@
         "buttonLabel": "Email us",
         "heading": "Let's have a chat",
         "label": "Manage land where people climb?",
-        "tone": "wattle"
+        "tone": "light"
       }
     ],
     "seoDescription": "For councils and land managers: how Acacia Climbing Coalition works with you to recognise and look after outdoor climbing.",
@@ -1042,7 +1042,7 @@
             "chipTone": "lichen",
             "kicker": "Talk",
             "title": "Host a night",
-            "tone": "wattle"
+            "tone": "lichen"
           },
           {
             "_key": "g2c",
@@ -1055,7 +1055,7 @@
           {
             "_key": "g2d",
             "_type": "card",
-            "body": "KAYA also has an indoor app for logging climbs and managing sets, similar to TopLogger, all in the same app as the outdoor guides. Full disclosure: our founder works with KAYA as a support engineer, and KAYA may pay him to set up and support gyms that join.",
+            "body": "KAYA also has an indoor app for logging climbs and managing sets, similar to TopLogger, all in the same app as the outdoor guides.",
             "chipTone": "paper",
             "kicker": "Indoor app",
             "title": "KAYA for your walls"
@@ -1074,7 +1074,7 @@
         "buttonLabel": "Email us",
         "heading": "Let's team up",
         "label": "Run a gym or club?",
-        "tone": "wattle"
+        "tone": "light"
       }
     ],
     "seoDescription": "How climbing gyms and clubs can work with Acacia Climbing Coalition to help climbers head outside responsibly.",
@@ -1155,19 +1155,9 @@
             "chipTone": "lichen",
             "kicker": "Guidebook income",
             "title": "Back to the land"
-          },
-          {
-            "_key": "s4c",
-            "_type": "card",
-            "anchor": "disclosure",
-            "body": "Cooper also works with KAYA as a support engineer. There's no gym arrangement yet, but if he helps a gym onto KAYA's indoor app, KAYA may pay him for the setup and ongoing support. That's separate from Acacia.",
-            "chipTone": "sandstone",
-            "kicker": "Full disclosure",
-            "title": "Our founder and KAYA",
-            "tone": "sandstone"
           }
         ],
-        "columns": 3,
+        "columns": 2,
         "heading": "Where the money goes",
         "intro": "We'd rather be completely clear about this from the start.",
         "titleStyle": "grotesk"

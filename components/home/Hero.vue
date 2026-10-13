@@ -21,10 +21,10 @@
 
     <p v-if="label" :class="latest ? 'mt-7' : ''" class="relative mb-0 max-w-[640px] font-poster text-[clamp(22px,3.2vw,32px)] leading-tight text-balance">{{ label }}</p>
 
-    <!-- Two-ink riso headline: the wattle copy sits slightly off-register behind the dark one.
+    <!-- Two-ink riso headline: the logo-gold copy sits slightly off-register behind the dark one.
          Each line typed in the Studio becomes its own line here. -->
     <h1 class="relative mt-4 sm:mt-5 mb-0 font-display text-[clamp(60px,12.5vw,148px)] leading-[0.9] tracking-[-0.025em]">
-      <span aria-hidden="true" class="absolute inset-0 text-wattle translate-x-[5px] translate-y-[5px] sm:translate-x-[6px] sm:translate-y-[6px] whitespace-pre-line">{{ heading }}</span>
+      <span aria-hidden="true" class="absolute inset-0 text-wattle-deep translate-x-[0.05em] translate-y-[0.05em] whitespace-pre-line">{{ heading }}</span>
       <span class="relative whitespace-pre-line">{{ heading }}</span>
     </h1>
 

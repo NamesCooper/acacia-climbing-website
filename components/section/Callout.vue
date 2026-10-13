@@ -4,9 +4,10 @@
     <UiCard :tone="tone" size="lg" halftone="bottom-right">
       <div class="max-w-[720px]">
         <p v-if="lead" class="m-0 font-poster text-2xl">{{ lead }}</p>
-        <UiRisoHeading :text="title" size="md" :shadow="tone === 'wattle' ? 'moss' : 'wattle'" class="mt-2 !text-[clamp(36px,5vw,60px)] !leading-[0.95]" />
+        <!-- Plain heading: an offset shadow blurs on a coloured panel -->
+        <h2 class="mt-2 mb-0 font-display text-[clamp(36px,5vw,60px)] leading-[0.95] tracking-[-0.025em]">{{ title }}</h2>
         <p v-if="body" class="mt-5 mb-0 text-lg leading-relaxed">{{ body }}</p>
-        <UiButton v-if="cta" class="mt-6" :to="cta.to" :href="cta.href" :variant="cta.variant ?? 'paper'">{{ cta.label }}</UiButton>
+        <UiButton v-if="cta" class="mt-6" :to="cta.to" :href="cta.href" :variant="cta.variant ?? (tone === 'light' ? 'wattle' : 'paper')">{{ cta.label }}</UiButton>
       </div>
     </UiCard>
   </section>
@@ -16,7 +17,7 @@
 import type { Cta } from '~/types/content'
 
 withDefaults(
-  defineProps<{ title: string; lead?: string; body?: string; cta?: Cta; tone?: 'sandstone' | 'wattle' | 'lichen' | 'gum' }>(),
+  defineProps<{ title: string; lead?: string; body?: string; cta?: Cta; tone?: 'light' | 'sandstone' | 'wattle' | 'lichen' | 'gum' }>(),
   { tone: 'sandstone' },
 )
 </script>

@@ -7,7 +7,7 @@
         <p v-for="p in paragraphs" :key="p" class="mt-5 mb-0 text-lg leading-relaxed">{{ p }}</p>
         <UiButton v-if="cta" class="mt-6" :to="cta.to" :href="cta.href" :variant="cta.variant">{{ cta.label }}</UiButton>
       </div>
-      <UiCard v-if="highlight" :tone="highlight.tone ?? 'wattle'" size="lg" halftone="top-right">
+      <UiCard v-if="highlight" :tone="highlight.tone ?? 'sandstone'" size="lg" halftone="top-right">
         <p class="m-0 font-display text-[clamp(30px,3.6vw,44px)] leading-[1.05]">{{ highlight.quote }}</p>
         <p v-if="highlight.body" class="mt-4 mb-0 text-[17px] leading-relaxed">{{ highlight.body }}</p>
       </UiCard>

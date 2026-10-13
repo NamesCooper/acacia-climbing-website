@@ -7,7 +7,7 @@ The website for Acacia Climbing Coalition (ACC), an Australian climbing access o
 - Climbers and volunteers who need to feel the mission and find a clear pathway to contribute
 - Council officers, land managers, and grant bodies who need to see a credible, organised, professional counterparty
 
-ACC operates under the RCQ (Rock Climbing Queensland, formerly ACAQ) umbrella and uses KAYA for digital guidebook hosting. Cooper also works with KAYA as a support engineer. There's no gym arrangement yet, but KAYA may pay him to onboard and support gyms on its indoor app; the site discloses this wherever gyms or money come up, as a possibility, not a done deal. Guidebook income goes back to RCQ, councils and theCrag; donations go to Crag Care Days, comps, giveaways and, once there's backing, sponsoring climbers who document and share crags (including free KAYA memberships). ACC isn't funnelling people into paid memberships. Never speak badly of existing guides or theCrag: the message is simply that nothing current and modern exists yet, and ACC is building it. The SEQ guidebook author is not involved; don't imply otherwise. Cooper presents with the website itself, not a slide deck The long-term goal is a funded non-profit with national scope.
+ACC operates under the RCQ (Rock Climbing Queensland, formerly ACAQ) umbrella and uses KAYA for digital guidebook hosting. Cooper does not work for KAYA yet; a support engineer role (possibly including paid gym onboarding) may start later. Until it does, the site says nothing about it. When it starts, add a short disclosure wherever KAYA, gyms or money come up, because ACC recommends KAYA and a hidden link would look like a conflict of interest. Guidebook income goes back to RCQ, councils and theCrag; donations go to Crag Care Days, comps, giveaways and, once there's backing, sponsoring climbers who document and share crags (including free KAYA memberships). ACC isn't funnelling people into paid memberships. Never speak badly of existing guides or theCrag: the message is simply that nothing current and modern exists yet, and ACC is building it. The SEQ guidebook author is not involved; don't imply otherwise. Cooper presents with the website itself, not a slide deck The long-term goal is a funded non-profit with national scope.
 
 ## Tech stack
 
@@ -59,15 +59,15 @@ The approved homepage mockup lives on the Claude Design canvas ("G · Retro post
 | `forest` | #203022 | Logo green, dark sections (pre-footer, footer) |
 | `moss` | #4F6B34 | Progress bars, primary button |
 | `lichen` | #A9B97E | "Recognised" chips, soft fills |
-| `wattle` | #EFC248 | Actions and highlights: buttons, chips, riso headline shadow. Never as text on paper |
-| `wattle-deep` | #D29F2A | Logo gold, halftone dots on wattle |
+| `wattle` | #EFC248 | Actions and small highlights: buttons, chips, stickers. Never as text on paper |
+| `wattle-deep` | #D29F2A | Logo gold, riso headline shadow, halftone dots on wattle |
 | `sandstone` | #D8C29A | Calm panels and bands (dusty, so it never competes with wattle) |
 | `sandstone-deep` | #B39A70 | Halftone dots on sandstone |
 | `gum` | #8FA6A0 | Gum-leaf grey-green: cool, calm panels and bands |
 | `gum-deep` | #6F8781 | Halftone dots on gum |
 | `ironbark` | #8A3B2A | Warnings only: the "Access issue" status, closures. Paper text on it |
 
-No orange or pink. Wattle is for actions and highlights; sandstone and gum are for calm panels; ironbark is only for warnings. Alternate greens (lichen, gum) with the yellows down a page so it doesn't read as one long beige scroll.
+No orange or pink. Wattle is for actions and small highlights (buttons, chips, stickers), not big panels or callouts; sandstone and gum are for calm panels; ironbark is only for warnings. Alternate greens (lichen, gum) with the yellows down a page so it doesn't read as one long beige scroll.
 
 ### Type
 
@@ -87,7 +87,8 @@ No orange or pink. Wattle is for actions and highlights; sandstone and gum are f
 ### Patterns
 
 - **Poster box:** 3px `outline` border + hard 4 to 8px offset shadow, big radius (20 to 32px) or full pill
-- **Riso headline:** duplicate the text behind in `wattle` (or `moss` on wattle backgrounds) offset ~6px, `aria-hidden` on the copy
+- **Riso headline:** duplicate the text behind in `wattle-deep` (logo gold), offset 0.05em, `aria-hidden` on the copy. Only on the paper background (hero, page headers, statements); on coloured panels use a plain heading, because the shadow blurs into the panel
+- **Fraunces** is loaded with the quirky "wonky" letters switched off (WONK 0) for readability
 - **Halftone circle:** `.halftone` with `--dot` set to a deeper shade of the panel colour
 - **Tilt:** stickers and pills sit at -3 to 3deg via `.tilt` + `--tilt`, and straighten on hover
 - **Motion:** marquee, bobbing sprig, twinkling sparkles, progress bars filling. All switch off under `prefers-reduced-motion`

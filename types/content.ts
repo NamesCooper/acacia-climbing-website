@@ -9,7 +9,7 @@ export interface Cta {
   variant?: 'wattle' | 'moss' | 'paper'
 }
 
-export type Tone = 'light' | 'wattle' | 'sandstone' | 'lichen' | 'forest'
+export type Tone = 'light' | 'wattle' | 'sandstone' | 'lichen' | 'gum' | 'forest'
 export type ChipTone = 'wattle' | 'lichen' | 'sandstone' | 'moss' | 'forest' | 'paper'
 
 export interface CardItem {
