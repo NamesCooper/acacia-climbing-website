@@ -175,6 +175,7 @@ function toCard(c: any): CardItem {
     cta: cta(c.linkLabel, c.linkHref, c.buttonColour),
     tone: clean(c.tone),
     halftone: c.halftone,
+    logo: c.logo?.asset ? { src: sanityImageUrl(c.logo, 400), alt: c.logo.alt } : undefined,
   }
 }
 </script>

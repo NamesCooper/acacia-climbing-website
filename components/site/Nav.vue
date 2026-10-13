@@ -3,10 +3,27 @@
        column headings; items with child links drop down a paper card on hover (or tap / Enter).
        Words and links come from "Navigation" in the Studio. -->
   <header class="relative z-[1000] bg-forest text-paper border-b-[3px] border-outline">
-    <div ref="barEl" class="relative max-w-[1240px] mx-auto px-5 sm:px-6 py-3.5 sm:pt-4 sm:pb-4 lg:py-5 grid grid-cols-[1fr_auto_auto] sm:grid-cols-[1fr_auto] lg:grid-cols-[auto_1fr_auto] items-center gap-x-3 sm:gap-x-6 gap-y-3" @keydown.esc="close(true); menuOpen = false">
+    <div ref="barEl" class="relative max-w-[1240px] mx-auto px-5 sm:px-6 py-3.5 sm:pt-4 sm:pb-4 lg:py-5 grid grid-cols-[1fr_auto_auto] sm:grid-cols-[1fr_auto] lg:grid-cols-[auto_1fr_auto] items-center gap-x-3 sm:gap-x-6 gap-y-3" @keydown.esc="onEsc">
       <NuxtLink to="/" aria-label="Acacia Climbing Coalition, home" class="no-underline text-paper-light">
         <UiWordmark :size="38" tagline />
       </NuxtLink>
+
+      <!-- Phones only: opens and closes the pills. It comes before the menu in the page so Tab
+           goes button, then menu items; `order` keeps it showing on the right. -->
+      <button
+        type="button"
+        class="sm:hidden order-2 col-start-3 min-[480px]:col-start-auto justify-self-end inline-flex items-center gap-2 cursor-pointer bg-paper-light text-outline border-[3px] border-outline rounded-full px-3.5 py-2 font-grotesk font-extrabold text-sm uppercase tracking-[0.06em] shadow-[3px_3px_0_var(--color-outline)]"
+        ref="menuBtn"
+        aria-controls="main-menu"
+        :aria-expanded="menuOpen"
+        @click="menuOpen = !menuOpen"
+      >
+        <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4">
+          <path v-if="!menuOpen" d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
+          <path v-else d="M3.5 3.5l9 9M12.5 3.5l-9 9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
+        </svg>
+        {{ menuOpen ? 'Close' : 'Menu' }}
+      </button>
 
       <!-- On phones the pills fold away behind the Menu button; from sm up they're always showing -->
       <nav
@@ -80,23 +97,9 @@
       <NuxtLink
         v-if="nav?.buttonLabel && nav.buttonLink"
         v-bind="chromeLink(nav.buttonLink)"
-        class="nudge hidden min-[480px]:inline-block justify-self-end whitespace-nowrap no-underline text-outline bg-wattle border-[3px] border-outline rounded-full px-4 py-2 sm:px-5 sm:py-2.5 font-bold shadow-[4px_4px_0_var(--color-outline)]"
+        class="nudge order-1 lg:order-none hidden min-[480px]:inline-block justify-self-end whitespace-nowrap no-underline text-outline bg-wattle border-[3px] border-outline rounded-full px-4 py-2 sm:px-5 sm:py-2.5 font-bold shadow-[4px_4px_0_var(--color-outline)]"
       >{{ nav.buttonLabel }}</NuxtLink>
 
-      <!-- Phones only: opens and closes the pills -->
-      <button
-        type="button"
-        class="sm:hidden col-start-3 min-[480px]:col-start-auto justify-self-end inline-flex items-center gap-2 cursor-pointer bg-paper-light text-outline border-[3px] border-outline rounded-full px-3.5 py-2 font-grotesk font-extrabold text-sm uppercase tracking-[0.06em] shadow-[3px_3px_0_var(--color-outline)]"
-        aria-controls="main-menu"
-        :aria-expanded="menuOpen"
-        @click="menuOpen = !menuOpen"
-      >
-        <svg aria-hidden="true" viewBox="0 0 16 16" class="size-4">
-          <path v-if="!menuOpen" d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
-          <path v-else d="M3.5 3.5l9 9M12.5 3.5l-9 9" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
-        </svg>
-        {{ menuOpen ? 'Close' : 'Menu' }}
-      </button>
     </div>
   </header>
 </template>
@@ -141,6 +144,12 @@ function isActive(item: MenuItem) {
 
 // Phones: whether the folded-away menu is showing
 const menuOpen = ref(false)
+const menuBtn = ref<HTMLButtonElement | null>(null)
+// Escape closes an open dropdown first, then the phone menu, and puts focus back on its button
+function onEsc() {
+  if (open.value !== null) return close(true)
+  if (menuOpen.value) { menuOpen.value = false; menuBtn.value?.focus() }
+}
 
 // Close when the page changes or when clicking anywhere outside the nav
 watch(() => route.fullPath, () => { close(); menuOpen.value = false })

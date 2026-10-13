@@ -25,7 +25,7 @@ useSeoMeta({
   ogImage: `${SITE_URL}/og.png`,
   ogImageWidth: 1200,
   ogImageHeight: 630,
-  ogImageAlt: 'Acacia Climbing Coalition: our crags, looked after',
+  ogImageAlt: "Acacia Climbing Coalition: Looking after Australia's crags",
   twitterCard: 'summary_large_image',
 })
 useHead({ link: [{ rel: 'canonical', href: pageUrl }] })

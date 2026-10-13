@@ -161,6 +161,14 @@ export const card = defineType({
     defineField({ name: 'title', type: 'string', group: 'words', validation: (r) => r.required() }),
     defineField({ name: 'body', type: 'text', rows: 3, group: 'words' }),
     defineField({
+      name: 'logo',
+      title: 'Logo (optional)',
+      type: 'image',
+      group: 'look',
+      description: "A partner's logo, shown small at the top of the card. Only use logos you have permission to use. PNG or SVG with a see-through background works best.",
+      fields: [defineField({ name: 'alt', title: 'Organisation name', type: 'string', description: 'e.g. "Rock Climbing Queensland"' })],
+    }),
+    defineField({
       name: 'items',
       title: 'Small list',
       description: 'Optional titled list inside the card (e.g. partners)',

@@ -25,6 +25,8 @@ export interface CardItem {
   cta?: Cta
   tone?: Tone
   halftone?: boolean
+  /** Small partner logo at the top of the card */
+  logo?: { src?: string; alt?: string }
 }
 
 export interface ProseBlock {

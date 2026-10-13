@@ -15,7 +15,7 @@ if (!page.value) {
 
 
 usePageSeo({
-  title: () => 'Acacia Climbing Coalition · Keep the crags open',
+  title: () => "Acacia Climbing Coalition · Looking after Australia's crags",
   description: () => page.value?.seoDescription,
   image: () => page.value?.shareImage,
 })

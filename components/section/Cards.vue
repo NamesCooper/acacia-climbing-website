@@ -6,6 +6,14 @@
     <ul class="list-none p-0 m-0 grid gap-6" :class="COLS[columns]">
       <li v-for="(c, i) in cards" :id="c.id" :key="c.title" class="scroll-mt-6">
         <UiCard :tone="c.tone ?? 'light'" :halftone="c.halftone ? 'top-right' : undefined" class="h-full">
+          <!-- Optional partner logo, kept small and in its own colours -->
+          <img
+            v-if="c.logo?.src"
+            :src="c.logo.src"
+            :alt="c.logo.alt ?? ''"
+            loading="lazy"
+            class="block h-12 w-auto max-w-[180px] object-contain object-left mb-4"
+          />
           <UiChip v-if="c.chip" :tone="c.chipTone ?? 'lichen'" :dashed="c.chipDashed">{{ c.chip }}</UiChip>
           <!-- h2 when the section has no title of its own, so heading levels never skip -->
           <component
