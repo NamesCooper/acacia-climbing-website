@@ -1,46 +1,202 @@
 [
-  { "crag_id": "cedar",         "text": "Area Research, History & General Mapping",                          "status": "done" },
-  { "crag_id": "cedar",         "text": "Guidebook Author Outreach (If Applicable)",                        "status": "done" },
-  { "crag_id": "cedar",         "text": "Council & Park Ranger Contact",                                     "status": "done" },
-  { "crag_id": "cedar",         "text": "Initial Plan Discussion & Approvals",                               "status": "done" },
-  { "crag_id": "cedar",         "text": "Site Visit — GPS, Photos, Crag Mapping & KAYA Documentation",      "status": "todo" },
-  { "crag_id": "cedar",         "text": "Access Issues Resolved",                                            "status": "todo" },
-  { "crag_id": "cedar",         "text": "Final Council Approvals",                                           "status": "todo" },
-  { "crag_id": "cedar",         "text": "Guidebook Published on KAYA",                                       "status": "todo" },
-
-  { "crag_id": "whiterock",     "text": "Area Research, History & General Mapping",                          "status": "done" },
-  { "crag_id": "whiterock",     "text": "Guidebook Author Outreach (If Applicable)",                        "status": "done" },
-  { "crag_id": "whiterock",     "text": "Council & Park Ranger Contact",                                     "status": "done" },
-  { "crag_id": "whiterock",     "text": "Initial Plan Discussion & Approvals",                               "status": "done" },
-  { "crag_id": "whiterock",     "text": "Site Visit — GPS, Photos, Crag Mapping & KAYA Documentation",      "status": "progress" },
-  { "crag_id": "whiterock",     "text": "Access Issues Resolved",                                            "status": "todo" },
-  { "crag_id": "whiterock",     "text": "Final Council Approvals",                                           "status": "todo" },
-  { "crag_id": "whiterock",     "text": "Guidebook Published on KAYA",                                       "status": "todo" },
-
-  { "crag_id": "tooheys",       "text": "Area Research, History & General Mapping",                          "status": "done" },
-  { "crag_id": "tooheys",       "text": "Guidebook Author Outreach (If Applicable)",                        "status": "done" },
-  { "crag_id": "tooheys",       "text": "Council & Park Ranger Contact",                                     "status": "done" },
-  { "crag_id": "tooheys",       "text": "Initial Plan Discussion & Approvals",                               "status": "done" },
-  { "crag_id": "tooheys",       "text": "Site Visit — GPS, Photos, Crag Mapping & KAYA Documentation",      "status": "done" },
-  { "crag_id": "tooheys",       "text": "Access Issues Resolved",                                            "status": "done" },
-  { "crag_id": "tooheys",       "text": "Final Council Approvals",                                           "status": "progress" },
-  { "crag_id": "tooheys",       "text": "Guidebook Published on KAYA",                                       "status": "todo" },
-
-  { "crag_id": "plunketts",     "text": "Area Research, History & General Mapping",                          "status": "done" },
-  { "crag_id": "plunketts",     "text": "Guidebook Author Outreach (If Applicable)",                        "status": "done" },
-  { "crag_id": "plunketts",     "text": "Council & Park Ranger Contact",                                     "status": "done" },
-  { "crag_id": "plunketts",     "text": "Initial Plan Discussion & Approvals",                               "status": "done" },
-  { "crag_id": "plunketts",     "text": "Site Visit — GPS, Photos, Crag Mapping & KAYA Documentation",      "status": "progress" },
-  { "crag_id": "plunketts",     "text": "Access Issues Resolved",                                            "status": "todo" },
-  { "crag_id": "plunketts",     "text": "Final Council Approvals",                                           "status": "todo" },
-  { "crag_id": "plunketts",     "text": "Guidebook Published on KAYA",                                       "status": "todo" },
-
-  { "crag_id": "passchendaele", "text": "Area Research, History & General Mapping",                          "status": "done" },
-  { "crag_id": "passchendaele", "text": "Guidebook Author Outreach (If Applicable)",                        "status": "done" },
-  { "crag_id": "passchendaele", "text": "Council & Park Ranger Contact",                                     "status": "done" },
-  { "crag_id": "passchendaele", "text": "Initial Plan Discussion & Approvals",                               "status": "progress" },
-  { "crag_id": "passchendaele", "text": "Site Visit — GPS, Photos, Crag Mapping & KAYA Documentation",      "status": "todo" },
-  { "crag_id": "passchendaele", "text": "Access Issues Resolved",                                            "status": "todo" },
-  { "crag_id": "passchendaele", "text": "Final Council Approvals",                                           "status": "todo" },
-  { "crag_id": "passchendaele", "text": "Guidebook Published on KAYA",                                       "status": "todo" }
+ {
+  "crag_id": "cedar",
+  "text": "Research the area, its history and its climbing",
+  "status": "done"
+ },
+ {
+  "crag_id": "cedar",
+  "text": "Reach out to locals and anyone who's documented it",
+  "status": "progress"
+ },
+ {
+  "crag_id": "cedar",
+  "text": "Talk with the land manager",
+  "status": "done"
+ },
+ {
+  "crag_id": "cedar",
+  "text": "Agree a plan together",
+  "status": "progress"
+ },
+ {
+  "crag_id": "cedar",
+  "text": "Site visits: GPS, photos and mapping on KAYA",
+  "status": "progress"
+ },
+ {
+  "crag_id": "cedar",
+  "text": "Sort out access issues",
+  "status": "todo"
+ },
+ {
+  "crag_id": "cedar",
+  "text": "Final approvals",
+  "status": "todo"
+ },
+ {
+  "crag_id": "cedar",
+  "text": "Guidebook published on KAYA",
+  "status": "todo"
+ },
+ {
+  "crag_id": "whiterock",
+  "text": "Research the area, its history and its climbing",
+  "status": "done"
+ },
+ {
+  "crag_id": "whiterock",
+  "text": "Reach out to locals and anyone who's documented it",
+  "status": "done"
+ },
+ {
+  "crag_id": "whiterock",
+  "text": "Talk with the land manager",
+  "status": "done"
+ },
+ {
+  "crag_id": "whiterock",
+  "text": "Agree a plan together",
+  "status": "done"
+ },
+ {
+  "crag_id": "whiterock",
+  "text": "Site visits: GPS, photos and mapping on KAYA",
+  "status": "progress"
+ },
+ {
+  "crag_id": "whiterock",
+  "text": "Sort out access issues",
+  "status": "progress"
+ },
+ {
+  "crag_id": "whiterock",
+  "text": "Final approvals",
+  "status": "todo"
+ },
+ {
+  "crag_id": "whiterock",
+  "text": "Guidebook published on KAYA",
+  "status": "todo"
+ },
+ {
+  "crag_id": "tooheys",
+  "text": "Research the area, its history and its climbing",
+  "status": "done"
+ },
+ {
+  "crag_id": "tooheys",
+  "text": "Reach out to locals and anyone who's documented it",
+  "status": "done"
+ },
+ {
+  "crag_id": "tooheys",
+  "text": "Talk with the land manager",
+  "status": "done"
+ },
+ {
+  "crag_id": "tooheys",
+  "text": "Agree a plan together",
+  "status": "done"
+ },
+ {
+  "crag_id": "tooheys",
+  "text": "Site visits: GPS, photos and mapping on KAYA",
+  "status": "done"
+ },
+ {
+  "crag_id": "tooheys",
+  "text": "Sort out access issues",
+  "status": "done"
+ },
+ {
+  "crag_id": "tooheys",
+  "text": "Final approvals",
+  "status": "done"
+ },
+ {
+  "crag_id": "tooheys",
+  "text": "Guidebook published on KAYA",
+  "status": "progress"
+ },
+ {
+  "crag_id": "plunketts",
+  "text": "Research the area, its history and its climbing",
+  "status": "done"
+ },
+ {
+  "crag_id": "plunketts",
+  "text": "Reach out to locals and anyone who's documented it",
+  "status": "done"
+ },
+ {
+  "crag_id": "plunketts",
+  "text": "Talk with the land manager",
+  "status": "done"
+ },
+ {
+  "crag_id": "plunketts",
+  "text": "Agree a plan together",
+  "status": "done"
+ },
+ {
+  "crag_id": "plunketts",
+  "text": "Site visits: GPS, photos and mapping on KAYA",
+  "status": "progress"
+ },
+ {
+  "crag_id": "plunketts",
+  "text": "Sort out access issues",
+  "status": "progress"
+ },
+ {
+  "crag_id": "plunketts",
+  "text": "Final approvals",
+  "status": "todo"
+ },
+ {
+  "crag_id": "plunketts",
+  "text": "Guidebook published on KAYA",
+  "status": "todo"
+ },
+ {
+  "crag_id": "passchendaele",
+  "text": "Research the area, its history and its climbing",
+  "status": "done"
+ },
+ {
+  "crag_id": "passchendaele",
+  "text": "Reach out to locals and anyone who's documented it",
+  "status": "done"
+ },
+ {
+  "crag_id": "passchendaele",
+  "text": "Talk with the land manager",
+  "status": "done"
+ },
+ {
+  "crag_id": "passchendaele",
+  "text": "Agree a plan together",
+  "status": "progress"
+ },
+ {
+  "crag_id": "passchendaele",
+  "text": "Site visits: GPS, photos and mapping on KAYA",
+  "status": "todo"
+ },
+ {
+  "crag_id": "passchendaele",
+  "text": "Sort out access issues",
+  "status": "todo"
+ },
+ {
+  "crag_id": "passchendaele",
+  "text": "Final approvals",
+  "status": "todo"
+ },
+ {
+  "crag_id": "passchendaele",
+  "text": "Guidebook published on KAYA",
+  "status": "todo"
+ }
 ]
