@@ -141,8 +141,8 @@
                   :href="currentCrag.kayaUrl"
                   target="_blank"
                   rel="noopener"
-                  class="nudge no-underline bg-wattle border-[3px] border-outline rounded-full px-4 py-2 font-grotesk font-extrabold text-sm shadow-[3px_3px_0_var(--color-outline)]"
-                >Guidebook on KAYA ↗</a>
+                  class="nudge no-underline inline-flex items-center gap-2 bg-wattle border-[3px] border-outline rounded-full px-4 py-2 font-grotesk font-extrabold text-sm shadow-[3px_3px_0_var(--color-outline)]"
+                ><img src="/partners/kaya/mark-black.svg" alt="" width="16" height="16" class="size-4" />Guidebook on KAYA ↗<span class="sr-only"> (opens in a new tab)</span></a>
                 <NuxtLink
                   :to="{ path: '/contact', query: { topic: 'crag-report', crag: currentCrag.name } }"
                   class="nudge no-underline bg-paper border-[3px] border-outline rounded-full px-4 py-2 font-grotesk font-extrabold text-sm shadow-[3px_3px_0_var(--color-outline)]"
