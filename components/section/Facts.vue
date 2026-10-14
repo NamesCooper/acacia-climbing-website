@@ -2,8 +2,9 @@
   <!-- A row of big-number stickers. Only ever use real, checkable numbers.
        On small phones each sticker is a single row: number on the left, label beside it. -->
   <section class="max-w-[1240px] mx-auto px-6 py-10 sm:py-14">
-    <UiSectionTitle v-if="title" :title="title" :lead="lead" />
-    <ul class="list-none p-0 m-0 grid gap-5 grid-cols-1 min-[480px]:grid-cols-2" :class="[title ? 'mt-9' : '', facts.length >= 4 ? 'lg:grid-cols-4' : facts.length === 3 ? 'lg:grid-cols-3 max-w-[960px]' : 'max-w-[640px]']">
+    <!-- Fewer than four stickers sit in a centred row rather than hugging the left edge -->
+    <UiSectionTitle v-if="title" :title="title" :lead="lead" :class="facts.length < 4 ? 'text-center' : ''" />
+    <ul class="list-none p-0 m-0 grid gap-5 grid-cols-1 min-[480px]:grid-cols-2" :class="[title ? 'mt-9' : '', facts.length >= 4 ? 'lg:grid-cols-4' : facts.length === 3 ? 'lg:grid-cols-3 max-w-[960px] mx-auto' : 'max-w-[640px] mx-auto']">
       <li v-for="(f, i) in facts" :key="f.label">
         <div
           class="h-full flex items-center gap-4 min-[480px]:block border-[3px] border-outline rounded-[24px] px-5 py-6 shadow-[5px_5px_0_var(--color-outline)] text-forest"

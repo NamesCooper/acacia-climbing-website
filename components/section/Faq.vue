@@ -1,8 +1,9 @@
 <template>
   <!-- Questions that open and close. Uses <details>, so it works without JavaScript and with keyboards. -->
   <section class="max-w-[1240px] mx-auto px-6 py-10 sm:py-14">
-    <UiSectionTitle v-if="title" :title="title" :lead="lead" />
-    <div class="max-w-[860px] flex flex-col gap-4" :class="title ? 'mt-8' : ''">
+    <!-- One centred column: heading centred, questions left-aligned inside their boxes -->
+    <UiSectionTitle v-if="title" :title="title" :lead="lead" class="text-center" />
+    <div class="max-w-[860px] mx-auto flex flex-col gap-4" :class="title ? 'mt-8' : ''">
       <details
         v-for="(item, i) in items"
         :key="item.question"

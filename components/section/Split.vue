@@ -1,8 +1,9 @@
 <template>
-  <!-- Text on the left, a highlight card on the right (stacks on phones). -->
+  <!-- Text on the left, a highlight card on the right (stacks on phones).
+       With no highlight card it becomes one centred column, so there's no empty half. -->
   <section class="max-w-[1240px] mx-auto px-6 py-10 sm:py-14">
-    <div class="grid gap-10 lg:grid-cols-2 items-start">
-      <div>
+    <div :class="highlight ? 'grid gap-10 lg:grid-cols-2 items-start' : 'max-w-[760px] mx-auto text-center'">
+      <div :class="highlight ? '' : 'flex flex-col items-center'">
         <!-- A partner logo can sit above the heading, or stand in for it (the heading is then
              kept for screen readers and Google) -->
         <img v-if="logo?.src" :src="logo.src" :alt="logoHeading ? '' : logo.alt ?? ''" loading="lazy" class="block w-auto" :class="logoHeading ? 'h-10 sm:h-12' : 'h-8 sm:h-9 mb-6'" />
