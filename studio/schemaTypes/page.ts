@@ -55,6 +55,14 @@ export const page = defineType({
     }),
     defineField({ name: 'eyebrow', description: 'Small label above the heading', type: 'string', group: 'header' }),
     defineField({
+      name: 'headerLogo',
+      title: 'Logo beside the label (optional)',
+      type: 'image',
+      group: 'header',
+      description: "A partner's logo shown next to the small label, e.g. KAYA on the Guidebooks page. SVG works best.",
+      fields: [defineField({ name: 'alt', title: 'Organisation name', type: 'string' })],
+    }),
+    defineField({
       name: 'heading',
       type: 'string',
       group: 'header',

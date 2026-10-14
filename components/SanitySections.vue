@@ -29,6 +29,7 @@
       :paragraphs="blocksToParagraphs(s.body)"
       :cta="cta(s.linkLabel, s.linkHref)"
       :highlight="s.quote ? { quote: s.quote, body: s.quoteBody, tone: clean(s.quoteTone) } : undefined"
+      :logo="s.logo?.asset ? { src: sanityImageUrl(s.logo, 400), alt: s.logo.alt } : undefined"
     />
 
     <SectionCards

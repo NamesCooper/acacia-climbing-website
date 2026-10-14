@@ -9,12 +9,18 @@
 
     <ol class="list-none p-0 m-0 mt-10 grid gap-10 sm:gap-8" :class="screens.length >= 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-2'">
       <li v-for="(s, i) in screens" :key="i" class="min-w-0 flex flex-col items-start">
-        <!-- Phone frame: thick outline and hard shadow like every other poster box -->
-        <div
-          v-if="s.image?.src"
-          class="w-full max-w-[260px] aspect-[9/19] bg-outline border-[3px] border-outline rounded-[38px] p-2 shadow-[6px_6px_0_var(--color-outline)]"
-        >
-          <img :src="s.image.src" :alt="s.image.alt ?? ''" loading="lazy" class="block size-full object-cover object-top rounded-[30px] bg-paper" />
+        <!-- iPhone-style mockup: dark body, side buttons, rounded screen and the Dynamic Island.
+             Drawn in CSS so any screenshot from the Studio drops straight in. -->
+        <div v-if="s.image?.src" class="relative w-full max-w-[250px]">
+          <span aria-hidden="true" class="absolute -left-[5px] top-[18%] h-[7%] w-[5px] rounded-l bg-outline"></span>
+          <span aria-hidden="true" class="absolute -left-[5px] top-[27%] h-[7%] w-[5px] rounded-l bg-outline"></span>
+          <span aria-hidden="true" class="absolute -right-[5px] top-[22%] h-[11%] w-[5px] rounded-r bg-outline"></span>
+          <div class="bg-outline rounded-[44px] p-[9px] shadow-[6px_6px_0_var(--color-moss)] ring-[3px] ring-outline">
+            <div class="relative aspect-[1320/2868] rounded-[36px] overflow-hidden bg-black">
+              <img :src="s.image.src" :alt="s.image.alt ?? ''" loading="lazy" class="block size-full object-cover object-top" />
+              <span aria-hidden="true" class="absolute top-[1.6%] left-1/2 -translate-x-1/2 w-[32%] h-[3.4%] rounded-full bg-black"></span>
+            </div>
+          </div>
         </div>
         <span
           v-else

@@ -7,6 +7,7 @@ export interface SanityPage {
   seoDescription?: string
   shareImage?: any
   eyebrow?: string
+  headerLogo?: any
   heading: string
   lede?: string
   showHelpBand?: boolean

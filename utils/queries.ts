@@ -21,7 +21,7 @@ export const QUERIES = {
 
   page: /* groq */ `
 *[_type == "page" && slug.current == $slug][0] {
-  title, "slug": slug.current, seoDescription, shareImage, eyebrow, heading, lede, showHelpBand,
+  title, "slug": slug.current, seoDescription, shareImage, eyebrow, headerLogo, heading, lede, showHelpBand,
   "sections": coalesce(sections, [])
 }`,
 

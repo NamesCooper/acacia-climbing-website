@@ -4,8 +4,13 @@
   <section class="relative max-w-[1240px] mx-auto px-6 pt-8 pb-12 sm:pt-12 sm:pb-16">
     <UiSparkle class="absolute right-[6%] top-4 text-outline hidden sm:block" :size="48" />
 
+    <!-- Optional partner logo beside the eyebrow, e.g. "Guidebooks on [KAYA]" -->
+    <div v-if="logo?.src" class="flex flex-wrap items-center gap-x-4 gap-y-3">
+      <p v-if="eyebrow" class="m-0 inline-block bg-lichen border-[3px] border-outline rounded-full px-4 py-1.5 font-grotesk font-extrabold text-sm tracking-[0.06em] uppercase">{{ eyebrow }}</p>
+      <img :src="logo.src" :alt="logo.alt ?? ''" class="block h-7 sm:h-8 w-auto" />
+    </div>
     <p
-      v-if="eyebrow"
+      v-else-if="eyebrow"
       class="m-0 inline-block bg-lichen border-[3px] border-outline rounded-full px-4 py-1.5 font-grotesk font-extrabold text-sm tracking-[0.06em] uppercase"
     >{{ eyebrow }}</p>
 
@@ -24,6 +29,7 @@ defineProps<{
   title: string
   accent?: string
   eyebrow?: string
+  logo?: { src?: string; alt?: string }
   lede?: string
 }>()
 </script>

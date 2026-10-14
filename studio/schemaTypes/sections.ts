@@ -138,6 +138,13 @@ export const textSection = defineType({
   title: 'Text (with optional quote card)',
   type: 'object',
   fields: [
+    defineField({
+      name: 'logo',
+      title: 'Logo above the heading (optional)',
+      type: 'image',
+      description: 'e.g. a partner logo. SVG or PNG with a see-through background.',
+      fields: [defineField({ name: 'alt', title: 'Organisation name', type: 'string' })],
+    }),
     labelField,
     headingField(),
     richText(),

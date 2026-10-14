@@ -1225,41 +1225,39 @@
   {
     "_id": "page-guidebooks",
     "_type": "page",
-    "title": "Guidebooks",
-    "slug": {
-      "_type": "slug",
-      "current": "guidebooks"
+    "eyebrow": "Guidebooks on",
+    "headerLogo": {
+      "_type": "image",
+      "alt": "KAYA",
+      "asset": {
+        "_ref": "image-472dec52fd8a3da5eab5534bd9ced197377343f5-932x214-svg",
+        "_type": "reference"
+      }
     },
-    "eyebrow": "Guidebooks on KAYA",
     "heading": "Guides that stay *up to date*",
     "lede": "Our guidebooks live on KAYA, a climbing app with digital guidebooks. Here's what it is, why we use it, and where the money goes.",
-    "seoDescription": "Acacia's climbing guidebooks live on KAYA: what KAYA is, why we use it, and where guidebook money goes.",
-    "showHelpBand": true,
     "sections": [
       {
         "_key": "gb1",
         "_type": "textSection",
-        "heading": "What is KAYA?",
         "body": [
           {
             "_key": "gb1a",
             "_type": "block",
-            "style": "normal",
-            "markDefs": [],
             "children": [
               {
                 "_key": "gb1a1",
                 "_type": "span",
                 "marks": [],
-                "text": "KAYA is a climbing app with digital guidebooks. Every boulder gets a GPS pin, with topo lines, approach notes and beta videos, and you can download a guide to use at the crag without phone reception."
+                "text": "KAYA is a climbing app with digital guidebooks. Every boulder gets a GPS pin, with topo lines, approach notes and beta videos, and with KAYA PRO you can download a guide to use at the crag without phone reception."
               }
-            ]
+            ],
+            "markDefs": [],
+            "style": "normal"
           },
           {
             "_key": "gb1b",
             "_type": "block",
-            "style": "normal",
-            "markDefs": [],
             "children": [
               {
                 "_key": "gb1b1",
@@ -1267,9 +1265,12 @@
                 "marks": [],
                 "text": "Unlike a printed book, a digital guide can change the day something changes. Authors keep it current, and climbers can report problems as they find them."
               }
-            ]
+            ],
+            "markDefs": [],
+            "style": "normal"
           }
         ],
+        "heading": "What is KAYA?",
         "quote": "\"Documented crag, protected crag.\"",
         "quoteBody": "A guide that's current, agreed with council and easy to find is the best way we know to keep a crag open and looked after.",
         "quoteTone": "sandstone"
@@ -1277,84 +1278,106 @@
       {
         "_key": "gbph",
         "_type": "phonesSection",
-        "label": "Three steps to the crag",
         "heading": "How it works",
+        "intro": "Downloading a guide to use without reception needs a KAYA PRO subscription.",
+        "label": "Three steps to the crag",
+        "linkHref": "https://kayaclimb.com/guidebooks",
+        "linkLabel": "See KAYA's guidebooks",
         "logo": {
           "_type": "image",
+          "alt": "KAYA",
           "asset": {
-            "_type": "reference",
-            "_ref": "image-472dec52fd8a3da5eab5534bd9ced197377343f5-932x214-svg"
-          },
-          "alt": "KAYA"
+            "_ref": "image-472dec52fd8a3da5eab5534bd9ced197377343f5-932x214-svg",
+            "_type": "reference"
+          }
         },
         "screens": [
           {
             "_key": "s1",
             "_type": "phoneScreen",
-            "title": "Find the crag",
-            "body": "Search for the area or browse the map. Every boulder has its own GPS pin."
+            "body": "Browse the map or search the area. Every boulder has its own GPS pin, with approach notes to get you there.",
+            "image": {
+              "_type": "image",
+              "alt": "KAYA app map with boulder pins and the selected boulder's problems listed below",
+              "asset": {
+                "_ref": "image-bc882b5427e33aec988bdc3086aa8270a193de4a-1320x2868-jpg",
+                "_type": "reference"
+              }
+            },
+            "title": "Find the crag"
           },
           {
             "_key": "s2",
             "_type": "phoneScreen",
-            "title": "Download it before you go",
-            "body": "Save the guide to your phone so it works at the crag, even with no reception."
+            "body": "Topo photos show exactly where each problem goes, with its grade, rating and how many people have climbed it.",
+            "image": {
+              "_type": "image",
+              "alt": "KAYA app topo photo with a problem's line drawn on the boulder",
+              "asset": {
+                "_ref": "image-9daad7fe56f718ffe06229251ff153c422013fd7-1320x2868-jpg",
+                "_type": "reference"
+              }
+            },
+            "title": "See the line"
           },
           {
             "_key": "s3",
             "_type": "phoneScreen",
-            "title": "Find your problem",
-            "body": "Topo lines, grades, approach notes and beta videos for each climb. Spot something wrong? Report it in the app."
-          }
-        ],
-        "linkLabel": "See KAYA's guidebooks",
-        "linkHref": "https://kayaclimb.com/guidebooks"
-      },
-      {
-        "_key": "gb2",
-        "_type": "cardsSection",
-        "heading": "Why we use it",
-        "columns": 3,
-        "titleStyle": "grotesk",
-        "cards": [
-          {
-            "_key": "gb2a",
-            "_type": "card",
-            "kicker": "Live",
-            "chipTone": "lichen",
-            "title": "Closures shown straight away",
-            "body": "Fire danger, backburning, road closures or a new access rule go into the guide the same day, instead of people relying on years-old information."
-          },
-          {
-            "_key": "gb2b",
-            "_type": "card",
-            "kicker": "All in one",
-            "chipTone": "wattle",
-            "title": "Everything at the crag",
-            "body": "Directions, approach tracks, boulder locations and access notes in one place, even with no reception."
-          },
-          {
-            "_key": "gb2c",
-            "_type": "card",
-            "kicker": "Councils",
-            "chipTone": "sandstone",
-            "title": "Agreed before it's public",
-            "body": "We only publish a guide once the council or land manager is comfortable, and they can see exactly what's out there.",
-            "linkHref": "/work-with-us/councils",
-            "linkLabel": "How we work with councils"
+            "body": "Beta videos from other climbers. You can log your sends, or report a problem the moment you spot it.",
+            "image": {
+              "_type": "image",
+              "alt": "KAYA app beta video of a climber on a boulder problem",
+              "asset": {
+                "_ref": "image-7925c7d91765e5a220b843d9f2c8f3e391065617-1320x2868-jpg",
+                "_type": "reference"
+              }
+            },
+            "title": "Watch the beta"
           }
         ]
       },
       {
+        "_key": "gb2",
+        "_type": "cardsSection",
+        "cards": [
+          {
+            "_key": "gb2a",
+            "_type": "card",
+            "body": "Fire danger, backburning, road closures or a new access rule go into the guide the same day, instead of people relying on years-old information.",
+            "chipTone": "lichen",
+            "kicker": "Live",
+            "title": "Closures shown straight away"
+          },
+          {
+            "_key": "gb2b",
+            "_type": "card",
+            "body": "Directions, approach tracks, boulder locations and access notes in one place. With KAYA PRO you can download it to use with no reception.",
+            "chipTone": "wattle",
+            "kicker": "All in one",
+            "title": "Everything at the crag"
+          },
+          {
+            "_key": "gb2c",
+            "_type": "card",
+            "body": "We only publish a guide once the council or land manager is comfortable, and they can see exactly what's out there.",
+            "chipTone": "sandstone",
+            "kicker": "Councils",
+            "linkHref": "/work-with-us/councils",
+            "linkLabel": "How we work with councils",
+            "title": "Agreed before it's public"
+          }
+        ],
+        "columns": 3,
+        "heading": "Why we use it",
+        "titleStyle": "grotesk"
+      },
+      {
         "_key": "gb3",
         "_type": "textSection",
-        "heading": "Where the money goes",
         "body": [
           {
             "_key": "gb3a",
             "_type": "block",
-            "style": "normal",
-            "markDefs": [],
             "children": [
               {
                 "_key": "gb3a1",
@@ -1362,13 +1385,13 @@
                 "marks": [],
                 "text": "Every guidebook on KAYA sends at least 5% of what it earns to the local climbing organisation for that area. In South East Queensland, that's us. Guide authors can also choose to give more of their own share."
               }
-            ]
+            ],
+            "markDefs": [],
+            "style": "normal"
           },
           {
             "_key": "gb3b",
             "_type": "block",
-            "style": "normal",
-            "markDefs": [],
             "children": [
               {
                 "_key": "gb3b1",
@@ -1376,11 +1399,23 @@
                 "marks": [],
                 "text": "We don't keep it. In Australia, signs, stairs and track work are done by contracted landscapers and sign makers, not by climbing groups, so guidebook income is passed on to where it can pay for that work: councils, Rock Climbing Queensland and theCrag."
               }
-            ]
+            ],
+            "markDefs": [],
+            "style": "normal"
           }
         ],
+        "heading": "Where the money goes",
+        "label": "Our job as KAYA's local climbing organisation",
         "linkHref": "https://kayaclimb.com/local-climbing-organizations",
-        "linkLabel": "How KAYA works with local climbing organisations"
+        "linkLabel": "How KAYA works with local climbing organisations",
+        "logo": {
+          "_type": "image",
+          "alt": "KAYA",
+          "asset": {
+            "_ref": "image-cdc48c93fd2741e78eb4fa11b4446dbf77b207d4-213x214-svg",
+            "_type": "reference"
+          }
+        }
       },
       {
         "_key": "gb4",
@@ -1390,39 +1425,46 @@
           {
             "_key": "gb4a",
             "_type": "faqItem",
-            "question": "Do I have to pay to use the guides?",
-            "answer": "Full guidebook access comes with a KAYA subscription. Prices change, so check KAYA for the current ones. Part of what KAYA earns goes to the guide's author, and at least 5% goes to the local climbing organisation."
+            "answer": "Full guidebook access, including downloading guides to use without reception, comes with KAYA PRO. KAYA sets the price, and for now it's charged in US dollars, so check KAYA for the current cost. Part of what KAYA earns goes to the guide's author, and at least 5% goes to the local climbing organisation.",
+            "question": "Do I have to pay to use the guides?"
           },
           {
             "_key": "gb4b",
             "_type": "faqItem",
-            "question": "Is this replacing the printed guides?",
-            "answer": "No. The people who wrote the existing guides did the hard yards, and we're grateful for it. The trouble is that nothing current and easy to keep up to date exists for a lot of South East Queensland, so that's what we're building."
+            "answer": "No. The people who wrote the existing guides did the hard yards, and we're grateful for it. The trouble is that nothing current and easy to keep up to date exists for a lot of South East Queensland, so that's what we're building.",
+            "question": "Is this replacing the printed guides?"
           },
           {
             "_key": "gb4c",
             "_type": "faqItem",
-            "question": "Which South East Queensland guides are on KAYA?",
-            "answer": "We're working on the first ones now. Each crag's progress is on the crag map, and we'll list every guide here as it goes live."
+            "answer": "We're working on the first ones now. Each crag's progress is on the crag map, and we'll list every guide here as it goes live.",
+            "question": "Which South East Queensland guides are on KAYA?"
           },
           {
             "_key": "gb4d",
             "_type": "faqItem",
-            "question": "Does KAYA work for climbing gyms too?",
-            "answer": "Yes, KAYA also has tools for indoor gyms and route setters. See kayaclimb.com/forgyms for the details."
+            "answer": "Yes, KAYA also has tools for indoor gyms and route setters. See kayaclimb.com/forgyms for the details.",
+            "question": "Does KAYA work for climbing gyms too?"
           }
         ]
       },
       {
         "_key": "gb5",
         "_type": "ctaSection",
-        "label": "Know a crag that needs a guide?",
-        "heading": "Tell us about your local",
         "body": "Mapping a crag is a team effort. If you know an area well, we'd love your help putting it on the record.",
-        "buttonLabel": "Help map a crag",
         "buttonHref": "/get-involved?help=mapping-on-kaya#sign-up",
+        "buttonLabel": "Help map a crag",
+        "heading": "Tell us about your local",
+        "label": "Know a crag that needs a guide?",
         "tone": "light"
       }
-    ]
+    ],
+    "seoDescription": "Acacia's climbing guidebooks live on KAYA: what KAYA is, why we use it, and where guidebook money goes.",
+    "showHelpBand": true,
+    "slug": {
+      "_type": "slug",
+      "current": "guidebooks"
+    },
+    "title": "Guidebooks"
   }
 ]

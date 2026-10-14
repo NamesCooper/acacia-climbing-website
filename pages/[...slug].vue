@@ -1,6 +1,12 @@
 <template>
   <div v-if="page">
-    <SitePageHeader :eyebrow="page.eyebrow" :title="heading.title" :accent="heading.accent" :lede="page.lede" />
+    <SitePageHeader
+      :eyebrow="page.eyebrow"
+      :logo="page.headerLogo?.asset ? { src: sanityImageUrl(page.headerLogo, 400), alt: page.headerLogo.alt } : undefined"
+      :title="heading.title"
+      :accent="heading.accent"
+      :lede="page.lede"
+    />
     <SanitySections :sections="page.sections" />
   </div>
 </template>
