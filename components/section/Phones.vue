@@ -17,7 +17,11 @@
           <span aria-hidden="true" class="absolute -right-[5px] top-[22%] h-[11%] w-[5px] rounded-r bg-outline"></span>
           <div class="bg-outline rounded-[44px] p-[9px] shadow-[6px_6px_0_var(--color-moss)] ring-[3px] ring-outline">
             <div class="relative aspect-[1320/2868] rounded-[36px] overflow-hidden bg-black">
-              <img :src="s.image.src" :alt="s.image.alt ?? ''" loading="lazy" class="block size-full object-cover object-top" />
+              <!-- Tap to see the screenshot full size -->
+              <button type="button" class="block size-full cursor-zoom-in p-0 border-0 bg-transparent" @click="zoom(s.image)">
+                <img :src="s.image.src" :alt="s.image.alt ?? ''" loading="lazy" class="block size-full object-cover object-top" />
+                <span class="sr-only">Enlarge this screenshot</span>
+              </button>
               <span aria-hidden="true" class="absolute top-[1.6%] left-1/2 -translate-x-1/2 w-[32%] h-[3.4%] rounded-full bg-black"></span>
             </div>
           </div>
@@ -35,6 +39,22 @@
     </ol>
 
     <UiButton v-if="cta" class="mt-10" :to="cta.to" :href="cta.href" :variant="cta.variant">{{ cta.label }}</UiButton>
+
+    <!-- Full-size view. <dialog> handles Escape, focus and the dimmed backdrop for us. -->
+    <dialog
+      ref="dialogEl"
+      class="m-auto p-0 bg-transparent border-0 max-w-[92vw] max-h-[92vh] overflow-visible backdrop:bg-outline/80"
+      @click.self="close"
+    >
+      <div v-if="zoomed" class="relative">
+        <img :src="zoomed.src" :alt="zoomed.alt ?? ''" class="block max-h-[88vh] max-w-[92vw] w-auto h-auto rounded-[28px] border-[3px] border-outline shadow-[6px_6px_0_var(--color-moss)]" />
+        <button
+          type="button"
+          class="absolute -top-4 -right-4 size-11 rounded-full bg-wattle border-[3px] border-outline font-grotesk font-extrabold text-xl cursor-pointer shadow-[3px_3px_0_var(--color-outline)]"
+          @click="close"
+        ><span aria-hidden="true">✕</span><span class="sr-only">Close</span></button>
+      </div>
+    </dialog>
   </section>
 </template>
 
@@ -49,4 +69,14 @@ defineProps<{
   screens: { title: string; body?: string; image?: { src?: string; alt?: string } }[]
   cta?: Cta
 }>()
+
+const dialogEl = ref<HTMLDialogElement | null>(null)
+const zoomed = ref<{ src?: string; alt?: string } | null>(null)
+function zoom(img: { src?: string; alt?: string }) {
+  zoomed.value = img
+  dialogEl.value?.showModal()
+}
+function close() {
+  dialogEl.value?.close()
+}
 </script>

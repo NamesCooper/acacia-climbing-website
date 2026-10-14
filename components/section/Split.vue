@@ -3,8 +3,10 @@
   <section class="max-w-[1240px] mx-auto px-6 py-10 sm:py-14">
     <div class="grid gap-10 lg:grid-cols-2 items-start">
       <div>
-        <img v-if="logo?.src" :src="logo.src" :alt="logo.alt ?? ''" loading="lazy" class="block h-8 sm:h-9 w-auto mb-6" />
-        <UiSectionTitle :title="title" :lead="lead" />
+        <!-- A partner logo can sit above the heading, or stand in for it (the heading is then
+             kept for screen readers and Google) -->
+        <img v-if="logo?.src" :src="logo.src" :alt="logoHeading ? '' : logo.alt ?? ''" loading="lazy" class="block w-auto" :class="logoHeading ? 'h-10 sm:h-12' : 'h-8 sm:h-9 mb-6'" />
+        <UiSectionTitle :title="title" :lead="lead" :class="logo?.src && logoHeading ? 'sr-only' : ''" />
         <p v-for="p in paragraphs" :key="p" class="mt-5 mb-0 text-lg leading-relaxed">{{ p }}</p>
         <UiButton v-if="cta" class="mt-6" :to="cta.to" :href="cta.href" :variant="cta.variant">{{ cta.label }}</UiButton>
       </div>
@@ -22,6 +24,7 @@ import type { Cta, Tone } from '~/types/content'
 defineProps<{
   title: string
   logo?: { src?: string; alt?: string }
+  logoHeading?: boolean
   lead?: string
   paragraphs: string[]
   cta?: Cta

@@ -145,6 +145,13 @@ export const textSection = defineType({
       description: 'e.g. a partner logo. SVG or PNG with a see-through background.',
       fields: [defineField({ name: 'alt', title: 'Organisation name', type: 'string' })],
     }),
+    defineField({
+      name: 'logoAsHeading',
+      title: 'Show the logo instead of the heading',
+      type: 'boolean',
+      description: 'The heading is still read out by screen readers and seen by Google',
+      hidden: ({ parent }) => !parent?.logo,
+    }),
     labelField,
     headingField(),
     richText(),

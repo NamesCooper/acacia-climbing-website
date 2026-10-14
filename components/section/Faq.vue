@@ -1,8 +1,8 @@
 <template>
   <!-- Questions that open and close. Uses <details>, so it works without JavaScript and with keyboards. -->
-  <section class="max-w-[920px] mx-auto px-6 py-10 sm:py-14">
+  <section class="max-w-[1240px] mx-auto px-6 py-10 sm:py-14">
     <UiSectionTitle v-if="title" :title="title" :lead="lead" />
-    <div class="flex flex-col gap-4" :class="title ? 'mt-8' : ''">
+    <div class="max-w-[860px] flex flex-col gap-4" :class="title ? 'mt-8' : ''">
       <details
         v-for="(item, i) in items"
         :key="item.question"
@@ -14,7 +14,13 @@
           <span aria-hidden="true" class="flex-shrink-0 size-9 rounded-full bg-wattle border-[3px] border-outline flex items-center justify-center text-2xl leading-none transition-transform group-open:rotate-45">+</span>
         </summary>
         <div class="px-5 pb-5 sm:px-6 text-[17px] leading-relaxed">
-          <p v-for="p in paragraphs(item.answer)" :key="p" class="m-0 [&+p]:mt-3">{{ p }}</p>
+          <!-- Web addresses in an answer (e.g. kayaclimb.com/forgyms) become links -->
+          <p v-for="p in paragraphs(item.answer)" :key="p" class="m-0 [&+p]:mt-3">
+            <template v-for="(part, j) in linkify(p)" :key="j">
+              <a v-if="part.href" :href="part.href" :target="part.external ? '_blank' : undefined" :rel="part.external ? 'noopener' : undefined" class="font-bold text-forest underline decoration-2 underline-offset-4 hover:decoration-wattle-deep">{{ part.text }}<span v-if="part.external" class="sr-only"> (opens in a new tab)</span></a>
+              <template v-else>{{ part.text }}</template>
+            </template>
+          </p>
         </div>
       </details>
     </div>
@@ -25,4 +31,22 @@
 defineProps<{ title?: string; lead?: string; items: { question: string; answer?: string }[] }>()
 // A blank line in the answer starts a new paragraph
 const paragraphs = (text = '') => text.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean)
+
+// Splits text into plain parts and links: full web addresses, bare domains like
+// kayaclimb.com/forgyms, and email addresses
+const LINK = /(https?:\/\/[^\s,]+[^\s.,)]|[\w.+-]+@[\w-]+\.[\w.]+[a-z]|\b[\w-]+\.(?:com|org|au|net)(?:\.au)?(?:\/[^\s,]*[^\s.,)])?)/gi
+function linkify(text: string) {
+  const out: { text: string; href?: string; external?: boolean }[] = []
+  let last = 0
+  for (const m of text.matchAll(LINK)) {
+    if (m.index! > last) out.push({ text: text.slice(last, m.index) })
+    const t = m[0]
+    const href = t.includes('@') && !t.startsWith('http') ? `mailto:${t}` : t.startsWith('http') ? t : `https://${t}`
+    const external = !href.startsWith('mailto:') && !/acaciaclimbing\.org/.test(href)
+    out.push({ text: t, href, external })
+    last = m.index! + t.length
+  }
+  if (last < text.length) out.push({ text: text.slice(last) })
+  return out
+}
 </script>
