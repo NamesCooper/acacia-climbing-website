@@ -33,6 +33,12 @@
       },
       {
         "_type": "navItem",
+        "_key": "n4",
+        "label": "Guidebooks",
+        "link": "/guidebooks"
+      },
+      {
+        "_type": "navItem",
         "_key": "n1",
         "label": "Updates",
         "link": "/updates"
@@ -130,6 +136,12 @@
             "_key": "c008",
             "label": "The crag map",
             "link": "/progress"
+          },
+          {
+            "_type": "navLink",
+            "_key": "c01b",
+            "label": "Guidebooks",
+            "link": "/guidebooks"
           },
           {
             "_type": "navLink",

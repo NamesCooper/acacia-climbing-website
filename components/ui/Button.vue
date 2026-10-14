@@ -4,7 +4,7 @@
   <component
     :is="tag"
     v-bind="linkAttrs"
-    class="nudge inline-block no-underline whitespace-nowrap border-[3px] border-outline rounded-full font-grotesk font-extrabold"
+    class="nudge inline-block no-underline max-w-full text-center sm:whitespace-nowrap border-[3px] border-outline rounded-full font-grotesk font-extrabold"
     :class="[VARIANTS[variant], SIZES[size]]"
   ><slot /></component>
 </template>

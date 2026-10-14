@@ -4,8 +4,10 @@
     <UiSectionTitle v-if="title" :title="title" :lead="lead" class="mb-10" />
     <p v-if="intro" class="-mt-6 mb-10 max-w-[680px] text-lg leading-relaxed">{{ intro }}</p>
     <ul class="list-none p-0 m-0 grid gap-6" :class="COLS[columns]">
-      <li v-for="(c, i) in cards" :id="c.id" :key="c.title" class="scroll-mt-6">
-        <UiCard :tone="c.tone ?? 'light'" :halftone="c.halftone ? 'top-right' : undefined" class="h-full">
+      <li v-for="(c, i) in cards" :id="c.id" :key="c.title" class="min-w-0 scroll-mt-6">
+        <!-- The card's inner box fills the card and stacks as a column, so the links all sit
+             on the same line at the bottom however long each card's text is -->
+        <UiCard :tone="c.tone ?? 'light'" :halftone="c.halftone ? 'top-right' : undefined" class="h-full [&>div:last-child]:h-full [&>div:last-child]:flex [&>div:last-child]:flex-col [&>div:last-child]:items-start">
           <UiChip v-if="c.chip" :tone="c.chipTone ?? 'lichen'" :dashed="c.chipDashed">{{ c.chip }}</UiChip>
           <!-- h2 when the section has no title of its own, so heading levels never skip.
                With a partner logo, the logo takes the title's place and the title stays for screen readers. -->
@@ -23,8 +25,8 @@
             />
             <span :class="c.logo?.src ? 'sr-only' : ''">{{ c.title }}</span>
           </component>
-          <p v-if="c.body" class="mt-3 mb-0 text-[17px] leading-relaxed" :class="c.tone === 'forest' ? 'text-paper/90' : ''">{{ c.body }}</p>
-          <ul v-if="c.items?.length" class="list-none p-0 m-0 mt-4 flex flex-col gap-3">
+          <p v-if="c.body" class="self-stretch mt-3 mb-0 text-[17px] leading-relaxed" :class="c.tone === 'forest' ? 'text-paper/90' : ''">{{ c.body }}</p>
+          <ul v-if="c.items?.length" class="self-stretch list-none p-0 m-0 mt-4 flex flex-col gap-3">
             <li v-for="item in c.items" :key="item.title">
               <p class="m-0 font-grotesk font-extrabold text-lg" :class="c.tone === 'forest' ? 'text-wattle' : 'text-forest'">{{ item.title }}</p>
               <p v-if="item.body" class="mt-0.5 mb-0 text-[16px] leading-relaxed" :class="c.tone === 'forest' ? 'text-paper/90' : ''">{{ item.body }}</p>
@@ -32,10 +34,10 @@
           </ul>
           <!-- "Text link" is a quiet read-more; anything else is a chunky button -->
           <template v-if="c.cta?.variant === 'link'">
-            <NuxtLink v-if="c.cta.to" :to="c.cta.to" class="inline-block mt-5 font-grotesk font-bold text-lg underline decoration-2 underline-offset-4 hover:decoration-wattle-deep" :class="c.tone === 'forest' ? 'text-wattle' : 'text-forest'">{{ c.cta.label }}&nbsp;→</NuxtLink>
-            <a v-else :href="c.cta.href" target="_blank" rel="noopener" class="inline-block mt-5 font-grotesk font-bold text-lg underline decoration-2 underline-offset-4 hover:decoration-wattle-deep" :class="c.tone === 'forest' ? 'text-wattle' : 'text-forest'">{{ c.cta.label }}&nbsp;↗<span class="sr-only"> (opens in a new tab)</span></a>
+            <NuxtLink v-if="c.cta.to" :to="c.cta.to" class="inline-block mt-auto pt-5 font-grotesk font-bold text-lg underline decoration-2 underline-offset-4 hover:decoration-wattle-deep" :class="c.tone === 'forest' ? 'text-wattle' : 'text-forest'">{{ c.cta.label }}&nbsp;→</NuxtLink>
+            <a v-else :href="c.cta.href" target="_blank" rel="noopener" class="inline-block mt-auto pt-5 font-grotesk font-bold text-lg underline decoration-2 underline-offset-4 hover:decoration-wattle-deep" :class="c.tone === 'forest' ? 'text-wattle' : 'text-forest'">{{ c.cta.label }}&nbsp;↗<span class="sr-only"> (opens in a new tab)</span></a>
           </template>
-          <UiButton v-else-if="c.cta" class="mt-6" :to="c.cta.to" :href="c.cta.href" :variant="c.cta.variant">{{ c.cta.label }}</UiButton>
+          <div v-else-if="c.cta" class="mt-auto pt-6"><UiButton :to="c.cta.to" :href="c.cta.href" :variant="c.cta.variant">{{ c.cta.label }}</UiButton></div>
         </UiCard>
       </li>
     </ul>
