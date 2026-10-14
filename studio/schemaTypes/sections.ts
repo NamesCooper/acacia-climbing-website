@@ -165,7 +165,7 @@ export const card = defineType({
       title: 'Logo (optional)',
       type: 'image',
       group: 'look',
-      description: "A partner's logo, shown small at the top of the card. Only use logos you have permission to use. PNG or SVG with a see-through background works best.",
+      description: "A partner's logo, shown in place of the card title (the title is still read out by screen readers). Only use logos you have permission to use. PNG or SVG with a see-through background works best.",
       fields: [defineField({ name: 'alt', title: 'Organisation name', type: 'string', description: 'e.g. "Rock Climbing Queensland"' })],
     }),
     defineField({

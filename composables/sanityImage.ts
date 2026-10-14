@@ -5,8 +5,10 @@ import { createImageUrlBuilder } from '@sanity/image-url'
 export function sanityImageUrl(source: any, width = 1200): string | undefined {
   if (!source?.asset) return undefined
   const { sanity } = useRuntimeConfig().public
-  return createImageUrlBuilder({ projectId: sanity.projectId, dataset: sanity.dataset })
-    .image(source)
+  const builder = createImageUrlBuilder({ projectId: sanity.projectId, dataset: sanity.dataset }).image(source)
+  // SVG logos are served untouched (no sizing), so they stay crisp at any size
+  if (String(source.asset._ref ?? '').endsWith('-svg')) return builder.url()
+  return builder
     .width(width)
     .fit('max')
     .auto('format')

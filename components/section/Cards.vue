@@ -6,21 +6,23 @@
     <ul class="list-none p-0 m-0 grid gap-6" :class="COLS[columns]">
       <li v-for="(c, i) in cards" :id="c.id" :key="c.title" class="scroll-mt-6">
         <UiCard :tone="c.tone ?? 'light'" :halftone="c.halftone ? 'top-right' : undefined" class="h-full">
-          <!-- Optional partner logo, kept small and in its own colours -->
-          <img
-            v-if="c.logo?.src"
-            :src="c.logo.src"
-            :alt="c.logo.alt ?? ''"
-            loading="lazy"
-            class="block h-12 w-auto max-w-[180px] object-contain object-left mb-4"
-          />
           <UiChip v-if="c.chip" :tone="c.chipTone ?? 'lichen'" :dashed="c.chipDashed">{{ c.chip }}</UiChip>
-          <!-- h2 when the section has no title of its own, so heading levels never skip -->
+          <!-- h2 when the section has no title of its own, so heading levels never skip.
+               With a partner logo, the logo takes the title's place and the title stays for screen readers. -->
           <component
             :is="title ? 'h3' : 'h2'"
             class="m-0 leading-[1.02]"
             :class="[c.chip ? 'mt-4' : '', titleStyle === 'display' ? 'font-display text-[clamp(30px,3.4vw,42px)]' : 'font-grotesk font-extrabold text-2xl', c.tone === 'forest' ? 'text-wattle' : '']"
-          >{{ c.title }}</component>
+          >
+            <img
+              v-if="c.logo?.src"
+              :src="c.logo.src"
+              alt=""
+              loading="lazy"
+              class="block h-7 w-auto max-w-[200px] object-contain object-left"
+            />
+            <span :class="c.logo?.src ? 'sr-only' : ''">{{ c.title }}</span>
+          </component>
           <p v-if="c.body" class="mt-3 mb-0 text-[17px] leading-relaxed" :class="c.tone === 'forest' ? 'text-paper/90' : ''">{{ c.body }}</p>
           <ul v-if="c.items?.length" class="list-none p-0 m-0 mt-4 flex flex-col gap-3">
             <li v-for="item in c.items" :key="item.title">

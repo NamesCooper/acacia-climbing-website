@@ -216,7 +216,15 @@
             "body": "Where our digital guidebooks live. We're their local climbing organisation for South East Queensland.",
             "linkLabel": "Visit KAYA",
             "linkHref": "https://kayaclimb.com/",
-            "buttonColour": "link"
+            "buttonColour": "link",
+            "logo": {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-472dec52fd8a3da5eab5534bd9ced197377343f5-932x214-svg"
+              },
+              "alt": "KAYA"
+            }
           },
           {
             "_key": "hw3",
