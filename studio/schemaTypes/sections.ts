@@ -492,6 +492,51 @@ export const imageTextSection = defineType({
   preview: { select: { title: 'heading', media: 'image' }, prepare: ({ title, media }) => ({ title: title || 'Photo and text', subtitle: 'Photo and text', media }) },
 })
 
+export const phonesSection = defineType({
+  name: 'phonesSection',
+  title: 'Phone screens (how it works)',
+  type: 'object',
+  description: 'A few numbered steps, each with an optional phone screenshot shown in a phone frame.',
+  fields: [
+    labelField,
+    headingField(),
+    defineField({ name: 'intro', type: 'text', rows: 2 }),
+    defineField({
+      name: 'logo',
+      title: 'Logo above the heading (optional)',
+      type: 'image',
+      description: 'e.g. a partner logo. SVG or PNG with a see-through background.',
+      fields: [defineField({ name: 'alt', title: 'Organisation name', type: 'string' })],
+    }),
+    defineField({
+      name: 'screens',
+      title: 'Steps',
+      type: 'array',
+      validation: (r) => r.max(4),
+      of: [
+        defineArrayMember({
+          type: 'object',
+          name: 'phoneScreen',
+          fields: [
+            defineField({ name: 'title', type: 'string', validation: (r) => r.required() }),
+            defineField({ name: 'body', title: 'Text', type: 'text', rows: 2 }),
+            defineField({
+              name: 'image',
+              title: 'Phone screenshot (optional)',
+              type: 'image',
+              description: 'A tall phone screenshot. Without one, the step shows as a numbered circle.',
+              fields: [defineField({ name: 'alt', title: 'Describe the screen', type: 'string' })],
+            }),
+          ],
+          preview: { select: { title: 'title', media: 'image' } },
+        }),
+      ],
+    }),
+    ...linkFields(),
+  ],
+  preview: { select: { title: 'heading' }, prepare: ({ title }) => ({ title: title || 'Phone screens', subtitle: 'Phone screens' }) },
+})
+
 export const formSection = defineType({
   name: 'formSection',
   title: 'Form (sign-up or contact)',
@@ -598,6 +643,7 @@ const rawSectionTypes = [
   factsSection,
   updatesSection,
   imageTextSection,
+  phonesSection,
   videoSection,
   formSection,
 ]
@@ -616,6 +662,7 @@ export const sectionMembers = [
   'ctaSection',
   'cragRegisterSection',
   'imageTextSection',
+  'phonesSection',
   'factsSection',
   'faqSection',
   'updatesSection',

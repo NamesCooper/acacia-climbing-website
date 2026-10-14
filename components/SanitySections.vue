@@ -74,6 +74,16 @@
       :image="s.image?.asset ? { src: sanityImageUrl(s.image, 600), alt: s.image.alt } : undefined"
     />
 
+    <SectionPhones
+      v-else-if="s._type === 'phonesSection'"
+      :lead="s.label"
+      :title="plain(s.heading)"
+      :intro="s.intro"
+      :logo="s.logo?.asset ? { src: sanityImageUrl(s.logo, 400), alt: s.logo.alt } : undefined"
+      :screens="(s.screens ?? []).map((x: any) => ({ title: x.title, body: x.body, image: x.image?.asset ? { src: sanityImageUrl(x.image, 700), alt: x.image.alt } : undefined }))"
+      :cta="cta(s.linkLabel, s.linkHref)"
+    />
+
     <SectionImageText
       v-else-if="s._type === 'imageTextSection'"
       :lead="s.label"

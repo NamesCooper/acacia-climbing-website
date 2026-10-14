@@ -1270,11 +1270,45 @@
             ]
           }
         ],
-        "linkHref": "https://kayaclimb.com/guidebooks",
-        "linkLabel": "See KAYA's guidebooks",
         "quote": "\"Documented crag, protected crag.\"",
         "quoteBody": "A guide that's current, agreed with council and easy to find is the best way we know to keep a crag open and looked after.",
         "quoteTone": "sandstone"
+      },
+      {
+        "_key": "gbph",
+        "_type": "phonesSection",
+        "label": "Three steps to the crag",
+        "heading": "How it works",
+        "logo": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-472dec52fd8a3da5eab5534bd9ced197377343f5-932x214-svg"
+          },
+          "alt": "KAYA"
+        },
+        "screens": [
+          {
+            "_key": "s1",
+            "_type": "phoneScreen",
+            "title": "Find the crag",
+            "body": "Search for the area or browse the map. Every boulder has its own GPS pin."
+          },
+          {
+            "_key": "s2",
+            "_type": "phoneScreen",
+            "title": "Download it before you go",
+            "body": "Save the guide to your phone so it works at the crag, even with no reception."
+          },
+          {
+            "_key": "s3",
+            "_type": "phoneScreen",
+            "title": "Find your problem",
+            "body": "Topo lines, grades, approach notes and beta videos for each climb. Spot something wrong? Report it in the app."
+          }
+        ],
+        "linkLabel": "See KAYA's guidebooks",
+        "linkHref": "https://kayaclimb.com/guidebooks"
       },
       {
         "_key": "gb2",
