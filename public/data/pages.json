@@ -243,7 +243,7 @@
             "kicker": "Councils",
             "chipTone": "paper",
             "title": "Local councils",
-            "body": "Brisbane, Ipswich, Logan and Moreton Bay so far, plus HQ Plantations at Passchendaele.",
+            "body": "Brisbane, Ipswich and Moreton Bay so far, plus HQ Plantations at Passchendaele.",
             "linkLabel": "How we work with councils",
             "linkHref": "/work-with-us/councils",
             "buttonColour": "link"
@@ -521,7 +521,7 @@
         "_type": "ctaSection",
         "label": "Where we're up to",
         "heading": "Every crag, on one map",
-        "body": "Tooheys Forest is recognised, White Rock and Plunketts are underway, and Cedar Creek and Passchendaele are just getting started. The map shows where each one is up to.",
+        "body": "Tooheys Forest is recognised, White Rock, Plunketts and Cedar Creek are underway, and Passchendaele is just getting started. The map shows where each one is up to.",
         "buttonLabel": "See the crag map",
         "buttonHref": "/progress",
         "tone": "gum"
