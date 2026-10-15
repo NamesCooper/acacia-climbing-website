@@ -21,7 +21,8 @@
               :src="c.logo.src"
               alt=""
               loading="lazy"
-              class="block h-7 w-auto max-w-[200px] object-contain object-left"
+              class="block w-auto max-w-[200px] object-contain object-left"
+              :class="c.logo.wide === false ? 'h-20' : 'h-7'"
             />
             <span :class="c.logo?.src ? 'sr-only' : ''">{{ c.title }}</span>
           </component>

@@ -175,6 +175,13 @@ function link(label?: string, href?: string) {
   return { label, to: stegaClean(href) }
 }
 
+// Sanity asset ids end in "-WIDTHxHEIGHT-format", which tells us a logo's shape without loading it.
+// Wide logos (like KAYA's) sit at text height; squarer ones (like RCQ's) need more height to read.
+function logoIsWide(img: any) {
+  const m = String(img?.asset?._ref ?? '').match(/-(\d+)x(\d+)-/)
+  return m ? Number(m[1]) / Number(m[2]) > 2.2 : true
+}
+
 function toCard(c: any): CardItem {
   return {
     id: clean(c.anchor),
@@ -187,7 +194,7 @@ function toCard(c: any): CardItem {
     cta: cta(c.linkLabel, c.linkHref, c.buttonColour),
     tone: clean(c.tone),
     halftone: c.halftone,
-    logo: c.logo?.asset ? { src: sanityImageUrl(c.logo, 400), alt: c.logo.alt } : undefined,
+    logo: c.logo?.asset ? { src: sanityImageUrl(c.logo, 400), alt: c.logo.alt, wide: logoIsWide(c.logo) } : undefined,
   }
 }
 </script>
