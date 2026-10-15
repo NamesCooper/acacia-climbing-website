@@ -205,7 +205,15 @@
             "body": "The state's peak climbing body. Our Queensland work happens under their umbrella.",
             "linkLabel": "Visit RCQ",
             "linkHref": "https://www.qldclimb.org.au/",
-            "buttonColour": "link"
+            "buttonColour": "link",
+            "logo": {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-ebbba5729e7d0c184e3b7152e894d4f322015fde-495x371-png"
+              },
+              "alt": "Rock Climbing Queensland"
+            }
           },
           {
             "_key": "hw2",
