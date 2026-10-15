@@ -322,7 +322,7 @@
                   {
                     "_type": "span",
                     "_key": "k001g",
-                    "text": "We don't have accounts or a newsletter on this site. If you use the sign-up form or email us, we receive your name, email address and whatever you choose to tell us. If the form is delivered by a form service, that service only passes it on to us.",
+                    "text": "We don't have accounts or a newsletter on this site. If you use one of our forms or email us, we receive your name, email address and whatever you choose to tell us. Our forms are delivered by Web3Forms, which only passes your message on to our inbox.",
                     "marks": []
                   }
                 ]
@@ -336,7 +336,7 @@
                   {
                     "_type": "span",
                     "_key": "k001i",
-                    "text": "Our host, Cloudflare, keeps basic technical logs (like IP addresses) to keep the site running and secure.",
+                    "text": "Our host, Cloudflare, keeps basic technical logs (like IP addresses) to keep the site running and secure. Fonts come from Google Fonts, images from Sanity, and the crag map's tiles from CARTO or OpenStreetMap, so those services also see your IP address when a page loads. We don't use tracking cookies or ads.",
                     "marks": []
                   }
                 ]
