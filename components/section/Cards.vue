@@ -7,21 +7,23 @@
       <li v-for="(c, i) in cards" :id="c.id" :key="c.title" class="min-w-0 scroll-mt-6">
         <!-- The card's inner box fills the card and stacks as a column, so the links all sit
              on the same line at the bottom however long each card's text is -->
-        <UiCard :tone="c.tone ?? 'light'" :halftone="c.halftone ? 'top-right' : undefined" class="h-full [&>div:last-child]:h-full [&>div:last-child]:flex [&>div:last-child]:flex-col [&>div:last-child]:items-start">
+        <UiCard :tone="c.tone ?? 'light'" :halftone="c.halftone ? 'top-right' : undefined" class="h-full [&>div:last-child]:h-full [&>div:last-child]:flex [&>div:last-child]:flex-col"
+          :class="hasLogos ? '[&>div:last-child]:items-center text-center' : '[&>div:last-child]:items-start'"
+        >
           <UiChip v-if="c.chip" :tone="c.chipTone ?? 'lichen'" :dashed="c.chipDashed">{{ c.chip }}</UiChip>
           <!-- h2 when the section has no title of its own, so heading levels never skip.
                With a partner logo, the logo takes the title's place and the title stays for screen readers. -->
           <component
             :is="title ? 'h3' : 'h2'"
             class="m-0 leading-[1.02]"
-            :class="[c.chip ? 'mt-4' : '', titleStyle === 'display' ? 'font-display text-[clamp(30px,3.4vw,42px)]' : 'font-grotesk font-extrabold text-2xl', c.tone === 'forest' ? 'text-wattle' : '']"
+            :class="[c.chip ? 'mt-4' : '', hasLogos ? 'h-20 flex items-center justify-center' : '', titleStyle === 'display' ? 'font-display text-[clamp(30px,3.4vw,42px)]' : 'font-grotesk font-extrabold text-2xl', c.tone === 'forest' ? 'text-wattle' : '']"
           >
             <img
               v-if="c.logo?.src"
               :src="c.logo.src"
               alt=""
               loading="lazy"
-              class="block w-auto max-w-[200px] object-contain object-left"
+              class="block w-auto max-w-[200px] object-contain"
               :class="c.logo.wide === false ? 'h-20' : 'h-7'"
             />
             <span :class="c.logo?.src ? 'sr-only' : ''">{{ c.title }}</span>
@@ -48,7 +50,7 @@
 <script setup lang="ts">
 import type { CardItem } from '~/types/content'
 
-withDefaults(
+const props = withDefaults(
   defineProps<{
     title?: string
     lead?: string
@@ -60,6 +62,10 @@ withDefaults(
   }>(),
   { columns: 2, titleStyle: 'display' },
 )
+
+// Partner rows (any card with a logo) are centred, and every card gets the same-height spot for
+// its logo or title, so the text and links line up across the row whatever shape the logos are.
+const hasLogos = computed(() => props.cards.some((c) => c.logo?.src))
 
 const COLS = { 2: 'md:grid-cols-2', 3: 'md:grid-cols-2 lg:grid-cols-3', 4: 'sm:grid-cols-2 lg:grid-cols-4' }
 </script>
