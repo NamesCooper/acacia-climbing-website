@@ -10,11 +10,11 @@
         class="group bg-paper-light border-[3px] border-outline rounded-[22px] shadow-[5px_5px_0_var(--color-outline)]"
         :open="i === 0"
       >
-        <summary class="list-none [&::-webkit-details-marker]:hidden cursor-pointer flex items-center justify-between gap-4 px-5 py-4 sm:px-6 font-grotesk font-extrabold text-lg leading-snug">
+        <summary @click="toggle($event)" class="list-none [&::-webkit-details-marker]:hidden cursor-pointer flex items-center justify-between gap-4 px-5 py-4 sm:px-6 font-grotesk font-extrabold text-lg leading-snug">
           {{ item.question }}
-          <span aria-hidden="true" class="flex-shrink-0 size-9 rounded-full bg-wattle border-[3px] border-outline flex items-center justify-center text-2xl leading-none transition-transform group-open:rotate-45">+</span>
+          <span aria-hidden="true" class="flex-shrink-0 size-9 rounded-full bg-wattle border-[3px] border-outline flex items-center justify-center text-2xl leading-none transition-transform duration-300 group-open:rotate-45">+</span>
         </summary>
-        <div class="px-5 pb-5 sm:px-6 text-[17px] leading-relaxed">
+        <div class="faq-body overflow-hidden px-5 pb-5 sm:px-6 text-[17px] leading-relaxed">
           <!-- Web addresses in an answer (e.g. kayaclimb.com/forgyms) become links -->
           <p v-for="p in paragraphs(item.answer)" :key="p" class="m-0 [&+p]:mt-3">
             <template v-for="(part, j) in linkify(p)" :key="j">
@@ -30,6 +30,39 @@
 
 <script setup lang="ts">
 defineProps<{ title?: string; lead?: string; items: { question: string; answer?: string }[] }>()
+// Smooth open and close. <details> snaps open on its own, so we take over the click: when
+// opening, set it open and grow the answer from 0 to its height; when closing, shrink it first
+// and only then close. The browser's own behaviour (keyboard, find-in-page) still works, and
+// people who ask for less motion get the plain instant toggle.
+const reduceMotion = () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+const running = new WeakMap<HTMLElement, Animation>()
+
+function toggle(e: MouseEvent) {
+  const details = (e.currentTarget as HTMLElement).parentElement as HTMLDetailsElement
+  const body = details.querySelector<HTMLElement>('.faq-body')
+  if (!body || reduceMotion() || !body.animate) return
+  e.preventDefault()
+  running.get(body)?.cancel()
+
+  const opening = !details.open
+  if (opening) details.open = true
+  const full = body.scrollHeight
+  const from = opening ? 0 : body.offsetHeight
+  const to = opening ? full : 0
+  const anim = body.animate(
+    [
+      { height: `${from}px`, opacity: opening ? 0 : 1 },
+      { height: `${to}px`, opacity: opening ? 1 : 0 },
+    ],
+    { duration: 280, easing: 'cubic-bezier(.2,.7,.3,1)' },
+  )
+  running.set(body, anim)
+  anim.onfinish = () => {
+    if (!opening) details.open = false
+    running.delete(body)
+  }
+}
+
 // A blank line in the answer starts a new paragraph
 const paragraphs = (text = '') => text.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean)
 
