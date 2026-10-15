@@ -268,6 +268,74 @@ function highlightPin(id: string | null) {
   crags.value.forEach((c) => pins[c.id]?.setIcon(pinIcon(c, c.id === id)))
 }
 
+// ── Grouping ──
+// Crags close together on screen (zoomed out, all of SEQ is a few pixels wide) would pile up into
+// overlapping dots that are hard to tell apart or tap. Instead they show as one numbered circle;
+// tapping it zooms in until they separate. Simple greedy grouping is plenty for a few dozen crags.
+const GROUP_PX = 38
+
+function groupIcon(count: number) {
+  const size = 44
+  return L!.divIcon({
+    className: '',
+    html: `<span style="display:flex;align-items:center;justify-content:center;width:${size}px;height:${size}px;border-radius:999px;background:#FFFCF2;color:#1E1A16;border:3px solid #1E1A16;box-shadow:3px 3px 0 #1E1A16;font:800 18px/1 var(--font-grotesk);">${count}</span>`,
+    iconSize: [size, size],
+    iconAnchor: [size / 2, size / 2],
+  })
+}
+
+// Leaflet makes pins focusable but doesn't reliably act on Enter, so wire Enter and Space ourselves
+function onActivate(m: Marker, fn: () => void) {
+  m.on('click', fn)
+  m.getElement()?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); fn() }
+  })
+}
+
+function renderPins() {
+  if (!L || !map || !pinLayer) return
+  pinLayer.clearLayers()
+  Object.keys(pins).forEach((k) => delete pins[k])
+
+  const groups: { at: { x: number; y: number }; crags: Crag[] }[] = []
+  crags.value.forEach((c) => {
+    const pt = map!.latLngToLayerPoint([c.lat, c.lng])
+    const near = groups.find((g) => Math.hypot(g.at.x - pt.x, g.at.y - pt.y) < GROUP_PX)
+    if (near) near.crags.push(c)
+    else groups.push({ at: pt, crags: [c] })
+  })
+
+  groups.forEach((g) => {
+    if (g.crags.length === 1) {
+      const c = g.crags[0]
+      const pin = L!.marker([c.lat, c.lng], { icon: pinIcon(c, currentCrag.value?.id === c.id), title: c.name, keyboard: true })
+      pin.bindTooltip(c.name, { direction: 'top', offset: [0, -12] })
+      pin.addTo(pinLayer!)
+      onActivate(pin, () => selectCrag(c.id))
+      pins[c.id] = pin
+      return
+    }
+    const bounds = L!.latLngBounds(g.crags.map((c) => [c.lat, c.lng] as [number, number]))
+    const names = g.crags.map((c) => c.name).join(', ')
+    const group = L!.marker(bounds.getCenter(), {
+      icon: groupIcon(g.crags.length),
+      title: `${g.crags.length} crags: ${names}. Zoom in to see them.`,
+      keyboard: true,
+      zIndexOffset: 500,
+    })
+    group.bindTooltip(`${g.crags.length} crags · tap to zoom in`, { direction: 'top', offset: [0, -16] })
+    group.addTo(pinLayer!)
+    onActivate(group, () =>
+      map!.flyToBounds(bounds, {
+        duration: 0.8,
+        maxZoom: 13,
+        paddingTopLeft: [window.innerWidth >= 1024 ? 470 : 50, 60],
+        paddingBottomRight: [50, 60],
+      }),
+    )
+  })
+}
+
 // On phones the panel sits under the map, so bring it into view after a tap
 function revealPanel() {
   if (window.innerWidth < 1024) panelEl.value?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -351,13 +419,9 @@ onMounted(async () => {
   }
 
   pinLayer = L.layerGroup().addTo(map)
-  crags.value.forEach((c) => {
-    const pin = L!.marker([c.lat, c.lng], { icon: pinIcon(c), title: c.name, keyboard: true })
-    pin.bindTooltip(c.name, { direction: 'top', offset: [0, -12] })
-    pin.on('click', () => selectCrag(c.id))
-    pin.addTo(pinLayer!)
-    pins[c.id] = pin
-  })
+  renderPins()
+  // Re-group the pins whenever the zoom changes, so groups split apart as you zoom in
+  map.on('zoomend', renderPins)
 })
 
 onUnmounted(() => {
