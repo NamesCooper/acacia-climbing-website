@@ -30,25 +30,23 @@
 
 <script setup lang="ts">
 defineProps<{ title?: string; lead?: string; items: { question: string; answer?: string }[] }>()
-// Smooth open and close. <details> snaps open on its own, so we take over the click: when
-// opening, set it open and grow the answer from 0 to its height; when closing, shrink it first
-// and only then close. The browser's own behaviour (keyboard, find-in-page) still works, and
-// people who ask for less motion get the plain instant toggle.
+// Smooth open and close, one question at a time. <details> snaps open on its own, so we take
+// over the click: opening a question grows its answer from nothing and closes whichever other
+// one was open; closing shrinks it first and only then closes it. Keyboards and find-in-page
+// still work, and people who ask for less motion get instant changes.
 const reduceMotion = () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches
 const running = new WeakMap<HTMLElement, Animation>()
 
-function toggle(e: MouseEvent) {
-  const details = (e.currentTarget as HTMLElement).parentElement as HTMLDetailsElement
+function animate(details: HTMLDetailsElement, opening: boolean) {
   const body = details.querySelector<HTMLElement>('.faq-body')
-  if (!body || reduceMotion() || !body.animate) return
-  e.preventDefault()
+  if (!body || reduceMotion() || !body.animate) {
+    details.open = opening
+    return
+  }
   running.get(body)?.cancel()
-
-  const opening = !details.open
   if (opening) details.open = true
-  const full = body.scrollHeight
   const from = opening ? 0 : body.offsetHeight
-  const to = opening ? full : 0
+  const to = opening ? body.scrollHeight : 0
   const anim = body.animate(
     [
       { height: `${from}px`, opacity: opening ? 0 : 1 },
@@ -61,6 +59,18 @@ function toggle(e: MouseEvent) {
     if (!opening) details.open = false
     running.delete(body)
   }
+}
+
+function toggle(e: MouseEvent) {
+  e.preventDefault()
+  const details = (e.currentTarget as HTMLElement).parentElement as HTMLDetailsElement
+  const opening = !details.open
+  if (opening) {
+    details.parentElement?.querySelectorAll<HTMLDetailsElement>('details[open]').forEach((d) => {
+      if (d !== details) animate(d, false)
+    })
+  }
+  animate(details, opening)
 }
 
 // A blank line in the answer starts a new paragraph
