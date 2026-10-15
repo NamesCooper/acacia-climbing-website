@@ -27,6 +27,9 @@ Legal: Cooper is a sole trader (ABN 38 237 542 815) trading as Acacia Climbing C
 - `.claude/agents/acc-helper.md` and `.claude/skills/` are Cooper's helper and its shortcuts (`/whats-next`, `/log-update`, `/check-site`)
 - `layouts/default.vue` wraps every page with the nav and the footer. The nav and footer are full-width forest bands that frame every page. The footer has the "Got an hour?" ask on top, then logo, links and small print. Words and links come from the Studio's Navigation, Footer and "Got an hour?" band documents (`studio/schemaTypes/chrome.ts`) via `composables/useSiteChrome.ts`, with `public/data/chrome.json` as the backup copy. Hide the ask on a Vue page with `definePageMeta({ prefooter: false })`; Studio pages have a switch
 - Link previews: `composables/usePageSeo.ts` sets each page's title, description and share picture (`public/og.png` unless the Page has its own "Share picture"); `layouts/default.vue` adds the canonical link
+- Fonts are self-hosted in `public/fonts` (trimmed woff2 files, OFL licence alongside), declared at the top of `assets/css/main.css` and preloaded in `nuxt.config.ts`. Don't go back to Google Fonts
+- Cloudflare Web Analytics (cookie-free) switches on when `NUXT_PUBLIC_CF_BEACON` is set in Cloudflare's build variables; the privacy page already mentions it
+- Instagram is @acaciaclimbing (footer link in the Studio's Footer document, plus a band on `/updates`). The homepage has Organization structured data for Google in `pages/index.vue`; swap its logo URL when the new logo lands
 - The crag map (`/progress`) is full-screen. Tiles come from CARTO and need `NUXT_PUBLIC_CARTO_KEY` in Cloudflare's build variables; without it they fall back to OpenStreetMap
 - Components are split into four folders (full list in `docs/COMPONENTS.md`):
   - `components/ui/` small bricks: `UiButton`, `UiChip`, `UiCard`, `UiRisoHeading`, `UiSectionTitle`, `UiHalftone`, `UiSparkle`, `UiWordmark`

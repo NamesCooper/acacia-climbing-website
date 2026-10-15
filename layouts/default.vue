@@ -29,4 +29,13 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 })
 useHead({ link: [{ rel: 'canonical', href: pageUrl }] })
+
+// Cloudflare Web Analytics: counts visits without cookies, so no consent banner is needed.
+// Only added on the live site, and only once the token is set in Cloudflare (NUXT_PUBLIC_CF_BEACON).
+const { cfBeacon, sanity } = useRuntimeConfig().public
+if (cfBeacon && !sanity.preview) {
+  useHead({
+    script: [{ src: 'https://static.cloudflareinsights.com/beacon.min.js', defer: true, 'data-cf-beacon': JSON.stringify({ token: cfBeacon }) }],
+  })
+}
 </script>

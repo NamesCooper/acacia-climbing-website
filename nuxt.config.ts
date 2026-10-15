@@ -32,6 +32,9 @@ export default defineNuxtConfig({
       // Free CARTO map-tile key. Set NUXT_PUBLIC_CARTO_KEY in Cloudflare's build variables.
       // (Tile keys are visible in the browser by design; lock it to your domains in CARTO's dashboard.)
       cartoKey: '',
+      // Cloudflare Web Analytics token (cookie-free visitor counts). Set NUXT_PUBLIC_CF_BEACON in
+      // Cloudflare's build variables; until then no analytics script is added. Public by design.
+      cfBeacon: '',
     },
   },
 
@@ -78,7 +81,13 @@ export default defineNuxtConfig({
         // Keep the preview site out of Google
         ...(preview ? [{ name: 'robots', content: 'noindex, nofollow' }] : []),
       ],
-      link: [{ rel: 'icon', type: 'image/png', href: '/brand/sprig-gold.png' }],
+      link: [
+        { rel: 'icon', type: 'image/png', href: '/brand/sprig-gold.png' },
+        // Start the three fonts every page needs straight away, before the CSS asks for them
+        { rel: 'preload', as: 'font', type: 'font/woff2', href: '/fonts/fraunces-900-italic.woff2', crossorigin: '' },
+        { rel: 'preload', as: 'font', type: 'font/woff2', href: '/fonts/bricolage-grotesque-700-800.woff2', crossorigin: '' },
+        { rel: 'preload', as: 'font', type: 'font/woff2', href: '/fonts/dm-sans-400-700.woff2', crossorigin: '' },
+      ],
     },
   },
 })

@@ -201,6 +201,12 @@
           },
           {
             "_type": "navLink",
+            "_key": "c01c",
+            "label": "Instagram",
+            "link": "https://www.instagram.com/acaciaclimbing/"
+          },
+          {
+            "_type": "navLink",
             "_key": "c016",
             "label": "hello@acaciaclimbing.org",
             "link": "mailto:hello@acaciaclimbing.org"

@@ -38,6 +38,24 @@
           </div>
         </li>
       </ol>
+
+      <!-- Day to day, the small stuff goes on Instagram first -->
+      <div class="mt-12 bg-gum border-[3px] border-outline rounded-[28px] p-7 sm:p-9 shadow-[6px_6px_0_var(--color-outline)] flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8 justify-between">
+        <div>
+          <p class="m-0 font-poster text-[22px] sm:text-[24px] leading-tight">For the day-to-day</p>
+          <h2 class="mt-1 mb-0 font-display text-[clamp(28px,3.4vw,38px)] leading-[1.05]">Follow along on Instagram</h2>
+          <p class="mt-3 mb-0 text-[17px] leading-relaxed max-w-[520px]">Crag days, mapping trips and the small wins land there first. The big milestones end up here.</p>
+        </div>
+        <a
+          href="https://www.instagram.com/acaciaclimbing/"
+          target="_blank"
+          rel="noopener"
+          class="nudge self-start sm:self-center flex-shrink-0 inline-flex items-center gap-2 no-underline text-outline bg-paper-light border-[3px] border-outline rounded-full px-6 py-3 font-grotesk font-extrabold shadow-[4px_4px_0_var(--color-outline)]"
+        >
+          <svg aria-hidden="true" viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" /></svg>
+          @acaciaclimbing<span class="sr-only"> on Instagram (opens in a new tab)</span>
+        </a>
+      </div>
     </section>
   </div>
 </template>

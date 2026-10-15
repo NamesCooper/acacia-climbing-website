@@ -43,5 +43,7 @@ export function useSiteChrome() {
 // stegaClean strips the visual editor's invisible markers so the address works.
 export function chromeLink(link?: string) {
   const l = stegaClean(link ?? '')
-  return l.startsWith('/') ? { to: l } : { href: l }
+  if (l.startsWith('/')) return { to: l }
+  // Other websites (e.g. Instagram) open in a new tab so people don't lose their place here
+  return /^https?:/.test(l) ? { href: l, target: '_blank', rel: 'noopener' } : { href: l }
 }
