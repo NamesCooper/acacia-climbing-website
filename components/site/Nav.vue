@@ -157,6 +157,7 @@ function onDocClick(e: MouseEvent) { if (barEl.value && !barEl.value.contains(e.
 onMounted(() => document.addEventListener('click', onDocClick))
 onUnmounted(() => document.removeEventListener('click', onDocClick))
 
-const CHIP_BG = ['bg-wattle', 'bg-lichen', 'bg-sandstone', 'bg-paper-light']
+// Calm colours only: wattle is kept for the one action that matters, "Lend a hand"
+const CHIP_BG = ['bg-lichen', 'bg-sandstone', 'bg-gum', 'bg-paper-light']
 const TILTS = [-2, 1.5, -1.5, 2]
 </script>

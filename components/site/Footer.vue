@@ -92,6 +92,7 @@ const showHelp = computed(() => route.meta.prefooter !== false && !data.value?.n
 // The nav's "Lend a hand" button, for pages without the ask
 const button = computed(() => (nav.value?.buttonLabel && nav.value.buttonLink ? chromeLink(nav.value.buttonLink) : null))
 
-const CHIP_BG = ['bg-wattle', 'bg-lichen', 'bg-sandstone', 'bg-paper-light']
+// Calm colours only: wattle is kept for the one action that matters, "Lend a hand"
+const CHIP_BG = ['bg-lichen', 'bg-sandstone', 'bg-gum', 'bg-paper-light']
 const PILL_BG: Record<string, string> = { wattle: 'bg-wattle', lichen: 'bg-lichen', sandstone: 'bg-sandstone', paper: 'bg-paper-light' }
 </script>
