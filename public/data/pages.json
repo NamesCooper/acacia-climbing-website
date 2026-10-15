@@ -600,7 +600,8 @@
           }
         ],
         "heading": "We climb on Country",
-        "sprig": true
+        "sprig": true,
+        "flag": true
       }
     ],
     "seoDescription": "Who we are, why we started, and how we work with councils to get outdoor climbing recognised across Australia.",
@@ -1247,15 +1248,7 @@
   {
     "_id": "page-guidebooks",
     "_type": "page",
-    "eyebrow": "Guidebooks on",
-    "headerLogo": {
-      "_type": "image",
-      "alt": "KAYA",
-      "asset": {
-        "_ref": "image-472dec52fd8a3da5eab5534bd9ced197377343f5-932x214-svg",
-        "_type": "reference"
-      }
-    },
+    "eyebrow": "Guidebooks",
     "heading": "Guides that stay *up to date*",
     "lede": "Our guidebooks live on KAYA, a climbing app with digital guidebooks. Here's what it is, why we use it, and where the money goes.",
     "sections": [

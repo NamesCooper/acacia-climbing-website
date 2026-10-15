@@ -8,7 +8,7 @@
     <p v-if="intro" class="mt-4 mb-0 max-w-[680px] text-lg leading-relaxed">{{ intro }}</p>
 
     <ol class="list-none p-0 m-0 mt-10 grid gap-10 sm:gap-8" :class="screens.length >= 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-2'">
-      <li v-for="(s, i) in screens" :key="i" class="min-w-0 flex flex-col items-start">
+      <li v-for="(s, i) in screens" :key="i" class="min-w-0 flex flex-col items-center text-center sm:items-start sm:text-left">
         <!-- iPhone-style mockup: dark body, side buttons, rounded screen and the Dynamic Island.
              Drawn in CSS so any screenshot from the Studio drops straight in. -->
         <div v-if="s.image?.src" class="relative w-full max-w-[250px]">
@@ -38,7 +38,9 @@
       </li>
     </ol>
 
-    <UiButton v-if="cta" class="mt-10" :to="cta.to" :href="cta.href" :variant="cta.variant">{{ cta.label }}</UiButton>
+    <div v-if="cta" class="mt-10 text-center sm:text-left">
+      <UiButton :to="cta.to" :href="cta.href" :variant="cta.variant">{{ cta.label }}</UiButton>
+    </div>
 
     <!-- Full-size view. <dialog> handles Escape, focus and the dimmed backdrop for us. -->
     <dialog
@@ -47,7 +49,7 @@
       @click.self="close"
     >
       <div v-if="zoomed" class="relative">
-        <img :src="zoomed.src" :alt="zoomed.alt ?? ''" class="block max-h-[88vh] max-w-[92vw] w-auto h-auto rounded-[28px] border-[3px] border-outline shadow-[6px_6px_0_var(--color-moss)]" />
+        <img :src="zoomed.src" :alt="zoomed.alt ?? ''" class="block max-h-[88vh] max-w-[92vw] w-auto h-auto rounded-[28px]" />
         <button
           type="button"
           class="absolute -top-4 -right-4 size-11 rounded-full bg-wattle border-[3px] border-outline font-grotesk font-extrabold text-xl cursor-pointer shadow-[3px_3px_0_var(--color-outline)]"

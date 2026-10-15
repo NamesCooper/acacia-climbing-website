@@ -260,7 +260,15 @@ export const statementSection = defineType({
   name: 'statementSection',
   title: 'Centred statement',
   type: 'object',
-  fields: [headingField(), richText(), defineField({ name: 'sprig', title: 'Show the sprig on top', type: 'boolean', initialValue: true })],
+  fields: [headingField(), richText(), defineField({ name: 'sprig', title: 'Show the sprig on top', type: 'boolean', initialValue: true }),
+    defineField({
+      name: 'flag',
+      title: 'Show the Aboriginal flag on top',
+      description: 'For the Acknowledgement of Country. Shows instead of the sprig.',
+      type: 'boolean',
+      initialValue: false,
+    }),
+  ],
   preview: { select: { title: 'heading' }, prepare: ({ title }) => ({ title: title || 'Statement', subtitle: 'Centred statement' }) },
 })
 

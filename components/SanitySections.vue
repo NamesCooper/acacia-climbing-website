@@ -58,6 +58,7 @@
       :title="plain(s.heading)"
       :paragraphs="blocksToParagraphs(s.body)"
       :sprig="s.sprig !== false"
+      :flag="s.flag === true"
     />
 
     <SectionProse
