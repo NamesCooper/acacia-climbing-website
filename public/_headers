@@ -1,0 +1,8 @@
+# Cloudflare reads this file. Page data files must always be checked for a newer copy, so
+# in-site navigation never shows content from an older build.
+/_payload.json
+  Cache-Control: no-cache
+/*/_payload.json
+  Cache-Control: no-cache
+/_nuxt/builds/*
+  Cache-Control: no-cache
