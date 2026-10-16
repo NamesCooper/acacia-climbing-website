@@ -1,20 +1,29 @@
 <template>
   <!-- Full-width coloured band with numbered step cards. -->
   <section class="border-y-[3px] border-outline my-10 sm:my-14" :class="BANDS[band] ?? BANDS.sandstone">
-    <div class="max-w-[1240px] mx-auto px-6 py-16 sm:py-20">
+    <div class="max-w-[1240px] mx-auto px-6 py-12 sm:py-20">
       <UiSectionTitle :title="title" :lead="lead" />
-      <ol class="list-none p-0 m-0 mt-10 grid gap-3 sm:gap-4 sm:grid-cols-2" :class="LG_COLS[steps.length] ?? 'lg:grid-cols-4'">
+
+      <!-- Phones: one card with a numbered list inside, so 8 steps stay about one screen tall -->
+      <UiCard size="sm" class="sm:hidden mt-8">
+        <ol class="list-none p-0 m-0 divide-y-2 divide-outline/15">
+          <li v-for="(step, i) in steps" :key="step" class="flex items-center gap-3 py-2.5 first:pt-0 last:pb-0">
+            <span class="flex-shrink-0 inline-flex items-center justify-center size-8 rounded-full bg-moss text-paper border-2 border-outline font-grotesk font-extrabold text-sm">{{ i + 1 }}</span>
+            <p class="m-0 font-grotesk font-bold text-[16px] leading-snug">{{ step }}</p>
+          </li>
+        </ol>
+      </UiCard>
+
+      <!-- Bigger screens: a card per step in a grid -->
+      <ol class="hidden sm:grid list-none p-0 m-0 mt-10 gap-4 grid-cols-2" :class="LG_COLS[steps.length] ?? 'lg:grid-cols-4'">
         <li v-for="(step, i) in steps" :key="step">
-          <!-- On phones the number sits beside the words, so a list of steps stays short -->
           <UiCard size="sm" class="h-full">
-            <div class="flex items-center gap-4 sm:block">
-            <span class="flex-shrink-0 inline-flex items-center justify-center size-10 rounded-full bg-moss text-paper border-[3px] border-outline font-grotesk font-extrabold">{{ i + 1 }}</span>
-            <p class="m-0 sm:mt-3 font-grotesk font-bold text-[17px] leading-snug">{{ step }}</p>
-            </div>
+            <span class="inline-flex items-center justify-center size-10 rounded-full bg-moss text-paper border-[3px] border-outline font-grotesk font-extrabold">{{ i + 1 }}</span>
+            <p class="m-0 mt-3 font-grotesk font-bold text-[17px] leading-snug">{{ step }}</p>
           </UiCard>
         </li>
       </ol>
-      <NuxtLink v-if="link" :to="link.to" class="inline-block mt-10 font-grotesk font-bold text-lg text-forest">{{ link.label }} →</NuxtLink>
+      <NuxtLink v-if="link" :to="link.to" class="inline-block mt-8 sm:mt-10 font-grotesk font-bold text-lg text-forest">{{ link.label }} →</NuxtLink>
     </div>
   </section>
 </template>
