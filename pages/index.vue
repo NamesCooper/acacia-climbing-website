@@ -37,7 +37,7 @@ useHead({
         description: "Climbers working with councils so Australia's bouldering spots get recognised, mapped and looked after. Starting in South East Queensland.",
         areaServed: 'Australia',
         taxID: '38 237 542 815',
-        sameAs: ['https://www.instagram.com/acaciaclimbing/', 'https://www.facebook.com/profile.php?id=61595665970911'],
+        sameAs: ['https://www.instagram.com/acaciaclimbing/', 'https://www.facebook.com/acaciaclimbing'],
       }),
     },
   ],
