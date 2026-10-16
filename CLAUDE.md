@@ -95,6 +95,7 @@ No orange or pink. Wattle is for actions and small highlights (buttons, chips, s
 - **Halftone circle:** `.halftone` with `--dot` set to a deeper shade of the panel colour
 - **Tilt:** only the nav pills tilt (-2 to 2deg via `.tilt` + `--tilt`, straightening on hover), plus the decorative marquee band. Buttons, chips, cards, eyebrows and footer pills stay straight; `.tilt` without `--tilt` just gives the hover lift
 - **Motion:** marquee, bobbing sprig, twinkling sparkles, progress bars filling. All switch off under `prefers-reduced-motion`
+- **Case:** nav pills, buttons and the menu button are sentence case, never forced capitals. Uppercase is only for section titles and small labels (chips, eyebrows in the footer)
 - **Grain:** applied once to the whole site via `body::after`. Don't add more
 - The mascot (in progress) will live in the About panel and hero. Until then, the sprig stands in
 

@@ -12,7 +12,7 @@
            goes button, then menu items; `order` keeps it showing on the right. -->
       <button
         type="button"
-        class="sm:hidden order-2 col-start-3 min-[480px]:col-start-auto justify-self-end inline-flex items-center gap-2 cursor-pointer bg-paper-light text-outline border-[3px] border-outline rounded-full px-3.5 py-2 font-grotesk font-extrabold text-sm uppercase tracking-[0.06em] shadow-[3px_3px_0_var(--color-outline)]"
+        class="sm:hidden order-2 col-start-3 min-[480px]:col-start-auto justify-self-end inline-flex items-center gap-2 cursor-pointer bg-paper-light text-outline border-[3px] border-outline rounded-full px-3.5 py-2 font-grotesk font-extrabold text-sm shadow-[3px_3px_0_var(--color-outline)]"
         ref="menuBtn"
         aria-controls="main-menu"
         :aria-expanded="menuOpen"
@@ -45,7 +45,7 @@
               v-if="item.children?.length"
               :ref="(el) => (triggers[i] = el as HTMLButtonElement)"
               type="button"
-              class="tilt inline-flex items-center gap-1.5 cursor-pointer border-2 border-outline rounded-full px-3.5 py-1.5 font-grotesk font-extrabold text-sm uppercase tracking-[0.06em] text-forest shadow-[2px_2px_0_var(--color-outline)]"
+              class="tilt inline-flex items-center gap-1.5 cursor-pointer border-2 border-outline rounded-full px-3.5 py-1.5 font-grotesk font-extrabold text-sm text-forest shadow-[2px_2px_0_var(--color-outline)]"
               :class="[CHIP_BG[i % CHIP_BG.length], isActive(item) ? 'ring-2 ring-wattle ring-offset-2 ring-offset-forest' : '']"
               :style="{ '--tilt': TILTS[i % TILTS.length] + 'deg' }"
               :aria-expanded="open === i"
@@ -58,7 +58,7 @@
             <NuxtLink
               v-else-if="item.link"
               v-bind="chromeLink(item.link)"
-              class="tilt inline-block no-underline border-2 border-outline rounded-full px-3.5 py-1.5 font-grotesk font-extrabold text-sm uppercase tracking-[0.06em] text-forest shadow-[2px_2px_0_var(--color-outline)]"
+              class="tilt inline-block no-underline border-2 border-outline rounded-full px-3.5 py-1.5 font-grotesk font-extrabold text-sm text-forest shadow-[2px_2px_0_var(--color-outline)]"
               :class="CHIP_BG[i % CHIP_BG.length]"
               :style="{ '--tilt': TILTS[i % TILTS.length] + 'deg' }"
               active-class="ring-2 ring-wattle ring-offset-2 ring-offset-forest"
