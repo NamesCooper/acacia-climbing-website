@@ -207,6 +207,12 @@
           },
           {
             "_type": "navLink",
+            "_key": "c01d",
+            "label": "Facebook",
+            "link": "https://www.facebook.com/profile.php?id=61595665970911"
+          },
+          {
+            "_type": "navLink",
             "_key": "c016",
             "label": "hello@acaciaclimbing.org",
             "link": "mailto:hello@acaciaclimbing.org"
