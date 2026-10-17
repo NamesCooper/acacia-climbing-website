@@ -32,7 +32,7 @@ useHead({
         name: 'Acacia Climbing Coalition',
         alternateName: 'ACC',
         url: 'https://acaciaclimbing.org/',
-        logo: 'https://acaciaclimbing.org/brand/sprig-green.png',
+        logo: 'https://acaciaclimbing.org/icon-512.png',
         email: 'hello@acaciaclimbing.org',
         description: "Climbers working with councils so Australia's bouldering spots get recognised, mapped and looked after. Starting in South East Queensland.",
         areaServed: 'Australia',

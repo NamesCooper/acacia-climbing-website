@@ -85,7 +85,7 @@ No orange or pink. Wattle is for actions and small highlights (buttons, chips, s
 
 ### Logo
 
-"Sprig Dot": lowercase `acacia` in Bricolage Grotesque 800 with the wattle sprig as the dot on the i, with "CLIMBING COALITION" in small gold capitals underneath. Use `<UiWordmark :size="44" tagline />` for the full lockup (nav, footer, share image) and `<UiWordmark />` alone only for tight spots (favicon, avatar). Sprig artwork is in `public/brand/` (gold, green, light). The old serif "A" monogram is kept as a formal seal for council and grant documents only.
+"Sprig Dot": lowercase `acacia` in Bricolage Grotesque 800 with the wattle sprig as the dot on the i, with "CLIMBING COALITION" in small gold capitals underneath. Use `<UiWordmark :size="44" tagline />` for the full lockup (nav, footer, share image) and `<UiWordmark />` alone for tight spots (social avatar). The favicon is a bold lowercase "a" with one wattle dot on a forest rounded square (`public/favicon.ico`, `favicon-32.png`, `apple-touch-icon.png`, `icon-192/512.png`), because the sprig can't be read at tab size; options live on the "ACC favicon" design canvas. Sprig artwork is in `public/brand/` (gold, green, light). The old serif "A" monogram is kept as a formal seal for council and grant documents only.
 
 ### Patterns
 

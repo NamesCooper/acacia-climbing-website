@@ -82,7 +82,10 @@ export default defineNuxtConfig({
         ...(preview ? [{ name: 'robots', content: 'noindex, nofollow' }] : []),
       ],
       link: [
-        { rel: 'icon', type: 'image/png', href: '/brand/sprig-gold.png' },
+        // Favicon: bold "a" with a wattle dot on forest (the sprig is unreadable at tab size)
+        { rel: 'icon', href: '/favicon.ico', sizes: '48x48' },
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32.png' },
+        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
         // Start the three fonts every page needs straight away, before the CSS asks for them
         { rel: 'preload', as: 'font', type: 'font/woff2', href: '/fonts/fraunces-900-italic.woff2', crossorigin: '' },
         { rel: 'preload', as: 'font', type: 'font/woff2', href: '/fonts/bricolage-grotesque-700-800.woff2', crossorigin: '' },
