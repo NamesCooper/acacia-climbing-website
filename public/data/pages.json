@@ -75,7 +75,7 @@
                   {
                     "_type": "span",
                     "_key": "k0006",
-                    "text": " around Australia, so crags stay open and get the good stuff: stairs, signs and proper tracks. In Queensland we work under Rock Climbing Queensland (RCQ, formerly ACAQ).",
+                    "text": " around Australia, so crags stay open and get the good stuff: stairs, signs and proper tracks. We're an independent volunteer group, and we keep Rock Climbing Queensland (formerly ACAQ) in the loop on our council work.",
                     "marks": []
                   }
                 ]
@@ -199,10 +199,10 @@
           {
             "_key": "hw1",
             "_type": "card",
-            "kicker": "Umbrella",
+            "kicker": "State body",
             "chipTone": "lichen",
             "title": "Rock Climbing Queensland",
-            "body": "The state's peak climbing body. Our Queensland work happens under their umbrella.",
+            "body": "The state's peak climbing body. We keep them in the loop on our council work.",
             "linkLabel": "Visit RCQ",
             "linkHref": "https://www.qldclimb.org.au/",
             "buttonColour": "link",
@@ -929,7 +929,7 @@
             "_key": "c7e",
             "_type": "faqItem",
             "question": "Who are you, officially?",
-            "answer": "Acacia Climbing Coalition (ABN 38 237 542 815). Our Queensland work sits under Rock Climbing Queensland (RCQ, formerly ACAQ), the state's peak climbing body, and our founder is RCQ's bouldering representative. We also work closely with QPWS rangers."
+            "answer": "Acacia Climbing Coalition (ABN 38 237 542 815) is an independent volunteer group. Our founder is also RCQ's bouldering representative, and we keep RCQ in the loop on all council work. We also work closely with QPWS rangers."
           },
           {
             "_key": "c7f",

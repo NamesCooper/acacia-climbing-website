@@ -195,7 +195,7 @@ const BLOCKS: { type: string; anchor?: string; name: string; goodFor: string; ex
       items: [
         { _key: 'q1', question: 'Is it okay to climb at these crags?', answer: 'Access status here is general information, not permission. Always check signage and local rules before you go.' },
         { _key: 'q2', question: 'Can I help if I\'m new to climbing outside?', answer: 'Absolutely. Plenty of the work is mapping, writing and turning up to clean-up days.' },
-        { _key: 'q3', question: 'Who runs Acacia?', answer: 'A small volunteer crew. In Queensland we work under Rock Climbing Queensland.' },
+        { _key: 'q3', question: 'Who runs Acacia?', answer: 'A small, independent volunteer crew. We keep Rock Climbing Queensland in the loop on our council work.' },
       ],
     },
   },
