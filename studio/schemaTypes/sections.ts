@@ -249,6 +249,7 @@ export const stepsSection = defineType({
   fields: [
     labelField,
     headingField(),
+    defineField({ name: 'intro', title: 'Intro', type: 'text', rows: 3, description: 'Optional short note under the heading' }),
     defineField({ name: 'steps', type: 'array', of: [defineArrayMember({ type: 'string' })] }),
     ...linkFields('linkLabel', 'linkHref', 'Link'),
     defineField({ name: 'band', title: 'Band colour', type: 'string', initialValue: 'sandstone', options: radio([{ title: 'Sandstone', value: 'sandstone' }, { title: 'Lichen', value: 'lichen' }, { title: 'Gum leaf', value: 'gum' }, { title: 'Wattle', value: 'wattle' }]) }),

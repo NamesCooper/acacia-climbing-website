@@ -48,6 +48,7 @@
       v-else-if="s._type === 'stepsSection'"
       :lead="s.label"
       :title="plain(s.heading)"
+      :intro="s.intro"
       :steps="s.steps ?? []"
       :link="link(s.linkLabel, s.linkHref)"
       :band="clean(s.band) ?? 'sandstone'"

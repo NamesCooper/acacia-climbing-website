@@ -3,6 +3,7 @@
   <section class="border-y-[3px] border-outline my-10 sm:my-14" :class="BANDS[band] ?? BANDS.sandstone">
     <div class="max-w-[1240px] mx-auto px-6 py-12 sm:py-20">
       <UiSectionTitle :title="title" :lead="lead" />
+      <p v-if="intro" class="mt-4 mb-0 max-w-[720px] text-lg leading-relaxed">{{ intro }}</p>
 
       <!-- Phones: one card with a numbered list inside, so 8 steps stay about one screen tall -->
       <UiCard size="sm" class="sm:hidden mt-8">
@@ -33,6 +34,7 @@ withDefaults(
   defineProps<{
     title: string
     lead?: string
+    intro?: string
     steps: string[]
     link?: { label: string; to: string }
     band?: 'sandstone' | 'wattle' | 'lichen' | 'gum'
