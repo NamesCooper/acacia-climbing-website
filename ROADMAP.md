@@ -64,12 +64,15 @@ Tick things off as you go. Add new ideas at the bottom of the right section rath
 - [x] Real ABN (38 237 542 815) on the footer and Privacy page
 - [ ] Check About still tells the story the way you'd tell it (fake team and timeline replaced with real milestones and a short "who's behind it")
 - [ ] Mission: Traditional Owner line now says we're building those relationships. Update it when there's something real to share
-- [ ] Privacy mentions a "quarterly dispatch" newsletter. Remove it if there isn't one
+- [x] Privacy no longer mentions a newsletter. Sign-up form has "Just keep me posted"; those emails land in the inbox for now
+- [ ] Once "Just keep me posted" passes about 50 people, move the list to Buttondown or Mailchimp and update Privacy to name it
 - [x] "The advocacy team" changed to "we" on Get involved
 - [x] Updates link is in the new homepage nav. Inner pages get it when they're restyled
 - [ ] Add KAYA links to each crag in Sanity (the `KAYA guidebook link` field) and show them on the crag panel
 
 ## Later
+
+- [x] "First time outside" guide for gym climbers heading outdoors (Studio page, in the menu and footer)
 
 - [ ] Move page copy (mission, about, work) into Sanity so words can change without code
 - [ ] "Report a crag issue" form (the sign-up form block can be reused for this)

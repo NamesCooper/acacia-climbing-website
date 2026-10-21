@@ -39,6 +39,12 @@
       },
       {
         "_type": "navItem",
+        "_key": "n5",
+        "label": "First time outside",
+        "link": "/first-time-outside"
+      },
+      {
+        "_type": "navItem",
         "_key": "n1",
         "label": "Updates",
         "link": "/updates"
@@ -142,6 +148,12 @@
             "_key": "c01b",
             "label": "Guidebooks",
             "link": "/guidebooks"
+          },
+          {
+            "_type": "navLink",
+            "_key": "c01e",
+            "label": "First time outside",
+            "link": "/first-time-outside"
           },
           {
             "_type": "navLink",
