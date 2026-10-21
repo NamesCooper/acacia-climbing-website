@@ -10,12 +10,15 @@
       <li
         v-for="(c, i) in cards"
         :key="c.id"
-        class="tilt bg-paper-light border-[3px] border-forest rounded-[20px] p-[22px] shadow-[6px_6px_0_var(--color-forest)]"
+        class="relative tilt bg-paper-light border-[3px] border-forest rounded-[20px] p-[22px] shadow-[6px_6px_0_var(--color-forest)]"
       >
         <span class="inline-block border-2 rounded-full px-3 py-1 text-[13px] font-bold" :class="statusChip(c.status)">
           {{ statusLabel(c.status) }}
         </span>
-        <h3 class="mt-4 mb-0 font-grotesk font-extrabold leading-none text-forest text-[28px] [overflow-wrap:break-word]">{{ c.name }}</h3>
+        <!-- The link covers the whole card (via after:inset-0) so the card is one big tap target -->
+        <h3 class="mt-4 mb-0 font-grotesk font-extrabold leading-none text-forest text-[28px] [overflow-wrap:break-word]">
+          <NuxtLink :to="`/crags/${c.id}`" class="no-underline text-inherit after:absolute after:inset-0 after:rounded-[20px] focus-visible:outline-none focus-visible:after:[outline:3px_solid_var(--color-outline)] focus-visible:after:[outline-offset:4px]">{{ c.name }}</NuxtLink>
+        </h3>
         <p class="mt-1.5 mb-0 text-sm">{{ c.council }}</p>
         <div
           class="mt-[18px] h-3.5 border-2 border-forest rounded-full bg-paper overflow-hidden"

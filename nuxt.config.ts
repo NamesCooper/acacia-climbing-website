@@ -66,6 +66,17 @@ export default defineNuxtConfig({
       } catch (err) {
         console.warn('[pages] Could not fetch Studio pages, skipping them this build:', err)
       }
+      // One page per crag (pages/crags/[id].vue). Falls back to the saved crag list.
+      let cragIds: string[] = []
+      try {
+        const query = encodeURIComponent('*[_type == "crag" && defined(slug.current)].slug.current')
+        const res = await fetch(`https://qxrv033n.apicdn.sanity.io/v2025-10-01/data/query/production?query=${query}`)
+        cragIds = ((await res.json()) as { result?: string[] }).result ?? []
+      } catch {}
+      if (!cragIds.length) cragIds = (await import('./public/data/crags.json')).default.map((c: { id: string }) => c.id)
+      config.prerender ??= {}
+      config.prerender.routes = [...(config.prerender.routes ?? []), ...cragIds.map((id) => `/crags/${id}`)]
+      console.log(`[crags] Prerendering ${cragIds.length} crag page(s)`)
     },
   },
 

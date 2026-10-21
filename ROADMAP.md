@@ -68,7 +68,9 @@ Tick things off as you go. Add new ideas at the bottom of the right section rath
 - [ ] Once "Just keep me posted" passes about 50 people, move the list to Buttondown or Mailchimp and update Privacy to name it
 - [x] "The advocacy team" changed to "we" on Get involved
 - [x] Updates link is in the new homepage nav. Inner pages get it when they're restyled
-- [ ] Add KAYA links to each crag in Sanity (the `KAYA guidebook link` field) and show them on the crag panel
+- [x] Crag pages at /crags/<id> (status, pathway, facts, help and report buttons)
+- [ ] Add KAYA links to each crag in Sanity (the `KAYA guidebook link` field). The map panel and crag page show the button once it's filled in
+- [ ] Crag pages, next: a photo per crag and a short "how to get there and where to park" once the land manager is happy for it to be public
 
 ## Later
 

@@ -39,6 +39,7 @@ Legal: Cooper is a sole trader (ABN 38 237 542 815) trading as Acacia Climbing C
 - `/blocks` is a hidden gallery of every Studio block with example words; its screenshots are the Studio's "Add item" thumbnails (`studio/static/blocks/*.jpg`)
 - `types/content.ts` holds the shared shapes (`Cta`, `CardItem`, `ProseBlock`) the sections take
 - `utils/cragStatus.ts` is the single source for status labels and colours (homepage cards and map)
+- Each crag has its own page at `/crags/<id>` (`pages/crags/[id].vue`), built from the crag's Studio fields; homepage crag cards and the map panel link to it, and `/progress?crag=<id>` opens the map on that crag
 - Pages: `/progress` (crag map) and `/updates` are Vue files. Every other page (home, about, get-involved, privacy, anything new) is a Studio Page: `pages/index.vue` (slug `home`) and `pages/[...slug].vue` load it via `usePage()` and draw its blocks with `components/SanitySections.vue`. To change page words or layout, edit the Page in the Studio, not Vue
 - `public/data/pages.json` is the backup copy of the Studio pages (made by `scripts/seed-pages.mjs`), used only if Sanity is unreachable during a build
 - The Studio's "Visual editor" tab shows a second, preview copy of the site (`pnpm build:preview`, `wrangler.preview.jsonc`, `preview/`, `server/api/preview-query.post.ts`). All queries live in `utils/queries.ts` and run through `sanityFetch()`. See README

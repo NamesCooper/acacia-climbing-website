@@ -148,6 +148,7 @@
                   class="nudge no-underline bg-paper border-[3px] border-outline rounded-full px-4 py-2 font-grotesk font-extrabold text-sm shadow-[3px_3px_0_var(--color-outline)]"
                 >Report something here</NuxtLink>
               </div>
+              <NuxtLink :to="`/crags/${currentCrag.id}`" class="inline-block mt-5 font-grotesk font-bold text-forest">More about {{ currentCrag.name }} →</NuxtLink>
               <p class="mt-4 mb-0 text-[12px] opacity-70">Last updated {{ formatDate(currentCrag.updatedAt) }}. Always check signage and local access info before you climb.</p>
             </div>
           </div>
@@ -422,6 +423,10 @@ onMounted(async () => {
   renderPins()
   // Re-group the pins whenever the zoom changes, so groups split apart as you zoom in
   map.on('zoomend', renderPins)
+
+  // Crag pages link here as /progress?crag=tooheys, which opens straight onto that crag
+  const wanted = useRoute().query.crag
+  if (typeof wanted === 'string') selectCrag(wanted)
 })
 
 onUnmounted(() => {

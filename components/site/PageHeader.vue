@@ -18,6 +18,8 @@
     </h1>
 
     <p v-if="lede" class="mt-7 mb-0 max-w-[680px] text-lg sm:text-xl leading-relaxed">{{ lede }}</p>
+    <!-- Anything extra under the lede, e.g. a status chip on crag pages -->
+    <slot />
   </section>
 </template>
 
