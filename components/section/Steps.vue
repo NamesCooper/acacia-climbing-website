@@ -1,6 +1,23 @@
 <template>
+  <!-- Checklist look: one card of ticks on the plain page (e.g. "what to bring") -->
+  <section v-if="look === 'checklist'" class="max-w-[1240px] mx-auto px-6 py-12 sm:py-16">
+    <UiSectionTitle :title="title" :lead="lead" />
+    <p v-if="intro" class="mt-4 mb-0 max-w-[720px] text-lg leading-relaxed">{{ intro }}</p>
+    <UiCard tone="light" class="mt-8 sm:mt-10 max-w-[900px]">
+      <ul class="list-none p-0 m-0 grid gap-x-10 gap-y-4 sm:grid-cols-2">
+        <li v-for="item in steps" :key="item" class="flex items-start gap-3">
+          <span aria-hidden="true" class="flex-shrink-0 inline-flex items-center justify-center size-8 rounded-full bg-wattle border-[3px] border-outline">
+            <svg viewBox="0 0 12 12" class="size-3.5"><path d="M2 6.5 4.8 9 10 3" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          </span>
+          <p class="m-0 pt-1 font-grotesk font-bold text-[17px] leading-snug">{{ item }}</p>
+        </li>
+      </ul>
+    </UiCard>
+    <NuxtLink v-if="link" :to="link.to" class="inline-block mt-8 font-grotesk font-bold text-lg text-forest">{{ link.label }} →</NuxtLink>
+  </section>
+
   <!-- Full-width coloured band with numbered step cards. -->
-  <section class="border-y-[3px] border-outline my-10 sm:my-14" :class="BANDS[band] ?? BANDS.sandstone">
+  <section v-else class="border-y-[3px] border-outline my-10 sm:my-14" :class="BANDS[band] ?? BANDS.sandstone">
     <div class="max-w-[1240px] mx-auto px-6 py-12 sm:py-20">
       <UiSectionTitle :title="title" :lead="lead" />
       <p v-if="intro" class="mt-4 mb-0 max-w-[720px] text-lg leading-relaxed">{{ intro }}</p>
@@ -38,8 +55,9 @@ withDefaults(
     steps: string[]
     link?: { label: string; to: string }
     band?: 'sandstone' | 'wattle' | 'lichen' | 'gum'
+    look?: 'numbered' | 'checklist'
   }>(),
-  { band: 'sandstone' },
+  { band: 'sandstone', look: 'numbered' },
 )
 
 // Fit 3 or 5 steps on one row on wide screens instead of leaving one on its own

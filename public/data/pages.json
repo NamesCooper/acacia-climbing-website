@@ -1500,36 +1500,15 @@
     "sections": [
       {
         "_key": "fo2",
-        "_type": "cardsSection",
-        "cards": [
-          {
-            "_key": "fo2a",
-            "_type": "card",
-            "body": "Your gym ones are fine.",
-            "title": "Shoes and chalk"
-          },
-          {
-            "_key": "fo2b",
-            "_type": "card",
-            "body": "Borrow one, or go with mates who have one.",
-            "title": "A crash pad"
-          },
-          {
-            "_key": "fo2d",
-            "_type": "card",
-            "body": "Never a wire brush. It wears the rock away.",
-            "title": "A soft brush"
-          },
-          {
-            "_key": "fo2c",
-            "_type": "card",
-            "body": "Reception can be patchy.",
-            "title": "Water and a first aid kit"
-          }
-        ],
-        "columns": 4,
+        "_type": "stepsSection",
+        "look": "checklist",
         "heading": "What to bring",
-        "titleStyle": "grotesk"
+        "steps": [
+          "Shoes and chalk (your gym ones are fine)",
+          "A crash pad (borrow one, or go with mates)",
+          "A soft brush, never a wire one",
+          "Water and a first aid kit"
+        ]
       },
       {
         "_key": "fo3",
@@ -1551,28 +1530,32 @@
             "_key": "fo4a",
             "_type": "card",
             "body": "New tracks mean erosion, and erosion closes crags.",
-            "title": "Stick to the track"
+            "title": "Stick to the track",
+            "tone": "lichen"
           },
           {
             "_key": "fo4b",
             "_type": "card",
             "body": "Ground cover takes years to grow back.",
-            "title": "Pads on dirt, not plants"
+            "title": "Pads on dirt, not plants",
+            "tone": "sandstone"
           },
           {
             "_key": "fo4c",
             "_type": "card",
             "body": "Leave the rock how you found it.",
-            "title": "Brush off your chalk"
+            "title": "Brush off your chalk",
+            "tone": "gum"
           },
           {
             "_key": "fo4e",
             "_type": "card",
             "body": "Rubbish, food scraps and tape go home with you.",
-            "title": "Pack it all out"
+            "title": "Pack it all out",
+            "tone": "light"
           }
         ],
-        "columns": 4,
+        "columns": 2,
         "heading": "At the crag",
         "titleStyle": "grotesk"
       },

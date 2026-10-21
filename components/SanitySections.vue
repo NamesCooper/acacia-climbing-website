@@ -52,6 +52,7 @@
       :steps="s.steps ?? []"
       :link="link(s.linkLabel, s.linkHref)"
       :band="clean(s.band) ?? 'sandstone'"
+      :look="clean(s.look) ?? 'numbered'"
     />
 
     <SectionStatement

@@ -244,7 +244,7 @@ export const cardsSection = defineType({
 
 export const stepsSection = defineType({
   name: 'stepsSection',
-  title: 'Numbered steps',
+  title: 'Steps or checklist',
   type: 'object',
   fields: [
     labelField,
@@ -252,9 +252,17 @@ export const stepsSection = defineType({
     defineField({ name: 'intro', title: 'Intro', type: 'text', rows: 3, description: 'Optional short note under the heading' }),
     defineField({ name: 'steps', type: 'array', of: [defineArrayMember({ type: 'string' })] }),
     ...linkFields('linkLabel', 'linkHref', 'Link'),
-    defineField({ name: 'band', title: 'Band colour', type: 'string', initialValue: 'sandstone', options: radio([{ title: 'Sandstone', value: 'sandstone' }, { title: 'Lichen', value: 'lichen' }, { title: 'Gum leaf', value: 'gum' }, { title: 'Wattle', value: 'wattle' }]) }),
+    defineField({
+      name: 'look',
+      title: 'Look',
+      type: 'string',
+      initialValue: 'numbered',
+      description: 'Checklist shows the items as ticks in one card on the plain page, good for "what to bring"',
+      options: radio([{ title: 'Numbered steps on a band', value: 'numbered' }, { title: 'Checklist', value: 'checklist' }]),
+    }),
+    defineField({ name: 'band', title: 'Band colour', type: 'string', initialValue: 'sandstone', hidden: ({ parent }) => parent?.look === 'checklist', options: radio([{ title: 'Sandstone', value: 'sandstone' }, { title: 'Lichen', value: 'lichen' }, { title: 'Gum leaf', value: 'gum' }, { title: 'Wattle', value: 'wattle' }]) }),
   ],
-  preview: { select: { title: 'heading' }, prepare: ({ title }) => ({ title: title || 'Steps', subtitle: 'Numbered steps' }) },
+  preview: { select: { title: 'heading', look: 'look' }, prepare: ({ title, look }) => ({ title: title || 'Steps', subtitle: look === 'checklist' ? 'Checklist' : 'Numbered steps' }) },
 })
 
 export const statementSection = defineType({
