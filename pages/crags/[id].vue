@@ -40,7 +40,7 @@
             </div>
           </dl>
           <div class="mt-6 flex flex-col gap-3">
-            <UiButton v-if="crag.kayaUrl" :href="crag.kayaUrl">Guidebook on KAYA ↗<span class="sr-only"> (opens in a new tab)</span></UiButton>
+            <UiButton v-if="crag.kayaUrl" :href="crag.kayaUrl">Guide and weather on KAYA ↗<span class="sr-only"> (opens in a new tab)</span></UiButton>
             <UiButton :to="`/progress?crag=${crag.id}`" variant="paper">See it on the map</UiButton>
             <UiButton :to="`/get-involved?crag=${encodeURIComponent(crag.name)}#sign-up`" variant="moss">Help out here</UiButton>
             <UiButton :to="`/contact?topic=crag-report&crag=${encodeURIComponent(crag.name)}`" variant="paper">Report something here</UiButton>

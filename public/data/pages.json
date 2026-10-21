@@ -1496,47 +1496,8 @@
     "copyStatus": "draft",
     "eyebrow": "First time outside",
     "heading": "From the gym to the *bush*",
-    "lede": "Thinking about bouldering outside for the first time? Here's what's different, what to bring, and how to help keep the crags open.",
+    "lede": "Heading outside for the first time? Here's the short version.",
     "sections": [
-      {
-        "_key": "fo1",
-        "_type": "textSection",
-        "body": [
-          {
-            "_key": "fo1a",
-            "_type": "block",
-            "children": [
-              {
-                "_key": "fo1a1",
-                "_type": "span",
-                "marks": [],
-                "text": "Outside, nobody resets the holds, there's no padded floor, and the rock sits in a place we share with walkers, neighbours and wildlife. It's more fun than it sounds, and a little more work."
-              }
-            ],
-            "markDefs": [],
-            "style": "normal"
-          },
-          {
-            "_key": "fo1b",
-            "_type": "block",
-            "children": [
-              {
-                "_key": "fo1b1",
-                "_type": "span",
-                "marks": [],
-                "text": "Most of the bouldering around South East Queensland is on public land looked after by councils or Queensland Parks and Wildlife. Climbing there relies on their goodwill, so how we all behave at the crag really matters."
-              }
-            ],
-            "markDefs": [],
-            "style": "normal"
-          }
-        ],
-        "heading": "What's different outside",
-        "label": "Start here",
-        "quote": "Leave it better than you found it.",
-        "quoteBody": "Pick up one bit of rubbish that isn't yours, every visit. It adds up.",
-        "quoteTone": "gum"
-      },
       {
         "_key": "fo2",
         "_type": "cardsSection",
@@ -1544,37 +1505,29 @@
           {
             "_key": "fo2a",
             "_type": "card",
-            "body": "Your gym shoes and chalk are fine. Bring an old towel or rag to wipe your shoes clean before you step on.",
-            "chipTone": "wattle",
-            "kicker": "Must",
+            "body": "Your gym ones are fine.",
             "title": "Shoes and chalk"
           },
           {
             "_key": "fo2b",
             "_type": "card",
-            "body": "There's no padded floor out here. Borrow a pad from a mate, or head out with friends who already have one. Two pads and a spotter beats one pad on its own.",
-            "chipTone": "wattle",
-            "kicker": "Must",
-            "title": "A crash pad and a spotter"
-          },
-          {
-            "_key": "fo2c",
-            "_type": "card",
-            "body": "Shade can be scarce and phone reception patchy. Bring more water than you think you'll need.",
-            "chipTone": "wattle",
-            "kicker": "Must",
-            "title": "Water, food and a first aid kit"
+            "body": "Borrow one, or go with mates who have one.",
+            "title": "A crash pad"
           },
           {
             "_key": "fo2d",
             "_type": "card",
-            "body": "A soft nylon or boar's hair brush for cleaning holds and your chalk marks. Never a wire brush: it wears the rock away.",
-            "chipTone": "lichen",
-            "kicker": "Handy",
+            "body": "Never a wire brush. It wears the rock away.",
             "title": "A soft brush"
+          },
+          {
+            "_key": "fo2c",
+            "_type": "card",
+            "body": "Reception can be patchy.",
+            "title": "Water and a first aid kit"
           }
         ],
-        "columns": 2,
+        "columns": 4,
         "heading": "What to bring",
         "titleStyle": "grotesk"
       },
@@ -1583,14 +1536,11 @@
         "_type": "stepsSection",
         "band": "gum",
         "heading": "Before you go",
-        "intro": "Five minutes at home saves a wasted trip.",
         "steps": [
-          "Check the crag's status on our crag map",
-          "Check the land manager's website and any signs for closures",
-          "Rained lately? Make sure the rock has had time to dry",
-          "Download the guide if you can, as reception can be patchy",
-          "Tell someone where you're going and when you'll be back",
-          "Park legally and keep gates and driveways clear"
+          "Check our crag map and the land manager's signs",
+          "Rained lately? Let the sandstone dry first",
+          "Tell someone where you're going",
+          "Park legally and keep gates clear"
         ]
       },
       {
@@ -1600,43 +1550,30 @@
           {
             "_key": "fo4a",
             "_type": "card",
-            "body": "Use the paths that are already there, even when a shortcut looks quicker. New tracks mean erosion, and erosion is what gets crags closed.",
+            "body": "New tracks mean erosion, and erosion closes crags.",
             "title": "Stick to the track"
           },
           {
             "_key": "fo4b",
             "_type": "card",
-            "body": "Put pads down on bare ground or rock. Ferns and ground cover take years to grow back.",
+            "body": "Ground cover takes years to grow back.",
             "title": "Pads on dirt, not plants"
           },
           {
             "_key": "fo4c",
             "_type": "card",
-            "body": "Brush away chalk and tick marks before you leave, so the next person finds the rock the way you did.",
+            "body": "Leave the rock how you found it.",
             "title": "Brush off your chalk"
-          },
-          {
-            "_key": "fo4d",
-            "_type": "card",
-            "body": "Sandstone is weaker when it's wet, and a hold that snaps is gone for good. If it's damp, come back another day.",
-            "title": "Wet rock? Wait it out"
           },
           {
             "_key": "fo4e",
             "_type": "card",
-            "body": "Everything you bring goes home with you, including food scraps and tape. Use a toilet before you head in.",
+            "body": "Rubbish, food scraps and tape go home with you.",
             "title": "Pack it all out"
-          },
-          {
-            "_key": "fo4f",
-            "_type": "card",
-            "body": "Small groups, no speakers, and a g'day for the walkers. Snakes are about in warmer months, so watch your hands and feet and give wildlife plenty of space.",
-            "title": "Keep it low key"
           }
         ],
-        "columns": 3,
-        "heading": "Looking after the place",
-        "intro": "Small habits keep crags open. These are the ones land managers notice.",
+        "columns": 4,
+        "heading": "At the crag",
         "titleStyle": "grotesk"
       },
       {
@@ -1651,7 +1588,7 @@
                 "_key": "fo5a1",
                 "_type": "span",
                 "marks": [],
-                "text": "These places were Country long before they were crags. If a sign or a park page asks you not to climb somewhere, please don't."
+                "text": "These places were Country long before they were crags. If a sign asks you not to climb somewhere, please don't."
               }
             ],
             "markDefs": [],
@@ -1669,45 +1606,27 @@
           {
             "_key": "fo6a",
             "_type": "faqItem",
-            "answer": "It depends on who looks after the land. Brisbane City Council has formally recognised bouldering at Tooheys Forest. Elsewhere, councils and Queensland Parks and Wildlife each have their own rules, and some spots are closed or on private land. Our crag map shows where each crag is at, but the land manager's website and signs always have the final say.",
+            "answer": "It depends on who looks after the land. Our crag map shows where each crag is at, but the land manager's website and signs always have the final say.",
             "question": "Am I allowed to boulder there?"
-          },
-          {
-            "_key": "fo6b",
-            "_type": "faqItem",
-            "answer": "It helps a lot. Printed guides and theCrag cover plenty of areas, and we're building current digital guides on KAYA for the crags we're working on. A guide tells you where the boulders are and how to get there without making new tracks.",
-            "question": "Do I need a guidebook?"
-          },
-          {
-            "_key": "fo6c",
-            "_type": "faqItem",
-            "answer": "Outdoor grades and gym grades don't line up neatly, and reading real rock takes practice. Most people climb a few grades easier on their first few trips. That's normal, and it comes back quickly.",
-            "question": "Why do the grades feel harder?"
           },
           {
             "_key": "fo6d",
             "_type": "faqItem",
-            "answer": "Stand behind the climber with your hands up. Your job is to guide their fall onto the pad and protect their head and shoulders, not to catch them. Move the pads as they move. It's best learned in person, so ask someone experienced to show you.",
+            "answer": "Stand behind the climber with your hands up and guide their fall onto the pad, protecting their head and shoulders. You're not there to catch them. Ask someone experienced to show you.",
             "question": "How do I spot someone?"
           },
           {
-            "_key": "fo6e",
+            "_key": "fo6c",
             "_type": "faqItem",
-            "answer": "We'd love to run beginner-friendly days at the crag, but we're not there yet. Sign up on our Get involved page and we'll let you know when we do.",
-            "question": "Can I come out with a group?"
-          },
-          {
-            "_key": "fo6f",
-            "_type": "faqItem",
-            "answer": "Us, please. Loose holds, rubbish, a new track forming or a damaged sign: it all helps us and the land manager. Use the crag report option on our Contact page.",
-            "question": "I spotted a problem at a crag. Who do I tell?"
+            "answer": "Real rock takes practice to read. Most people climb a few grades easier on their first trips, and it comes back quickly.",
+            "question": "Why do the grades feel harder?"
           }
         ]
       },
       {
         "_key": "fo7",
         "_type": "ctaSection",
-        "body": "Crags stay open because people look after them. Lend a hand with track care, mapping crags on KAYA, or just telling us what you see out there.",
+        "body": "Lend a hand with track care, mapping crags, or just telling us what you see.",
         "buttonHref": "/get-involved",
         "buttonLabel": "Lend a hand",
         "heading": "Help keep the crags open",

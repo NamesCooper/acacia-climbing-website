@@ -69,7 +69,8 @@ Tick things off as you go. Add new ideas at the bottom of the right section rath
 - [x] "The advocacy team" changed to "we" on Get involved
 - [x] Updates link is in the new homepage nav. Inner pages get it when they're restyled
 - [x] Crag pages at /crags/<id> (status, pathway, facts, help and report buttons)
-- [ ] Add KAYA links to each crag in Sanity (the `KAYA guidebook link` field). The map panel and crag page show the button once it's filled in
+- [ ] Add KAYA links to each crag in Sanity (the `KAYA guidebook link` field). The map panel and crag page show the button once it's filled in (the crag page button says "Guide and weather on KAYA")
+- [ ] Once guides are live, add "check the crag weather in KAYA" to the dry-rock step on First time outside
 - [ ] Crag pages, next: a photo per crag and a short "how to get there and where to park" once the land manager is happy for it to be public
 
 ## Later
