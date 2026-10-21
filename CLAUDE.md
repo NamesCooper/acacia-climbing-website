@@ -141,6 +141,8 @@ No orange or pink. Wattle is for actions and small highlights (buttons, chips, s
 
 ### Content
 
+- **The why (Cooper, Oct 2026), the thread through every page:** the leap from gym to outdoor climbing is hard in Australia right now. It's hard to find people to go with, and hard to find anyone who knows where to go or what's allowed. KAYA guides give the clarity; ACC's access work with councils and land managers makes sure there's a clear, agreed way in, so people get it right the first time instead of going off track, getting in trouble, or being put off. Lead with this, not with ACC itself
+- The site doesn't quote KAYA's percentage to ACC; it just says ACC gets a share of guidebook income and passes it on
 - Voice is homey, warm and honest. ACC is a group of climbers doing this for the first time and saying so. Openly a work in progress, community-first, not a polished institution
 - Still careful and fair about councils and land managers, and never claim progress or numbers that aren't real
 - Avoid em dashes (comma rhythm preferred)

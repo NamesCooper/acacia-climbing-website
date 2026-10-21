@@ -1309,7 +1309,7 @@
         "_key": "gbph",
         "_type": "phonesSection",
         "heading": "How it works",
-        "intro": "Downloading a guide to use without reception needs a KAYA PRO subscription.",
+        "intro": "Browsing climbs, beta videos and logging sends are free. Topos, GPS directions and offline guides come with KAYA PRO.",
         "label": "Three steps to the crag",
         "linkHref": "https://kayaclimb.com/guidebooks",
         "linkLabel": "See KAYA's guidebooks",
@@ -1400,30 +1400,30 @@
           {
             "_key": "gb3a",
             "_type": "block",
+            "style": "normal",
+            "markDefs": [],
             "children": [
               {
                 "_key": "gb3a1",
                 "_type": "span",
                 "marks": [],
-                "text": "Every guidebook on KAYA sends at least 5% of what it earns to the local climbing organisation for that area. In South East Queensland, that's us. Guide authors can also choose to give more of their own share."
+                "text": "As KAYA's local climbing organisation for South East Queensland, we get a share of what guidebooks earn here."
               }
-            ],
-            "markDefs": [],
-            "style": "normal"
+            ]
           },
           {
             "_key": "gb3b",
             "_type": "block",
+            "style": "normal",
+            "markDefs": [],
             "children": [
               {
                 "_key": "gb3b1",
                 "_type": "span",
                 "marks": [],
-                "text": "We don't keep it. In Australia, signs, stairs and track work are done by contracted landscapers and sign makers, not by climbing groups, so guidebook income is passed on to where it can pay for that work: councils, Rock Climbing Queensland and theCrag."
+                "text": "We don't keep it. In Australia, signs, stairs and track work are done by contracted landscapers and sign makers, not by climbing groups, so guidebook income is passed on to where it can pay for that work and support climbers: councils, RCQ, theCrag, gyms and sponsors."
               }
-            ],
-            "markDefs": [],
-            "style": "normal"
+            ]
           }
         ],
         "heading": "Where the money goes",
@@ -1447,7 +1447,7 @@
           {
             "_key": "gb4a",
             "_type": "faqItem",
-            "answer": "Full guidebook access, including downloading guides to use without reception, comes with KAYA PRO. KAYA sets the price. For now it's charged in US dollars, because KAYA isn't set up in Australia yet. KAYA has agreed to set up Australian pricing once enough climbers here are using it, so the more local guides there are, the sooner that happens. Check KAYA for the current cost. Part of what KAYA earns goes to the guide's author, and at least 5% goes to the local climbing organisation.",
+            "answer": "No. You can use the guidebooks for free: see every climb, watch beta videos, read the descriptions, and log your sends and attempts.\n\nKAYA PRO gives you full access on top of that: topos, GPS directions, the guidebook map, offline guides and no ads.\n\nKAYA sets the price. For now it's charged in US dollars, because KAYA isn't set up in Australia yet. KAYA has agreed to set up Australian pricing once enough climbers here are using it, so the more local guides there are, the sooner that happens. Check KAYA for the current cost.",
             "question": "Do I have to pay to use the guides?"
           },
           {
@@ -1496,8 +1496,47 @@
     "copyStatus": "draft",
     "eyebrow": "First time outside",
     "heading": "From the gym to the *bush*",
-    "lede": "Heading outside for the first time? Here's the short version.",
+    "lede": "Heading outside for the first time? Here's the short version, and why we're building this.",
     "sections": [
+      {
+        "_key": "fo0",
+        "_type": "textSection",
+        "label": "Why we're doing this",
+        "heading": "The leap outside is hard",
+        "body": [
+          {
+            "_key": "fo0a",
+            "_type": "block",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_key": "fo0a1",
+                "_type": "span",
+                "marks": [],
+                "text": "Going from the gym to real rock is a big jump. It's hard enough finding people to go with, let alone someone who knows where to go and what's allowed."
+              }
+            ]
+          },
+          {
+            "_key": "fo0b",
+            "_type": "block",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_key": "fo0b1",
+                "_type": "span",
+                "marks": [],
+                "text": "That's why we're doing this. KAYA guides give you the clarity: where the boulders are, how to get there and what's what. Our access work with councils and land managers is about making sure there's a clear, agreed way in, so you get it right the first time instead of ending up off track, in trouble, or put off climbing outside altogether."
+              }
+            ]
+          }
+        ],
+        "quote": "Getting outside shouldn't be guesswork.",
+        "quoteBody": "Clear guides and agreed access, so your first trip is a good one.",
+        "quoteTone": "gum"
+      },
       {
         "_key": "fo2",
         "_type": "stepsSection",
