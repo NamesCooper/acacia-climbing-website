@@ -1,0 +1,4 @@
+# Cloudflare redirects (static assets read this file).
+# Facebook joined our post's link to the next word ("acaciaclimbing.org/Critical"), so send those visits home.
+/Critical / 301
+/critical / 301
