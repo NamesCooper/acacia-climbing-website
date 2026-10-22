@@ -5,7 +5,7 @@ import { stegaClean } from '@sanity/client/stega'
 
 export interface ChromeLink { _key?: string; label: string; link: string }
 export interface SiteChrome {
-  nav: { menu?: (Partial<ChromeLink> & { label: string; children?: ChromeLink[] })[]; links?: ChromeLink[]; buttonLabel?: string; buttonLink?: string } | null
+  nav: { menu?: (Partial<ChromeLink> & { label: string; children?: ChromeLink[] })[]; links?: ChromeLink[]; buttonLabel?: string; buttonLink?: string; bannerOn?: boolean; bannerText?: string; bannerLinkLabel?: string; bannerLink?: string; bannerWhere?: string } | null
   footer: { tagline?: string; columns?: { _key?: string; heading: string; links?: ChromeLink[] }[]; smallPrint?: string; smallPrintRight?: string } | null
   helpBand: { heading?: string; accent?: string; intro?: string; pills?: (ChromeLink & { colour?: string })[]; linkLabel?: string; linkHref?: string } | null
   /** Studio pages with the "Got an hour?" switch turned off */

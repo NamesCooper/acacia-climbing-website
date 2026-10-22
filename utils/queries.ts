@@ -27,7 +27,7 @@ export const QUERIES = {
 
   // Navigation, footer and "Got an hour?" band: one trip for all three
   chrome: /* groq */ `{
-  "nav": *[_id == "navigation"][0]{ menu[]{ _key, label, link, children[]{ _key, label, link } }, links[]{ _key, label, link }, buttonLabel, buttonLink },
+  "nav": *[_id == "navigation"][0]{ menu[]{ _key, label, link, children[]{ _key, label, link } }, links[]{ _key, label, link }, buttonLabel, buttonLink, bannerOn, bannerText, bannerLinkLabel, bannerLink, bannerWhere },
   "footer": *[_id == "footer"][0]{ tagline, columns[]{ _key, heading, links[]{ _key, label, link } }, smallPrint, smallPrintRight },
   "helpBand": *[_id == "helpBand"][0]{ heading, accent, intro, pills[]{ _key, label, link, colour }, linkLabel, linkHref },
   "noHelpPages": *[_type == "page" && showHelpBand == false].slug.current

@@ -86,7 +86,12 @@
           }
         ]
       }
-    ]
+    ],
+    "bannerOn": true,
+    "bannerText": "We're asking local climbers for feedback.",
+    "bannerLinkLabel": "Have your say",
+    "bannerLink": "https://forms.gle/1qYja5d4ExJtHvgp6",
+    "bannerWhere": "home"
   },
   {
     "_id": "helpBand",

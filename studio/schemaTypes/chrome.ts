@@ -54,7 +54,21 @@ export const navigation = defineType({
     defineField({ name: 'links', title: 'Top links (old)', type: 'array', of: [defineArrayMember({ type: 'navLink' })], hidden: ({ document }) => Boolean((document as any)?.menu?.length) }),
     defineField({ name: 'buttonLabel', title: 'Yellow button text', type: 'string' }),
     defineField({ name: 'buttonLink', title: 'Yellow button link', type: 'string', description: LINK_HELP }),
+    // A thin yellow strip above the nav, for a short-term ask like a feedback form
+    defineField({ name: 'bannerOn', title: 'Show the banner strip', type: 'boolean', initialValue: false, group: 'banner' }),
+    defineField({ name: 'bannerText', title: 'Banner text', type: 'string', description: 'Keep it to one short line', group: 'banner', validation: (r) => r.max(90) }),
+    defineField({ name: 'bannerLinkLabel', title: 'Banner link text', type: 'string', description: 'e.g. "Have your say"', group: 'banner' }),
+    defineField({ name: 'bannerLink', title: 'Banner link', type: 'string', description: LINK_HELP + ', or a full web address like a Google Form', group: 'banner' }),
+    defineField({
+      name: 'bannerWhere',
+      title: 'Show it on',
+      type: 'string',
+      initialValue: 'home',
+      group: 'banner',
+      options: { list: [{ title: 'Homepage only', value: 'home' }, { title: 'Every page', value: 'all' }], layout: 'radio', direction: 'horizontal' },
+    }),
   ],
+  groups: [{ name: 'banner', title: 'Banner strip' }],
   preview: { prepare: () => ({ title: 'Navigation' }) },
 })
 
