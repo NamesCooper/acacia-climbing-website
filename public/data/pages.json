@@ -20,7 +20,10 @@
         "primaryLabel": "See the crag map",
         "primaryHref": "/progress",
         "secondaryLabel": "How you can help",
-        "secondaryHref": "/get-involved"
+        "secondaryHref": "/get-involved",
+        "noticeText": "We're asking local climbers for feedback.",
+        "noticeLabel": "Have your say",
+        "noticeHref": "https://forms.gle/1qYja5d4ExJtHvgp6"
       },
       {
         "_type": "cragRegisterSection",

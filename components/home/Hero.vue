@@ -19,8 +19,22 @@
 
     <p v-if="body" class="relative mt-7 sm:mt-9 mb-0 max-w-[620px] text-lg sm:text-xl leading-relaxed text-balance">{{ body }}</p>
 
+    <!-- Optional short-term ask (set in the Studio's hero block), e.g. the feedback form.
+         One pill-shaped link that sits right above the buttons. -->
+    <component
+      :is="noticeLink?.to ? NuxtLink : 'a'"
+      v-if="notice && noticeLink"
+      v-bind="noticeLink.to ? { to: noticeLink.to } : { href: noticeLink.href, target: '_blank', rel: 'noopener' }"
+      class="nudge relative mt-9 sm:mt-11 inline-flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 max-w-full no-underline bg-paper-light border-[3px] border-outline rounded-[28px] sm:rounded-full pl-2.5 pr-5 py-2 shadow-[4px_4px_0_var(--color-outline)] text-[15px] sm:text-base leading-snug"
+    >
+      <span class="inline-block bg-wattle border-2 border-outline rounded-full px-2.5 py-0.5 font-grotesk font-extrabold text-[12px] uppercase tracking-[0.06em]">Open now</span>
+      <span>{{ notice }}</span>
+      <span class="font-grotesk font-extrabold whitespace-nowrap">{{ noticeLink.label }} →</span>
+      <span v-if="!noticeLink.to" class="sr-only"> (opens in a new tab)</span>
+    </component>
+
     <!-- Same-width buttons, side by side on bigger screens, stacked on phones -->
-    <div v-if="primary || secondary" class="relative mt-9 sm:mt-11 grid gap-4 w-full max-w-[300px] sm:max-w-none sm:w-auto sm:grid-flow-col sm:auto-cols-fr">
+    <div v-if="primary || secondary" :class="notice && noticeLink ? 'mt-6' : 'mt-9 sm:mt-11'" class="relative grid gap-4 w-full max-w-[300px] sm:max-w-none sm:w-auto sm:grid-flow-col sm:auto-cols-fr">
       <UiButton v-if="primary" :to="primary.to" :href="primary.href" variant="moss" size="lg" class="text-center">{{ primary.label }}</UiButton>
       <UiButton v-if="secondary" :to="secondary.to" :href="secondary.href" variant="paper" size="lg" class="text-center">{{ secondary.label }}</UiButton>
     </div>
@@ -31,6 +45,7 @@
 <script setup lang="ts">
 import type { Cta } from '~/types/content'
 
-defineProps<{ label?: string; heading: string; body?: string; primary?: Cta; secondary?: Cta }>()
+const props = defineProps<{ label?: string; heading: string; body?: string; primary?: Cta; secondary?: Cta; notice?: string; noticeLink?: Cta }>()
+const NuxtLink = resolveComponent('NuxtLink')
 
 </script>

@@ -72,6 +72,9 @@ export const heroSection = defineType({
     defineField({ name: 'body', title: 'Intro', type: 'text', rows: 3 }),
     ...linkFields('primaryLabel', 'primaryHref', 'Green button'),
     ...linkFields('secondaryLabel', 'secondaryHref', 'Light button'),
+    // A short-term ask that sits just above the buttons, e.g. a feedback form. Leave empty to hide it.
+    defineField({ name: 'noticeText', title: 'Note above the buttons', type: 'string', description: 'Optional one-liner, e.g. "We\'re asking local climbers for feedback." Leave empty to hide it', validation: (r) => r.max(80) }),
+    ...linkFields('noticeLabel', 'noticeHref', 'Note link'),
   ],
   preview: { select: { title: 'heading' }, prepare: ({ title }) => ({ title: title || 'Hero', subtitle: 'Hero' }) },
 })
