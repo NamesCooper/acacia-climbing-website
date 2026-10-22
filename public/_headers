@@ -1,5 +1,23 @@
-# Cloudflare reads this file. Page data files must always be checked for a newer copy, so
-# in-site navigation never shows content from an older build.
+# Cloudflare reads this file. When several rules match, a page gets all of their headers.
+
+# Basic security headers on every page (standard settings council IT teams look for)
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+
+# Code and style files get a new name on every build, so phones can keep them for a year
+/_nuxt/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/_nuxt/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+# Fonts keep their names, so a month rather than a year
+/fonts/*
+  Cache-Control: public, max-age=2592000
+
+# Page data files must always be checked for a newer copy, so in-site navigation
+# never shows content from an older build.
 /_payload.json
   Cache-Control: no-cache
 /*/_payload.json
