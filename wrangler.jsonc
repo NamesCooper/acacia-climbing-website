@@ -6,6 +6,9 @@
   "compatibility_date": "2025-09-01",
   "assets": {
     "directory": "./.output/public",
-    "not_found_handling": "404-page"
+    "not_found_handling": "404-page",
+    // Serve pages at /about (no trailing slash), the same address every link on the site uses,
+    // so Google never has to follow a redirect to reach a page. /about/ redirects to /about.
+    "html_handling": "drop-trailing-slash"
   }
 }

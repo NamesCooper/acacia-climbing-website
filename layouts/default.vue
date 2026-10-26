@@ -16,9 +16,10 @@ import { SITE_URL } from '~/composables/usePageSeo'
 
 // Site-wide link details. Each page sets its own title, description and picture
 // (see composables/usePageSeo.ts); these fill in everything else.
-// Pages are served with a trailing slash (/about/), so the address Google keeps does too.
+// Pages are served without a trailing slash (/about), matching every link on the site
+// (see html_handling in wrangler.jsonc), so that's the address Google keeps.
 const route = useRoute()
-const pageUrl = () => SITE_URL + (route.path === '/' ? '/' : route.path.replace(/\/?$/, '/'))
+const pageUrl = () => SITE_URL + (route.path === '/' ? '/' : route.path.replace(/\/+$/, ''))
 
 useSeoMeta({
   ogType: 'website',
