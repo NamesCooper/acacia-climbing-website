@@ -142,6 +142,8 @@ No orange or pink. Wattle is for actions and small highlights (buttons, chips, s
 ### Content
 
 - **The why (Cooper, Oct 2026), the thread through every page:** the leap from gym to outdoor climbing is hard in Australia right now. It's hard to find people to go with, and hard to find anyone who knows where to go or what's allowed. KAYA guides give the clarity; ACC's access work with councils and land managers makes sure there's a clear, agreed way in, so people get it right the first time instead of going off track, getting in trouble, or being put off. Lead with this, not with ACC itself
+- **The access voice (after KAYA and QPWS meetings, Oct 2026):** "We're not trying to open everything up, just make sure the places we already climb are documented properly and looked after." Acacia does crag info and care (careful mapping, agreed approach tracks only, guides on KAYA, closures passed on, volunteer crag care); Rock Climbing Queensland (formerly ACAQ) leads access and advocacy, and Acacia keeps them in the loop. Don't describe Acacia as the voice of climbers or as running access advocacy. The explainer people get sent is acaciaclimbing.org/about#rcq
+- Don't mention the QPWS climbing framework, concept plan or closures mailing list on the site until QPWS says so
 - The site doesn't quote KAYA's percentage to ACC; it just says ACC gets a share of guidebook income and passes it on
 - Voice is homey, warm and honest. ACC is a group of climbers doing this for the first time and saying so. Openly a work in progress, community-first, not a polished institution
 - Still careful and fair about councils and land managers, and never claim progress or numbers that aren't real

@@ -33,6 +33,7 @@
       :highlight="s.quote ? { quote: s.quote, body: s.quoteBody, tone: clean(s.quoteTone) } : undefined"
       :logo="s.logo?.asset ? { src: sanityImageUrl(s.logo, 400), alt: s.logo.alt } : undefined"
       :logo-heading="s.logoAsHeading"
+      :id="clean(s.anchor) || undefined"
     />
 
     <SectionCards

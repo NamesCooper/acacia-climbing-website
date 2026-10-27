@@ -16,7 +16,7 @@
         "_type": "heroSection",
         "_key": "k0000",
         "heading": "Looking after\nAustralia's crags",
-        "body": "We work with councils so bouldering spots get recognised, mapped and looked after. We're starting in South East Queensland, it's our first go at this, and we're doing it out in the open.",
+        "body": "We work with councils and rangers so the bouldering spots people already climb are documented carefully and looked after. We're starting in South East Queensland, it's our first go at this, and we're doing it out in the open.",
         "primaryLabel": "See the crag map",
         "primaryHref": "/progress",
         "secondaryLabel": "How you can help",
@@ -62,24 +62,24 @@
                 "markDefs": [],
                 "children": [
                   {
-                    "_type": "span",
                     "_key": "k0004",
-                    "text": "A bunch of climbers working to get outdoor bouldering ",
-                    "marks": []
+                    "_type": "span",
+                    "marks": [],
+                    "text": "A bunch of climbers "
                   },
                   {
-                    "_type": "span",
                     "_key": "k0005",
-                    "text": "formally recognised by councils",
+                    "_type": "span",
                     "marks": [
                       "strong"
-                    ]
+                    ],
+                    "text": "looking after the places we climb"
                   },
                   {
-                    "_type": "span",
                     "_key": "k0006",
-                    "text": " around Australia, so crags stay open and get the good stuff: stairs, signs and proper tracks. We're an independent volunteer group, and we keep Rock Climbing Queensland (formerly ACAQ) in the loop on our council work.",
-                    "marks": []
+                    "_type": "span",
+                    "marks": [],
+                    "text": ", working with councils and rangers so crags stay open, are reached on agreed tracks, and get the good stuff: stairs, signs and proper tracks. We're an independent volunteer group, and we keep Rock Climbing Queensland (formerly ACAQ) in the loop on our council work."
                   }
                 ]
               }
@@ -98,24 +98,24 @@
                 "markDefs": [],
                 "children": [
                   {
-                    "_type": "span",
                     "_key": "k0009",
-                    "text": "Research the area, chat with council and rangers, map every boulder on ",
-                    "marks": []
+                    "_type": "span",
+                    "marks": [],
+                    "text": "Research the area, chat with council and rangers, agree the tracks, map it carefully on "
                   },
                   {
-                    "_type": "span",
                     "_key": "k000a",
-                    "text": "KAYA",
+                    "_type": "span",
                     "marks": [
                       "strong"
-                    ]
+                    ],
+                    "text": "KAYA"
                   },
                   {
-                    "_type": "span",
                     "_key": "k000b",
-                    "text": ", sort out access, then get it signed off. Documented crag, protected crag.",
-                    "marks": []
+                    "_type": "span",
+                    "marks": [],
+                    "text": ", then get it signed off. Documented crag, protected crag."
                   }
                 ]
               }
@@ -461,7 +461,7 @@
                 "_key": "k000k",
                 "_type": "span",
                 "marks": [],
-                "text": "Most councils in Australia don't have a way to formally recognise outdoor climbing. That leaves crags with unclear access, no stairs or signs, and nobody speaking for climbers when decisions get made."
+                "text": "Most councils in Australia don't have a way to formally recognise outdoor climbing. That leaves crags with unclear access, no stairs or signs, and no agreed plan for how climbing is looked after."
               }
             ],
             "markDefs": [],
@@ -500,6 +500,84 @@
         "quote": "\"Documented crag, protected crag.\"",
         "quoteBody": "A crag that's mapped, written up and known to council is a lot easier to keep open. So that's what we do, one crag at a time, and we share every step along the way.",
         "quoteTone": "sandstone"
+      },
+      {
+        "_key": "k00rc",
+        "_type": "textSection",
+        "anchor": "rcq",
+        "heading": "Alongside Rock Climbing Queensland, not instead of it",
+        "body": [
+          {
+            "_key": "rc1",
+            "_type": "block",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_key": "rc1s",
+                "_type": "span",
+                "marks": [],
+                "text": "Rock Climbing Queensland (formerly ACAQ) is the state's peak climbing body, and they lead access and advocacy work in Queensland. That doesn't change."
+              }
+            ]
+          },
+          {
+            "_key": "rc2",
+            "_type": "block",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_key": "rc2s",
+                "_type": "span",
+                "marks": [],
+                "text": "Acacia does the work that sits alongside it: mapping areas carefully, keeping guides current on KAYA, getting closures and land manager notes to climbers quickly, and running volunteer days to look after crags once they're open. RCQ isn't set up to publish and maintain crag guides, so that's the gap we're filling."
+              }
+            ]
+          },
+          {
+            "_key": "rc3",
+            "_type": "block",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_key": "rc3s",
+                "_type": "span",
+                "marks": [],
+                "text": "We keep RCQ in the loop on all our work with councils and land managers, so climbers have one voice, not two."
+              }
+            ]
+          }
+        ],
+        "quote": "Not opening everything up.",
+        "quoteBody": "We're not trying to open everything up, just make sure the places we already climb are documented properly and looked after.",
+        "quoteTone": "gum"
+      },
+      {
+        "_key": "k00rd",
+        "_type": "cardsSection",
+        "label": "Who does what",
+        "columns": 2,
+        "titleStyle": "grotesk",
+        "cards": [
+          {
+            "_key": "rd1",
+            "_type": "card",
+            "kicker": "State body",
+            "chipTone": "sandstone",
+            "title": "Rock Climbing Queensland",
+            "body": "Queensland's peak climbing body (formerly ACAQ). They lead climbing access and advocacy across the state."
+          },
+          {
+            "_key": "rd2",
+            "_type": "card",
+            "kicker": "Crag info and care",
+            "chipTone": "lichen",
+            "title": "Acacia",
+            "body": "We map areas carefully, keep guides current on KAYA, pass on closures and land manager notes, and run volunteer days to look after crags once they're open."
+          }
+        ]
       },
       {
         "_key": "k00m1",
@@ -813,7 +891,7 @@
                 "_key": "c1a1",
                 "_type": "span",
                 "marks": [],
-                "text": "Most councils in Australia don't yet have a way to formally recognise outdoor climbing. That leaves crags with unclear access, no stairs, signs or proper tracks, and nobody speaking for climbers when decisions get made."
+                "text": "Most councils in Australia don't yet have a way to formally recognise outdoor climbing. That leaves crags with unclear access, no stairs, signs or proper tracks, and no agreed plan for how climbing is looked after."
               }
             ],
             "markDefs": [],
@@ -846,10 +924,18 @@
           {
             "_key": "c4a",
             "_type": "card",
-            "body": "A single, organised voice for climbers. We share your permits and conditions and help climbers follow them.",
+            "body": "One point of contact for crag info and care. We share your permits and conditions and help climbers follow them. Access advocacy stays with Rock Climbing Queensland, and we keep them in the loop.",
             "chipTone": "wattle",
             "kicker": "Contact",
             "title": "One point of contact"
+          },
+          {
+            "_key": "c4f",
+            "_type": "card",
+            "kicker": "Tracks",
+            "chipTone": "lichen",
+            "title": "Agreed tracks only",
+            "body": "We suggest approach tracks, you agree them, and only those go in the guide. We help keep them in good shape with volunteer Crag Care Days, and if a track can't be looked after, it comes out."
           },
           {
             "_key": "c4b",
@@ -895,11 +981,11 @@
           "Talk with the land manager",
           "Agree a plan together",
           "Site visits: GPS, photos and mapping on KAYA",
-          "Sort out access issues",
+          "Agree approach tracks",
           "Final approvals",
           "Guidebook published on KAYA"
         ],
-        "intro": "We're an independent volunteer group. While we're working through access with councils and land managers, we keep Rock Climbing Queensland (formerly ACAQ) in the loop. Once access is agreed, the guidebook is ours to build and publish on KAYA."
+        "intro": "We're an independent volunteer group. When we document an area, we work it through with the land manager and keep Rock Climbing Queensland (formerly ACAQ) in the loop. Once it's agreed, we build and publish the guide on KAYA."
       },
       {
         "_key": "c5",
@@ -1376,7 +1462,7 @@
           {
             "_key": "gb2b",
             "_type": "card",
-            "body": "A GPS pin for every boulder and approach notes to get there, so you find the problem without bush-bashing a new track. With KAYA PRO it all works offline.",
+            "body": "Agreed approach tracks and clear notes, so you get there without bush-bashing a new path. With KAYA PRO it all works offline.",
             "chipTone": "wattle",
             "kicker": "GPS",
             "title": "Never get lost"
@@ -1395,6 +1481,41 @@
         "columns": 3,
         "heading": "Why we use it",
         "titleStyle": "grotesk"
+      },
+      {
+        "_key": "gbm",
+        "_type": "textSection",
+        "heading": "Why a membership?",
+        "body": [
+          {
+            "_key": "gbm1",
+            "_type": "block",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_key": "gbm1s",
+                "_type": "span",
+                "marks": [],
+                "text": "We know paywalls aren't popular, and we're not big on them either. But keeping the precise details (GPS directions, the guidebook map and topos) behind KAYA's membership, rather than open to anyone online, is part of what makes land managers comfortable. It cuts down on informal paths and overuse, and info can be fixed or taken down in one place."
+              }
+            ]
+          },
+          {
+            "_key": "gbm2",
+            "_type": "block",
+            "style": "normal",
+            "markDefs": [],
+            "children": [
+              {
+                "_key": "gbm2s",
+                "_type": "span",
+                "marks": [],
+                "text": "Part of each membership goes to the guide's author, and a share comes to us, which we pass on (see where the money goes, below)."
+              }
+            ]
+          }
+        ]
       },
       {
         "_key": "gb3",
@@ -1424,7 +1545,7 @@
                 "_key": "gb3b1",
                 "_type": "span",
                 "marks": [],
-                "text": "We don't keep it. In Australia, signs, stairs and track work are done by contracted landscapers and sign makers, not by climbing groups, so guidebook income is passed on to where it can pay for that work and support climbers: councils, RCQ and theCrag, gym events (backing the event or putting up KAYA memberships as prizes), and sponsoring local climbers of all kinds."
+                "text": "We don't keep it for ourselves. In Australia, signs, stairs and major track work are done by contracted landscapers and sign makers, not by climbing groups, so guidebook income is passed on to where it can pay for that work and support climbers: councils, RCQ and theCrag, gym events (backing the event or putting up KAYA memberships as prizes), and sponsoring local climbers of all kinds."
               }
             ]
           }

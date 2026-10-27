@@ -162,6 +162,7 @@ export const textSection = defineType({
     defineField({ name: 'quote', title: 'Quote card: big line', type: 'string', description: 'Leave empty for no quote card' }),
     defineField({ name: 'quoteBody', title: 'Quote card: text', type: 'text', rows: 3 }),
     defineField({ name: 'quoteTone', title: 'Quote card colour', type: 'string', initialValue: 'sandstone', description: 'Wattle is best kept for buttons and small highlights, not big panels', options: radio(CARD_TONES) }),
+    defineField({ name: 'anchor', title: 'Link name', type: 'string', description: 'Lets you link straight to this section, e.g. "rcq" for /about#rcq. Lowercase, no spaces' }),
   ],
   preview: { select: { title: 'heading', subtitle: 'label' }, prepare: ({ title, subtitle }) => ({ title: title || 'Text', subtitle: `Text · ${subtitle ?? ''}` }) },
 })
