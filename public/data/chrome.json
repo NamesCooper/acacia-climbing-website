@@ -33,12 +33,6 @@
       },
       {
         "_type": "navItem",
-        "_key": "n4",
-        "label": "Guidebooks",
-        "link": "/guidebooks"
-      },
-      {
-        "_type": "navItem",
         "_key": "n5",
         "label": "First time outside",
         "link": "/first-time-outside"
@@ -150,12 +144,6 @@
           },
           {
             "_type": "navLink",
-            "_key": "c01b",
-            "label": "Guidebooks",
-            "link": "/guidebooks"
-          },
-          {
-            "_type": "navLink",
             "_key": "c01e",
             "label": "First time outside",
             "link": "/first-time-outside"
@@ -244,6 +232,6 @@
       }
     ],
     "smallPrint": "Acacia Climbing Coalition · ABN 38 237 542 815",
-    "smallPrintRight": "For climbers across Australia · Starting in SEQ · Guidebooks on KAYA"
+    "smallPrintRight": "For climbers across Australia · Starting in SEQ"
   }
 ]

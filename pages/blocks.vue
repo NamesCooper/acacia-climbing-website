@@ -71,7 +71,7 @@ const BLOCKS: { type: string; anchor?: string; name: string; goodFor: string; ex
     example: {
       tabs: [
         { _key: 'a', label: 'What', heading: 'What is ACC?', body: text('A bunch of climbers working to get outdoor bouldering formally recognised by councils around Australia.') },
-        { _key: 'b', label: 'How', heading: 'How does it work?', body: text('Research, chat with council, map every boulder on KAYA, then get it signed off.') },
+        { _key: 'b', label: 'How', heading: 'How does it work?', body: text('Research, chat with council, map it carefully, then get it signed off.') },
       ],
     },
   },
@@ -119,7 +119,7 @@ const BLOCKS: { type: string; anchor?: string; name: string; goodFor: string; ex
     example: {
       label: 'Got an hour?', heading: 'Lend a hand',
       intro: "Tell us a bit about yourself and what you'd like to help with. We'll get in touch.",
-      interests: ['Clean-up days', 'Track work', 'Writing to council', 'Mapping on KAYA'],
+      interests: ['Clean-up days', 'Track work', 'Writing to council', 'Mapping crags'],
       privacyNote: "We'll only use your details to get in touch about helping out.",
     },
   },
@@ -132,7 +132,7 @@ const BLOCKS: { type: string; anchor?: string; name: string; goodFor: string; ex
       cards: [
         card({ kicker: 'Volunteer', chipTone: 'lichen', title: 'Give an hour or two', body: 'Clean-ups, track work and mapping.', linkLabel: "I'm keen", linkHref: '/get-involved', buttonColour: 'moss', halftone: true }),
         card({ kicker: 'Report', chipTone: 'wattle', title: 'Be our eyes', body: 'Tell us about closed tracks, new signs or damage.', tone: 'sandstone' }),
-        card({ kicker: 'Partners', title: 'Working with', tone: 'forest', items: [{ _key: 'i1', title: 'RCQ', body: "Rock Climbing Queensland, the state's peak climbing body." }, { _key: 'i2', title: 'KAYA', body: 'Where our guidebooks live.' }] }),
+        card({ kicker: 'Partners', title: 'Working with', tone: 'forest', items: [{ _key: 'i1', title: 'RCQ', body: "Rock Climbing Queensland, the state's peak climbing body." }, { _key: 'i2', title: 'QPWS', body: 'Rangers looking after crags in their parks.' }] }),
       ],
     },
   },
@@ -157,7 +157,7 @@ const BLOCKS: { type: string; anchor?: string; name: string; goodFor: string; ex
     goodFor: 'a process people can follow, like the eight steps to protect a crag.',
     example: {
       label: 'Every crag goes through the same steps', heading: 'How we do it', band: 'sandstone',
-      steps: ['Research the area', 'Talk with council', 'Map it on KAYA', 'Get it signed off'],
+      steps: ['Research the area', 'Talk with council', 'Map it carefully', 'Get it signed off'],
       linkLabel: 'See where each crag is up to', linkHref: '/progress',
     },
   },

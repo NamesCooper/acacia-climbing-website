@@ -6,7 +6,7 @@ import savedCrags from '~/public/data/crags.json'
 
 const SITE = 'https://acaciaclimbing.org'
 const FIXED = ['/', '/progress', '/updates']
-const HIDDEN = new Set(['blocks'])
+const HIDDEN = new Set(['blocks', 'guidebooks'])
 
 export default defineEventHandler(async (event) => {
   // When each page last changed, so Google can trust the dates and re-crawl only what changed.

@@ -101,21 +101,7 @@
                     "_key": "k0009",
                     "_type": "span",
                     "marks": [],
-                    "text": "Research the area, chat with council and rangers, sort out tracks, signs and safe access, map it carefully on "
-                  },
-                  {
-                    "_key": "k000a",
-                    "_type": "span",
-                    "marks": [
-                      "strong"
-                    ],
-                    "text": "KAYA"
-                  },
-                  {
-                    "_key": "k000b",
-                    "_type": "span",
-                    "marks": [],
-                    "text": ", then get it signed off. Documented crag, protected crag."
+                    "text": "Research the area, chat with council and rangers, sort out tracks, signs and safe access, map it carefully, then get it signed off. Documented crag, protected crag."
                   }
                 ]
               }
@@ -196,7 +182,7 @@
         "_type": "cardsSection",
         "label": "Who we work alongside",
         "heading": "Working with",
-        "columns": 4,
+        "columns": 3,
         "titleStyle": "grotesk",
         "cards": [
           {
@@ -216,25 +202,6 @@
                 "_ref": "image-0c951955696813d79af9f744c459276b37a91c47-495x371-png"
               },
               "alt": "Rock Climbing Queensland"
-            }
-          },
-          {
-            "_key": "hw2",
-            "_type": "card",
-            "kicker": "Guidebooks",
-            "chipTone": "wattle",
-            "title": "KAYA",
-            "body": "Where our digital guidebooks live. We're their local climbing organisation for South East Queensland.",
-            "linkLabel": "Visit KAYA",
-            "linkHref": "https://kayaclimb.com/",
-            "buttonColour": "link",
-            "logo": {
-              "_type": "image",
-              "asset": {
-                "_type": "reference",
-                "_ref": "image-472dec52fd8a3da5eab5534bd9ced197377343f5-932x214-svg"
-              },
-              "alt": "KAYA"
             }
           },
           {
@@ -430,7 +397,7 @@
                   {
                     "_type": "span",
                     "_key": "k001v",
-                    "text": "You're welcome to share and link to anything here with credit to Acacia Climbing Coalition. Detailed guidebook information lives on KAYA under their terms.",
+                    "text": "You're welcome to share and link to anything here with credit to Acacia Climbing Coalition.",
                     "marks": []
                   }
                 ]
@@ -531,7 +498,7 @@
                 "_key": "rc2s",
                 "_type": "span",
                 "marks": [],
-                "text": "Acacia does the work that sits alongside it: mapping areas carefully, keeping guides current on KAYA, getting closures and land manager notes to climbers quickly, and running volunteer days to look after crags once they're open. RCQ isn't set up to publish and maintain crag guides, so that's the gap we're filling."
+                "text": "Acacia does the work that sits alongside it: mapping areas carefully, keeping crag info current, getting closures and land manager notes to climbers quickly, and running volunteer days to look after crags once they're open. RCQ isn't set up to publish and maintain crag guides, so that's the gap we're filling."
               }
             ]
           },
@@ -575,7 +542,7 @@
             "kicker": "Crag info and care",
             "chipTone": "lichen",
             "title": "Acacia",
-            "body": "We map areas carefully, keep guides current on KAYA, pass on closures and land manager notes, and run volunteer days to look after crags once they're open."
+            "body": "We map areas carefully, keep crag info current, pass on closures and land manager notes, and run volunteer days to look after crags once they're open."
           }
         ]
       },
@@ -769,7 +736,7 @@
           "Clean-up days",
           "Track work",
           "Writing to council",
-          "Mapping on KAYA",
+          "Mapping crags",
           "Telling us about your local",
           "Chipping in when it opens",
           "Just keep me posted"
@@ -940,7 +907,7 @@
           {
             "_key": "c4b",
             "_type": "card",
-            "body": "GPS, photos and area boundaries, ready for your planning and published on KAYA once you're happy.",
+            "body": "GPS, photos and area boundaries, ready for your planning and only shared once you're happy.",
             "chipTone": "lichen",
             "kicker": "Mapping",
             "title": "Mapping and documentation"
@@ -980,12 +947,12 @@
           "Reach out to locals and anyone who's documented it",
           "Talk with the land manager",
           "Agree a plan together",
-          "Site visits: GPS, photos and mapping on KAYA",
+          "Site visits: GPS, photos and mapping",
           "Sort out tracks, signs and safe access",
           "Final approvals",
-          "Guidebook published on KAYA"
+          "Guide published"
         ],
-        "intro": "We're an independent volunteer group. When we document an area, we work it through with the land manager and keep Rock Climbing Queensland (formerly ACAQ) in the loop. Once it's agreed, we build and publish the guide on KAYA."
+        "intro": "We're an independent volunteer group. When we document an area, we work it through with the land manager and keep Rock Climbing Queensland (formerly ACAQ) in the loop. Nothing about the area is shared with climbers until it's agreed."
       },
       {
         "_key": "c5",
@@ -1098,7 +1065,7 @@
         ],
         "heading": "Why it matters to you",
         "quote": "\"Know before you go.\"",
-        "quoteBody": "Our crag map shows where each spot is up to, and every documented crag goes on KAYA.",
+        "quoteBody": "Our crag map shows where each spot is up to.",
         "quoteTone": "lichen"
       },
       {
@@ -1131,14 +1098,6 @@
             "chipTone": "sandstone",
             "kicker": "Outside",
             "title": "Intro-to-outdoors"
-          },
-          {
-            "_key": "g2d",
-            "_type": "card",
-            "body": "KAYA also has an indoor app for logging climbs and managing sets, similar to TopLogger, all in the same app as the outdoor guides.",
-            "chipTone": "paper",
-            "kicker": "Indoor app",
-            "title": "KAYA for your walls"
           }
         ],
         "columns": 2,
@@ -1191,7 +1150,7 @@
             "kicker": "Events",
             "chipTone": "wattle",
             "title": "Crag challenges",
-            "body": "Month-long challenges on KAYA. Most sends, or most photos and info logged for the guide, wins a crash pad or a KAYA membership."
+            "body": "Month-long crag challenges. Most sends, or most photos and info logged, wins a crash pad."
           },
           {
             "_key": "s1c",
@@ -1199,7 +1158,7 @@
             "kicker": "Community",
             "chipTone": "sandstone",
             "title": "Fundraising comps",
-            "body": "Community comps with live scoring on KAYA, where the entry money goes back into the crags."
+            "body": "Community comps with live scoring, where the entry money goes back into the crags."
           },
           {
             "_key": "s1d",
@@ -1207,7 +1166,7 @@
             "kicker": "Sponsorship",
             "chipTone": "paper",
             "title": "Backing local climbers",
-            "body": "Sponsoring climbers who document and share crags, including free KAYA memberships."
+            "body": "Sponsoring climbers who document and share crags."
           }
         ],
         "columns": 4,
@@ -1222,7 +1181,7 @@
             "_key": "s4a",
             "_type": "card",
             "anchor": "donations",
-            "body": "Crag Care Days, crag challenges, fundraising comps and giveaways, and, once we have the backing, sponsoring climbers who help document and share our crags, including free KAYA memberships. We're not here to push anyone into paid memberships.",
+            "body": "Crag Care Days, crag challenges, fundraising comps and giveaways, and, once we have the backing, sponsoring climbers who help document and share our crags. We're not here to push anyone into paid memberships.",
             "chipTone": "wattle",
             "kicker": "Donations",
             "title": "Back into climbing"
@@ -1652,13 +1611,13 @@
                 "_key": "fo0b1",
                 "_type": "span",
                 "marks": [],
-                "text": "That's why we're doing this. KAYA guides give you the clarity: where the boulders are, how to get there and what's what. Our access work with councils and land managers is about making sure there's a clear, agreed way in, so you get it right the first time instead of ending up off track, in trouble, or put off climbing outside altogether."
+                "text": "That's why we're doing this. Our work with councils and land managers is about making sure there's a clear, agreed way in, with good crag info to match, so you get it right the first time instead of ending up off track, in trouble, or put off climbing outside altogether."
               }
             ]
           }
         ],
         "quote": "Getting outside shouldn't be guesswork.",
-        "quoteBody": "Clear guides and agreed access, so your first trip is a good one.",
+        "quoteBody": "Clear crag info and agreed access, so your first trip is a good one.",
         "quoteTone": "gum"
       },
       {

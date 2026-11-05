@@ -2,3 +2,6 @@
 # Facebook joined our post's link to the next word ("acaciaclimbing.org/Critical"), so send those visits home.
 /Critical / 301
 /critical / 301
+
+# The Guidebooks page is hidden while KAYA works things out with guidebook authors (Nov 2026)
+/guidebooks / 302

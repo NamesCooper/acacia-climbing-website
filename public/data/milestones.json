@@ -21,7 +21,7 @@
  },
  {
   "crag_id": "cedar",
-  "text": "Site visits: GPS, photos and mapping on KAYA",
+  "text": "Site visits: GPS, photos and mapping",
   "status": "progress"
  },
  {
@@ -36,7 +36,7 @@
  },
  {
   "crag_id": "cedar",
-  "text": "Guidebook published on KAYA",
+  "text": "Guide published",
   "status": "todo"
  },
  {
@@ -61,7 +61,7 @@
  },
  {
   "crag_id": "whiterock",
-  "text": "Site visits: GPS, photos and mapping on KAYA",
+  "text": "Site visits: GPS, photos and mapping",
   "status": "progress"
  },
  {
@@ -76,7 +76,7 @@
  },
  {
   "crag_id": "whiterock",
-  "text": "Guidebook published on KAYA",
+  "text": "Guide published",
   "status": "todo"
  },
  {
@@ -101,7 +101,7 @@
  },
  {
   "crag_id": "tooheys",
-  "text": "Site visits: GPS, photos and mapping on KAYA",
+  "text": "Site visits: GPS, photos and mapping",
   "status": "done"
  },
  {
@@ -116,7 +116,7 @@
  },
  {
   "crag_id": "tooheys",
-  "text": "Guidebook published on KAYA",
+  "text": "Guide published",
   "status": "progress"
  },
  {
@@ -141,7 +141,7 @@
  },
  {
   "crag_id": "plunketts",
-  "text": "Site visits: GPS, photos and mapping on KAYA",
+  "text": "Site visits: GPS, photos and mapping",
   "status": "progress"
  },
  {
@@ -156,7 +156,7 @@
  },
  {
   "crag_id": "plunketts",
-  "text": "Guidebook published on KAYA",
+  "text": "Guide published",
   "status": "todo"
  },
  {
@@ -181,7 +181,7 @@
  },
  {
   "crag_id": "passchendaele",
-  "text": "Site visits: GPS, photos and mapping on KAYA",
+  "text": "Site visits: GPS, photos and mapping",
   "status": "todo"
  },
  {
@@ -196,7 +196,7 @@
  },
  {
   "crag_id": "passchendaele",
-  "text": "Guidebook published on KAYA",
+  "text": "Guide published",
   "status": "todo"
  }
 ]
